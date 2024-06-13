@@ -29,16 +29,15 @@ book:
     - Chapter_20_Climate_Normals.qmd
     - Chapter_21_Various.qmd
     - Chapter_22_References.qmd
-    - Chapter_23_Index.qmd
+    - Chapter_23_Appendix.qmd
 
 	
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: cosmo	
   pdf:
-    documentclass: scrreprt
-
+   documentclass: scrreprt
 
 

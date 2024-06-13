@@ -1,4 +1,4 @@
-# Index
+# Appendix
 Zimbabwe, 123
 
 [^1]: This threshold is like the value of 1mm sometimes suggested by
