@@ -1,0 +1,297 @@
+# Index
+Zimbabwe, 123
+
+[^1]: This threshold is like the value of 1mm sometimes suggested by
+    WMO. The smallest value usually recorded is 0.1mm, but we find
+    stations are not equally conscientious in recording very small
+    amounts. So, if 0.1mm is used, then it is harder to compare the
+    pattern of rainfall at different stations. Records also differ in
+    their attitudes on rounding. So, some records have far fewer values
+    of 0.9 or 1.1mm than others. There is also an old issue that some
+    stations used to measure in inches and the smallest value was then
+    0.01 inches. This translates to 0.3mm and higher values are 0.5, 0.8
+    and 1mm. So 0.9mm is not possible in data that used to be in inches.
+    Hence the threshold of 0.85mm is a practical way of implementing
+    "1mm and above".
+
+[^2]: The body of the boxplot is not blue by default. For this, choose
+    ***Boxplot Options*** in Fig. 2.2e, then choose the ***Geom
+    Parameters*** tab and change the ***Fill colour*** to your choice.
+
+[^3]: This is partly because the "Omit Missing Values" checkbox in Fig.
+    2.3c was left unchecked. Coping with missing values in the data,
+    when summaries are calculated, is a complex issue. It is discussed
+    in detail in Chapter 6.
+
+[^4]: The graph in Fig. 2.4k also starts from 0. This used the Yaxis tab
+    in Fig. 2.3j.
+
+[^5]: R is case sensitive. So Date and date are different variable
+    names. Hence make sure you use Date as the new name.
+
+[^6]: If the names of your date columns are not the same, then use the
+    Options sub-dialogue to tell R-Instat which columns to match.
+
+[^7]: The missing values are because a full join was used in the merging
+    process. The satellite data are up to 2015, while the observed data
+    are to 2013. One way of avoiding the problem is to use a Left Join
+    instead.
+
+[^8]: Use Tools \> Options \> Data View to change these values. However,
+    this may have a speed effect on R-Instat.
+
+[^9]: This is the Dodoma data used in Chapter 2. Use ***File \> Open
+    from Library \> Instat \> Climatic \> Original Climate Guide Data***
+    and choose ***Dodoma*** to open these data.
+
+[^10]: An R data book is special to R-Instat. Hence these RDS files
+    cannot be opened directly in R, for example in RStudio. We describe,
+    in Section 3.3 how you can transfer your R-Instat work to RStudio.
+
+[^11]: Changing the number of significant figures does not change any of
+    the data in R at all. It just changes how it is presented in the
+    grid. If you do want to change the number, then use the R-Instat
+    Calculator with Prepare \> Column: Calculate \> Calculations, where
+    the maths keyboard has round and various other functions that can be
+    applied.
+
+[^12]: This can be changed if not appropriate.
+
+[^13]: Sometimes the graph in the R viewer does not seem to appear, or
+    it appears and then disappears again. This is because it is on a
+    totally separate window. In this case look in the R-Instat icon in
+    the taskbar at the bottom of the screen.
+
+[^14]: The extra feature in Fig. 3.4 is the date of each outlier, which
+    helps in the quality control. This is provided by the label argument
+    in the ***Describe \> Specific \> Scatter Plot*** dialogue in Fig.
+    3.4h.
+
+[^15]: Though a "list" is something different in R.
+
+[^16]: We could alternatively have used Climatic \> Tidy and Examine \>
+    Replace Values in R-Instat and then changed the columns to be
+    numeric. But it is simpler to do a Find and Replace in Excel.
+
+[^17]: Use Climatic \> Tidy and Examine \> Replace Values.
+
+[^18]: This issue was with Climsoft Version 3.2. The problem has been
+    resolved in later versions.
+
+[^19]: They use ***Describe \> Specific \> Line Plot*** dialogue, with
+    the ***Date*** column as the x-variable.
+
+[^20]: To filter, one way is to return to the data, and right-click to
+    set up the filter. Alternatively press the Data Options button in
+    any dialogue, here Fig. 5.2h. Then filter to select just the first
+    station.
+
+[^21]: The Climatic \> dates \> Use Date dialogue is used to generate
+    the quarters.
+
+[^22]: In Section 3.3 we show how a skew boxplot may be constructed as a
+    preferred graph for rainfall data.
+
+[^23]: From the main ***Climatic \> Check Data \> Boxplot*** dialogue,
+    with ***Tmin*** as the variable, use ***Plot Options \> Layer \>
+    Add*** to give Fig. 5.3j. Include ***Tmax*** as the y, Fig. 5.3j,
+    then use the ***Layer Parameters*** tab, Fig. 5.3j, and set the
+    ***Outlier colour*** to ***red***. Then ***Return*** to the main
+    dialogue and ***Ok***.
+
+[^24]: This feature is common and is largely due to the possibility of
+    lower values of Tmax on some rainy days. One way to check this
+    feature is the filter the data and just consider the Tmax data on
+    dry days.
+
+[^25]: An outlier is when a point is further from the respective
+    quartile than 1.5 times the interquartile range.
+
+[^26]: This threshold is like the value of 1mm sometimes suggested by
+    WMO. The smallest value usually recorded is 0.1mm, but we find that
+    stations are not equally conscientious in recording very small
+    amounts. So, if 0.1mm is used, then it is harder to compare the
+    pattern of rainfall at different stations. Records also differ in
+    their attitudes on rounding. So some records have far fewer values
+    of 0.9 or 1.1mm than others. There is also an old issue that some
+    stations used to measure in inches and the smallest value was then
+    0.01 inches. This translates to 0.3mm and higher values are 0.5, 0.8
+    and 1mm. So, 0.9mm is not possible in data that used to be in
+    inches. Hence the threshold of 0.85mm is a practical way of
+    implementing "1mm and above".
+
+[^27]: And, of course, if it is not possible with the ordinary R-Instat
+    menus it may still be possible using R directly.
+
+[^28]: To find the equation and level of significance of this result you
+    could then use the ***Model \> Two Variable*** dialogue
+
+[^29]: To add the colour, we also used the ***Boxplot Options*** in Fig.
+    6.4d and specified the ***Fill Colour*** as green.
+
+[^30]: We also used the Data Options and filtered on the Months to use
+    just March to October.
+
+[^31]: It uses the 2 factors month and station for the facets.
+
+[^32]: ***Filter to 1962 at Saltpond*** and use ***Climatic \> Check
+    Data \> Display Daily***.
+
+[^33]: In the current version of R-Instat the Plot Options are disabled
+    for multiple variables. Hence set the facets before setting the
+    variables to Multiple. Set them back to Single Variable if you wish
+    to edit the Plot Options. This limitation will be removed in a
+    future version.
+
+[^34]: Monthly means are calculated using ***Climatic \> Prepare \>
+    Climatic Summaries*** as shown in Fig. 6.6k. The data are then
+    filtered to just 1971 to 1980 for Saltpond. Then the results could
+    be shown in the output window, but we chose to unstack the data, by
+    Month to give the display shown in Fig. 6.6h.
+
+[^35]: Use ***Prepare \> Column: Calculate \> Calculation*** with the
+    formula ***round(max_temperature\*9/5+32)***.
+
+[^36]: An alternative to renaming the variables is to change the names
+    of the new variables in the ***Climatic \> Prepare \> Start of the
+    Rains*** dialogue, Fig. 7.3a.
+
+[^37]: The file called Moorings 7.4.rds from ***File \> Open from
+    Library,*** contains the data including the variables from Section
+    7.3.
+
+[^38]: To plot as shown in Fig. 7.6h, use ***Climatic \> Tidy and
+    Examine \> Stack*** with the 3 totals, carrying the ***s_year***
+    variable. Then, on the ***Climatic \> PICSA \> Rainfall Graph***,
+    choose Plot Options and Facets and make the layout vertical.
+
+[^39]: Include the checkbox to display the zero values as "---".
+
+[^40]: Plotting exceedance graphs is one way to examine these data. Our
+    use
+
+[^41]: The default gives the x-axis as numeric. The presentation shown,
+    as dates within the year, will soon be easy, but currently it needs
+    a little coding as described in Chapter 8.
+
+[^42]: They are higher because they include years where a dry spell may
+    have started before the given dates and continued into the flowering
+    period. The earlier calculation (following planting) assumed the
+    previous day had rain -- as it was a potential planting date.)
+
+[^43]: If we move the dekad column "down one row", , that's the
+    ***lead*** function (lag is the opposite) then these are the rows
+    when the two columns are different, (i.e. !=). So, with the
+    ***dekad_abbr*** variable the function: ***dekad_abbr !=
+    lead(dekad_abbr)*** is used. We need to specify the R package for
+    the ***lead*** function, so give the command as ***dekad_abbr !=
+    dplyr::lead(dekad_abbr)***
+
+[^44]: In Fig. 7.8ad we have also filtered to omit the very dry months
+    of the year.
+
+[^45]: This adds two ***layers*** to the boxplot with the data from the
+    current year. One layer is for the line and the other for the
+    points. This is explained n=in more detail in Chapter 8.
+
+[^46]: This might have been corrected by the time you read this section.
+
+[^47]: The resulting column is slightly incorrect, because of the
+    multiple stations. The last 2 rows (hours) at each station should be
+    missing, but they continue with the values from the next station.
+    This will have a negligible effect on subsequent calculations. If
+    you wish to be strictly correct, then filter for these last 2 days
+    and set the values as missing.
+
+[^48]: The calculation of the baseline values is more complex in two
+    ways. First is that each day uses the data from the 5 surrounding
+    days, e.g. for 10^th^ January, the data are used from 8^th^ to
+    12^th^ January. There are therefore 150 values for each day, from
+    which to calculate the 10% and 90% points. Second is that a
+    bootstrapping methods is used, following (Zhang, Hegerl, Zwiers, &
+    Kenyon, 2005) where each year in turn is omitted and replaced by one
+    of the other 29 years.
+
+[^49]: If you have multiple data frames open, and you just want to close
+    this one, then use ***Right-Click*** on the data frame tab (at the
+    bottom of the data) and choose ***Delete***.
+
+[^50]: With the default of more than 9 days, there is no planting date
+    in 2 of the years. This is possible, and the issue us discussed in
+    Section 7.4. Here we avoid the discussion!
+
+[^51]: A caption can be split over multiple lines if \\n is used as a
+    line feed.
+
+[^52]: You may wonder why they are not always the same. They are within
+    a day of each other and we consider that is "good enough" for the
+    uses of the results. They sometimes differ by a day for one (or
+    both) of 2 reasons. First the length =End -- Start. So, if the Start
+    was 14 Nov, and the End was 16^th^, then Length = 2 days. But 3 days
+    are used in the calculation of the sum, from the start day to the
+    end day. Second -- and the other way -- is that February 29 is an
+    extra day in non-leap years for calculating the length, but not for
+    the number of days in calculating the sum. So, in Fig. 12.4s the
+    results are the same in non-leap years, and different, by one day,
+    in leap years.
+
+[^53]: From the dates, use ***Prepare \> Column: Calculate
+    \>Calculation*** to find the month of the maximum. ***Label*** the
+    month and ***reorder***, so December is first. Then, in the
+    ***Climatic \> PICSA \> Rainfall Graph***, use ***Plot Options***
+    and edit the points layer to include the month in the graph.
+
+[^54]: Changed geom_line, to geom_col, colour to black, and size=0.8 to
+    width=0.05 in PICSA line chart.
+
+[^55]: You could simply count the number of years in Fig. 12.4i when
+    planting is on or before each day number. Or count from a graphical
+    display, such as Fig. 12.4j. This is simpler from a cumulative
+    display of the starting dates, using the ***Climatic \> PICSA \>
+    Cumulative/Exceedance Graph***. Numerically you could give a logical
+    expression using the calculator, ***Prepare \> Column: Calculate \>
+    Calculation***, or using the proportion summary in ***Prepare \>
+    Column Calculate \> Column Summaries***.
+
+[^56]: The order of the factor levels is changed to go from South to
+    North (i.e. in latitude order). A Date column has been added (with
+    Climatic \> Dates \> Make Date, and just use the Year column. Then
+    the data frame is defined as climatic, as described in Chapter 8.
+
+[^57]: It isn't difficult. First use ***Climatic \> Dates \> Make
+    Date*** for the daily data, (possibly change the year and doy to be
+    numeric) then, ***Use Date*** to get the monthly variable. Then
+    repeat the plot with the ***month as a facet***.
+
+[^58]: The scale option was used to make the width proportional to the
+    count of observations at each direction.
+
+[^59]: This is Precip ≥ 0.01 inches as the US uses inches rather than
+    mm. (1 inch = 25.4mm).
+
+[^60]: Here the total rainfall is calculated from ***all*** the rain
+    days -- i.e. even those with less than 0.85mm. This slightly higher
+    than the totals ignoring those days completely, i.e. setting those
+    values to zero. If you wish to set those values to zero, then, with
+    the daily data, generate a new variable, say rain0 using ***Prepare
+    \> Column: Calculate \> Calculation*** with the formula
+    ***(rain\>0.85) \* rain*** or equivalently ***ifelse(rain\>0.85,
+    rain, 0)***.
+
+[^61]: There were some simple steps to produce the graph in Fig. 19.2n,
+    from the data in Fig. 19.2m, as follows. First subtract successive
+    columns to give the number of days between 1mm and 5mm, etc. Then
+    use Climatic \> Tidy and Examine \> Stack on these four variables,
+    carrying the Month factor. Then produce the stacked bar chart. It is
+    good if the chart is in the "right order", both for the bars and the
+    legend, and this may involve the Prepare \> Column: Factor \>
+    Reorder Levels.
+
+[^62]: Some countries continue to use a tighter rule where 5 is the
+    maximum number of missing days permitted in a month, or 3
+    consecutive days.
+
+[^63]: If the checkbox is not (yet) enabled, then press Ok for the
+    existing summary. Use the dialogue again, make date the element and
+    choose Minimum. This has given the column called min_date in Fig.
+    19.3h.

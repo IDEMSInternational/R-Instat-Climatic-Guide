@@ -1,0 +1,10 @@
+# Various
+## Evapotranspiration
+
+## Filling and homogenising data
+
+## Markov chains
+
+Will refer to (Stern, Dennett, & Dale, The Analysis of Daily Rainfall
+Measurements to Give Agronomically Useful Results 2 - A Modelling
+Approach, 1982)

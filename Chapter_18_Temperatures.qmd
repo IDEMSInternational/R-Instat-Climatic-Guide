@@ -1,0 +1,16 @@
+# Temperatures
+## Examining trends
+
+[Check on scale, daily, monthly, annual.]{.mark}
+
+[Consider adding broken stick -- segmented regression model. With fixed
+or estimated break points. Package segmented may be used if estimated.
+Probably not needed if a break-point and want to try a fixed
+value.]{.mark}
+
+See, for example
+[[https://stats.stackexchange.com/questions/382114/segmented-regression]{.underline}](https://stats.stackexchange.com/questions/382114/segmented-regression)
+
+## Comparing gridded and station data
+
+## Degree days

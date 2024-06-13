@@ -1,0 +1,669 @@
+# Climate Normals
+## Introduction
+
+The calculation of climate normals in this chapter is based largely on
+(World Meteorological Organization (WMO), 2017). We also consider the
+adaptation of the guidelines to the calculations of the normals in the
+US, as described in (Arguez, et al., 2012).
+
+A climatological standard normal now refers to the most recent 30-year
+period finishing in a zero, i.e. currently 1981-2010, and soon to be
+1991-2020. In addition, the 1961-1990 period is retained as a standard
+reference period for assessing long-term climate change.
+
+A distinction is made in (World Meteorological Organization (WMO),
+2017), between "Principal Climatological Parameters" and "Secondary
+Parameters". There are 8 primary parameters including monthly total
+rainfall (precipitation) and the total number of rain days, Table 19.1a.
+
+  -----------------------------------------------------------------------
+  ***Table 19.1a WMO Principal Climatological             
+  Parameters***                                           
+  ------------------------------------------------------- ---------------
+  **Parameter**                                           **Units**
+
+  Precipitation total                                     mm
+
+  Precipitation days (Precip ≥ 1mm)                       days
+
+  Mean Tmax                                               °C
+
+  Mean Tmin                                               °C
+
+  Mean Tavg                                               °C
+
+  Mean sea-level pressure                                 hPa
+
+  Mean vapour pressure                                    hPa
+
+  Total hours of sunshine                                 hours
+  -----------------------------------------------------------------------
+
+The quintile boundaries for rainfall (mm) and the mean number of days
+with more than 5, 10, 50, 100 and 150mm are secondary parameters.
+Temperature thresholds and extremes are also included.
+
+These are intended as guidelines and are adapted by individual
+countries. Examples from the US are shown in Table 19.1b. This table is
+adapted from Table 5 in (Arguez, et al., 2012). The units have been
+changed to millimetres for rainfall and °C for temperatures (US uses
+inches and Fahrenheit.)
+
+  --------------------------------------------------------------------------------------------------------
+  Table 19.1b                                                                                      
+  Monthly and                                                                                      
+  annual                                                                                           
+  normals for                                                                                      
+  a station in                                                                                     
+  Chicago,                                                                                         
+  from                                                                                             
+  (Arguez, et                                                                                      
+  al., 2012)                                                                                       
+  ------------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ -------
+  Variable     J      F      M      A      M      J      J      A      S      O      N      D      Ann
+
+  Tmax (°C)    -0.3   2.1    8.2    15.1   21.2   26.6   29.0   27.8   24.1   17.1   9.2    1.8    15.2
+
+  Tavg (°C)    -4.0   -1.8   3.8    10.2   16.1   21.7   24.4   23.4   19.1   12.3   5.3    -1.7   10.8
+
+  Tmin (°C)    -7.7   -5.7   -0.6   5.4    10.9   16.7   19.7   19.0   14.2   7.6    1.4    -5.2   6.4
+
+  DTR (°C)     7.4    7.8    8.8    9.7    10.3   9.9    9.3    8.8    9.9    9.5    7.8    7.0    8.8
+
+  Precip(mm)   52     49     69     92     105    103    102    101    84     82     87     65     993
+
+  HDD          692    564    451    249    104    17     1      2      43     194    391    620    3327
+
+  CDD          0      0      1      7      34     117    188    160    66     9      0      0      581
+
+  Days Tmax \> 0      0      0      0      0.6    3.1    6.3    3.8    1.2    0      0      0      15.1
+  32.2                                                                                             
+
+  Days with    1.4    2.9    10.6   23.5   30.5   30     31     31     30     28.1   13.1   2.9    235
+  Tmin \< 10                                                                                       
+
+  Precip 25%   29     26     41     54     63     70     53     57     40     49     48     38     
+
+  Precip 75%   75     66     90     119    141    124    115    143    117    93     133    80     
+
+  Precip \>    10.7   8.8    11.2   11.1   11.4   10.3   9.9    9      8.2    10.2   11.2   11.1   123.1
+  0.2mm[^59]                                                                                       
+
+  Precip \>    0.2    0.2    0.3    0.9    1      1.3    1      1.3    0.7    0.8    0.8    0.5    9
+  25mm                                                                                             
+  --------------------------------------------------------------------------------------------------------
+
+One differences is for rainfall, where WMO suggests quintiles, i.e. 20%,
+to 80%, while the US uses quartiles (25% and 75%). Heating (HDD) and
+cooling degree days are also including. A heating degree day is defined
+as a value of Tavg above 18°C (65 degrees Fahrenheit), while CDDs are
+temperatures below that level.
+
+The WMO lower threshold for rainfall is proposed as ≥ 1mm. We have
+largely used 0.85mm as a practical lower limit in this guide. We claim
+this is consistent with the WMO value of ≥1mm. For practical purposes,
+as data are recorded to 0.1mm the WMO value is effectively \> 0.95mm.
+For consistency between stations (which is important for climate
+normals) the value of 0.85mm is about the same. But it allows for
+differences in rounding at different stations. This can occur in 2 ways.
+If data were originally in inches, then 0.01inch = 0.3mm. The value of
+0.9mm is not possible, because 0.03inches = 0.8mm, while 0.04inches =
+1mm.
+
+In addition, some observers round data more than others. An observer who
+rounds 0.9mm to 1mm would have that day counted as rain, while the more
+precise observer, recording the same value as 0.9mm would have it
+omitted as dry.
+
+For these reasons, we claim the proposed threshold value of 0.85mm is a
+practical was of implementing the WMO ≥1mm threshold.
+
++-----------------------------------+-----------------------------------+
+| ***Fig. 19.1a Inventory for       | ***Fig. 19.1b Subset with 30      |
+| Dodoma***                         | years***                          |
+|                                   |                                   |
+| ***Climatic \> Check Data \>      | Right-click \> Filter (to year    |
+| Inventory***                      | from 1981 to 2010)                |
++===================================+===================================+
+| ![](media/image320.               | ![](media/image326.               |
+| png){width="2.9576673228346455in" | png){width="2.8694127296587926in" |
+| height="2.9941371391076115in"}    | height="3.0189227909011374in"}    |
++-----------------------------------+-----------------------------------+
+
+In principle, producing normals is straightforward as is shown in
+Section 19.2 with examples using rainfall data. Complications relate
+largely to the presence of missing values in the reference period and
+this is discussed in Section 19.3.
+
+The Dodoma data are used as an example. ***File \> Open from Library \>
+Instat \> Browse \> Climatic \> Tanzania \> Dodoma.rds***.
+
+The data are already defined as climatic. An inventory is shown in Fig.
+19.1a. IT shows there are virtually no missing values in the rainfall,
+either in the 30 years from 1961 or in the most recent period, from 1981
+to2010. A subset of the data is produced as shown in Fig. 19.1b, and
+rainfall normals from 1981-2010 are shown in Section 19.2.
+
+There are also relatively few missing values in the temperatures. They
+are considered in Section 19.3, where we also explain the WMO
+recommendations for coping with missing values.
+
+The sunshine records only started in 1973, and so could not be used for
+1961-90 normals. And there are far too many missing values for them to
+be used in 1981-2010, unless they can be merged with satellite data.
+This is considered in Section 19.4.
+
+The examples here are for a single station. Usually they would be done
+for a whole set of stations in a single file, and that is no more work.
+The process, in R-Instat, currently involves three successive steps.
+There seems to be no R-package for this task. We expect to construct one
+for R and hence R-Instat, in the future.
+
+## Precipitation normals 
+
+From Fig. 19.1b the Dodoma data are now from 1981 to 2010. We have
+chosen to keep the year from January to December, though there could be
+a case for July to June, as that would mean each "year" would be a
+complete season. The rains in Dodoma are from November to April. In
+(World Meteorological Organization (WMO), 2017), mention is made of
+climate normals being for seasons rather than annual, but no details are
+given, In Tanzania part of the country is unimodal and part is bimodal,
+so comparisons of the normals between stations would be easier with a
+consistent definition and January to December therefore seems justified.
+
+The first 2 normals in Table 19.1a are the precipitation totals and the
+number of rain days. As preparation, calculate the rain days as shown in
+Fig. 19.2a. In Fig. 19.2a the 0.85mm threshold has been used, which we
+claimed above, is consistent with the WMO definition of rain ≥ 1mm. (Use
+0.95mm is you don't agree!)
+
++--------------------------------+-------------------------------------+
+| ***Fig. 19.2a Add a variable   | ***Fig. 19.2b***                    |
+| for raindays***                |                                     |
+|                                |                                     |
+| ***Climatic \> Prepare \>      |                                     |
+| Transform***                   |                                     |
++================================+=====================================+
+| ![](media/image343.png         | ![](media/image32                   |
+| ){width="2.7958967629046367in" | 2.png){width="3.2288713910761153in" |
+| height="3.432683727034121in"}  | height="3.409433508311461in"}       |
++--------------------------------+-------------------------------------+
+
+The resulting daily data are in Fig. 19.2b. The rainday variable can be
+seen to be 1 on rain days, and 0 otherwise.
+
+Getting the monthly normals is a 2-step process and the annual normals
+adds a 3rd step.
+
+The first step uses the ***Climatic \> Prepare \> Climatic Summaries***,
+as shown in Fig. 19.2c, to give the monthly rainfall totals for each
+year.
+
++-----------------------------------+----------------------------------+
+| ***Fig. 19.2c***                  | ***Fig. 19.2d***                 |
+|                                   |                                  |
+| ***Climatic \> Prepare \>         |                                  |
+| Climatic Summaries***             |                                  |
++===================================+==================================+
+| ![](media/image325.               | ![](media/image298.p             |
+| png){width="2.9981966316710413in" | ng){width="2.8774507874015747in" |
+| height="3.774873140857393in"}     | height="2.998788276465442in"}    |
++-----------------------------------+----------------------------------+
+
+Complete the dialogue as shown in Fig. 19.2c and choose just the 3
+summaries from the sub-dialogue, as shown in Fig. 19.2d. This generates
+a new data frame with 30 (years) by 12 (months), i.e. 360 rows of data.
+It will be multiples of 360 rows if there is more than one station.
+
+Return to the dialogue, change the variable, in Fig. 19.2c, to
+***raindays*** and omit the ***Maximum*** and also the ***N Non
+Missing*** summary -- it isn't needed, because it is just the same as
+for the rain column.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.2e The resulting monthly data***            ***Fig. 9.2f***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image280.png){width="2.6224245406824145in"   ![](media/image294.png){width="3.398500656167979in"
+  height="3.3829286964129484in"}                         height="3.334045275590551in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+Check the resulting data frame, shown in Fig. 19.2e. For example, the
+first row shows there was a total of 26.4mm from 5 rain days in
+1981[^60]. The maximum daily value was 14.4mm in January 1981. In Fig.
+19.2e, check there are no missing months. With the setting for missing
+values unchecked in Fig. 19.2c, a month will be set to missing if there
+is even a single missing day in that month. We consider this issue at
+the start of Section 19.3.
+
+The (World Meteorological Organization (WMO), 2017) describes four
+different parameters that can become monthly normals. From the daily
+data it may be a mean, or a sum, or a count or an extreme. In Fig. 19.2e
+there are 3 of these types. Thus, the rainfall totals are an example of
+a sum, the number of rain days is a count, and the maximum rainfall is
+an example of an extreme. Once temperature data are considered, there
+will also be examples of means.
+
+The second step is to produce the climate normals from these monthly
+data. This uses the "ordinary" summary dialogue in R-Instat, from
+***Prepare \> Column: Reshape \> Column Summaries***, Fig 19.2f, rather
+than the special climatic summary. This time the only summary needed is
+the mean, Fig. 19.2g.
+
+The results are a new data frame with just 12 rows, giving the monthly
+climate normals, Fig. 19.2h. With multiple stations this would be a data
+frame with 12 rows for each station. These can now be copied to a table
+or presented graphically. With multiple stations this would be in a
+facetted graph.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.2g***                                       ***Fig. 19.2h The climate normals***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image282.png){width="2.8663834208223973in"   ![](media/image306.png){width="2.805609142607174in"
+  height="3.124615048118985in"}                          height="3.1915343394575677in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+Fig. 19.2i gives a simple graph of the mean monthly totals with the data
+from Fig. 19.2h as labels. Fig. 19.2j shows the rain days, where the
+months have been changed into the more natural seasonal order.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.2i***                                      ***Fig. 19.2j***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](media/image275.png){width="3.008005249343832in"   ![](media/image281.png){width="3.0185575240594926in"
+  height="2.9874726596675414in"}                        height="2.9944094488188977in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+Secondary parameters for the rainfall, suggested by (World
+Meteorological Organization (WMO), 2017) are the extremes, the quintile
+boundaries and the number of rain days above defined thresholds.
+
+The quintile boundaries are the 0%, 20%, 40%, 60%, 80%, 100% points,
+where the 0% and 100% are the monthly extremes. Countries are unlikely
+to need them all and this is where the US has chosen quartiles, i.e. 25%
+and 75% instead of quintiles.
+
+In R-Instat either can be found from adapting the second stage of the
+calculations. If you would like the extremes and quartiles then use
+Prepare \> Column: Reshape \> Column Summaries again, Fig. 19.2f, but
+just for the sum_rain variable. In the summaries, Fig. 19.2g use the
+Minimum and Maximum for the extremes and the Lower and Upper Quartiles
+if they are what you wish.
+
+If you prefer the quintiles (say 20% and 80% points), use the ***More***
+tab, in Fig. 19.2g, to provide further summaries, Fig. 19.2k, where the
+0.2 gives the 20% point. Currently only a single value is allowed, so
+use the dialogue a second time to add the 80% point.
+
+Section 4.5 in (World Meteorological Organization (WMO), 2017) proposes
+a definition for the quintile boundaries. R, and hence R-Instat, have 9
+alternative methods for the calculation of quantiles (including
+therefore quintiles). The default in R is method 7 and this,
+fortunately, coincides with the method proposed in (World Meteorological
+Organization (WMO), 2017).
+
+Fig. 19.2l shows the normals for the mean, as in Fig. 19.2i, as a line
+plot. It is together with the minimum, 20%, 80% and maximums for the
+1981-2010 period. Note that the minimums and maximums are for the
+monthly data, i.e. the maximum of the monthly totals. For the rainfall
+data it is also useful to have the daily maximums.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.2k***                                       ***Fig. 19.2l***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image279.png){width="2.3519149168853892in"   ![](media/image277.png){width="3.1489687226596677in"
+  height="2.540067804024497in"}                          height="3.1894805336832897in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+It is important to be clear on the differences between the two maximums.
+In January in Fig. 19.2m shows the largest monthly total was 331mm.
+
+  -----------------------------------------------------------------------
+  ***Fig. 19.2m***
+  -----------------------------------------------------------------------
+  ![](media/image260.png){width="5.713489720034995in"
+  height="3.0282895888013996in"}
+
+  -----------------------------------------------------------------------
+
+Also, in January, the maximum daily rainfall in the 30 years was 113mm.
+
+The quartile or quintile boundaries are calculated from the monthly
+summaries, (i.e. the second stage in the calculations). The mean number
+of days above different thresholds needs the daily data.
+
+In ***Climatic \> Prepare \> Transform***, Fig. 19.2a change the
+threshold from 0.85mm to 5mm, 10mm, etc and then summarise the resulting
+column(s) as described above.
+
+In practice, decide on the thresholds at the start, and then produce the
+summaries together with the 1mm threshold.
+
+The resulting normals are in Fig. 19.2m for 5mm, 10mm and 25mm.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.2n***                                       ***Fig. 19.2o***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image314.png){width="2.9886920384951883in"   ![](media/image304.png){width="2.9118350831146107in"
+  height="2.7532655293088366in"}                         height="2.8491032370953633in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+Fig. 19.2n presents the normals of the number of rain days at
+Dodoma[^61]. It shows that there was an average of 10 rain days in
+January. Of these, just under half were between 1mm and 5mm and there
+were about 2 days per month, on average, with more than 25mm.
+
+So far, we have considered monthly normals for the 1981-2010 rainfall
+data. The third stage is to produce annual normals. The (World
+Meteorological Organization (WMO), 2017) recommend producing them from
+the monthly normals, i.e. from the data in Fig. 19.2m, rather than from
+the monthly data, e.g. Fig 19.2e. If there are no missing values the
+results are essentially the same.
+
+From the monthly normals in Fig. 19.2m use ***Prepare \> Column: Reshape
+\> Column Summaries*** again, Fig. 19.2o, with the five variables
+***meanrain, rainday, rainday5, rainday10*** and ***rainday25***. In
+Fig. 19.2o press the ***Summaries*** sub-dialogue and just get the
+***Sum***. Also, in Fig. 19.2o, the results could be stored in another
+data frame if the calculations were for multiple stations. We choose
+here to give the results in the ***output window*** instead, Fig. 19.2p.
+
+Now return to the dialogue in Fig. 19.2o. Use the variable ***maxrain***
+instead and change the summary to just produce the ***maximum***.
+
+The annual results, in Fig. 19.2p show the mean annual rainfall was
+595mm from 43 rain days, of which, on average 7 days has 25mm or more.
+So, the mean rain per rain day was on average 14mm and about one rain
+day in six had 25mm or more. The largest ever daily rainfall was 113mm.
+
++--------------------------------------+-------------------------------+
+| ***Fig. 19.2p***                     | ***Fig. 19.2q***              |
+|                                      |                               |
+|                                      | ***Prepare \> Column: Reshape |
+|                                      | \> Column Summaries (after    |
+|                                      | making year a factor)***      |
++======================================+===============================+
+| ![](media/image                      | ![](media/image293.png        |
+| 297.png){width="3.388011811023622in" | ){width="2.658290682414698in" |
+| height="1.6162992125984252in"}       | height="2.639235564304462in"} |
++--------------------------------------+-------------------------------+
+
+The (World Meteorological Organization (WMO), 2017) recommendation of
+calculating the annual normals from the monthly values does not work for
+the quintiles. In the calculations above we have used the nice property
+that "the sum of the means is the same as the mean of the sums". So, in
+the figures above, totalling the monthly values in Fig. 19.2e to give
+the 30 annual values and then taking the mean over the years, still
+gives the value of 595mm that we found doing it "the other way round".
+
+One limitation with this recommendation is that it is not possible to
+calculate the annual normal quintiles, i.e. the variables minrain, 20%
+(q20) , q80 and maxrain, see Fig. 19.2m, from their monthly
+counterparts. The same applies to the quartiles, see Table 19.1b above,
+from (Arguez, et al., 2012) where the annual quartiles have been
+omitted.
+
+These quintiles, including the annual extremes, are useful. As there are
+no missing values in the data, they are calculated from the individual
+monthly values, shown in Fig. 19.2e.
+
+With the monthly data frame, Fig. 19.2e, right-click in the year name
+and make the year into a factor column. Then use ***Prepare \> Column:
+Reshape \> Column Summaries*** again as shown in Fig. 19.2q, for the
+sumrain variable.
+
+In the summaries sub-dialogue just get the ***Sum***. The resulting data
+frame is shown in Fig. 19.2r.
+
+Use the ***Prepare \> Column: Reshape \> Column Summaries*** in this new
+data frame. With the ***Summaries*** sub-dialogue give the ***Mean,
+Minimum,*** ***Maximum*** and the ***0.2 percentile*** (on the More
+tab). Use the same dialogue again, and change 0.2 to 0.8 to give the 80%
+point.
+
+The results are in Fig. 19.2s. The first value simply confirms that the
+mean is the same, whichever way it is calculated. The lowest year had a
+total of 330mm and the highest was 864mm. The 20% point for the annual
+rainfall total was 487mm and the 80% point was 717mm.
+
++---------------------------+------------------------------------------+
+| ***Fig. 19.2r***          | ***Fig. 19.2s Annual results***          |
+|                           |                                          |
+|                           | ***From Prepare \> Column: Reshape \>    |
+|                           | Column Summaries***                      |
++===========================+==========================================+
+| ![                        | ![](media/im                             |
+| ](media/image307.png){wid | age303.png){width="3.7290562117235346in" |
+| th="2.3395986439195102in" | height="1.6612860892388452in"}           |
+| heig                      |                                          |
+| ht="2.445317147856518in"} |                                          |
++---------------------------+------------------------------------------+
+
+## Missing values 
+
+Make a copy of the rainfall column, to illustrate how to cope with
+missing values.
+
+***Right-click*** in the ***rain variable***, Fig. 19.3a and choose
+***Duplicate Column***. Call the resulting variable ***rainm***, Fig.
+19.3b.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.3a***                                       ***Fig. 19.3b***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image291.png){width="3.0459667541557307in"   ![](media/image296.png){width="2.8682020997375326in"
+  height="3.0348293963254593in"}                         height="2.8682020997375326in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+In the resulting column, double-click on 7^th^, 8^th^ and 9^th^ January
+and make the values into NA. Scroll down and make 1^st^ to 5^th^
+February 1981 into NA.
+
+Then use Climatic \> Prepare \> Transform, Fig. 19.3c, to make a column
+called raindaym. The resulting data are shown in Fig. 19.3d.
+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 19.3c***                                      ***Fig. 19.3d***
+  ----------------------------------------------------- ----------------------------------------------------
+  ![](media/image310.png){width="2.964792213473316in"   ![](media/image289.png){width="2.98044728783902in"
+  height="4.0111898512685915in"}                        height="2.9964720034995627in"}
+
+  ----------------------------------------------------------------------------------------------------------
+
+The guidelines in (World Meteorological Organization (WMO), 2017) depend
+on what type of parameter you are calculating, i.e. sum, mean, count or
+extreme.
+
++--------------------------------+-------------------------------------+
+| ***Fig. 19.3e***               | ***Fig. 19.3f***                    |
+|                                |                                     |
+|                                | ***[Redo when new option            |
+|                                | available]{.mark}***                |
++================================+=====================================+
+| ![](media/image593.pn          | ![](media/image58                   |
+| g){width="2.739374453193351in" | 2.png){width="3.2279877515310584in" |
+| height="3.505337926509186in"}  | height="2.816849300087489in"}       |
++--------------------------------+-------------------------------------+
+
+It is strict for a sum parameter, so here for the total monthly
+rainfall. If there are ***any*** missing values, it proposes the monthly
+sum be set to missing.
+
+This is also one of the default settings in R, and hence in R-Instat.
+So, repeat the ***Climatic \> Prepare \> Climatic Summaries*** dialogue,
+from Fig. 19.2b, also shown in Fig. 19.3e, for the new ***rainm***
+variable. Just get the ***sum***.
+
+The maximum daily rainfall is an extreme. When there are missing values
+in the month, the extreme is found for those that remain present. So,
+return to the ***Prepare \> Column: Reshape \> Column Summaries***
+dialogue, tick the ***Omit Missing Values*** checkbox in the dialogue
+shown in Fig. 19.3e. Click the ***Summaries button*** and change the
+summary to give just the ***Maximum***.
+
+When the parameter is a count, like the number of rain days, (or a
+mean), there is an intermediate recommendation, shown in Fig. 19.3f. The
+monthly summary is set to missing if there are 11 or more missing days
+in the month, or if 5, or more, consecutive days are missing[^62].
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.3g***                                       ***Fig. 19.3h***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image581.png){width="2.6387160979877518in"   ![](media/image577.png){width="3.3559295713035873in"
+  height="2.633252405949256in"}                          height="2.6931856955380575in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+Return to the ***Prepare \> Column: Reshape \> Column Summaries***
+dialogue, Fig. 19.3e, yet again and use the ***raindaym*** variable.
+Click on the Summaries and choose ***N Non Missing*** and ***Sum***. On
+the main dialogue also tick the Add Date Column[^63] checkbox.
+
+The results are shown in Fig. 19.3h. With the missing values, the first
+2 months in 1981 are set to missing for the rainfall total and neither
+month is missing for the maximum. For the number of rain days, the first
+month is summarised, because just 3 days were missing. The second has
+been set to NA, because 5 consecutive days were missing.
+
+With missing values (World Meteorological Organization (WMO), 2017)
+propose one further adjustment for the count-type normals, that are here
+represented by the number of rain days. The first row of data in Fig.
+19.3h shows there were 4 rain days in the 28 non-missing days in January
+1981. There are 31 days in January and hence the value is multiplied by
+31/28, which gives an estimate of 4.4 rain days in the full month.
+
+To handle this adjustment, use ***Climatic \> Date \> Use Date*** as
+shown in Fig. 19.3i. Just choose the check-box for ***Days in Month***.
+The resulting column is also shown in Fig. 19.3h. Now use ***Prepare \>
+Column: Calculate \> Calculations*** and complete it as shown in Fig.
+19.3j. The resulting variable is also shown in Fig. 19.3h.
+
++--------------------------------+-------------------------------------+
+| ***Fig. 19.3i Number of days   | ***Fig. 19.3j***                    |
+| in each month***               |                                     |
+|                                |                                     |
+| ***Climatic \> Date \> Use     |                                     |
+| Date***                        |                                     |
++================================+=====================================+
+| ![](media/image580.pn          | ![](media/image57                   |
+| g){width="2.790554461942257in" | 8.png){width="3.1834765966754155in" |
+| height="2.93128937007874in"}   | height="2.9771905074365703in"}      |
++--------------------------------+-------------------------------------+
+
+The second stage in the calculations is the summary of the normal for
+each month, as shown in Section 19.2. The recommendation is that the
+monthly normals should only be calculated where there are at least 80%,
+i.e. 24 of the 30 years that are not missing. In the example here, there
+is missing in only a single year. Hence the second and third stages can
+proceed as described in Section 19.2.
+
+This same rule of needing 80% of the years also applies to the
+calculations of the monthly quintiles. The annual quintiles, unlike the
+other normal, can not be calculated from the monthly normal. Hence
+annual quintiles should not be calculated if there are missing months in
+the data.
+
+## Temperature normals 
+
+In (World Meteorological Organization (WMO), 2017) the monthly (and
+annual) mean values of the (daily) Tmax, Tmin and Tmean are in the list
+of Principal normals, [[Table 19.1a]{.underline}](#bookmark=id.4anzqyu),
+while the monthly extremes and the count of the number of days that Tmax
+exceeds 25˚C, 30˚C, 35˚C and 40˚C are listed as secondary. The only
+equivalent threshold for Tmin is the count less than 0˚C, which is
+rarely useful in Africa. In (Arguez, et al., 2012) the count less than
+10˚C is used, see [[Table 19.1b]{.underline}](#bookmark=id.2pta16n) and
+that may be more relevant.
+
+There are missing values in the temperature record. The inventory in
+Fig. 19.1a indicated that there are not many missing values, but a more
+accurate check may be useful. One way again uses ***Climatic \> Check
+Data \> Inventory***, as shown in Fig. 19.4a, but with a different
+layout of the data. The result is in Fig. 19.4b.
+
++---------------------------+------------------------------------------+
+| ***Fig. 19.4a Detailed    | ***Fig. 19.4b Results for Tmax and Tmin  |
+| inventory***              | 1981-2010***                             |
+|                           |                                          |
+| ***Climatic \> Check Data |                                          |
+| \> Inventory***           |                                          |
++===========================+==========================================+
+| !                         | ![](media/im                             |
+| [](media/image576.png){wi | age579.png){width="3.6292169728783903in" |
+| dth="2.362328302712161in" | height="3.4070188101487315in"}           |
+| heig                      |                                          |
+| ht="2.666806649168854in"} |                                          |
++---------------------------+------------------------------------------+
+
+This confirms that there are only a few missing values. A more precise
+result would be through a table. This is not currently an automatic
+option in R-Instat. However, it can easily be given as was shown in
+Chapter 8, giving the results in Fig. 19.4c. They show the thin red
+lines in Fig. 19.4b refer to isolated single missing days. There are
+just 2 years with at least a missing month for Tmax and one year for
+Tmin. The analysis can continue.
+
+  -----------------------------------------------------------------------
+  ***Fig. 19.4c Count of missing values in Tmax, Dodoma 1981-2010***
+  -----------------------------------------------------------------------
+  ![](media/image569.png){width="6.268055555555556in" height="4.25625in"}
+
+  -----------------------------------------------------------------------
+
+Tmin is used for illustration. The main dialogue is ***Climatic \>
+Prepare \> Climatic Summaries***, Fig. 19.4d.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.4d***                                       ***Fig. 19.4e***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image588.png){width="2.9493580489938758in"   ![](media/image596.png){width="2.993937007874016in"
+  height="3.6728904199475068in"}                         height="3.0913003062117235in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.4f***                                       ***Fig. 19.4g***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image587.png){width="2.798834208223972in"    ![](media/image613.png){width="3.347797462817148in"
+  height="1.2322878390201224in"}                         height="2.8662959317585304in"}
+
+  ![](media/image598.png){width="2.7431364829396325in"   
+  height="1.68996719160105in"}                           
+  ------------------------------------------------------------------------------------------------------------
+
+The results are shown in Fig. 19.4g. For example, in July 1984 the
+minimum of Tmin was 12.3˚C, the mean was 14.0˚C and the maximum was 15.8
+˚C. These were from 30 days, because one day was missing. 25 out of the
+30 days were less than 15 ˚C. This count is adjusted as described in
+Fig. 19.3i, i.e. use Climatic \> Dates \> Use Date to add a variable
+giving the number of days in each month and then adjust the count of
+days less than 15 ˚C by:
+
+Countlt15/count_non_missing \* days_in month.
+
+This gives the last variable shown in Fig. 19.4g.
+
+The second stage is to average over the years. This uses ***Prepare \>
+Column: Reshape \> Column Summaries*** as for the rainfall normals, Fig.
+19.4h.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.4h***                                      ***Fig. 19.4i***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](media/image601.png){width="2.648307086614173in"   ![](media/image594.png){width="3.4425153105861765in"
+  height="2.638747812773403in"}                         height="2.5276388888888888in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 19.4j***                                       ***Fig. 19.4k***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image586.png){width="3.2818733595800524in"   ![](media/image590.png){width="2.493397856517935in"
+  height="3.1984864391951007in"}                         height="3.3734208223972004in"}
+
+  ------------------------------------------------------------------------------------------------------------

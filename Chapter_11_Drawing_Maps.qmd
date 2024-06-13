@@ -1,0 +1,240 @@
+# Drawing Maps
+## Introduction
+
+Climatic data is often presented in map form. Common examples include
+details of the stations in each country, plus further information about
+each station.
+
+Preparing a map is usually a 2-stage process. The first stage, described
+in Section 10.2, uses a shape file to provide an outline of the country,
+and other general details. Then climatic details are added, as is
+described in Section 10.3.
+
+## Using a shape file
+
+R-Instat does not currently have any shape files in the library, so they
+have to be downloaded. There are various sites that offer shape files
+and GADM (GADM, 2019) is comprehensive, Fig. 10.2a.
+
+  -----------------------------------------------------------------------
+  ***Fig. 10.2a The GADM data page***
+  -----------------------------------------------------------------------
+  ![](media/image190.png){width="6.11749343832021in"
+  height="3.305452755905512in"}
+
+  -----------------------------------------------------------------------
+
+C licking on country in Fig. 10.1a allows the input of a country name,
+as shown in Fig. 10.2b. For Kenya, as for most other formats, there are
+different ways to download the data.
+
++------------------------------+---------------------------------------+
+| ***Fig. 10.2b***             | ***Fig. 10.2c***                      |
+|                              |                                       |
+|                              | ***Climatic \> File \> Open and Tidy  |
+|                              | Shapefile***                          |
++==============================+=======================================+
+| ![](media/image185.png){     | ![](media/image                       |
+| width="2.7050929571303586in" | 187.png){width="3.3892760279965004in" |
+| h                            | height="1.7678455818022747in"}        |
+| eight="2.183115704286964in"} |                                       |
++------------------------------+---------------------------------------+
+
+Data at level 0 is simply the country boundary, while level 1 gives the
+outline for each of Kenya's 47 counties. Levels 2 and 3 provide even
+more detail.
+
+In Fig. 10.2b the R(sf) option provides a file, with an ***rds***
+extension, that can be opened into R-Instat through the ***File \>
+Open*** dialogue. However, we suggest clicking on Shapefile in Fig.
+10.2. This downloads a zip file that is about 20 Mbytes for Kenya and
+which contains data at all 4 levels, 0, 1, 2, 3.
+
+Unzip this file. In R-Instat use ***Climatic \> File \> Open and Tidy
+Shapefile***, Fig. 10.2c. Go to the unzipped files and open the Level 1
+shapefile. There are 47 rows of data, shown in Fig. 10.2d, (after
+reordering the variables for clarity.)
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 10.2d***                                       ***Fig. 10.2e***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image188.png){width="3.5070898950131233in"   ![](media/image163.png){width="2.380729440069991in"
+  height="3.419274934383202in"}                          height="2.9443088363954506in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+Go to ***Climatic \> Mapping***. Part of this dialogue is shown in Fig.
+10.2e. Choose the data frame with the shape file if it isn't chosen
+automatically. Then just press Ok for the map shown in Fig. 10.2f.
+
+What could be easier?
+
+Return to the ***Climatic \> Mapping*** dialogue and add the
+***NAME_1*** variable from Fig. 10.2d into the ***Fill field*** of Fig.
+10.2e. The result is in Fig. 10.2g. The map is now nicely colourful. If
+there were, say, 10 regions, this would be fine, but with 47 counties
+the legend is taking too much space and can't easily be associated with
+each county.
+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 10.2fKenya county map***                     ***Fig. 10.2g***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](media/image172.png){width="2.97536198600175in"   ![](media/image189.png){width="3.021402012248469in"
+  height="3.437853237095363in"}                        height="2.575886920384952in"}
+
+  ----------------------------------------------------------------------------------------------------------
+
+So, return to the ***Climatic \> Mapping*** dialogue. Press ***Plot
+Options,*** then use the ***Theme*** tab and set the ***Legend to
+None***, Fig. 10.2h.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 10.2h***                                       ***Fig. 10.2i***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image139.png){width="2.9793011811023624in"   ![](media/image166.png){width="3.0055807086614172in"
+  height="2.9853805774278217in"}                         height="3.5880883639545056in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+The resulting map is shown in Fig. 10.2i.
+
+Sometimes it is useful for an initial map to include the names of the
+districts as labels.
+
+Return to the ***Climatic \> Mapping*** dialogue and include the same
+data frame also on the right-hand side of the dialogue, Fig 10.2j.
+
+  -----------------------------------------------------------------------
+  ***Fig. 10.2j***
+  -----------------------------------------------------------------------
+  ![](media/image182.png){width="5.439518810148732in"
+  height="2.9879385389326334in"}
+
+  -----------------------------------------------------------------------
+
+The initial results are in Fig. 10.2k. It shows that, with 47 labels we
+have given the software a considerable challenge to make all the labels
+visible. The geom is called geom_label_repel and has done its best, but
+perhaps it needs some help. Two possibilities are to make the labels
+smaller, Fig. 10.2l, or to omit the box round each label. This then uses
+geom_text_repel instead, Fig. 10.2m.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 10.2k***                                       ***Fig. 10.2l***
+  ------------------------------------------------------ ----------------------------------------------------
+  ![](media/image103.png){width="3.0282250656167977in"   ![](media/image74.png){width="2.979179790026247in"
+  height="3.608007436570429in"}                          height="3.6041830708661418in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+Finally, in this section, we go "down a level". This uses the level 2
+data, which has 310 rows. Then we filter to give just one district,
+choosing Kisumu. (A few neighbouring districts could be chosen.) The
+resulting map is shown in Fig. 10.2n.
+
+The GADM site is limited to administrative data only. There are other
+sites, such as
+[[http://www.diva-gis.org/]{.underline}](http://www.diva-gis.org/) with
+additional information, such as roads and elevation.
+
+  ---------------------------------------------------------------------------------------------------------
+  ***Fig. 10.2m Text, rather than label***             ***Fig. 10.2n***
+  ---------------------------------------------------- ----------------------------------------------------
+  ![](media/image78.png){width="2.865278871391076in"   ![](media/image85.png){width="3.192403762029746in"
+  height="3.3938265529308835in"}                       height="1.2317147856517936in"}
+
+  ---------------------------------------------------------------------------------------------------------
+
+## Adding station data
+
+Adding station data to a map is just as easy as adding the county
+information in Section 10.2. If your data are in CLIMSOFT, and you have
+the necessary permissions, then transferring the data may be done with
+the ***Climatic \> File \> Import from Climsoft*** dialogue. Here we
+illustrate with the Kenya data from the Instat library.
+
+Use ***File \> Open from Library \> Instat \> Browse \> Climatic \>
+Kenya*** and open the file called western_kenya.rds. This has 3 data
+frames, including one called wkenya_stationinfo, Fig. 10.3a.
+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 10.3a***                                     ***Fig. 10.3b***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](media/image60.png){width="4.219044181977253in"   ![](media/image63.png){width="1.6362029746281714in"
+  height="3.1557469378827645in"}                       height="2.9429680664916886in"}
+
+  ----------------------------------------------------------------------------------------------------------
+
+There are 52 stations, Fig. 10.3a, and the information includes the
+County as well as the latitude and longitude. An initial step is to
+examine how many counties have data. This uses the ***Right-Click***
+from the top of the County column, and the ***Levels/Labels*** option,
+also shown in Fig. 10.3a.
+
+The Levels/Labels dialogue shows there are data from 12 counties. The
+spelling is consistent with the County=level file, used in Section 10.2
+except for Homabay, which we change, in this dialogue, to Homa Bay.
+
+This initial check is important, as any spelling mistakes in the county
+name, when entering the data, will invent a new county!
+
++-------------------------------+--------------------------------------+
+| ***Fig. 10.3d Filter the map  | ***Fig. 10.3e Map file for Western   |
+| file***                       | Kenya***                             |
+|                               |                                      |
+| ***Right Click \> Filter \>   |                                      |
+| Define New Filter***          |                                      |
++===============================+======================================+
+| ![](media/image61.png         | ![](media/imag                       |
+| ){width="2.791648075240595in" | e62.png){width="3.346146106736658in" |
+| height="2.561923665791776in"} | height="2.414307742782152in"}        |
++-------------------------------+--------------------------------------+
+
+Return to the level 1 map file, Right-Click and Filter to choose the
+same 12 counties, Fig. 10.3d. The data file should now have just 12
+rows, to match the number of counties that will be mapped.
+
+Return to the Climatic \> Mapping dialogue. The map information is on
+the left-hand side of the dialogue and the new station information is
+now on the right, Fig. 10.3f.
+
+  -----------------------------------------------------------------------
+  ***Fig. 10.3f***
+  -----------------------------------------------------------------------
+  ![](media/image58.png){width="5.3781485126859145in"
+  height="3.0781649168853895in"}
+
+  -----------------------------------------------------------------------
+
+The result is shown in Fig. 10.3g with labels, and with the county given
+as a legend. Fig. 10.3h uses text and omits the legend. This is quite a
+challenging map, because so may stations are close together.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 10.3g***                                     ***Fig. 10.3h***
+  ---------------------------------------------------- ------------------------------------------------------
+  ![](media/image59.png){width="3.244919072615923in"   ![](media/image101.png){width="2.7297692475940507in"
+  height="2.782950568678915in"}                        height="2.7890474628171478in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+The results show there are at least 2 obvious errors in the data. The
+most obvious is Chemilil, which should be in Kisumu county, but is shown
+in the middle of Kajaido. And Akira, that should be in Kajaido is shown
+slightly outside any of the counties. It is tempting to correct these
+obvious errors. However, better is the message that there may be other
+errors and a strategy for checking the geographical information would be
+useful.
+
+We wonder whether google maps could be used for checking? This aspect
+has become important, partly because of the potential of combining
+station and satellite information. However, the combining is only
+sensible if the locations of the station data are correct.
+
+## Information about the stations
+
+[To be added.]{.mark}
+
+## Further types of mapping
+
+[Contours, gridded data]{.mark}

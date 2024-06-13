@@ -1,0 +1,96 @@
+# References
+Agostinelli, C., & Lund, U. (n.d.). *R package \'circular\': Circular
+Statistics*, 0.4-93. Retrieved 2017, from
+https://r-forge.r-project.org/projects/circular/
+
+Beguería, S., & Vicente-Serrano, S. M. (2017). *SPEI: Calculation of the
+Standardised Precipitation-Evapotranspiration Index. R package version
+1.7.* Retrieved from https://CRAN.R-project.org/package=SPEI
+
+Cooper, P. M., Dimes, J., Rao, K. P., Shapiro, B., Shiferaw, B., &
+Swomlow, S. (2008). Coping better with current climatic variability in
+the rain-fed farming systems of sub-Saharan Africa: An essential first
+step in adapting to future climate change? *Agriculture, Ecosystems and
+Environment*, 24-35.
+
+GADM. (2019, 6 12). *GADM*. Retrieved from https://gadm.org/data.html
+
+Hansen, J. W., Mason, S. J., Sun, L., & Tall, A. (2011). Review of
+Seasonal Climate Forecasting. *Experimental Agriculture*, 201-240.
+
+Keyantash, J., & (Eds), N. C. (2018, August 7). *The Climate Data Guide:
+Standardized Precipitation Index (SPI)*. Retrieved June 10, 2019, from
+NCAR/UCAR Climate Data Guide:
+https://climatedataguide.ucar.edu/climate-data/standardized-precipitation-index-spi
+
+Mardia, K. V. (1972). *Statistics of Directional Data.* London: Academic
+Press.
+
+Mupamgwa, W., Walker, S., & Twomlow, S. (2011). Start, end and dry
+spells of the growing season in semi-arid southern Zimbabwe. *Journal of
+Arid Environments*, 1097-1104.
+
+Otieno Sango, B., & Anderson-Cook, C. M. (2003). A More Efficient Way Of
+Obtaining A Unique Median Estimate For Circular Data. *Journal of Modern
+Applied Statistical Methods*.
+
+Palmer, W. C. (1965). *Meteorological Drought.* US Weather Bureau.
+
+Pewsey, A. N., & D., R. G. (2013). *Circular Statistics in R.* Oxford:
+Oxford University Press.
+
+R Core Team. (2018). *R: A language and environment for statistical
+computing.* Retrieved from https://www.R-project.org/.
+
+Siebert, A., Dinku, T., Vuguziga, F., Twahirwa, A., Kagabo, D. M.,
+delCorral, J., & Robertson, A. W. (2019). Evaluation of ENACTS‐Rwanda: A
+new multi‐decade, high‐resolution rainfall and temperature data
+set---Climatology. *International Journal of Climatology*, 3104-3120.
+
+Stern, R. D., Dennett, M. D., & Dale, I. C. (1982). The Analysis of
+Daily Rainfall Measurements to Give Agronomically Useful Results 1 -
+Direct Methods. *Experimental Agriculture*, 223-236.
+
+Stern, R. D., Dennett, M. D., & Dale, I. C. (1982). The Analysis of
+Daily Rainfall Measurements to Give Agronomically Useful Results 2 - A
+Modelling Approach. *Experimental Agriculture*, 237-253.
+
+Stern, R. D., Rijks, D., Dale, I. C., & Knock, J. (2006). *Instat
+Climatic Guide.*
+
+Svoboda, M., Hayes, M., & Wood, D. A. (2012). *Standardized
+Precipitation Index User Guide.* Geneva: WMO. Retrieved from
+http://library.wmo.int/pmb_ged/wmo_1090_en.pdf
+
+Vicente-Serrano, S. M., Beguería, S., & López-Moreno, J. I. (2010). A
+Multiscalar Drought Index Sensitive to Global Warming: The Standardized
+Precipitation Evapotranspiration Index. *Journal of Climate*, 1696-1718.
+Retrieved from https://doi.org/10.1175/2009JCLI2909.1
+
+Wells, N., Goddard, S., & Hayes, M. J. (2004). . A Self-Calibrating
+Palmer Drought Severity Index. *Journal of Climate*, 2335-2351.
+
+Wikipedia contributors. (2019). *R (programming language)*. Retrieved
+from Wikipedia, The Free Encyclopedia:
+https://en.wikipedia.org/w/index.php?title=R\_(programming_language)&oldid=887219468
+
+Wikipedia contributors. (n.d.). *Mean of circular quantities.* Retrieved
+May 14 , 2019, from
+https://en.wikipedia.org/w/index.php?title=Mean_of_circular_quantities&oldid=885307281
+
+World Meteorological Organization (WMO). (2017). *WMO guidelines on the
+calculation of climate normals.* WMO. Retrieved from
+https://library.wmo.int/doc_num.php?explnum_id=4166
+
+World Meteorological Organization, (., Zwiers, F. W., & Zhang, X.
+(2009). *Guidelines on Analysis of extremes in a changing climate in
+support of informed decisions for adaptation.* WMO. Retrieved from
+http://library.wmo.int/pmb_ged/wmo-td_1500_en.pdf
+
+Zhang, X., Hegerl, G., Zwiers, F. W., & Kenyon, J. (2005). Avoiding
+Inhomogeneity in Percentile-Based Indices of Temperature Extremes.
+*Journal of Climate*, 1641-1651.
+
+Zhong, R., Chen, X., Wang, Z., & Chengguang, L. (2018). scPDSI:
+Calculation of the Conventional and Self-Calibrating Palmer Drought
+Severity Index. Retrieved from https://CRAN.R-project.org/package=scPDSI

@@ -1,0 +1,465 @@
+# The Seasonal forecast
+## Introduction
+
+Many countries produce a seasonal forecast. (Hansen, Mason, Sun, & Tall,
+2011) provides a review for Sub-Saharan Africa. The forecast, for a
+given season, often results from a Regional Climate Outlook Forum
+(RCOF), updated and down-scaled by the National Meteorological Service
+(NMS). In some countries the forecast is a mixture of results from the
+global climate models (GCMs) and statistical methods relating historical
+climatic data to sea-surface temperatures. Fig. 13.1a and Fig. 13.1b
+give examples of the forecast from Ghana and the Caribbean.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig 13.1a Ghana rainfall forecast, April - June    ***Fig. 13.1b Caribbean rainfall forecast April --
+  2015***                                               June 2015***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](media/image606.gif){width="2.991641513560805in"   ![](media/image623.png){width="3.008535651793526in"
+  height="3.068241469816273in"}                         height="2.7479418197725285in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+When statistical methods are used, the Climate Predictability Tool (CPT)
+software is usually used to produce the forecast. CPT uses multiple
+regression with usually the rainfall as the y (dependent or predictand)
+variables and SSTs as the x's (independent, or predictor) variables.
+There are usually many x (SST) variables and hence CPT offers the option
+of doing a principal component analysis first.
+
+When there are also many y (rainfall) variables, a canonical correlation
+analysis may precede the multiple regression analysis.
+
+R-Instat can export data for CPT. Hence one use of R-Instat is to
+prepare the y-variables (rainfall or temperature) for analysis with CPT.
+Traditionally these are 3-month rainfall totals, but any other summary
+is possible, for example 3-month total rain days, or the date of the
+start of the rains. The requirement is that there is one summary per
+year (per station) and the ***Climatic \> Prepare*** menu provides many
+options. This is considered in Section 13.2.
+
+The rainfall (or temperature data) are often station values, but they
+may also originate from other sources, e.g. reanalysis, or satellite or
+merged data. These are sometimes provided ready for CPT. Sometimes
+R-Instat could examine these data also and then prepare a subset for
+CPT. This option is considered in Section 13.3
+
+## The Y variables - Examining the rainfall data
+
+One use we propose for R-Instat is to examine the rainfall data, before
+it is analysed with CPT. The first example is data from Ghana, already
+prepared for CPT. The data are in the R-Instat library, hence use
+***File \> Open from Library \> Instat \> Browse \> Climatic \> Ghana***
+and open the file called ***rr-amj-1981-2014.txt***. The data are shown
+in Fig. 13.2a.
+
+The first 2 lines are the locations (Lat and Long) of each station. Then
+there are the rainfall data, the 3-month totals from April to June, for
+the 34 years from 1981 to 2014. They are from the 22 synoptic stations
+in Ghana.
+
+We also need the locations of the station, but in a separate data frame.
+Return to the last dialogue and read the data again. This time read just
+the first 2 rows, Fig. 13.2b and give the file a new name.
+
+  ---------------------------------------------------------------------------------------------------------
+  ***Fig. 13.2a***                                      ***Fig. 13.2b***
+  ----------------------------------------------------- ---------------------------------------------------
+  ![](media/image615.png){width="2.998064304461942in"   ![](media/image607.png){width="3.0224343832021in"
+  height="2.7682305336832895in"}                        height="3.2848982939632547in"}
+
+  ---------------------------------------------------------------------------------------------------------
+
+The station data are now still the "wrong way round". There is a
+dialogue to transpose, but it is simpler to use ***Prepare \> Column:
+Reshape \> Stack***, Fig. 13.2c, as shown in Fig. 13.2d.
+
+In Fig. 13.2d put all the columns, except the first to be stacked and
+put the STN column to be "carried".
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 13.2c***                                       ***Fig. 13.2d***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image609.png){width="3.5934798775153105in"   ![](media/image602.png){width="2.477023184601925in"
+  height="1.7293897637795275in"}                         height="2.1099081364829395in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+In the stacked data the column called STN now has the Lat and Long. Now,
+Fig. 13.2e, use the ***Prepare \> Column: Reshape \> Unstack***, as
+shown to produce the location data as shown in Fig. 13.2f.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 13.2e***                                       ***Fig. 13.2f***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image599.png){width="3.2505271216097986in"   ![](media/image642.png){width="2.7720789588801398in"
+  height="3.3606167979002626in"}                         height="3.350340113735783in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+The rainfall data are first examined briefly (as usual) with ***Climatic
+\> Tidy and Examine \> One Variable Summaries.*** Use all the columns.
+The results are shown in Fig. 13.2g. There is a problem with the station
+WEN, where the minimum is -999.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 13.2g***                                       ***Fig. 13.2h***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image624.png){width="3.1101279527559056in"   ![](media/image619.png){width="2.8708475503062116in"
+  height="2.217218941382327in"}                          height="2.8815398075240597in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+This could have been changed to a missing value when the data were
+imported. Now the change is made with the dialogue ***Climatic \> Tidy
+and Examine \> Replace Values***. Fig 13.2h.
+
+Now stack the rainfall data using ***Climatic \> Tidy and Examine \>
+Stack***, as shown in Fig. 13.2i.
+
+Now use ***Describe \> Specific \> Line Plot***, as shown in Fig. 13.2j.
+Include the ***Station*** as a ***facet***.
+
++------------------------------------+---------------------------------+
+| ***Fig. 13.2i***                   | ***Fig. 13.2j***                |
+|                                    |                                 |
+| ***Climatic \> Tidy and Examine \> |                                 |
+| Stack***                           |                                 |
++====================================+=================================+
+| ![](media/image6                   | ![](media/image630.pn           |
+| 18.png){width="3.15838801399825in" | g){width="2.8473687664041996in" |
+| height="2.91377624671916in"}       | height="2.88209208223972in"}    |
++------------------------------------+---------------------------------+
+
+The results are roughly as shown in Fig. 13.2k. (If you would like to
+get the results exactly as Fig. 13.2k, then either follow the note
+below[^56] or open the file that is better prepared -- called
+ghana1981-2014.rds and use the Climatic \> PICSA \> Rainfall Graph
+dialogue.)
+
+  -----------------------------------------------------------------------
+  ***Fig. 13.2k***
+  -----------------------------------------------------------------------
+  ![](media/image617.png){width="6.268055555555556in"
+  height="3.057638888888889in"}
+
+  -----------------------------------------------------------------------
+
+The stations go from South to North in Fig. 13.2k. We see that the most
+Southerly station, Axim, is different to the other stations. The
+variability of the few stations in the North of Ghana is much less than
+those in the South. This is going to make the forecasting task much
+harder to expect much that is meaningful for the North.
+
+Next examine the correlations. They use the original data, but
+unstacking the data with the Stations from South to North will put the
+resulting columns in the same order.
+
+Hence (assuming you have the data in this order) use Climatic \> Tidy
+and Examine \> Unstack, as shown in Fig. 13.2l
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 13.2l***                                       ***Fig. 13.2m***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image620.png){width="3.0245745844269467in"   ![](media/image625.png){width="2.868203193350831in"
+  height="2.9575273403324585in"}                         height="3.0626574803149604in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+Next use ***Climatic \> Seasonal Forecast Support \> Correlations***.
+Fig. 13.2m. The results provide further "food-for-thought. The most
+Southerly station (bottom row in Fig 13.2m) and the most Northerly
+(column to the right in Fig. 13.2m) each have quite a lot of blue
+values, i.e. negative correlations. There are just 5 stations in the
+North of Ghana (latitudes between 9°N and 11°N and the correlations
+there are low. If 2 stations have a low or zero correlation, then
+logically they should have a separate seasonal forecast. However, Fig.
+13.1a shows the whole of the North has a single forecast.
+
+With this information we would be inclined to
+
+a)  Omit Axim as it seems so different
+
+b)  Consider only using the stations from the South.
+
+c)  Query including Akatsi, which is the furtherst to the Eaqst and has
+    very low correlation with the other stations
+
+d)  Look for more rainfall stations from the North.
+
+If, instread, all the stations are used in CPT, then the finalo stage is
+a multiple regression on each y-variable separately, as a function of
+the set of x-variables, and they are usually the principal components.
+Then the interest would be more in the individual results at a station
+level -- and these are given by CPT.
+
+  -----------------------------------------------------------------------
+  ***Fig. 13.2n***
+  -----------------------------------------------------------------------
+  ![](media/image621.png){width="5.91378280839895in"
+  height="5.039098862642169in"}
+
+  -----------------------------------------------------------------------
+
+Finally, in ***Climatic \> Seasonal Forecast Support \> Correlations***
+(Fig. 13.2m) use just the 5 columns from the North, (from Bole to
+Navrongo) and opt for a pairwise plot. This shows the size of the
+correlations clearly and confirms that the whole of the North should not
+have a single forecast.
+
+  -----------------------------------------------------------------------
+  ***Fig. 13.2o***
+  -----------------------------------------------------------------------
+  ![](media/image614.png){width="6.112517497812774in"
+  height="3.49576990376203in"}
+
+  -----------------------------------------------------------------------
+
+## Rainfall data with many stations
+
+The second example is from Rwanda. The rainfall data are considered in
+this section. The data file is again in a form that reads directly into
+CPT. The file, in Excel, is shown in Fig. 13.3a. These data are again
+3-month rainfall totals and are from March to May. They are for 37
+years, from 1981 to 2017.
+
+These are estimated rainfall from ENACTS. This is a merged product,
+combining station data with estimated rainfall from satellite
+observations (Siebert, et al., 2019). In Fig. 13.3a the first column
+gives the latitude and row 5 gives the longitude of each grid point. So,
+the estimated rainfall total at 1.05°S and 28.54°E in 1981 was 550mm.
+
++-----------------------------------+----------------------------------+
+| ***Fig. 13.3a***                  | ***Fig. 13.3b***                 |
+|                                   |                                  |
+|                                   | ***File \> Open***               |
++===================================+==================================+
+| ![](media/image952                | ![](media/image969.p             |
+| .png){width="3.004711286089239in" | ng){width="2.9594510061242345in" |
+| height="2.948018372703412in"}     | height="3.2666458880139984in"}   |
++-----------------------------------+----------------------------------+
+
+In the data in Fig. 13.3a the rectangle of data for 1981 is followed by
+an approximate repeat of lines 4 and 5, followed by the data for 1982.
+And so on to 2017.
+
+If the data, from Excel are saved, then the default (by Excel) is to add
+the ***txt*** extension and this makes it easy to import into R-Instat.
+
+In R-Instat use ***File \> Open***, Fig. 13.3b. Change the ***Lines to
+Skip*** to 4, so the first line is the longitudes.
+
++----------------------------------+-----------------------------------+
+| ***Fig. 13.3c***                 | ***Fig. 13.3d Setting the         |
+|                                  | filter***                         |
+|                                  |                                   |
+|                                  | ***(Omit level 1 and from 54      |
+|                                  | onwards)***                       |
++==================================+===================================+
+| ![](media/image951.              | ![](media/image940.               |
+| png){width="2.938659230096238in" | png){width="2.9718602362204725in" |
+| height="3.8734087926509186in"}   | height="2.960559930008749in"}     |
++----------------------------------+-----------------------------------+
+
+These data, in Fig. 13.3c, need tidying. The first step is to delete the
+rows between each year. This uses a filter, so right click, choose
+Filter and then define a new filter on the first column. Part of the
+filter sub-dialogue is shown in Fig. 13.3d.
+
+When you return to the main dialogue, Fig. 13.3e choose to make the
+filtered data a subset. If you feel bold, then give the new name the
+same as the old one, so the original file is overwritten.
+
+There are now 1924 rows of data, i.e. 52 rows each year, for 37 years.
+
+Now a year variable is added as shown in Fig. 13.3f. Check, Fig. 13.3f,
+that it will be the same length as the other columns of data.
+
++----------------------------+-----------------------------------------+
+| ***Fig. 13.3e Making a     | ***Fig. 13.3f Adding a year variable*** |
+| subset***                  |                                         |
+|                            | ***Prepare \> Column: Generate \>       |
+|                            | Regular Sequence***                     |
++============================+=========================================+
+| ![](media/image942.png){wi | ![](media/ima                           |
+| dth="2.4592377515310586in" | ge960.png){width="3.5354002624671916in" |
+| hei                        | height="2.9525820209973754in"}          |
+| ght="2.761431539807524in"} |                                         |
++----------------------------+-----------------------------------------+
+
+Now all that remains is to stack the data, ***Climatic \> Tidy and
+Examine \> Stack***, as shown in Fig. 13.3g. The re4sulting data are in
+Fig.13.3h. There are now 126984 rows of data, i.e. 37 years from 52 \*
+66 = 3432 equally spaced locations.
+
++----------------------------------+-----------------------------------+
+| ***Fig. 13.3g***                 | ***Fig. 13.3h The Rwanda ENACTS   |
+|                                  | data so far***                    |
+| ***Climatic \> Tidy and Examine  |                                   |
+| \> Stack***                      |                                   |
++==================================+===================================+
+| ![](media/image943.              | ![](media/image941                |
+| png){width="2.946774934383202in" | .png){width="2.965952537182852in" |
+| height="2.53537510936133in"}     | height="3.399851268591426in"}     |
++----------------------------------+-----------------------------------+
+
+We outline further "housekeeping" steps on these data to make it simpler
+to examine and to export back to CPT when needed:
+
+a)  Use ***Prepare \> Column: Text \> Transform \> Substring*** on the
+    variable ***Lat*** into ***LatS*** from Start Value 2 to End Value
+    5.
+
+b)  Recall the ***last dialogue*** and put ***Lon*** into ***LonE***
+    from 2 to 6.
+
+c)  ***Select*** both these columns, (LatS and LonE), then
+    ***right-click*** and make them ***Factors***.
+
+d)  Use ***Prepare \> Column: Factor: Factor \> Combine Factors***.
+    Choose ***LatS and LonE***, make the separator an ***underscore***
+    and make the ***New Column Name:*** ***Location***.
+
+e)  Select LatS and LonE again. Right-click and ***Convert to Numeric***
+    columns.
+
+f)  Use ***Prepare \> Column: Factor \> Recode Numeric*** and make a new
+    column from ***Lats*** into ***Lat6S***, with 10 break points at
+    about (1.03, 1.25, 1.48, 1.7,1.93, 2.15, 2.38, 2.6, 2.83, 2.98).
+
+g)  Recall the last dialogue and make LonE into Lon6E using (28.5,
+    28.74, 28.97, 29.2, 29.42, 29.64, 29.87, 30.1, 30.32, 30.54, 30.77,
+    31).
+
+h)  Right click to delete the 2 columns Lat, Lon.
+
+i)  Reorder the columns possibly as shown in Fig. 13.3i
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 13.3i ENACTS data for Rwanda***               ***Fig. 13.3j The locations***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](media/image953.png){width="3.459744094488189in"   ![](media/image949.png){width="2.6555074365704288in"
+  height="2.7487062554680666in"}                        height="2.722613735783027in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+A Station (i.e. Location data frame is also needed for exporting back to
+CPT. From here:
+
+a)  ***Right-click*** and choose ***Filter*** on the year column and put
+    just the first year (1981) into a new data frame called
+    ***Location***.
+
+b)  Delete the ***year and rain*** variables from the Location data
+    frame.
+
+The resulting data frame is in Fig. 13.3j.
+
+Now look at the at the data. Start with a given part of Rwanda.
+Right-click and filter the data file to the ***last set of stations in
+Lat6S*** and ***Lon6E***, i.e. the South-East corner. This is a 30km
+square and there should be 880 rows of data, Fig. 13.3k.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 13.3k SE corner (24 locations)***              ***Fig. 13.3l***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image965.png){width="3.0264523184601924in"   ![](media/image964.png){width="2.8941546369203848in"
+  height="2.2105172790901135in"}                         height="2.9555139982502188in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+These data can now be graphed. The results from a ***Describe \>
+Specific \> Line Plot*** of ***rain*** against ***year*** by
+***location*** is in Fig. 13.3l. (A facetted graph by LonE and LatS,
+after making them factors, is an alternative).
+
+Fig. 13.3l the coherence (high correlation) between the different
+locations is clear. The last point (data from 2017) is a cause for
+concern. This is also indicated for 4 of the locations in Fig. 13.3k.
+This last year has less than half the rain of any of the other 36 years
+at most locations. That can greatly affect a regression model. Perhaps
+only fit using the data to 2016?
+
+Next, use ***Climatic \> Tidy and Examine \> Unstack*** for the
+***rain***, by the ***location*** and ***carry the year***. This gives
+the 24 stations in separate columns and ***Climatic \> Seasonal Forecast
+Support \> Correlations***, gives the results in Fig. 13.3m. They are
+all coloured dark red (compare with Fig. 13.2n) as all correlations are
+more than 0.8.
+
+  -----------------------------------------------------------------------
+  ***Fig. 13.3m***
+  -----------------------------------------------------------------------
+  ![](media/image961.png){width="5.9061286089238845in"
+  height="5.168680008748907in"}
+
+  -----------------------------------------------------------------------
+
+This can be repeated for further parts of Rwanda. We suggest that
+exporting the data from individual "blocks" of 24 or usually 36 stations
+for CPT, may enable separate local forecasts to be given?
+
+Change the filter to choose 12 blocks over the country, possibly Lat6S =
+(1, 5, 9) and Lon6E = (1, 4, 7, 10).
+
++------------------------------------------+---------------------------+
+| ***Fig. 13.3n Choosing 12 blocks as a    | ***Fig. 13.3oFacet with 2 |
+| filter***                                | variables***              |
+|                                          |                           |
+| ***Right-Click \> Filter \> Define New   | ***Describe \> Specific   |
+| Filter***                                | \> Line Plot Options \>   |
+|                                          | Facet***                  |
++==========================================+===========================+
+| ![](media/im                             | !                         |
+| age963.png){width="3.6805905511811026in" | [](media/image979.png){wi |
+| height="2.7163943569553806in"}           | dth="2.402188320209974in" |
+|                                          | heigh                     |
+|                                          | t="2.6810597112860894in"} |
++------------------------------------------+---------------------------+
+
+  -----------------------------------------------------------------------
+  ***Fig. 13.3p***
+  -----------------------------------------------------------------------
+  ![](media/image966.png){width="6.268055555555556in"
+  height="3.0805555555555557in"}
+
+  -----------------------------------------------------------------------
+
+The results in Fig. 13.3p show some part of the country, e.g. North-West
+-- (top-left) with very high correlations, but also relatively little
+year-to-year variability to be explained, compared to other parts. (The
+blue set of graphs in the middle of Fig. 13.3p should be examined in
+more detail, as the large rainfall in about 1990 is just in a few
+locations -- perhaps caused by data from a single station?). The low
+rainfall totals in 2017, mentioned above, is apparent in some parts of
+the country, but not all.
+
+Plots of further combinations could be useful. Then 2 alternative
+strategies for CPT (in addition to the default of using the 3432
+stations individually) could be:
+
+a)  Use data from single blocks of interest, i.e. usually 36 locations
+    over a 30km by 30km grid, to examine the forecast for specific parts
+    of the country.
+
+b)  Take the means (or medians) each year, for each of the blocks, so
+    reducing the number of locations to 96 and use these data instead of
+    the data individually for the 3432 locations.
+
+## The X variables -- Sea Surface Temperatures
+
+Ghana data first.
+
+Then Rwanda data!
+
+For Rwanda data use
+[[http://iridl.ldeo.columbia.edu/SOURCES/.IRI/.Analyses/.ICPAC/.Models/.GFDL/.GFDL-CM2p5-FLOR-A06/.MONTHLY/.sst/index.html]{.underline}](http://iridl.ldeo.columbia.edu/SOURCES/.IRI/.Analyses/.ICPAC/.Models/.GFDL/.GFDL-CM2p5-FLOR-A06/.MONTHLY/.sst/index.html)
+
+The data were downloaded from this
+link [[http://iridl.ldeo.columbia.edu/SOURCES/.Models/.NMME/.GFDL-CM2p5-FLOR-A06/.MONTHLY/.sst/]{.underline}](http://iridl.ldeo.columbia.edu/SOURCES/.Models/.NMME/.GFDL-CM2p5-FLOR-A06/.MONTHLY/.sst/) 
+However you may decide to choose any other model of your choice.  
+
+Those Sea Surface Temperature (SST) are GCM outputs from different
+source (GFDL, CFS2, NASA etc). Initialization is the process of locating
+and using the defined values for variable data that is used by a model
+or system. For our model we choose February as the month forecasts (MAM)
+were initialized.

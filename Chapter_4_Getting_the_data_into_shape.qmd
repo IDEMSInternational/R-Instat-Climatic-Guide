@@ -1,0 +1,915 @@
+# Getting the data into shape
+## Introduction
+
+R-Instat provides a menu-driven front-end to R. It is designed to make
+it easy to analyse any sort of data, including climatic data. The
+climatic menu is designed to make many analyses of the historical
+climatic records even easier. Most of this guide uses the various menus
+and dialogues in this special climatic menu.
+
+If your analysis is not practical using the special climatic menu it may
+still be possible using the general menus in R-Instat. After all many
+climatic analyses are done with other statistical software and they do
+not have a special climatic menu.
+
+"Click and point" systems all have limitations, or they would lose the
+simplicity of use that is a major driving force in their production. If
+your analyses cannot be done using R-Instat, then one strategy would be
+to use R itself. The "tweaking" guide shows how R-Instat can be
+extended, but you may also find that using RStudio is not as hard as you
+feared.
+
+This Chapter introduce the climatic menu in R-Instat and shows how
+climatic data is arranged for analysis.
+
+## Climatic data that is "ready"
+
+In Chapters 2 and 3 we examined data from Moorings, Zambia and Dodoma in
+Tanzania that were both in the right "shape" for an immediate analysis.
+Here we illustrate with more examples that are "ready". In the following
+sections of this chapter we show how the Climatic menu, or the general
+Prepare menu can help to organise data into the same shape.
+
+If your data are already in the same shape as the examples below then
+much of the content from Section 4.4 can be omitted.
+
+  --------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.2a Importing a csv file***                    ***Fig. 4.2b Data for 2 stations from Guinea***
+  ------------------------------------------------------- ------------------------------------------------------
+  ![](media/image1303.png){width="2.8748140857392825in"   ![](media/image1299.png){width="3.189455380577428in"
+  height="2.917489063867017in"}                           height="2.27875in"}
+
+  --------------------------------------------------------------------------------------------------------------
+
+Go to ***File \> Open from Library***. Choose ***Load From Instat
+Collection***, then ***Browse***. Go to the ***Climatic directory*** and
+then ***Guinea***. The data we require are in 2 forms, both an R file
+with the RDS extension and a csv file that can be read into Excel.
+
+***Use*** the file ***Guinea2.csv***.
+
+The new feature, compared to the data in Chapter 2, is that there are
+multiple stations. Right-click in the first Column, Fig. 4.2c, and
+choose the Levels/Labels dialogue. The result, in Fig 4.2d shows there
+are 2 stations, Kankan with about 24 thousand rows (days) and Koundara
+with about 16 thousand days.
+
+  --------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.2c Choose Levels/Labels***                    ***Fig. 4.2d The Levels/Labels dialogue confirms 2
+                                                          stations***
+  ------------------------------------------------------- ------------------------------------------------------
+  ![](media/image1306.png){width="2.1535017497812774in"   ![](media/image1275.png){width="3.772503280839895in"
+  height="3.25292104111986in"}                            height="2.585647419072616in"}
+
+  --------------------------------------------------------------------------------------------------------------
+
+A second data file is from Western Kenya. Go back to the ***File \> Open
+From Library*** dialogue. ***Browse*** again to the ***climatic***
+directory. Choose ***Kenya*** and then the file ***WesternKenya.RDS***.
+
+This opens 3 data frames in R-Instat, 2 of which are shown in Fig. 4.2e
+and Fig. 4.2f.
+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.2e Name and location of each station***       ***Fig. 4.2f Rainfall data***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](media/image1281.png){width="3.9066469816272966in"   ![](media/image1271.png){width="2.2107206911636044in"
+  height="2.779728783902012in"}                           height="2.814510061242345in"}
+
+  ---------------------------------------------------------------------------------------------------------------
+
+Fig. 4.2e gives details of each station. The locations are included,
+which will be useful, in Chapter xxx when we draw maps. Fig. 4.2f gives
+the rainfall data for just over 50 stations. There are over 600 thousand
+rows (days) of data in total.
+
+The third example is again from the ***Instat files*** in the
+***Climatic directory***. Choose ***Original Climatic Guide Datasets***,
+which is an Excel file. R-Instat can import multiple sheets together,
+but here we just need the single sheet called ***Bulmonth***, Fig. 4.2g.
+The data are monthly from Bulawayo in Zimbabwe from 1951.
+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.2g Importing monthly data from Bulawayo***    ***Fig. 4.2h Monthly data***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](media/image1254.png){width="3.0052121609798776in"   ![](media/image1246.png){width="3.0768536745406823in"
+  height="2.779524278215223in"}                           height="2.6771259842519686in"}
+
+  ---------------------------------------------------------------------------------------------------------------
+
+The final example is from an R package. From ***File \> Open From
+Library*** use the ***Open from R*** option, Fig. 4.2i. This gives
+access to all the datasets provided with the R packages that are in
+R-Instat. Scroll down the ***From Package*** list to the ***OpenAir***
+package. There is only one data set. Open it to give the data shown in
+Fig. 4.2j
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.2i Choosing the openair package***           ***Fig. 4.2j Hourly data***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image1238.png){width="3.040103893263342in"   ![](media/image1240.png){width="2.886120953630796in"
+  height="2.7375568678915134in"}                         height="2.9988998250218724in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+These examples show what is assumed in R-Instat to analyse the data.
+Data for multiple elements and from multiple sites can be in a single
+data frame. The multiple elements are in successive variables, i.e. they
+"go across", while the multiple stations "go down". The station name or
+ID is a factor column.
+
+The dates are also needed, either in a single variable, Fig. 4.2j or in
+multiple variables as in Fig. 4.2h and Fig. 4.2f.
+
+## The R-Instat Climatic System
+
+Analyses usually proceed using the following general menus:
+
+1.  The ***File menu*** is used to read the data
+
+2.  The ***Prepare menu*** is to organise the data ready for analysis
+
+3.  The ***Describe menu*** is for descriptive statistics, i.e. graphs
+    and tables.
+
+4.  The ***Model menu*** fits and examines statistical models for the
+    data
+
+This is shown by the structure of the R-Instat menus shown in Fig. 4.3a.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 4.3a The R-Instat menus***                    ***Fig. 4.3b The Climatic menu***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](media/image237.png){width="2.932736220472441in"   ![](media/image230.png){width="2.949284776902887in"
+  height="1.6180610236220472in"}                        height="3.438086176727909in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+The same applies to climatic data and hence the special climatic menu is
+arranged in the same order, Fig. 4.3b. We now examine some of the
+initial menu items in turn.
+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.3c The Climatic \> File menu***               ***Fig. 4.3d The Climatic \> Tidy and Examine menu***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](media/image1234.png){width="2.9021456692913388in"   ![](media/image1288.png){width="3.1925765529308836in"
+  height="1.3064479440069992in"}                          height="2.466251093613298in"}
+
+  ---------------------------------------------------------------------------------------------------------------
+
+Fig. 4.3c shows the ***Climatic \> File*** menu. Often the data will be
+loaded using the main File menu as for all the examples in Section 4.2
+above. This used the ***File \> Open from Library*** dialogue, but the
+***File \> Open*** dialogue is often used for the data files.
+
+Some options in Fig. 4.3c, such as the importing of NetCDF files are in
+both menus. Others, like Climsoft are just in this menu. Climsoft is a
+data management system specially to manage climatic data. It was
+described in general in Section 1.7 and importing from Climsoft is
+described in Section 4.5.
+
+Fig. 4.3d shows the ***Tidy and Examine*** menu. The first dialogue is
+used to "tidy" climatic data that are not yet in the shape of those in
+the examples shown in Section 4.2. The idea of Tidy data is useful and
+is described well by [Wickham 2014.]{.mark} He gives a variety of
+examples, with the most complex being climatic data. The remaining items
+in the menu in Fig. 4.2b are all also in the main Prepare menu. They may
+be needed if the tidying is too tricky for the special ***Tidy Daily
+Data*** dialogue. They are also for further checks. For example, for
+daily data there should be no duplicate days in the record for the same
+station. Section 4.8 gives an example where this is not the case.
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.3e The Climatic \> dates menu***              ***Fig. 4.3f The dialogue to define a data frame as climatic***
+  ------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
+  ![](media/image1287.png){width="2.4016754155730533in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLf1001c1.PNG](media/image1300.png){width="3.6607972440944883in"
+  height="1.3685028433945756in"}                          height="4.270929571303587in"}
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Next in the preparation is to check that the file has date columns that
+are ready for the subsequent analyses, Fig. 4.3e. This menu is a copy of
+the ***Prepare \> Column: Date*** menu which can be used instead.
+
+This leads to the ***Define Climatic Data*** dialogue shown in Fig.
+4.3f. The example in Fig. 4.3f is for the 2 stations in Guinee, but
+using the second copy of the file, called Guinee2.rds. This was prepared
+earlier and saved as an RDS file. The fact it is ready for analysis is
+saved as part of the metadata for this data frame.
+
+The subsequent dialogues in the climatic menu all assume the data have
+been defined as climatic, i.e. have used the dialogue in Fig. 4.3f.
+That's the "climatic system" in R-Instat.
+
+Some readers may be concerned that they are in a rush to analyse their
+data and were not prepared for these initial steps. However, if your
+data are in "good shape" then they take only a few minutes. If not, then
+in many analyses these "organising of data" steps do take the time. Once
+this has been done the analyses can proceed quickly.
+
+These organising steps are only done the first time you use the data.
+Then save the data using ***File \> Save As \> Save Data As*** so the
+climatic information is remembered. You can therefore continue later,
+with these data, going straight to the subsequent items in the climatic
+menu.
+
+If you choose, instead, to save the data frame using ***File \> Export
+\> Export Dataset*** this has the advantage that you can view and use
+the data in other software. The only problem is that the special
+climatic information from Fig. 4.3f isn't saved. So, when you resume,
+then start with the ***Define Climatic Data*** dialogue.
+
+## Tidying the Data
+
+You can ignore this section if your data are already in the shape
+discussed in Section 4.2. Often this is not the case.
+
+The first example was previously prepared for the original Instat. It is
+56 years of daily data from Samaru in Northern Nigeria. Use ***File \>
+Open from Library***. Choose ***Instat data***, B***rowse*** to the
+***Climatic directory,*** choose ***Original Climatic Guide Datasets***.
+There untick the first option and choose the sheet called
+***Samaru56***, Fig. 4.4a.
+
++----------------------------------+-----------------------------------+
+| ***Fig. 4.4a Open Samaru56***    | ***Fig. 4.4b The "shape" of the   |
+|                                  | Samaru56 data***                  |
+| ***File \> Open from Library \>  |                                   |
+| Instat \> Browse \> Climatic***  |                                   |
++==================================+===================================+
+| ![](media/image1262.p            | ![](media/image1278.              |
+| ng){width="2.9889523184601923in" | png){width="3.0898140857392824in" |
+| height="2.9002613735783025in"}   | height="2.9266207349081363in"}    |
++----------------------------------+-----------------------------------+
+
+The data are shown in Fig. 4.4b. They are from 1928 and each year is in
+a separate column. All columns are of length 366, in Fig. 4.4b, and
+there is a special code for February 29^th^ in non-leap years.
+
++-------------------------------------+--------------------------------+
+| ***Fig. 4.4c Tidying the Samaru     | ***Fig. 4.4d Issues in the     |
+| data***                             | data -- no surprises***        |
+|                                     |                                |
+| ***Climatic \> Tidy and Examine \>  |                                |
+| Tidy Daily Data***                  |                                |
++=====================================+================================+
+| ![](media/image1                    | ![](media/image1270.p          |
+| 279.png){width="3.17121719160105in" | ng){width="2.49872375328084in" |
+| height="3.300761154855643in"}       | height="2.5170286526684165in"} |
++-------------------------------------+--------------------------------+
+
+Use ***Climatic \> Tidy and Examine \> Tidy Daily Data*** and complete
+the dialogue as shown in Fig. 4.4c. This will not work, because we know,
+from Fig. 4.4b, that there are values on invalid dates, i.e. on Feb 29
+in non-leap years. The results are in Fig. 4.4d. We see that day 60
+(which we knew about) is the only problem. So we can proceed.
+
+Return to the dialogue in Fig. 4.4c, ***tick the option above to ignore
+data on invalid dates***. Press ***Ok*** again.
+
++------------------------------+---------------------------------------+
+| ***Fig. 4.4e Samaru data     | ***Fig. 4.4f Using the date           |
+| reshaped***                  | variable***                           |
+|                              |                                       |
+|                              | ***Climatic \> Dates \> Use Date***   |
++==============================+=======================================+
+| ![](media/image1269.png)     | ![](media/image                       |
+| {width="2.555686789151356in" | 1260.png){width="3.007804024496938in" |
+| he                           | height="3.889673009623797in"}         |
+| ight="3.7988068678915137in"} |                                       |
++------------------------------+---------------------------------------+
+
+The results are in Fig. 4.4e. The tidy data now has 20454 rows (days).
+Also, as shown in Fig. 4.4e is that there is no longer any need for a
+special code for February 29^th^ in non-leap years.
+
+The date column has been included in the data in Fig. 4.4e. The next
+step is the ***Climatic \> Dates \> Use Date*** dialogue, completed as
+in Fig. 4.4f. This adds 4 new columns to the data file. We then do some
+housekeeping, with ***Right-Click*** and ***Reorder Columns*** to give
+the data as shown in Fig. 4.4g.
+
++-------------------------------+--------------------------------------+
+| ***Fig. 4.4g Data ready to be | ***Fig. 4.4h Defining the data as    |
+| defined as climatic***        | climatic***                          |
+|                               |                                      |
+|                               | ***Climatic \> Define Climatic       |
+|                               | Data***                              |
++===============================+======================================+
+| ![](media/image1277.png       | ![](media/image12                    |
+| ){width="2.641606517935258in" | 08.png){width="3.0199562554680663in" |
+| h                             | height="3.5843416447944008in"}       |
+| eight="2.5361253280839895in"} |                                      |
++-------------------------------+--------------------------------------+
+
+Now use ***Climatic \> Define Climatic Data***. The dialogue fills
+automatically which is a good sign. The Check Unique also indicates the
+Date column can be a key field. Press Ok and the data are now ready for
+the analysis in R-Instat. They can be saved as an RDS file and/or
+exported as a csv file.
+
+These steps should not have taken long. But this was a single element
+(rain) from a single station.
+
+A second example is data from Garoua, Cameroon. The rainfall first, and
+initially in Excel, Fig. 4.4i.
+
+  -----------------------------------------------------------------------
+  ***Fig. 4.4i Rainfall data from Garoua***
+  -----------------------------------------------------------------------
+  ![](media/image1211.png){width="5.617016622922135in"
+  height="2.673465660542432in"}
+
+  -----------------------------------------------------------------------
+
+There are (at least 4 complications with these data, compared to the
+shape we would like.
+
+1.  There are some trace values, given as TR in the data, Fig. 4.4i
+
+2.  Each year is on a separate Excel sheet.
+
+3.  There are summary values, i.e. there are daily data and analysed
+    data together in Fig. 4.4i.
+
+4.  The months "go across".
+
+We change the trace issue in Excel. They are rare and only up to 2005.
+R-Instat does not (yet) cope with trace[^16]. We choose to replace the
+TR by 0 in each sheet. This is easily done in Excel. The data are saved
+as "Garoua Daily Rainfall data 1999-July2013NOTR.xlxs".
+
+In R-Instat save any files you wish, then use ***File \> Close Data
+File*** to clear your data.
+
+Then use ***File \> Open from Library \> Instat file, Browse, Climatic,
+Cameroon***. ***Open the Garoua rainfall file with the TR removed***,
+Fig. 4.4j***.***
+
+  --------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.4j Importing the Garoua rainfall***          ***Fig. 4.4k Complete the importing dialogue***
+  ------------------------------------------------------ -------------------------------------------------------
+  ![](media/image1199.png){width="3.012716535433071in"   ![](media/image1212.png){width="3.0955194663167105in"
+  height="3.050082020997375in"}                          height="3.032146762904637in"}
+
+  --------------------------------------------------------------------------------------------------------------
+
+***Click to select all the sheets***, and to import only the first ***31
+data rows***, Fig. 4.4k. Press ***Ok***.
+
+The 15 Excel sheets have imported into 15 R data frames, Fig. 4.4l and
+we check quickly that each has the 31 rows and 13 columns. Also, that
+all the columns are numeric. All seems alright. The next step is to
+append the years together.
+
++--------------------------------+-------------------------------------+
+| ***Fig. 4.4l The Garoua        | ***Fig. 4.4m Appending the years*** |
+| rainfall data imported***      |                                     |
+|                                | ***Climatic \> Tidy and Examine \>  |
+|                                | Append***                           |
++================================+=====================================+
+| ![](media/image1206.png        | ![](media/image1                    |
+| ){width="2.7554286964129484in" | 204.png){width="3.26417760279965in" |
+| height="2.5474726596675414in"} | height="2.4939785651793525in"}      |
++--------------------------------+-------------------------------------+
+
+Use ***Climatic \> Tidy and Examine \> Append*** and use ***all the
+sheets***, Fig. 4.4m. Press ***Ok***.
+
+The 15 years of data are now in a single data frame, Fig. 4.4n, and the
+Append dialogue has added an extra variable that contains the Year. We
+need the year, but it is "hidden" inside X2013.Stats", etc. The next
+dialogue is in Prepare, rather than Climatic.
+
+Use ***Prepare \> Column: Text \> Transform*** and complete the dialogue
+as shown in Fig. 4.4o
+
++--------------------------------+-------------------------------------+
+| ***Fig. 4.4n Data in a single  | ***Fig. 4.4o Extract the Year       |
+| data frame***                  | number***                           |
+|                                |                                     |
+|                                | ***Prepare \> Column: Text \>       |
+|                                | Transform***                        |
++================================+=====================================+
+| ![](media/image1221.png        | ![C:\\Users\                        |
+| ){width="2.7817443132108486in" | \ROGERS\~1\\AppData\\Local\\Temp\\S |
+| height="2.539852362204724in"}  | NAGHTML109fd672.PNG](media/image119 |
+|                                | 8.png){width="3.1949234470691166in" |
+|                                | height="2.772106299212598in"}       |
++--------------------------------+-------------------------------------+
+
+This adds a new column called yr, Fig. 4.4p.
+
++---------------------------------+------------------------------------+
+| ***Fig. 4.4p The year is now    | ***Fig. 4.4q Sort the data using   |
+| available***                    | the year column***                 |
+|                                 |                                    |
+|                                 | ***Right-click \> Sort or Prepare  |
+|                                 | \> Data Frame \> Sort***           |
++=================================+====================================+
+| ![](media/image1188.pn          | ![C:\\Users\\R                     |
+| g){width="2.9009897200349957in" | OGERS\~1\\AppData\\Local\\Temp\\SN |
+| height="2.3619094488188974in"}  | AGHTML10a74ad5.PNG](media/image119 |
+|                                 | 3.png){width="3.099902668416448in" |
+|                                 | height="3.013610017497813in"}      |
++---------------------------------+------------------------------------+
+
+Nearly there. Use ***Climatic \> Tidy and Examine \> Tidy Daily Data***
+as shown in Fig. 4.4r. Earlier, in Fig. 4.4c, each year was in a column.
+Now each month is in its own column. Complete Fig. 4.4r as shown. As
+with the first run earlier (Fig. 4.4c) we first check on any errors,
+rather than simply ignoring them.
+
++----------------------------------------+-----------------------------+
+| ***Fig. 4.4r Tidy the daily data***    | ***Fig. 4.4s An error is    |
+|                                        | reported. The yr column     |
+| ***Climatic \> Tidy and Examine \>     | should be numeric***        |
+| Tidy Daily Data***                     |                             |
++========================================+=============================+
+| ![](media/image                        | ![](media/image1229.png)    |
+| 1233.png){width="3.4139971566054244in" | {width="2.59626968503937in" |
+| height="3.800272309711286in"}          | hei                         |
+|                                        | ght="0.6789588801399825in"} |
++----------------------------------------+-----------------------------+
+
+There is an error! This can happen. Reading the message is says the
+"year column must be numeric".
+
+Looking back to Fig. 4.4p we see the year column is given as yr (c), so
+it is a character, or text column. So ***right-click*** and ***change it
+to numeric.*** Then ***return to the dialogue*** in Fig. 4.4r and press
+***Ok*** again.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.4t Some issues with the data***               ***Fig. 4.4u The tidy Garoua data -- at last!***
+  ------------------------------------------------------- -----------------------------------------------------
+  ![](media/image1237.png){width="2.9636832895888015in"   ![](media/image1228.png){width="2.65291447944007in"
+  height="2.599909230096238in"}                           height="3.4515660542432194in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+The results are in Fig. 4.4t. Our troubles are not over, because we
+learn there are 8 non-existent days with rainfall. Fortunately, most
+have zero and this was probably just a simple error. But the data shows
+there was 13.7mm on 31 September 2006, and this is a puzzle.
+Unfortunately, we have no way of checking this value now. So, we return
+to the dialogue in Fig. 4.4r and change the options to ignore these
+days. The result is in Fig. 4.4u.
+
+If you now wish to proceed with the analysis of the rainfall data, then
+the next steps are just the same as for the Samaru data, i.e. first the
+***Climatic \> Dates \> Use Date*** dialogue, Fig. 4.4f and then the
+***Climatic \> Define Climatic Data***, Fig. 4.4h. However, we may first
+want to reorganise the Tmax and Tmin data, and then merge the 3
+elements, before defining the climatic data. We leave this largely as an
+exercise but provide a few hints below.
+
+  --------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.4v Garoua Tmax data***                        ***Fig. 4.4w A problem with the data***
+  ------------------------------------------------------- ------------------------------------------------------
+  ![](media/image1223.png){width="3.0163976377952757in"   ![](media/image1183.png){width="2.942357830271216in"
+  height="2.7246872265966755in"}                          height="2.448571741032371in"}
+
+  --------------------------------------------------------------------------------------------------------------
+
+Part of the Tmax data are shown in Excel in Fig. 4.4v. There are again
+multiple sheets and this time each column is a day of the month. So,
+there are now 31 columns of data. This is the third option, when using
+the ***Climatic \> Tidy and Examine \> Tidy Daily Data*** dialogue. For
+the Samaru data, the years were in separate columns in Fig. 4.4c, and
+the months in Fig. 4.4r. This time it is the day of the month. That is
+quite a common layout.
+
+On importing all the data for Tmax there is a common problem on the
+sheet called Page 10. The immediate indication is that some values in
+X25 (25^th^ of the month) have many decimals. This is because the column
+name is X25 (c), so it is a character or text column and not numeric.
+This is because one value is given as 35.B. Perhaps it should be 35.8?
+
+Hence note all the columns in Page 10 that are text columns. These are
+easily corrected in Excel. Then the tidying of the data follows similar
+steps to that for the rainfall.
+
+Once the Tmax and Tmin data have been tidied, the ***Climatic \> Tidy
+and Examine \> Merge*** dialogue is used to merge the elements into a
+single data frame.
+
+## Transferring data from Climsoft
+
+Climsoft is a comprehensive system for the entry and management of
+climatic data. The main menu is shown in Fig. 4.5a. It is designed for
+the entry (or transfer) of climatic data of any sort. It is also
+particularly useful for capturing and managing data from automatic
+stations.
+
+It also includes facilities for the scanned paper records and hence
+facilitates the checking of the computerised data against the originals.
+
+CLIMSOFT has its own products but is also designed to work smoothly with
+R-Instat. Hence R-Instat can produce products and applications for
+CLIMSOFT.
+
+  -----------------------------------------------------------------------
+  ***Fig. 4.5a The main CLIMSOFT menu***
+  -----------------------------------------------------------------------
+  ![](media/image1227.png){width="4.769510061242345in"
+  height="3.358102580927384in"}
+
+  -----------------------------------------------------------------------
+
+There are two ways to transfer data from Climsoft into R-Instat. If
+Climsoft is on your machine, or is available from your machine, then
+R-Instat can read the Climsoft database directly. Otherwise Climsoft can
+export tidy data that is in the form that is easily used by R-Instat.
+Both methods are shown here.
+
+Use ***Climatic \> File \> Climsoft*** to transfer data directly from a
+Climsoft database, Fig. 4.5b.
+
++-------------------------------------+--------------------------------+
+| ***Fig. 4.5b Import data from       | ***Fig. 4.5c Connect to the    |
+| Climsoft***                         | database***                    |
+|                                     |                                |
+| ***Climatic \> File \> Climsoft***  |                                |
++=====================================+================================+
+| ![C:\\Users\                        | ![C:\\Users\\ROGERS\~1\\App    |
+| \ROGERS\~1\\AppData\\Local\\Temp\\S | Data\\Local\\Temp\\SNAGHTML117 |
+| NAGHTML117998d8.PNG](media/image123 | f6eae.PNG](media/image1217.png |
+| 2.png){width="3.1856747594050745in" | ){width="2.3774759405074364in" |
+| height="3.1720319335083116in"}      | height="2.4924475065616796in"} |
+|                                     |                                |
+|                                     | ![C:\\Users\\ROGERS\~1\\App    |
+|                                     | Data\\Local\\Temp\\SNAGHTML118 |
+|                                     | 11950.PNG](media/image1207.png |
+|                                     | ){width="2.7705063429571304in" |
+|                                     | height="0.6207775590551181in"} |
++-------------------------------------+--------------------------------+
+
+In Fig. 4.5b ***Click*** on the ***Establish Connection*** button to
+give the screen shown in Fig. 4.5c. This is already set to the main
+database, so you probably do not need to change that name. We chose to
+add \_test\_, Fig. 4.5c to use the tutorial database. Then click on
+***Enter Password*** and enter your Climsoft password shown at the
+bottom of Fig. 4.5c.
+
+The sub-dialogue now says ***Connected***, Fig. 4.5d and you can press
+***Return***.
+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.5d Connected***                               ***Fig. 4.5e Transfer just the station data***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](media/image1167.png){width="2.6251345144356955in"   ![](media/image1157.png){width="3.3453958880139982in"
+  height="2.7640310586176726in"}                          height="3.291350612423447in"}
+
+  ---------------------------------------------------------------------------------------------------------------
+
+The main dialogue, in Fig. 4.5e now has all the station identifiers. We
+choose them all and press Ok.
+
+  --------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.5f Station data imported from Climsoft***    ***Fig. 4.5g Add observation data***
+  ------------------------------------------------------ -------------------------------------------------------
+  ![](media/image1145.png){width="2.707234251968504in"   ![](media/image1156.png){width="3.2457753718285214in"
+  height="2.139587707786527in"}                          height="3.18499343832021in"}
+
+  --------------------------------------------------------------------------------------------------------------
+
+This gives the station information in Fig. 4.5f for all 122 stations in
+the tutorial database.
+
+Now return to the Climsoft dialogue and tick the box for the observation
+data. Now the Elements are chosen, and we have selected Tmax, Tmin and
+rainfall in Fig. 4.5g. The Start Date and End Date are left blank so all
+the data is transferred.
+
++-------------------------------------+--------------------------------+
+| ***Fig. 4.5h The data are           | ***Fig. 4.5i Add a Date        |
+| imported***                         | column***                      |
+|                                     |                                |
+|                                     | ***Climatic \> Dates \> Make   |
+|                                     | Date***                        |
++=====================================+================================+
+| ![](media/image115                  | ![](media/image1166.png        |
+| 5.png){width="3.1908967629046368in" | ){width="2.8087740594925634in" |
+| height="2.257316272965879in"}       | height="2.605239501312336in"}  |
++-------------------------------------+--------------------------------+
+
+The data in R-Instat are in Fig. 4.5h. There are 6 columns, first the
+station, then the element given in 3 different ways, then the date and
+finally the data.
+
+The date column is a date-time variable, because the data may be
+sub-daily. Use the ***Climatic \> Dates \> Make Date*** dialogue as
+shown in Fig. 4.5i. This adds an R date column.
+
+Had we exported just a single element then the data would now be almost
+ready. As in Section 4.4, just use ***Climatic \> Dates \> Use Date***
+and then ***Climatic \> Define Climatic Data***.
+
+However, as we imported 3 elements (Tmax, Tmin and Rain) we have one
+further step, because they are currently all in a single column. They
+need to be in separate columns.
+
+First use Right-click on one of the element columns, Fig. 4.5j, and
+convert it to a factor column.
+
++-------------------------------+--------------------------------------+
+| ***Fig. 4.5j Make the Element | ***Fig. 4.5k Unstack the data on the |
+| column a factor***            | 3 elements***                        |
+|                               |                                      |
+|                               | ***Climatic \> Tidy and Examine \>   |
+|                               | Unstack***                           |
++===============================+======================================+
+| ![](media/image1153.png)      | ![C:\\Use                            |
+| {width="2.6682010061242343in" | rs\\ROGERS\~1\\AppData\\Local\\Temp\ |
+| h                             | \SNAGHTML120afa21.PNG](media/image11 |
+| eight="2.0810804899387576in"} | 43.png){width="3.2150010936132984in" |
+|                               | height="3.11830927384077in"}         |
++-------------------------------+--------------------------------------+
+
+Use ***Climatic \> Tidy and Examine \> Unstack*** and complete the
+dialogue as shown in Fig 4.5k. The data are in Fig. 4.5m and are in just
+the right "shape" for R-Instat.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.5l The data ready for R-Instat***            ***Fig. 4.5m Climsoft dialogue to export data***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image1154.png){width="3.026971784776903in"   ![](media/image1129.png){width="2.93706583552056in"
+  height="2.7565004374453195in"}                         height="2.774326334208224in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+The second way is for data to be exported from Climsoft that can then be
+imported into R-Instat.
+
+For this option the CLIMSOFT user starts with the ***Products option***
+in Fig. 4.5a. The products menu is shown in Fig 4.5m. Select ***Data***
+as the Product category and ***Daily***, as shown in Fig. 4.5m.
+
+  -----------------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.5n Screen to export daily data from Climsoft***
+  -----------------------------------------------------------------------------------------------------------------------
+  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML15618e97.PNG](media/image1180.png){width="6.1309044181977255in"
+  height="3.1893930446194227in"}
+
+  -----------------------------------------------------------------------------------------------------------------------
+
+The resulting screen in Climsoft is shown in Fig. 4.5n. Complete it as
+shown and then press to ***Start Extraction,*** Fig. 4.5n. The resulting
+data are shown in Fig. 4.5o.
+
+  -----------------------------------------------------------------------------------------
+  ***Fig. 4.5o Ooops!***                                  
+  ------------------------------------------------------- ---------------------------------
+  ![](media/image1190.png){width="3.1422430008748905in"   
+  height="2.184351487314086in"}                           
+
+  -----------------------------------------------------------------------------------------
+
+## Satellite data
+
+## What can go wrong?
+
+Nothing may go wrong in organising your data ready for analysis. Even
+so, it is often frustrating, particularly to those who are relatively
+inexperienced in these tasks, that the organising stage takes so long,
+and is also often quite difficult. What can we say except perhaps
+"Welcome to the real world"!
+
+But it is annoying that these steps come first and may be more difficult
+and time-consuming that the subsequent analyses. These problems are
+general and are not limited to climatic data, but that may be small
+comfort as you hoped to proceed quickly and then have more time for
+other activities!
+
+In addition, things may take longer, because of additional problems in
+the data. We look at some examples in this section. You need to become a
+super-critical data detective. Here we show how and why.
+
+The first problem is very common. It was earlier shown in Fig. 4.4w and
+we repeat it in Fig. 4.7a. A column that should be numeric has a (c)
+after it, in R-Instat.
+
+  --------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.7a Numeric data imports as character         ***Fig. 4.7b Filter in Excel to see the problem***
+  (text)***                                              
+  ------------------------------------------------------ -------------------------------------------------------
+  ![](media/image1183.png){width="2.942357830271216in"   ![](media/image1165.png){width="2.2510772090988627in"
+  height="2.448571741032371in"}                          height="3.288844050743657in"}
+
+  --------------------------------------------------------------------------------------------------------------
+
+This indicates it is a character, or text, column. The "cure" is usually
+to return to Excel and correct the error there. In Excel, once you know
+where to look, then one way is to set up a filter and then check on the
+column that R-Instat has shown has the problem. In Fig. 4.7b we filter
+on column Z for the 25^th^ and find the bottom entries are not in order.
+A more careful look shows the bottom value to be 38.B when it possibly
+should have been 38.8. Other character columns on this same sheet were
+when a number was typed with a space and no decimal, e.g. 38 6 instead
+of 38.6 on the 10^th^ of the month.
+
+A check that is often useful is Climatic \> Tidy and Examine \> One
+Variable Summaries. This is the Examining part of this menu. To show its
+use, look again at the Dodoma data that was introduced in Chapter 2. So,
+***File \> Open from Library \> Instat Data \> Browse \> Climatic
+Directory \> Instat Guide datasets \> Dodoma***.
+
+The data are shown in Fig. 4.7c. On ***row 120 make a deliberate
+mistake***, i.e. double click on April 30 and change the ***30 into
+31***. That's not a possible day!
+
++-----------------------------+----------------------------------------+
+| ***Fig. 4.7c Dodoma with an | ***Fig. 4.7d Add a date column***      |
+| error added***              |                                        |
+|                             | ***Climatic \> Dates \> Make Date***   |
++=============================+========================================+
+| ![](media/image1175.png){w  | ![](media/image                        |
+| idth="2.5625590551181103in" | 1170.png){width="3.4776574803149605in" |
+| he                          | height="2.7455194663167104in"}         |
+| ight="2.680066710411199in"} |                                        |
++-----------------------------+----------------------------------------+
+
+Add a date column using ***Climatic \> Dates \> Make Date*** and
+complete the dialogue as shown in Fig. 4.7d.
+
++--------------------------------+-------------------------------------+
+| ***Fig 4.7e Examine the        | ***Fig. 4.7f Resulting summaries*** |
+| data***                        |                                     |
+|                                |                                     |
+| ***Climatic \> Tidy and        |                                     |
+| Examine \> One Variable        |                                     |
+| Summarise***                   |                                     |
++================================+=====================================+
+| ![](media/image1161.pn         | ![](media/image11                   |
+| g){width="2.727936351706037in" | 72.png){width="3.288003062117235in" |
+| height="2.4675043744531933in"} | height="1.9241557305336834in"}      |
++--------------------------------+-------------------------------------+
+
+Use ***Climatic \> Tidy and Examine \> One Variable Summarise*** as
+shown in Fig. 4.7e. The results are in Fig. 4.7f.
+
+Examine these results for each column in turn. The results are
+encouraging. The Year goes from 1935 to 2013. The day of the month is
+from 1 to 31 -- which is fine.
+
+The rainfall is from 0 (zero) to 119.8. Sometimes it is from -9999 in
+which case the missing values need to be recoded[^17]. Here they seem
+fine, and it is encouraging tht there are less than 100 missing values
+overall. Similarly, the limits for Tmax, Tmin and Sunh all seem
+reasonable.
+
+The last column is the Date and there is one missing value -- as we
+know, because this time we caused it! There should not be missing values
+in the date column. You need to do something about it.
+
+The first step in solving the problem (assuming we don't know it) is to
+filter the data, choosing just the days when Date1 == NA. To do this,
+right-click in any column and choose Filter, Fig, 4.7g.
+
++----------------------------------+-----------------------------------+
+| ***Fig. 4.7g Filter to locate    | ***Fig. 4.7h The Filter           |
+| the problem***                   | sub-dialogue***                   |
+|                                  |                                   |
+| ***Right-click \> Filter***      |                                   |
++==================================+===================================+
+| ![](media/image1173.             | ![](media/image1194.              |
+| png){width="2.901389982502187in" | png){width="3.0803193350831144in" |
+| height="3.3789851268591424in"}   | height="2.3552165354330707in"}    |
++----------------------------------+-----------------------------------+
+
+In the Filter dialogue, choose the button to Define New Filter, and
+complete the sub-dialogue as shown in Fig. 4.7h. Click to Add Condition
+then ***Return*** and ***Ok***.
+
+The filtered data, Fig.
+
+  -----------------------------------------------------------------------
+  ***Fig. 4.7i The filtered data***
+  -----------------------------------------------------------------------
+  ![](media/image1098.png){width="5.618597987751531in"
+  height="1.294780183727034in"}
+
+  -----------------------------------------------------------------------
+
+This shows it is row 120 that is causing the problem. The correction can
+be made immediately, or you may like to remove the filter first and then
+check that there was no value on April 30 in that year.
+
+Data from Thaba Tseka in Lesotho initially seemed easy to process. Use
+***File \> Open from Library \> Instat \> Browse \> Climatic \>
+Lesotho*** and the file ***Thaba_Tseka_Original***.
+
+  -----------------------------------------------------------------------
+  ***Fig. 4.7j The Thaba-Tseka rainfall data***
+  -----------------------------------------------------------------------
+  ![](media/image1109.png){width="5.528430664916885in"
+  height="2.338526902887139in"}
+
+  -----------------------------------------------------------------------
+
+The data have been exported from a previous version of Climsoft (see
+Sections 1.6 and 4.5). They include a lot of station details but seem in
+exactly the right shape to make quick progress.
+
++------------------------------+---------------------------------------+
+| ***Fig. 4.7k Add a date      | ***Fig. 4.7l Define Climatic Data***  |
+| column***                    |                                       |
+|                              | ***Climatic \> Define Climatic        |
+| ***Climatic \> Dates \> Make | Data***                               |
+| Date***                      |                                       |
++==============================+=======================================+
+| ![](media/image1102.png){    | ![](media/image1                      |
+| width="2.5451115485564304in" | 087.png){width="2.6707239720034996in" |
+| h                            | height="3.1690671478565178in"}        |
+| eight="3.125343394575678in"} |                                       |
++------------------------------+---------------------------------------+
+
+Define a date column from ***Climatic \> Dates \> Make Date, Fig.
+4.7k,*** and then check, with ***Climatic \> Tidy and Examine \> One
+Variable Summarise***, as in Fig. 4.7e. All seems fine so far.
+
+So, the last step. Use ***Climatic \> Define Climatic Data*** as in Fig.
+4.7l. Complete the year, month, day fields, as the names are not
+recognised automatically. Also, obs is the rain column.
+
+Finally check for uniqueness, Fig. 3.7m.
+
++----------------------------------+-----------------------------------+
+| ***Fig. 4.7m A problem -         | ***Fig. 4.7n Check on the         |
+| duplicates***                    | Duplicates***                     |
+|                                  |                                   |
+|                                  | ***Climatic \> Tidy and Examine   |
+|                                  | \> Duplicates***                  |
++==================================+===================================+
+| ![](media/image1094.             | ![C:\\Users\\ROGE                 |
+| png){width="2.859336176727909in" | RS\~1\\AppData\\Local\\Temp\\SNAG |
+| height="2.021839457567804in"}    | HTML199cd2c0.PNG](media/image1103 |
+|                                  | .png){width="3.061738845144357in" |
+|                                  | height="3.214241032370954in"}     |
++----------------------------------+-----------------------------------+
+
+The message in Fig. 4.7m indicates a problem. There are apparently
+duplicate values in the data.
+
+As suggested in Fig. 4.7m use ***Climatic \> Tidy and Examine \>
+Duplicates*** and complete as shown in Fig. 4.7n. This produces a new
+logical column, that is first examined through ***Climatic \> Tidy and
+Explore \> One Variable Summarise***, Fig. 4.7o.
+
++----------------------------------+-----------------------------------+
+| ***Fig. 4.7o Find how often      | ***Fig. 4.7p The results***       |
+| there are duplicates***          |                                   |
+|                                  |                                   |
+| ***Climatic \> Tidy and Examine  |                                   |
+| \> One Variable Summarise***     |                                   |
++==================================+===================================+
+| ![](media/image1099.             | ![](media/image1082.              |
+| png){width="2.949659886264217in" | png){width="3.0340715223097114in" |
+| height="2.6671434820647417in"}   | height="1.0911526684164479in"}    |
++----------------------------------+-----------------------------------+
+
+If there were no duplicates, then this column would be FALSE all the
+time. We learn, from the result in Fig. 4.7p that it is TRUE on 364
+rows. There are then at least 2 values for each day, so up to 182 days
+have duplicate values.
+
++--------------------------------+-------------------------------------+
+| ***Fig. 4.7r Filter            | ***Fig. 4.7s The filtered data***   |
+| sub-dialogue***                |                                     |
+|                                |                                     |
+| ***Right Click \> Filter \>    |                                     |
+| Define New Filter***           |                                     |
++================================+=====================================+
+| ![](media/image1089.p          | ![](media/image109                  |
+| ng){width="2.78961832895888in" | 0.png){width="3.2141513560804897in" |
+| height="1.4765748031496062in"} | height="3.3251870078740158in"}      |
++--------------------------------+-------------------------------------+
+
+Use the ***right-click and Filter*** dialogue. Then Define new Filter
+and complete the sub-dialogue as shown in Fig. 4.7r. Then ***Return***,
+and ***Ok*** to show the filtered data in Fig. 4.7s.
+
+The possible problem becomes clearer from an examination of the data
+from the first 4 days. They are consecutive, from 18^th^ to 21^st^
+January 1987. It looks as though a value might have been put on one day,
+and then corrected to the previous day. But both versions of the data
+have been exported from Climsoft, and without any indication of which
+version is the more recent.
+
+Now, having been a data detective -- it is probably time to go back to
+the source of the data. This could be to check against the paper copy,
+or to see whether the data could be exported without the
+duplicates[^18].
+
+## What's next?
+
+[I would like to describe some of the sets of software to be used in
+later chapters -- in addition to those so far. In particular I am
+looking for examples from countries (in addition to Kenya) where there
+could be quite a number of stations. One possibility is Rwanda, where we
+have permission to use 4 stations. I wonder about Germany -- partly
+because of its potential for comparing satellite and station data.
+Lesotho -- I could ask, and Guyana. Later possibly Haiti, but the data
+aren't quite ready yet. Maybe Ghana, we currently have permission to use
+2 stations.]{.mark}

@@ -1,0 +1,908 @@
+# Circular data and wind roses 
+## Introduction
+
+Fig. 16.1a shows data from the R openair package. These are hourly data
+and the two columns called ws and wd are wind speed and direction. Fig.
+16.1b shows a single wind rose and these are discussed in detail in
+Section 16.4. The wind rose is a circular stacked histogram that shows
+both wind speeds and wind directions on the same graph. They are a
+popular form of display by National Met Services (NMSs) for these data.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.1a***                                       ***Fig. 16.1b***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image876.png){width="2.6243372703412073in"   ![](media/image975.png){width="3.3880194663167105in"
+  height="2.683885608048994in"}                          height="2.6981517935258092in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+[For reference the command was as follows:]{.mark}
+
+[last_graph \<- clifro::windrose(speed=ws, direction=wd,
+speed_cuts=c(3,6,9,12,15,18), col_pal=\"Dark2\", ggtheme=\"linedraw\") +
+ggplot2::labs(title=\"\", caption=\"\", subtitle=\"\")]{.mark}
+
+Wind direction is an example of circular data and this type of data
+needs some special treatment. Circular variables are common in climatic
+data. The obvious example is wind direction, but there are many others:
+
+-   Time in hours at which rainfall starts. The circle is 24 hours.
+
+-   The hour of the minimum temperature each day. The circle is again 24
+    hours.
+
+-   Day of the year when the season starts. The circle is 366 days.
+
+-   The month of maximum rainfall. The circle is 12 months.
+
+Special methods are needed to cope with circular data. Sometimes they
+can be avoided, and we have done this often in this guide. For example,
+the date of the start of the rains may be from November to January. If
+the year is always defined from January, then these data mist be handled
+as circular. But the complexity can be avoided by shifting the year to
+start in August, as was shown in Chapter 7.
+
+Section 16.2 considers the general idea of circular data and Section
+16.3 shows some simple graphs. Then we return to wind roses in Section
+16.4.
+
+## Circular data
+
+Wikipedia (Wikipedia contributors) shows a small example of 10, 20, 30
+degrees to illustrate circular data. The mean is obviously 20. Now
+subtract 15 degrees, so the mean becomes 5. The data are now 355, 5, 15,
+so the usual formula for the mean is (355 + 5 + 15)/3 = 125 -- obviously
+wrong. With circular data, once we "go over" zero, the usual formulae no
+longer apply.
+
+There are books on circular statistics, for example (Pewsey & D., 2013)
+and, of course, R packages. R-Instat mainly uses the ***circular***
+package. (Agostinelli & Lund, n.d.).
+
+An example from the circular package is called wind. This has 310
+observations on wind direction. The data in ***File \> Open from Library
+\> R package \> circular \> wind***, just has a single variable. The
+description states it is five 15-minute observations per day, for 62
+days, from 3am to 4am. It is for a single site from 29 January to 31
+March 2001.
+
+Fig. 16.2a shows the data in R-Instat. The wind directions (column
+wind_dir) are in radians, i.e. they are an angle between 0 and 2pi (i.e.
+2 \* 3.14 = 6.28).
+
++------------------------------+---------------------------------------+
+| ***Fig. 16.2a Data from      | ***Fig. 16.2b Adding a date           |
+| circular package***          | variable***                           |
+|                              |                                       |
+|                              | ***Climatic \> Dates \> Generate      |
+|                              | Dates***                              |
++==============================+=======================================+
+| ![](media/image955.png){     | ![](media/imag                        |
+| width="2.5966491688538933in" | e954.png){width="3.488678915135608in" |
+| h                            | height="3.357030839895013in"}         |
+| eight="3.298924978127734in"} |                                       |
++------------------------------+---------------------------------------+
+
+Directional data are often given in degrees. Hence also use ***Prepare
+\> Column: Calculate \> Calculations***, with the formula:
+
+wind_dir \*360/(2\*pi)
+
+Data should be given with their "structure". The dialogue ***Climatic \>
+Dates \> Generate Dates***, Fig. 16.2b is used to add the date column,
+then ***Prepare \> Column: Generate \> Regular Sequence***, Fig. 16.2c,
+to add the time column.
+
+to give the directions in degrees. The results are all shown in Fig.
+16.2a.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2c***                                       ***Fig. 16.2d***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image900.png){width="2.5924682852143484in"   ![](media/image916.png){width="3.5642311898512684in"
+  height="2.2782305336832898in"}                         height="1.0976224846894138in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+Start, as usual with a check on the data. Use ***Climatic \> Tidy and
+Examine \> One Variable Summarise*** to give the results in Fig. 16.2d.
+The summaries for the 2 wind variables are of course for linear, rather
+than circular data. The analysis can begin. One aspect that is simpler
+here is that there are no missing values in these data.
+
+The structure of the data is ignored initially, to concentrate on the
+new summary statistics for circular data. Graphs are discussed in
+Section 16.3. A preview, in Fig. 16.2e indicates the data are reasonably
+concentrated near zero. From the graph we expect a mean just above zero,
+i.e. perhaps North-North-East, (where East = pi/2 = 1.57 in radians) and
+a standard deviation that indicates a good level of concentration of the
+data. Thus, we don't expect the circular mean to be as large as 2.36
+radians, or 135 degrees, as shown in Fig. 16.2d
+
++-----------------------------+----------------------------------------+
+| ***Fig. 16.2e A circular    | ***Fig. 16.2f The circular keyboard*** |
+| histogram of the wind       |                                        |
+| data***                     | ***Prepare \> Column: Calculate \>     |
+|                             | Calculations***                        |
++=============================+========================================+
+| ![](media/image928.png){    | ![](media/imag                         |
+| width="2.557014435695538in" | e921.png){width="3.5340409011373577in" |
+| hei                         | height="1.9491097987751531in"}         |
+| ght="2.6285608048993874in"} |                                        |
++-----------------------------+----------------------------------------+
+
+Use ***Prepare \> Column: Calculate \> Calculations*** and open the
+***Circular*** keyboard, Fig. 16.2f. The initial step is to define the
+two variables wind_dir and wind_deg in Fig. 16.2a as circular. For
+wind_dir, click on the ***circular button*** and add the variable,
+***wind_dir***. Save the result back into the same variable, Fig. 16.2g.
+
+Then press ***Clear***, and do the same for the wind_deg variable, Fig.
+16.2h. In this case you need to replace the word "radians" by "degrees".
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2g***                                       ***Fig. 16.2h***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image902.png){width="3.5270439632545934in"   ![](media/image919.png){width="2.536725721784777in"
+  height="2.5473108048993875in"}                         height="2.549666447944007in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+It seems that nothing has happened. But now press the
+![](media/image898.png){width="0.2736023622047244in"
+height="0.30578958880139984in"}icon on the toolbar, Fig. 16.2i to
+confirm that the two variables are now defined as circular. Press
+![](media/image950.png){width="0.26344050743657044in"
+height="0.23361767279090115in"} to close the metadata window.
+
+  -----------------------------------------------------------------------
+  ***Fig. 16.2i***
+  -----------------------------------------------------------------------
+  ![](media/image929.png){width="4.6506572615923005in"
+  height="1.764834864391951in"}
+
+  -----------------------------------------------------------------------
+
+Click ***Clear***, then the ***mean button*** and add the ***wind_dir***
+column as shown in Fig. 16.2j. Un-check Save so the result is in the
+Output window, Fig. 16.2k.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2j***                                       ***Fig. 16.2k***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image899.png){width="3.1713484251968502in"   ![](media/image939.png){width="2.8102821522309713in"
+  height="3.01583552055993in"}                           height="1.6273206474190727in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+The mean direction is 0.2922 radians (or 0.2922\*360/(2\*pi) = 16.7
+degrees.)
+
+In the command in Fig. 16.2j the package name is given first, i.e.
+
+circular::mean.circular(wind_dir)
+
+Change the variable in Fig. 16.2j to ***wind_deg*** to give the result
+directly as 16.7 degrees, Fig. 16.2l.
+
+This result for the circular mean of 17 degrees is consistent with the
+graph, given in Fig. 16.2e. It is a long way from the result in Fig.
+16.2d that has ignored the circular nature of the data (and is wrong!)
+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2l***                                     ***Fig. 16.2m***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](media/image948.png){width="2.40545384951881in"   ![](media/image930.png){width="3.680741469816273in"
+  height="1.7108311461067367in"}                       height="2.1625273403324585in"}
+
+  ----------------------------------------------------------------------------------------------------------
+
+Now examine the spread of the data. In the dialogue, ***Clear the
+expression again***, and find the ***circular variance*** of the
+***wind_dir*** variable. The result is seen to be 0.3443 from pressing
+the ***Try*** button. Pressing ***Ok*** puts this result into the output
+window.
+
+***Return to this dialogue*** and find the circular variance of the same
+data in degrees. The result is identical, i.e. 0.3443, despite the
+numbers being very different! Some explanation is needed, because with
+ordinary (linear) data, that is not the case.
+
+Change the function to get the ***standard deviation***, i.e. the sd key
+on the circular keyboard, rather than var. The formula is then
+
+circular::sd.circular(wind_deg).
+
+This gives the circular standard deviation as 0.9187, and again this is
+the same for the wind_dir variable.
+
+However, in addition, the circular standard deviation is not the square
+root of the circular variance. The var = 0.3443 and √0.3443 = 0.5868
+which is quite a long way from the result above.
+
+The results for the variability (spread) of circular data require
+explanation, because they are so different to "ordinary" data.
+
+We need a formula. With angles (in degrees), x~1~, x~2~,... x~n~ define:
+
+R = √((Σcos(x~i~))^2^ +(Σsin(x~i~))^2^)
+
+R is called the resultant length, and r = R/n is called the mean
+resultant length. It is the ***rho key*** on the circular keyboard, with
+
+circular::rho.circular(wind_dir) or circular::rho.circular(wind_deg)
+
+In each case it gives the value of r = 0.6557 for these data.
+
+The mean resultant length, r, is between 0 and 1 and values near to 1
+correspond to low variation.
+
+In the R circular package, and hence in R-Instat the var.circular =
+(1-r) = 0.3443 as found above. So, the circular variance is between 0
+and 1 with 0 being no variation.
+
+Then, sd.circular = √(-2log(r), to be consistent with the definition
+first given in (Mardia, 1972).
+
+Also available in R-Instat is the angular.variance = 2 \* (1-r) = 2 \*
+var.circular.
+
+For these data, the angular.variance is the ***ang.var*** key = 0.6886
+
+And there is also the angular.deviation = √(angular variance)
+
+The angular.deviation is the ang.dev key = √0.6886 = 0.8298.
+
+To help with the interpretation, of these summaries, take a very simple
+example with 5 observations. In degrees take 10, 15, 20, 25 30, Fig.
+16.2n. Round the circle they are not very spread out.
+
++------------------------------------+---------------------------------+
+| ***Fig. 16.2n***                   | ***Fig. 16.2o***                |
+|                                    |                                 |
+| ***File \> New Data Frame***       |                                 |
++====================================+=================================+
+| ![](media/image93                  | ![](media/image937.pn           |
+| 8.png){width="3.098264435695538in" | g){width="2.7570877077865266in" |
+| height="2.7773720472440946in"}     | height="2.7570877077865266in"}  |
++------------------------------------+---------------------------------+
+
+Use ***Prepare \> Column: Calculations \> Calculate*** and produce
+***data_rad = (data_deg/360)\*2\*pi***.
+
+In radians, these data are 0.175, 0.262, 0.349, 0.436, 0.524 as shown in
+Fig. 16.2o.
+
+In ***Prepare \> Column: Calculations \> Calculate*** use the
+***degrees*** and ***radians*** buttons to define each of these
+variables as circular.
+
+Then, with the ***sd button***, the sd.circular = 0.1235 for each
+variable.
+
+The ordinary standard deviation for the data in radians is 0.138, i.e.
+is close. So, for circular data, with small spread the circular standard
+deviation can be interpreted roughly as the ordinary standard deviation,
+i.e. a typical distance from the circular mean (which is 0.349 radians),
+of the data -- when measured in radians.
+
+Let's confirm this, with even smaller spread. Divide all the values (in
+radians) by 2. The new circular standard deviation = 0.617, which is
+half the previous value. Of course, the ordinary standard deviation also
+halves, so the interpretation is ok.
+
+Now multiply the values by 10. In degrees, the values are now 100, 150,
+200, 250, 300 so almost round the circle. This is therefore very large
+spread for the circular data. In radians this becomes 1.75, 2.62, 3.49,
+4.36, 5.24. The maximum is 360 degrees = 2π = 6.28 radians.
+
+For the data in radians, the ordinary standard deviation is 1.38 and the
+circular standard deviation is the same. Hence, a very spread-out
+circular dataset has a circular standard deviation of more than 1.
+(Otieno Sango & Anderson-Cook, 2003)
+
+The wind data, analysed in this section, had a circular standard
+deviation of 0.92 (radians). So quite large as can be seen from the
+graph in Fig. 16.2e.
+
+What of r and the circular variance = (1-r)? For the 5 values from 10,
+to 30 degrees, the circular variance = 0.0076. For large spread, e.g.
+the 5 values from 100 to 300 degrees the circular variance = 0.6123. So,
+the circular variance can be interpreted directly, with close to 0 being
+very concentrated data and close to 1 being very spread out -- round the
+circle. The wind data had a spread -- as measured by the circular
+variance of 0.3443, i.e. about 1/3.
+
+Other summary statistics, including the median are also available,
+through the circular package, and hence through R-Instat. These are the
+median and the quantiles, including the quartiles, the "maximum" and
+"minimum" and the range. Most are intuitively obvious for data that are
+"concentrated", i.e. have small variability, but are more difficult to
+consider where data can be anywhere round the circle. And general
+definitions are needed.
+
+The median is defined by considering diameters that cut the circle in
+two. Look for the diameter with end-points P and Q, so that half the
+data points are in each semi-circle. Then the median is either P or Q
+and choose P, so that the data are more concentrated round it, compared
+to Q,
+
+For the wind data the median is 9.5 degrees, so a little lower than the
+mean.
+
+Once the median exists, the other quantiles, including the maximum and
+minimum, can go outwards from this point. The lower quartile is 355
+degrees and the upper quartile is 37 degrees.
+
+The range is defined as the extent of the circle, minus the biggest gap
+of data. This is usually (but not necessarily) the maximum minus the
+minimum!
+
+The von Mises distribution is roughly the equivalent to the normal
+distribution for linear data, Fig. 16.2k. This has, similarly, 2
+parameters and is symmetrical about the circular mean.
+
++----------------------------------+-----------------------------------+
+| ***Fig. 16.2k Examples of von    | ***Fig. 16.2l***                  |
+| Mises distributions***           |                                   |
++==================================+===================================+
+| [Prefer from R-Instat]{.mark}    | ![](media/image934                |
+|                                  | .png){width="3.070688976377953in" |
+| ![](media/image933.              | height="2.5898534558180226in"}    |
+| png){width="2.939744094488189in" |                                   |
+| height="2.360246062992126in"}    |                                   |
++----------------------------------+-----------------------------------+
+
+The shape is dictated by the к parameter. К = 0 corresponds to the
+uniform distribution (round the circle) and large values of к correspond
+to a concentrated distribution, i.e. one with low variation.
+
+Estimating к is done by setting r = A~1~(к) = I~1~(к)/I~0~(к) = 1 --
+var.circular, where I~1~ and I~0~ are modified Bessel functions. In the
+R-Instat circular keyboard the function A1(к) is available, Fig. 16.2l.
+With a little trial and error we see that, for the wind data the
+appropriate value of к = 0.734, i.e. the shape is just above the blue
+line in Fig. 16.2k.
+
+Compared to the circular histogram, Fig. 16.2e it is not clear that a
+symmetrical distribution is appropriate. However, more important is that
+the wind data have structure that the above analysis has ignored. In
+particular, the data are 5 observations from each of 62 days. In any
+analysis this sort of structure should not be ignored.
+
+Hence get the mean each day and then analyse the resulting daily data.
+This is the circular mean, and uses the ***Prepare \> Column: Reshape \>
+Column Summaries*** as shown in Fig. 16.2m and Fig. 16.2n.
+
++-----------------------------------+----------------------------------+
+| ***Fig. 16.2m***                  | ***Fig. 16.2n Circular           |
+|                                   | sub-dialogue***                  |
+| ***Prepare \> Column: Reshape \>  |                                  |
+| Column Summaries***               |                                  |
++===================================+==================================+
+| ![](media/image932.               | ![](media/image926.              |
+| png){width="2.9925721784776904in" | png){width="2.955838801399825in" |
+| height="3.2901760717410324in"}    | height="2.0233978565179354in"}   |
++-----------------------------------+----------------------------------+
+|                                   | ![](media/image931.p             |
+|                                   | ng){width="2.9682622484689416in" |
+|                                   | height="1.713193350831146in"}    |
++-----------------------------------+----------------------------------+
+
+These daily data have 62 records as shown in Fig. 16.2o. For example on
+2^nd^ February the mean wind direction was 355 degrees (or 6.19
+radians). The 5 observations were all close in direction, with the
+minimum being 345 degrees and the maximum 0.5 degrees. The (circular)
+standard deviation was 0.1. The directions were much more variable on
+the next day, ranging from 303 degrees (roughly from the West) to 77
+degrees (almost East) within the hour. The (circular) standard deviation
+was just over 1.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2o***                                      ***Fig. 16.2p***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](media/image885.png){width="3.054669728783902in"   ![](media/image879.png){width="2.9363615485564303in"
+  height="2.7000721784776904in"}                        height="2.3743088363954508in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+It is simply for illustration that the results, in Fig. 16.2o are given
+in both degrees and radians. As discussed above, the standard deviation
+is the same, whatever the units and the interpretation is similar to the
+ordinary standard deviation for the data in radians.
+
+The resulting daily data can now be plotted and summarised. As an
+example, a circular histogram is shown in Fig. 16.2p.
+
+These data are fine to illustrate the commands in the R circular package
+but not for real applications because they are all from a single year
+and the summaries, from January to March may also include some
+seasonality. In the following sections, we therefore largely consider
+data from multiple years.
+
+## Graphs for wind direction
+
+The example used is from ***File \> Open From Library \> Open from R \>
+R package \> openair*** that was shown earlier in Fig. 16.1a and Fig
+16.1b. Open the dataset called ***mydata.*** It is hourly data on
+pollution concentrations plus wind speed (ws) and wind direction (wd).
+There are 65,533 records, shown again in Fig. 16.3a. The data are from
+London for 7.5 years from January 1998 to June 2005.
+
+Section 16.4 examines wind roses, that examine wind speeds and wind
+directions together. Here simpler plots are used to examine just the
+circular element, i.e. the wind directions in the variable called wd.
+
++-----------------------------------+----------------------------------+
+| ***Fig. 16.3a Wind and pollution  | ***Fig. 16.3b Checking the wind  |
+| data***                           | data***                          |
+|                                   |                                  |
+|                                   | ***Climatic \> Tidy and Examine  |
+|                                   | \> One Variable Frequencies***   |
++===================================+==================================+
+| ![](media/image876.               | ![](media/image878.p             |
+| png){width="2.9951706036745405in" | ng){width="2.5270352143482064in" |
+| height="3.0631321084864394in"}    | height="3.0722867454068243in"}   |
++-----------------------------------+----------------------------------+
+
+First examine the wind direction data. One way uses the ***Climatic \>
+Tidy and Examine \> One Variable Frequencies*** dialogue, Fig. 16.3b.
+
++----------------------------------+-----------------------------------+
+| ***Fig. 16.3c Different values   | ***Fig. 16.3d Duplicating the     |
+| in the wd variable***            | wind variable***                  |
+|                                  |                                   |
+|                                  | ***Right click (in wd variable)   |
+|                                  | \> Duplicate Column***            |
+|                                  |                                   |
+|                                  | [Redo with new duplicate column   |
+|                                  | dialogue]{.mark}                  |
++==================================+===================================+
+| ![](media/image873.              | ![](media/image889                |
+| png){width="2.902083333333333in" | .png){width="3.140196850393701in" |
+| height="3.334722222222222in"}    | height="2.535087489063867in"}     |
++----------------------------------+-----------------------------------+
+
+The results are in Fig. 16.3c. They confirm that the data are measured
+to the nearest 10 degrees. There is one possible oddity, namely that
+there are 37 different directions and not 36. There are 608 hours with
+North, i.e. 0 degrees and 1377 values at 360 degrees. One obvious reason
+for this feature is that there are calm days, i.e. zero wind speed, and
+hence no direction. This could reasonably be given the direction of
+zero. Use of the right-click and Filter however shows this is not the
+case.
+
+There are 4 alternative next steps to resolve this oddity in the data:
+
+1.  Ignore it and see what happens
+
+2.  Omit one category, i.e. recode those observations as missing
+
+3.  Recode the value 0 to be 360, or 360 to become 0, so the frequencies
+    are added
+
+4.  Contact the supplier to resolve the oddity.
+
+We tried option 4 first but had no response. The frequency at 360
+degrees seems reasonable, compared to the values at 350 and 10 degrees,
+hence we adopt option 2, and set the zero-degree values to be missing.
+
+First use the ***Right-click \> Duplicate Column*** dialogue, Fig. 16.3d
+to avoid overwriting the original data in wd.
+
++--------------------------+-------------------------------------------+
+| ***Fig. 16.3e Replace 0  | ***Fig. 16.3f Results from summary of 4   |
+| by missing***            | variables***                              |
+|                          |                                           |
+| ***Climatic \> Tidy and  | ***Climatic \> Tidy and Examine \> One    |
+| Examine \> Replace***    | Variable Summarise***                     |
++==========================+===========================================+
+| ![]                      | ![](media/i                               |
+| (media/image872.png){wid | mage871.png){width="3.8288287401574803in" |
+| th="2.243173665791776in" | height="1.8698742344706911in"}            |
+| heigh                    |                                           |
+| t="2.243173665791776in"} |                                           |
++--------------------------+-------------------------------------------+
+
+Now use ***Climatic \> Tidy and Examine \> Replace Values***, Fig.
+16.3e, to replace all instances of 0 by missing values. The result can
+be checked with the ***Climatic \> Tidy and Examine \> One Variable
+Summarise*** dialogue, the results of which are in Fig. 16.3f. The new
+wd1 variable now has 608 missing values and ranges from 10 to 360
+degrees.
+
+There isn't yet a special climatic graph for these data, so the general
+graphics dialogues are used. Use ***Describe \> Specific \> Histogram***
+with the variable wd1, Fig. 16.3g to give the result in Fig. 16.3h.
+
+Before making this graph circular, note an oddity in the results in Fig.
+16.3h. There are exactly 6 directions that stand out. This could either
+be a real feature in the data, or an oddity caused by the grouping of
+the data when the histogram is constructed. The default in the ggplot2
+system is 30 bins, and we just have 36 different values in the data. So
+here the grouping for the histogram is probably to blame.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3g***                                      ***Fig. 16.3h***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](media/image877.png){width="2.882574365704287in"   ![](media/image870.png){width="3.096017060367454in"
+  height="3.0101727909011373in"}                        height="3.2579746281714788in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+So return to the dialogue and click on the Histogram Options button to
+set the number of bins to 36, Fig. 16.3i. We make the histogram a little
+more colourful at the same time.
+
++------------------------------+---------------------------------------+
+| ***Fig. 16.3i Setting bins   | ***Fig. 16.3j Ordinary histogram***   |
+| in the histogram***          |                                       |
+|                              |                                       |
+| ***Describe \> Specific \>   |                                       |
+| Histogram\                   |                                       |
+| Then Histogram Options***    |                                       |
++==============================+=======================================+
+| ![](media/image895.png       | ![](media/image                       |
+| ){width="2.63702646544182in" | 915.png){width="3.3948250218722658in" |
+| h                            | height="3.5374660979877515in"}        |
+| eight="3.539001531058618in"} |                                       |
++------------------------------+---------------------------------------+
+
+This is now ready to produce a circular plot. Return to the dialogue,
+use the Plot Options and the Y-axis tab, Fig. 16.3k. Set the axis limits
+for the y-axis as shown in Fig. 16.3k. Also press on the
+***Coordinates*** tab in Fig. 16.3k and specify ***polar*** coordinates.
+
++---------------------------------+------------------------------------+
+| ***Fig. 16.3k***                | ***Fig. 16.3l Histogram as a       |
+|                                 | circular plot***                   |
+| ***Describe \> Specific \>      |                                    |
+| Histogram\                      |                                    |
+| Then Plot Options \> Y-Axis and |                                    |
+| Coordinates***                  |                                    |
++=================================+====================================+
+| ![](media/image897.pn           | ![](media/image886                 |
+| g){width="2.8561056430446192in" | .png){width="2.7276979440069993in" |
+| height="2.6587325021872266in"}  | height="2.743533464566929in"}      |
++---------------------------------+------------------------------------+
+
+The "trick" of starting the Y-Axis with a negative value in Fig 16.3k,
+gives the "hole" in the circular plot.
+
+There is therefore a series of steps to constructing a circular plot in
+R-Instat. They could be avoided through using a special function, such
+as ***rose.diag*** in the circular package. One reason for continuing
+with the ggplot graphs is the ease with which multiple plots (facets)
+can be constructed.
+
+This is illustrated by examining whether there are obvious differences
+in the pattern of the wind directions at different times of the day.
+
+Use ***Prepare \> Column: Calculate \> Calculations***, with the
+***Dates*** keyboard, Fig. 16.3m and the ***hour*** key.
+
+Check the calculation by using the ***Try button***, Fig. 16.3m and save
+the result into a variable called ***hour***.
+
++--------------------------------+-------------------------------------+
+| ***Fig. 16.3m Making an hour   | ***Fig. 16.3n Making a 3-hour       |
+| variable***                    | variable***                         |
+|                                |                                     |
+| ***Prepare \> Column:          | ***Prepare \> Column: Calculate \>  |
+| Calculate \> Calculations***   | Calculations***                     |
++================================+=====================================+
+| ![](media/image888.pn          | ![](media/image91                   |
+| g){width="2.794021216097988in" | 7.png){width="3.1914271653543307in" |
+| height="3.2234055118110234in"} | height="3.2890627734033244in"}      |
++--------------------------------+-------------------------------------+
+
+The hour variable is from 0 (midnight) to 23 (11pm). This can be used to
+give 24 plots, one for each hour. This is unnecessarily detailed, so
+combine the hours into blocks of 3. There are many ways this can be done
+in R-Instat. We choose the calculator again, with the DIV function,
+which is given by %/% in R and is on the Logical keyboard, Fig. 16.3n.
+
+The formula: ***threehour \<- (hour %/% 3)*** gives the values 0, 0, 0,
+1, 1, 1,...,8,8,8 so multiplying by 3 and adding 1 gives the middle hour
+of each 3-hour period as shown in Fig. 16.3n.
+
+***Right-click*** and make the resulting variable into a ***factor***.
+Then return to the ***histogram dialogue, Plot Options*** and use this
+variable as a ***facet***, Fig. 16.3o. Also change the ***Y-axis
+limits*** to ***-600 to 600***.
+
++-------------------------+--------------------------------------------+
+| ***Fig. 16.3o***        | ***Fig. 16.3p Circular histogram with      |
+|                         | facets***                                  |
+| ***Describe \> Specific |                                            |
+| \> Histogram\           |                                            |
+| Plot Options \> Facets  |                                            |
+| and Y-axis***           |                                            |
++=========================+============================================+
+| ![](m                   | ![](media                                  |
+| edia/image901.png){widt | /image882.png){width="3.889770341207349in" |
+| h="2.160592738407699in" | height="2.695122484689414in"}              |
+| height                  |                                            |
+| ="2.357010061242345in"} |                                            |
++-------------------------+--------------------------------------------+
+
+The resulting graph is shown in Fig. 16.3p. There is no obviously
+consistent pattern for different times of the day.
+
+The next step is to summarise the hourly data to a daily basis. To
+enable this, use the ***Climatic \> Dates \> Make Date*** dialogue, Fig.
+16.3q to make a Date column from the date-time column.
+
++-----------------------------------+-----------------------------------+
+| ***Fig. 16.3q***                  | ***Fig. 16.3r Defining a variable |
+|                                   | as circular***                    |
+| ***Climatic \> Dates \> Make      |                                   |
+| Date***                           | ***Prepare \> Column: Define \>   |
+|                                   | Circular***                       |
++===================================+===================================+
+| ![](media/image883.               | [The new dialogue when            |
+| png){width="2.9268219597550305in" | ready]{.mark}                     |
+| height="3.5730719597550307in"}    |                                   |
++-----------------------------------+-----------------------------------+
+
+Now use the ***Prepare \>Column: Define \> Circular*** to set the ***wd
+variable*** as ***circular, Fig 16.4r***.
+
++---------------------------------+------------------------------------+
+| ***Fig. 16.4s Calculating       | ***Fig. 16.4t***                   |
+| circular summaries***           |                                    |
+|                                 |                                    |
+| ***Prepare \> Column: Reshape   |                                    |
+| \> Summarise***                 |                                    |
++=================================+====================================+
+| ![](media/image892.p            | ![](media/image855                 |
+| ng){width="2.861185476815398in" | .png){width="3.2525437445319336in" |
+| height="2.8767071303587053in"}  | height="1.0542038495188102in"}     |
++---------------------------------+------------------------------------+
+|                                 | ![](media/image851                 |
+|                                 | .png){width="3.2090365266841645in" |
+|                                 | height="1.2806244531933508in"}     |
++---------------------------------+------------------------------------+
+|                                 | ![](media/image86                  |
+|                                 | 7.png){width="3.264692694663167in" |
+|                                 | height="0.9643383639545057in"}     |
++---------------------------------+------------------------------------+
+
+Then use the ***Prepare \> Column: Reshape \> Column Summaries, Fig
+16.4s*** to give the ***circular mean and standard deviation,*** Fig.
+16.4t. One complication is that there are missing values in these data.
+We choose, in Fig. 16.4t, to allow up to 3 missing hours in the day.
+
+The resulting data frame has 2731 rows (days) of data, Fig. 16.4u. The
+summary in Fig. 16.4uhas a few missing daily values, when less than 21
+hours are available.
+
+  --------------------------------------------------------------------------------------------
+  ***Fig. 16.3u***                                       ***Fig. 16.3v***
+  ------------------------------------------------------ -------------------------------------
+  ![](media/image862.png){width="2.6617049431321087in"   
+  height="3.3775021872265967in"}                         
+
+  --------------------------------------------------------------------------------------------
+
+  ----------------------------------- ------------------------------------------------------
+                                      ![](media/image843.png){width="2.9924245406824146in"
+                                      height="2.9322222222222223in"}
+
+  ----------------------------------- ------------------------------------------------------
+
+The obvious extension of this plotting is to consider the seasonality,
+e.g. to produce the plot on a monthly basis. This is left largely as a
+challenge[^57]. This produces the plot in Fig. 16.3u. This shows the
+predominant wind direction is consistent in each month, but some have an
+indication of bimodality.
+
+  -----------------------------------------------------------------------
+  ***Fig. 16.3u***
+  -----------------------------------------------------------------------
+  ![](media/image849.png){width="6.120766622922135in"
+  height="2.369372265966754in"}
+
+  -----------------------------------------------------------------------
+
+[Discuss further once it is easy to have percentages and proportions in
+histograms.]{.mark}
+
+## Wind roses
+
+In this section we consider graphs of the wind speed and the wind
+direction together. This is simpler, because of the special wind-rose
+dialogue using the R clifro package. [(reference)]{.mark}.
+
+The steps in the previous section are followed. First, produce a single
+wind rose of the two columns, wind speed (ws) and direction (wd)
+together using the hourly data.
+
+Use ***Climatic \> Describe \> Wind Speed/Direction \> Wind Rose***,
+Fig. 16.4a. Ignore the Windrose Options to investigate the default
+results from the hourly data.
+
++-------------------------------+--------------------------------------+
+| ***Fig. 16.4a Default wind    | ***Fig. 16.4b Default wind-rose***   |
+| rose***                       |                                      |
+|                               | ***(5 wind speeds, colours: Blues,   |
+| ***Climatic \> Describe \>    | Theme: Minimal)***                   |
+| Wind \> Wind Rose***          |                                      |
++===============================+======================================+
+| ![](media/image866.png)       | ![](media/image                      |
+| {width="2.7000404636920385in" | 853.png){width="3.279529746281715in" |
+| height="2.970044838145232in"} | height="2.730269028871391in"}        |
++-------------------------------+--------------------------------------+
+
+Many wind roses will be produced, so a useful step is to fix on a
+suitable colour scheme and theme for the graphs.
+
+Return to the dialogue and choose ***Windrose Options***, Fig. 16.4c.
+This shows that 12 is the default number of directions for the graph --
+lucky for us as the wd1 variable has 36 distinct values. Change the
+theme to Classical. Then choose the Colours tab and try Red-Yellow-Blue.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.4c Windrose Options***                     ***Fig. 16.4d***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](media/image839.png){width="2.305673665791776in"   ![](media/image844.png){width="3.5765726159230096in"
+  height="2.826534339457568in"}                         height="2.8056999125109363in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+The resulting wind rose is in Fig. 16.4e. Changing the theme to linedraw
+(Fig. 16.4c) and the colours to Qualitative \> Dark2 gives Fig. 16.4f.
+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.4e***                                     ***Fig. 16.4f***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](media/image352.png){width="2.99290791776028in"   ![](media/image348.png){width="2.940764435695538in"
+  height="2.7942268153980754in"}                       height="2.7876476377952755in"}
+
+  ----------------------------------------------------------------------------------------------------------
+
+It is easy to add facets, and Fig. 16.4g shows the windspeeds and
+directions at different times of the day.
+
++-----------------------------------------------------------------------+
+| ***Fig. 16.2g Time of day as facets***                                |
+|                                                                       |
+| ***Climatic \> Describe \> Wind Speed/Direction \> Wind Rose -        |
+| three-hour as facet and 4 columns***                                  |
++=======================================================================+
+| ![](media/image340.png){width="6.1262849956255465in"                  |
+| height="2.9776224846894137in"}                                        |
++-----------------------------------------------------------------------+
+
+As in the previous section, the data are now summarised to a daily
+basis. This uses ***the Prepare \> Column: Reshape \> Column
+Summaries*** dialogue. We add the daily values of both the mean wind
+speed and the maximum speed in the 24 hours to the daily data frame.
+
+The daily data are shown in Fig. 16.4h.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.4h***                                       ***Fig. 16.4i***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image337.png){width="3.3471358267716536in"   ![](media/image342.png){width="2.649762685914261in"
+  height="3.201608705161855in"}                          height="2.5432163167104114in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+  ***Fig. 16.4j***
+  -----------------------------------------------------------------------
+  ![](media/image341.png){width="6.124628171478565in"
+  height="2.3491535433070867in"}
+
+  -----------------------------------------------------------------------
+
+## More displays for circular data
+
+The wind roses, shown in Section 16.4 are essentially stacked histograms
+round a circle. As such they remain largely a circular plot, showing the
+wind direction and something of the wind speeds. If more detail is
+needed on the wind speeds, then boxplots may be useful. If necessary,
+they can also be displayed round a circle as is shown below.
+
+The daily data from the previous section are used again. The 12
+directions used in Section 16.4 seem appropriate, so these are
+constructed. These are 30 degrees per category, and the only
+complication is that the first category is conveniently 345 to 15
+degrees. This is therefore a 2-step process. The first step uses the
+***Prepare \> Factor \> Recode Numeric*** dialogue, Fig. 16.5a. The 14
+break points are:
+
+-1, 15, 45,75, 105, 135, 165, 195, 225, 255, 285, 315, 345, 361
+
+This gives a factor column with 13 levels (not 12!). The second step is
+to use ***Prepare \> Column: Factor \> Recode Factor*** to combine the
+first and last levels. In Fig. 16.5b make the new first label into (345,
+15\] and do the same to the last level. Give the new column a sensible
+name, Fig. 16.5b.
+
+If you prefer, then relabel each level in Fig. 16.5b to indicate the
+middle angle of that group, namely 0, 30, 60, 90,... , 0. Or you could
+use directions, i.e. N, NNE, etc.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.5a***                                       ***Fig. 16.5b***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image338.png){width="2.9411942257217847in"   ![](media/image353.png){width="2.9109405074365706in"
+  height="2.2323447069116362in"}                         height="2.239504593175853in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+Check, using ***Right-Click \> Levels/Labels*** that the new Direction
+variable has 12 levels.
+
+Use ***Describe \> Specific \> Boxplot***, Fig. 16.5c, to get a boxplot
+of the wind speeds by these 12 directions.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.5c***                                       ***Fig. 16.5d Maximum daily wind speeds, by
+                                                         direction***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image339.png){width="2.5343930446194225in"   ![](media/image346.png){width="3.4517311898512686in"
+  height="2.976563867016623in"}                          height="3.5370078740157482in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+In Fig. 16.5c make the boxplots of variable width, so the width of each
+boxplot indicates the relative frequencies of each wind direction. One
+small problem in Fig. 16.5d is that the missing values are included as a
+13^th^ category. Use ***Right-Click \> Filter*** (or ***Data Options***
+in the Boxplot dialogue) to omit the missing values in the wind speed
+column and repeat the boxplot. At the same time you may wish to use
+***Plot Options \> Coordinates*** to make this into a circular plot,
+Fig. 16.5e.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.5e***                                       ***Fig. 16.5f***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image315.png){width="2.9485433070866143in"   ![](media/image324.png){width="2.9764621609798776in"
+  height="2.9555708661417324in"}                         height="2.958765310586177in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+There are alternative displays, from the Describe \> Specific \> Boxplot
+dialogue. Fig. 16.5f shows a violin plot(essentially a density plot
+instead of the boxplot[^58].
+
+Fig. 16.5g, shows the boxplot without the red outliers of Fig. 16.5e,
+while Fig. 16.5h adds the jittered points to the diagram.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.5g***                                      ***Fig. 16.5h***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](media/image311.png){width="2.992658573928259in"   ![](media/image302.png){width="2.977374234470691in"
+  height="2.9998425196850396in"}                        height="2.988058836395451in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+Usually it will be informative to have a set of graphs to investigate a
+further factor at the same time. These are usually the seasonality, or
+the station. Fig. 16.5i shows the data for the mean daily windspeed
+(rather than the maximums, shown above) for each month.
+
+  -----------------------------------------------------------------------
+  ***Fig. 16.5i***
+  -----------------------------------------------------------------------
+  ![](media/image333.png){width="6.155880358705162in"
+  height="2.937444225721785in"}
+
+  -----------------------------------------------------------------------
+
+Fig. 16.5i shows the data as linear plots and Fig. 16.5j as circular
+plots. We invite you to compare the two displays. The wind direction
+data are circular, so perhaps Fig. 16.5j is the more natural display.
+But, for some readers we suggest the comparisons between the months seem
+easier to make from Fig. 16.5i.
+
+  -----------------------------------------------------------------------
+  ***Fig. 16.5j***
+  -----------------------------------------------------------------------
+  ![](media/image313.png){width="6.137919947506561in"
+  height="2.27128937007874in"}
+
+  -----------------------------------------------------------------------

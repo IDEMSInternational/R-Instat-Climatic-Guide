@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Tailored Products – R-Instat Climatic Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" rel="next">
+<link href="./Chapter_6_Preparing_summaries.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter_7_Tailored_Products.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R-Instat Climatic Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_1_About_this_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About this guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_2_More_Practice_with_RInstat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">More Practice with R-Instat</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_3_Using_RInstat_effectively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_4_Getting_the_data_into_shape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_5_Quantity_and_quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_6_Preparing_summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_7_Tailored_Products.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_9_Gridded_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gridded Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_10_Comparing_Data_from_Different_Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing Data from Different Sources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_11_Drawing_Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_12_Extremes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_14_The_Seasonal_forecast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_16_Withinday_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_17_Circular_data_and_wind_roses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_18_Temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_19_Drought_Indices__SPI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_20_Climate_Normals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_21_Various.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_22_References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_23_Index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Index</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">8.1</span> Introduction</a></li>
+  <li><a href="#getting-ready" id="toc-getting-ready" class="nav-link" data-scroll-target="#getting-ready"><span class="header-section-number">8.2</span> Getting ready</a></li>
+  <li><a href="#start-of-the-rains" id="toc-start-of-the-rains" class="nav-link" data-scroll-target="#start-of-the-rains"><span class="header-section-number">8.3</span> <strong>Start of the rains</strong></a></li>
+  <li><a href="#the-end-and-length" id="toc-the-end-and-length" class="nav-link" data-scroll-target="#the-end-and-length"><span class="header-section-number">8.4</span> The end and length</a></li>
+  <li><a href="#coping-with-censored-and-missing-data" id="toc-coping-with-censored-and-missing-data" class="nav-link" data-scroll-target="#coping-with-censored-and-missing-data"><span class="header-section-number">8.5</span> Coping with censored and missing data</a></li>
+  <li><a href="#during-the-season" id="toc-during-the-season" class="nav-link" data-scroll-target="#during-the-season"><span class="header-section-number">8.6</span> During the season</a></li>
+  <li><a href="#it-rained-yesterday.-should-i-plant" id="toc-it-rained-yesterday.-should-i-plant" class="nav-link" data-scroll-target="#it-rained-yesterday.-should-i-plant"><span class="header-section-number">8.7</span> It rained yesterday. Should I plant?</a></li>
+  <li><a href="#reduce-risks" id="toc-reduce-risks" class="nav-link" data-scroll-target="#reduce-risks"><span class="header-section-number">8.8</span> Reduce risks</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">8.1</span> Introduction</h2>
+<p>Products by NMSs include regular reports, such as climate normal and 10-day bulletins through the rainy season. It is useful if they also produce “tailored products” that correspond to the specific demands of users.</p>
+<p>In many countries, one such product is the “start of the rains”. This is usually not a single fixed definition but may depend on factors such as the crop being planted and the type of soil. The results in this chapter are mainly based on an analysis of the daily rainfall data.</p>
+<p>In early years on this type of work, e.g.&nbsp;(Stern, Dennett, &amp; Dale, 1982) some researchers questioned the need for the daily (rainfall) data. This was often because sufficient results could be obtained through an analysis of monthly totals supplemented, when needed, with 10-day (dekads) or weekly totals.</p>
+<p>This was partly due to a mis-understanding that the analysis would use the daily values directly. Instead, the daily values are simply used in an initial step to calculate appropriate summaries and these are on a yearly basis. The results are then presented in the same ways as the rainfall totals and total number of rain days in Chapter 6.</p>
+</section>
+<section id="getting-ready" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="getting-ready"><span class="header-section-number">8.2</span> Getting ready</h2>
+<p>One of the examples used in this Chapter is from Moorings in Southern Zambia. This has rainfall data from early 1922. Use <strong><em>Open From Library &gt; Instat &gt; Browse &gt; Climatic &gt; Zambia</em></strong> and open the file called <strong><em>Moorings.rds</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.2a</em></strong></p>
+<p><strong><em>Climatic &gt; Dates &gt; Use Date</em></strong></p></th>
+<th><strong><em>Fig. 7.2b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image562.png" class="img-fluid">{w idth=“2.5082042869641294in” he ight=“3.754517716535433in”}</td>
+<td><img src="media/imag e561.png" style="width:3.49513in;height:3.68764in"></td>
+</tr>
+</tbody>
+</table>
+<p>A feature of Moorings, like many stations in Southern Africa, is that the rainy season is from November to April. (This is roughly the mirror image of the Sahel, where the rains are from May to October.) Hence the year is “shifted” and we choose to start from August, Fig. 7.2a.</p>
+<p>Use the <strong><em>Climatic &gt; Dates &gt; Use Date</em></strong> dialogue, Fig. 7.2a, and complete as shown in Fig. 7.2b. Set the starting month to August.</p>
+<p>The resulting data, after reordering the columns, is shown in Fig. 7.2b.</p>
+<p>In Fig. 7.2b 1<sup>st</sup> March 1922 is given as the season starting in 1921. The year variable has also been given as a factor, to emphasise it is the 1921-1922 season. The variable s_doy (shifted day of year) is 214 on 1<sup>st</sup> March. It is the day number in the season starting from 1<sup>st</sup> August as day 1.</p>
+<p>Finally, in Fig. 7.2b, there seems nothing different about the <strong><em>month</em></strong> variable. But <strong><em>right-click</em></strong> on the column and choose <strong><em>Levels/Labels</em></strong>, Fig. 7.2c. This shows, Fig. 7.2d, that the months are now labelled from August, so all tables and graphs will now appear from August to July, rather than from January to December. <strong><em>Close</em></strong> the <strong><em>Levels/Labels</em></strong> dialogue.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.2c Choose Levels/Labels</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.2d Factor levels start from August</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image556.png" style="width:2.12964in;height:2.97015in"></td>
+<td style="text-align: left;"><img src="media/image560.png" style="width:3.15733in;height:2.95211in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now use the <strong><em>Climatic &gt; Define Climatic Data</em></strong> dialogue.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.2e Define Moorings as climatic</em></strong></p>
+<p><strong><em>Climatic &gt; Define Climatic Data</em></strong></p></th>
+<th><strong><em>Fig. 7.2f The Climatic &gt; Prepare menu</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image557.p ng" style="width:2.62074in;height:3.44835in"></td>
+<td><img src="media/image54 5.png" style="width:3.16862in;height:2.98188in"></td>
+</tr>
+</tbody>
+</table>
+<p>This dialogue should fill automatically, as shown in Fig. 7.2e. Check that the dates define <strong><em>unique rows,</em></strong> Fig. 7.2e, and press <strong><em>Ok</em></strong>.</p>
+<p>We now assume use of the <strong><em>Climatic &gt; Check Data</em></strong> dialogues, described in Chapter 5, and go straight to the <strong><em>Climatic &gt; Prepare</em></strong> menu, Fig. 7.2f<strong><em>.</em></strong> Start with the <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong> dialogue, Fig. 7.2g. Complete it as shown to produce a new variable, called rainday, see Fig. 7.2h, that facilitates the analysis of the number of rain days. A rain day is defined as one with more than 0.85mm. You can choose a different threshold if you wish.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.2g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.2h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image539.png" style="width:2.41476in;height:3.25756in"></td>
+<td style="text-align: left;"><img src="media/image531.png" style="width:3.54285in;height:3.20519in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now use the <strong><em>Climatic &gt; Prepare &gt;</em></strong> <strong><em>Climatic Summaries</em></strong> dialogue, Fig. 7.i</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.2i Getting annual summaries</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p>
+<p><strong><em>Summaries: N not missing and sum</em></strong></p></th>
+<th><p><strong><em>Fig. 7.2j Annual level data frame</em></strong></p>
+<p><strong><em>(Then also just sum for variable raindays)</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image523. png" style="width:2.99177in;height:3.53007in"></td>
+<td><img src="media/image553. png" style="width:2.51092in;height:3.57793in"></td>
+</tr>
+</tbody>
+</table>
+<p>Most of the dialogue, in Fig. 7.2i, should have completed automatically. If not, then either the data frame was not defined as climatic, or you are on the wrong data frame.</p>
+<p>In Fig. 7.2i, include the <strong><em>rain</em></strong> variable. Press the <strong><em>Summaries</em></strong> button and choose just the <strong><em>Number not Missing</em></strong> and the <strong><em>Sum</em></strong>. The result should be a new annual data frame with 3 columns.</p>
+<p>In Fig. 7.2i, change the variable to <strong><em>rainday</em></strong> and this time, just get the <strong><em>sum</em></strong> as the only summary.</p>
+<p>The resulting annual data frame is shown in Fig. 7.2j. The results show, for example, that the 1922/23 season had a total of 853mm from 75 rain days. Further columns will now be added, that give the start of the rains each year, etc.</p>
+</section>
+<section id="start-of-the-rains" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="start-of-the-rains"><span class="header-section-number">8.3</span> <strong>Start of the rains</strong></h2>
+<p>Return to the daily data and use <strong><em>Climatic &gt; Prepare &gt; Start of the Rains</em></strong>, see Fig. 7.2f.</p>
+<p>The dialogue is shown in Fig. 7.3a. If it is not automatically completed as in Fig. 7.2i, then either you did not define the data as climatic (Fig. 7.2e), or you are on the wrong data frame.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.3a Start of the rains dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Start of the Rains</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image537.png" style="width:5.06578in;height:4.63058in"></td>
+</tr>
+</tbody>
+</table>
+<p>This is the first “tailored” product, i.e.&nbsp;there is no fixed definition. What is needed is a definition that corresponds as closely as possible to something used by farmers – perhaps for a specified crop.</p>
+<p>The first decision is the earliest possible planting date. If there were rain in Moorings on 1<sup>st</sup> October it would almost certainly be ignored, because it would probably be followed by a long dry spell.</p>
+<p>As an example, we suggest 15<sup>th</sup> November as the earliest date. Then also 15<sup>th</sup> January as the latest date, i.e.&nbsp;after then it would not be worth planting.</p>
+<p>In Fig. 7.3a, press the Day Range button and complete the sub-dialogue as shown in Fig. 7.3b.</p>
+<p>After returning to Fig. 7.3a change the <strong><em>2 days to 3 days</em></strong> and choose to also <strong><em>save the Date</em></strong> column. Then press <strong><em>Ok</em></strong>. The full definition is then:</p>
+<p><strong><em>Event 1:</em></strong> “The first occasion from 15<sup>th</sup> November with more than 20mm within a 3-day period.”</p>
+<p>The resulting data are in Fig. 7.3c. The Start of the rains dialogue has added 2 more columns to the yearly data frame, one giving the day number (from 1 August) and the other giving the date. In the 1922/23 season the day was 119 or 27 November, while it was also in late November for the following two seasons.</p>
+<p>The start_doy column is used in the further analysis. The start_date column is just to assist interpretation.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.3b</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.3c</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image526.png" style="width:3.08141in;height:2.82925in"></td>
+<td style="text-align: left;"><img src="media/image521.png" style="width:3.01452in;height:3.4613in"></td>
+</tr>
+</tbody>
+</table>
+<p>With the start date, or even with the totals from Section 7.2, you could proceed straight to a PICSA-type graph.</p>
+<p>Use <strong><em>Climatic &gt; PICSA &gt; Rainfall Graph</em></strong>. Include the <strong><em>start_doy</em></strong> variable, and then the <strong><em>PICSA options</em></strong> Fig. 7.3d.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.3d</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.3e Sub-dialogue</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image541.png" style="width:3.00236in;height:2.99703in"></td>
+<td style="text-align: left;"><img src="media/image522.png" style="width:3.01854in;height:2.26012in"></td>
+</tr>
+</tbody>
+</table>
+<p>The sub-dialogue in Fig. 7.3e is used to display the <strong><em>Y-axis</em></strong> as dates, rather than day numbers. Use also the <strong><em>Lines</em></strong> tab to add a line for the mean, and possibly also the <strong><em>X-Axis</em></strong> to untick the angle for the labels. The resulting graph is in Fig. 7.3f.</p>
+<p>The graph shows the mean starting day was 28<sup>th</sup> November. There was just one year with a starting date in January. There were also 10 years where the starting date was on the lower limit of 15<sup>th</sup> November. Perhaps the earliest date should have been even earlier?</p>
+<p>As a small investigation, change the names of the two columns (<strong><em>right-click, Rename</em></strong>). Then use the <strong><em>Climatic &gt; Prepare &gt; Start of the Rains</em></strong> dialogue again, changing the earliest start date to 1<sup>st</sup> November[^36]. The definition is now:</p>
+<p><strong><em>Event 2:</em></strong> “The first occasion from 1<sup>st</sup> November with more than 20mm within a 3-day period.”</p>
+<p>Then the PICSA rainfall graph is run again (unaltered) giving the graph in Fig. 7.3g. The mean is now 9 days earlier.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.3f Start of the rains from 15 November</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.3g Start from 1<sup>st</sup> November</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image546.png" style="width:2.98512in;height:2.32565in"></td>
+<td style="text-align: left;"><img src="media/image547.png" style="width:3.05344in;height:2.33017in"></td>
+</tr>
+</tbody>
+</table>
+<p>There are other components of the Start of the Rains dialogue that can optionally be used. For example, in India a definition (for the Summer monsoon) is of the form:</p>
+<p><strong><em>Event 3:</em></strong> First occasion from 1 June with more than 25mm in 5 days, or which at least 3 days are rainy.</p>
+<p>This uses the Number of Rainy Days checkbox in Fig. 7.3a.</p>
+<p>The third checkbox in Fig. 7.3a is called Dry Spell. Events 1 and 2 can be considered as defining planting opportunities, while if a dry spell condition is added, this might define a successful planting.</p>
+<p><strong><em>Rename</em></strong> the last columns that were produced – so they are not overwritten.</p>
+<p>Then return to the <strong><em>Climatic &gt; Prepare &gt; Start of the Rains</em></strong> dialogue and check the <strong><em>Dry Spells</em></strong> checkbox, Fig. 7.3h. The definition is now:</p>
+<p><strong><em>Event 4:</em></strong> First occasion from 1<sup>st</sup> November with more than 20mm in 3 days, and no dry spell of more than 9-days in the next 3 weeks (21 days).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.3h</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.3i</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image600.png" style="width:2.92363in;height:1.28105in"></td>
+<td style="text-align: left;"><img src="media/image548.png" style="width:3.1585in;height:3.12056in"></td>
+</tr>
+</tbody>
+</table>
+<p>The data resulting from Events 1, 2 and 4 are shown in Fig. 7.3i. They show that in 1965, with Event 2, there was a planting opportunity on 13 November, but that was not successful. The date of the successful planting was 20<sup>th</sup> December.</p>
+<p>There was just one year, namely 1972, where there was no successful planting by the imposed limit of 15 January.</p>
+<p>Event 2 and Event 4 can be compared. Use <strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong> and subtract the date of Event 2 from Event 4, Fig. 7.3j.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.3j Difference from including a dry spell</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Calculate &gt; Calculation</em></strong></p></th>
+<th><p><strong><em>Fig. 7.3k Exceedance graph for 3 definitions</em></strong></p>
+<p><strong><em>Climatic &gt; PICSA &gt; Cumulative/Exceedance graph</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image542.p ng" style="width:2.80739in;height:3.2033in"></td>
+<td><img src="media/image536 .png" style="width:3.14745in;height:3.20676in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are also shown in the last column in Fig. 7.3i. Where the value in this last column is zero the first planting was successful. Otherwise the value shows the delay, before the date of the successful start. Looking down this column, or <strong><em>filtering</em></strong>, or using <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> shows there were 22 non-zero values, a risk of 1 year in 4.</p>
+<p>If this risk is too high, then one way to reduce it, might be to omit the early planting dates and start later. Changing Event4 to start on 15<sup>th</sup> November, and comparing those results with Event 1, changes the risk to 12 years or about 14%.</p>
+<p>Conservation farming is encouraged in Southern Zambia and one component is water conservation, using planting in small hollows. The promoters estimate this gives an extra 3 days, that seedlings could withstand drought. So, keeping to 1 November in Event 4, and changing the 9 days to 12 days could also be considered. This halves the risk, as there are then just 10 years when replanting was needed.</p>
+<p>The data may also be plotted as exceedance graphs, as is shown in Fig. 7.3k for the Events 1, 2 and 4.</p>
+</section>
+<section id="the-end-and-length" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="the-end-and-length"><span class="header-section-number">8.4</span> The end and length</h2>
+<p>A common definition for the end of the rainy season is based on a simple water balance model. This has been adequate in the unimodal stations in West Africa, but has problems with stations, like Moorings in the Southern hemisphere.</p>
+<p>Hence, we first look quickly at a site in Northern Nigeria, before returning to discuss the end and length of the season at Moorings.</p>
+<p>Use <strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic &gt; Nigeria</em></strong> and open the file called <strong><em>Samaru.rds</em></strong>. The data frame called Samaru56t has 56 years of daily data from 1928, Fig. 7.4a.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.4a Samaru daily data</em></strong></p>
+<p><strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic &gt; Nigeria &gt; Samaru.rds</em></strong></p></th>
+<th><p><strong><em>Fig. 7.4b Start of rains for Samaru</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Start of the Rains</em></strong></p>
+<p><strong><em>(Day range from 1 April to 30 June)</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image554.p ng" style="width:2.96934in;height:3.03661in"></td>
+<td><img src="media/image54 3.png" style="width:2.98372in;height:2.0036in"></td>
+</tr>
+</tbody>
+</table>
+<p>This data frame is already defined as climatic, so proceed directly to the <strong><em>Climatic &gt; Prepare &gt; Start of the Rains</em></strong> dialogue.</p>
+<p>These data are from January. In this dialogue, set the earliest date as <strong><em>1st April</em></strong> and the latest as <strong><em>30 June</em></strong>. Use <strong><em>Event 5</em></strong> as shown in Fig. 7.4b:</p>
+<p><strong><em>Event 5</em></strong>: First occasion from <strong><em>1st April</em></strong> with more than <strong><em>20mm in 3 days</em></strong> and no dry spell longer than <strong><em>9 days</em></strong> in the next <strong><em>21 days</em></strong>.</p>
+<p>As in the previous section, get the starting day of year and the corresponding date.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.4c End of rains/Season dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; End of the Rains</em></strong></p>
+<p><strong><em>(Day Range from 15 August to 15 December)</em></strong></p></th>
+<th><p><strong><em>Fig. 7.4d The season length</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Length</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image549.p ng" style="width:2.75298in;height:3.69728in"></td>
+<td><img src="media/image540 .png" style="width:3.01in;height:2.40907in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now use <strong><em>Climatic &gt; Prepare &gt; End of the Rains</em></strong> and complete the dialogue as shown in Fig. 7.4c</p>
+<p>The water balance “model” is like a simple “bucket”. It is empty in the dry season. It is then filled by the rainfall and loses a constant amount of 5mm per day, due to evaporation. The capacity of the bucket, in Fig. 7.4c, is 100mm. Any excess, when the bucket is full, is assumed lost to runoff.</p>
+<p>In the middle of the season (August), the bucket is usually quite full. The end of the season is defined, in Fig. 7.4c, as the first time, after 15<sup>th</sup> August, that the bucket is effectively empty.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 7.4e Samaru summary data</em></strong></th>
+<th><p><strong><em>Fig. 7.4f Time-series graphs</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Line</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image544.p ng" style="width:2.87533in;height:2.70212in"></td>
+<td><img src="media/image5 03.png" style="width:3.27461in;height:2.76851in"></td>
+</tr>
+</tbody>
+</table>
+<p>The length of the season is then, from <strong><em>Climatic &gt; Prepare &gt; Length,</em></strong> simply the difference between the end and the start dates, Fig. 7.4d.</p>
+<p>The resulting annual data are shown in Fig. 7.4e. Various graphs are possible. The time series graph in Fig. 7.4f indicates clearly the smaller inter-annual variability of the end of the season, compared to the start. This graph was produced using <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong>. An alternative would have been the <strong><em>Climatic &gt; PICSA &gt; Rainfall Graph</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.4g Exceedance plots</em></strong></p>
+<p><strong><em>Climatic &gt; PICSA &gt; Cumulative/Exceedance</em></strong></p></th>
+<th><strong><em>Fig. 7.4h Length of the season at Samaru</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image505.png" class="img-fluid"> {width=“2.5142836832895887in” height=“3.160087489063867in”}</td>
+<td><img src="media/image5 08.png" style="width:3.25415in;height:3.21362in"></td>
+</tr>
+</tbody>
+</table>
+<p>An alternative display is with exceedance graphs, Fig. 7.4g. Here the greater steepness of the line for the end of the season, corresponds to the lower variability. The <strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong> can be used to show the standard deviation of the start is about 17 days (over 2 weeks), while it is about 9 days (just over 1 week) for the end of the season.</p>
+<p>Fig. 7.4h shows the length of the season, using the <strong><em>Climatic &gt; PICSA &gt; Rainfall Graphs</em></strong> dialogue. Terciles have been added to show that about 1/3 of the years had a season length of less than 152 days, i.e.&nbsp;5 months, and 1/3 had more than 172 days – almost 6 months.</p>
+<p>Now return to the Moorings data in the Southern hemisphere[^37]. The start was considered in Section 7.3 and we choose the definition 4, i.e. from 1 November, but with no dry spell of more than 12 days. In principle it simply remains to get the end of the season, and then the length, as above.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.4i End of the season dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; End of the Rains</em></strong></p></th>
+<th><strong><em>Fig. 7.4j</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image509.png" class="img-fluid">{wi dth=“2.5004582239720037in” heig ht=“2.9221620734908136in”}</td>
+<td><img src="media/ima ge501.png" style="width:3.62759in;height:2.61828in"></td>
+</tr>
+</tbody>
+</table>
+<p>To illustrate the problem first try the same analysis as for Samaru, Fig. 7.4i. Make the day range 15<sup>th</sup> February to 15<sup>th</sup> June, as the equivalent of 15<sup>th</sup> August to 15<sup>th</sup> December for Samaru. The results are in Fig. 7.4j and a few of the problems are highlighted.</p>
+<p>In some years the season appears to end in February, and sometimes on the precise day (15<sup>th</sup> February) that is the lower limit. This never happened at Samaru as the water balance was always full (or close to full) throughout August. So, August, in the Sahel, has reliable rain. This isn’t the case at Moorings, where there can be a long dry spell at any time in the season.</p>
+<p>We would still prefer to consider issues in February as a problem during the season – which is covered in Section 7.6, - rather than necessarily a very early end of the season.</p>
+<p>In an analysis of 5 stations in Zimbabwe, (Mupamgwa, Walker, &amp; Twomlow, 2011) proposed a different type of definition for the end of the season. This was the <strong><em>last day with more than 10mm</em></strong> between 1 January and 30 June. This type of definition has been added to the <strong><em>Climatic &gt; Prepare &gt; End of the Rains</em></strong> dialogue, Fig. 7.4k.</p>
+<p>For Moorings we have used the last day with more than 10mm up to the end of April, Fig. 4.7k.</p>
+<p>In using this definition some meteorology staff complained that this was clearly the end of the rains and they would prefer the end of the season.</p>
+<p>What is therefore also available in R-Instat is to use the above definition for the end of the rains and then to start the water-balance definition from that date – which is a different date each year. Return to <strong><em>Climatic &gt; Prepare &gt; End of Rains</em></strong>, select the <strong><em>End of Season</em></strong> and then the <strong><em>Day Range</em></strong> again, Fig. 7.4l.</p>
+<p>In Fig. 7.4l choose <strong><em>Variable Day</em></strong> and select the <strong><em>end_rains</em></strong> variable from the summary data. Keep the end date as <strong><em>Fixed Day</em></strong>, and choose 30 June.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.4k</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; End of Rains</em></strong></p></th>
+<th><strong><em>Fig. 7.4l Day Range on End of Rains</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image484.pn g" style="width:2.83286in;height:3.82203in"></td>
+<td><img src="media/image50 2.png" style="width:3.16008in;height:2.92637in"></td>
+</tr>
+</tbody>
+</table>
+<p>Return to the main dialogue, Fig. 7.4m and set as shown. The results are shown in Fig. 7.4n and are more reasonable.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.4m</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.4n</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image512.png" style="width:2.60377in;height:2.94993in"></td>
+<td style="text-align: left;"><img src="media/image511.png" style="width:3.49007in;height:2.43485in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now use <strong><em>Climatic &gt; Prepare &gt; Length of Season</em></strong>, as shown for Samaru in Fig. 7.4d, to give the length.</p>
+<p>The start and end of the season are plotted in Fig. 7.4o. Unlike Samaru, they are approximately equally variable, and each has a standard deviation of just over 2 weeks. The cumulative frequency graph illustrates the same point, with each of the start, end_rains and end_season having roughly equal slopes and with each having a range of about 2 months (i.e.&nbsp;roughly 4 times the standard deviation).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.4o</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.4p</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image515.png" style="width:3.18058in;height:3.05307in"></td>
+<td style="text-align: left;"><img src="media/image516.png" style="width:2.94033in;height:3.04233in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 7.4q plots the season lengths. Here about 1/3 have a length less than 4 months, while the longest third has a duration of five months or more.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.4q</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image442.png" style="width:5.7214in;height:4.00612in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="coping-with-censored-and-missing-data" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="coping-with-censored-and-missing-data"><span class="header-section-number">8.5</span> Coping with censored and missing data</h2>
+<p>Censoring occurs in many areas of application of statistics. The topic is particularly important in the analysis of medical data. There the survival times of patients may be recorded for a study up to 3 years. Those who survive longer are the censored observations. We know the survival is more than 3 years, but don’t know exactly how long.</p>
+<p>In hydrology the height of a river may be measured. At times of flooding the height may be more than the measuring instrument, but the exact value isn’t known.</p>
+<p>In climatology a heavy wind may destroy the measuring equipment. In that case the exact censoring point is unknown, but we do know that a large value occurred.</p>
+<p>There is also possible censoring with the start and end of the season in Sections 7.3 and 7.4.</p>
+<p>To illustrate, use the <strong><em>Climatic &gt; Prepare &gt; Start of the Rains</em></strong> dialogue again, Fig. 7.5a. This time we deliberately choose a small planting window, Fig. 7.5b. The latest planting date is designed to be the date beyond which a farmer would not think it would be sensible to plant for that season. That is not likely to be 30 November, but we choose that early date to illustrate the issue of censoring.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.5a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.5b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image510.png" style="width:3.60635in;height:3.5928in"></td>
+<td style="text-align: left;"><img src="media/image513.png" style="width:2.41252in;height:1.95945in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 7.5a the variable names for the results are also changed, to avoid overwriting the previous variables. The results are in Fig. 7.5c, together with the previous ones. In the 1925/26 season the earliest planting opportunity was 3<sup>rd</sup> January. This is now too late and hence is now given as a missing value. The same is done in the following season when the earliest date was 8<sup>th</sup> December.</p>
+<p>In the subsequent analysis we should examine the number of occasions that planting was not possible. One way is to use the <strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong> dialogue, Fig. 7.5d.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.5c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.5d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image518.png" style="width:3.20001in;height:3.4126in"></td>
+<td style="text-align: left;"><img src="media/image519.png" style="width:2.78995in;height:2.50823in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results, in Fig. 7.5e, indicates there were 17 seasons in which the new starting date was censored. However, the problem is that there was already one season for which the original definition was missing. That was not due to censoring, but because there were also missing values in the first season.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.5e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.5f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image517.png" style="width:3.32002in;height:1.41801in"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>So, there were, 16 years when no planting was possible in November. That is interesting information itself. But the main problem is that the summaries are missing for 2 different reasons, namely either because there were days with missing data, or because planting was not possible, i.e.&nbsp;there was censoring.</p>
+<p>To proceed we fist explain how R-Instat handles missing values, i.e. days when the rainfall was not recorded. There are various options when producing (say) monthly summaries that were discussed earlier. But what happens with the start and end of the rains.</p>
+<p>For the start of the rains the summary is set to missing if any day is missing in the period calculated. For example in Fig. 7.5c the start in 1922/23 was on 27<sup>th</sup> November.</p>
+<ul>
+<li><p>Had any value been missing between 1<sup>st</sup> and 27<sup>th</sup> November 1922, then the result would have been set to missing.</p></li>
+<li><p>If there were a missing day on 1<sup>st</sup> December 1922 the result would be given, i.e.&nbsp;it would not be set to missing, because the rains had already started.</p></li>
+<li><p>One detail is that the result would also be set to missing if either 30<sup>th</sup> or 31<sup>st</sup> October 1922 were missing, because then the 3-day total on 1<sup>st</sup> November cannot be calculated.</p></li>
+</ul>
+<p>The same idea is true for the end of the rains, i.e.&nbsp;if a missing value is encountered in the period when it calculates the end of the rains, then the result is set to missing. Otherwise it is given.</p>
+<p>For the Moorings data there is only one missing day in the record, once it has started in early 1922. This was on 10<sup>th</sup> March 2004. The end of the rains was defined to be last occasion with more than 10mm between 1 January and 30 June. This missing value is within the period, but the calculation has “worked backwards” and found the last day on 23<sup>rd</sup> March 2004. The missing value did not affect this calculation and hence the value is given.</p>
+<p>The calculation is more complicated for the water balance definition. If there are missing water-balance values in the period of calculation, then the summary is set to missing. If the rainfall is ever missing, then the water balance is set to missing. Once the rainfall is no longer missing the water balance may still be missing, because it does not know what the state was, just after the rainfall data resumed. Hence, the analysis is doubled, starting with both a full and an empty balance (i.e.&nbsp;the two extremes). While these are different, the water balance is still set to missing. Once they are the same, the water balance calculation resumes.</p>
+<p>These decisions on missing values are strict and some users may feel that a single missing day should not set the summary for that year, or season, to be missing. In that case consider infilling the data, discussed in chapter <mark>xxx</mark>.</p>
+<p>We now return to the censoring problem. Return to the <strong><em>Climatic &gt; Prepare &gt; Start of the Rains</em></strong> dialogue in Fig. 7.5a and tick the third option for saving columns, called <strong><em>Occurrence</em></strong>. This adds a logical column to the summaries that can be used to distinguish between missing and censored seasons.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong><em>Fig.7.5g</em></strong> <strong><em>Fig. 7.5h</em></strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><mark>To be continued once status variable sorted.</mark></p>
+</section>
+<section id="during-the-season" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="during-the-season"><span class="header-section-number">8.6</span> During the season</h2>
+<p>This section considers examples of risks during the rainy season.</p>
+<p>Chapter 6 examined rainfall totals and rain days throughout the year. Now they are examined for the season.</p>
+<p>The simplest is to consider fixed periods. At Moorings the rainy season is from November to April. Use <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong>, as shown in Fig. 7.6a.</p>
+<p>In Fig. 7.6a press <strong><em>Summaries</em></strong> and choose just the <strong><em>N non-missing</em></strong> and the <strong><em>Sum</em></strong>. Click on <strong><em>Day Range</em></strong> and choose <strong><em>1 November to 30 April</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.6a Summaries for Moorings</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p></th>
+<th><p><strong><em>Fig. 7.6b Rename the resulting columns</em></strong></p>
+<p><strong><em>Right-click &gt; Rename Column</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image514.p ng" style="width:2.83063in;height:3.03142in"></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image520 .png" style="width:3.15657in;height:2.16951in" class="figure-img"></p>
+<figcaption>C:\Users\ ROGERS~1\AppData\Local\Temp\S NAGHTML59463e8.PNG</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>Once run, change the <strong><em>rain</em></strong> variable in Fig. 7.6a, to <strong><em>raindays,</em></strong> and this time just get the <strong><em>Sum</em></strong>. You may have found that the variables overwrote the ones produced earlier for the full year. To ensure this does not happen in the future, rename the 3 columns, Fig. 7.6b. It is also useful to add an explanatory label as shown in Fig. 7.6b.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.6c Day Range sub-dialogue</em></strong></p>
+<p><strong><em>From Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p></th>
+<th><strong><em>Fig. 7.6d Main climatic summaries dialogue</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image476.p ng" style="width:2.88212in;height:2.30841in"></td>
+<td><img src="media/image474. png" style="width:2.9965in;height:2.28385in"></td>
+</tr>
+</tbody>
+</table>
+<p>The totals can also be calculated for the rainy season each year. Return to the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue. Use the <strong><em>rain</em></strong> variable and then press <strong><em>Day Range</em></strong>. Complete as shown in Fig. 7.6c, where the total is now from the <strong><em>start doy</em></strong> to the <strong><em>end-season</em></strong>. This is confirmed on the <strong><em>return</em></strong> to the main dialogue, Fig. 7.6d.</p>
+<p>In Fig. 7.6d click on Summaries and choose the Count Non Missing and the Sum. Once produced, <strong><em>right-click</em></strong> and <strong><em>rename</em></strong> the Sum variable as <strong><em>rainSeason</em></strong>. The <strong><em>Count Non Missing</em></strong> column is now the season length. This is another way to get the length!</p>
+<p>A third possibility is to produce the total (or the number of rain days) for a fixed period following the start. Return once more to the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> and change the <strong><em>Day Range</em></strong> as indicated in Fig. 7.6e, i.e.&nbsp;for <strong><em>120 days from the start</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.6e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.6f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image472.png" style="width:3.06766in;height:2.31779in"></td>
+<td style="text-align: left;"><img src="media/image469.png" style="width:2.92924in;height:2.88679in"></td>
+</tr>
+</tbody>
+</table>
+<p>This would be for a 120-day crop. The approximate water requirement of many crops is known, so the results are the first step in calculating the risks of not having enough water for a specified (20 day) crop in the period following planting.</p>
+<p>The summary columns produced are shown in Fig. 7.6f.</p>
+<p>The results are presented as exceedance probabilities in Fig. 7.6g and as time series in Fig. 7.6h.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.6g Exceedance graphs of rainfall totals</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.6hTime-series graphs</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image468.png" style="width:2.96572in;height:2.8693in"></td>
+<td style="text-align: left;"><img src="media/image470.png" style="width:2.9133in;height:2.893in"></td>
+</tr>
+</tbody>
+</table>
+<p>The three totals are sufficiently similar that plotting the 3 lines on a single time-series graph in Fig. 7.6h would be confusing, so they are plotted as facets[^38]….</p>
+<p>The same ideas are now considered for spell lengths. In the tropics, drought is a problem and hence we consider the occurrence of long dry spells. The same dialogue could equally be used for hot, or cold, spells in temperature data, etc.</p>
+<p>The simplest is to find the longest spell length within the main months of the rainy season. Continuing with the Moorings data, use <strong><em>Climatic &gt; Prepare &gt; Spells</em></strong>, Fig. 7.6i.</p>
+<p>Use the Day Range sub-dialogue to specify <strong><em>January 1 to March 31</em></strong> as the range of days. The results, shown in Fig. 7.6j give the longest dry-spell length within this 3-month period. It shows the longest number of consecutive days with rain less than 0.85mm on any day.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.6i Spells dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Spells</em></strong></p>
+<p><strong><em>(Day range from January 1 to March 31)</em></strong></p></th>
+<th><p><strong><em>Fig. 7.6j Spell lengths Jan-Mar &amp; Apr</em></strong></p>
+<ul>
+<li></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image46 4.png" style="width:3.3136in;height:3.70842in" class="figure-img"></p>
+<figcaption>C:\User s\ROGERS~1\AppData\Local\Temp<br>
+9f3a1.PNG</figcaption>
+</figure>
+</div></td>
+<td><img src="media/image460.png" style="width:2.80591in;height:3.26927in"></td>
+</tr>
+</tbody>
+</table>
+<p>To clarify the results, use <strong><em>Climatic &gt; Check Data &gt; Display Daily</em></strong>[^39]. Data for 4 early years are in Fig. 7.6k to be compared with the results in Fig. 7.6j.</p>
+<p>In Fig. 7.6j the longest spell in 1924 is 19 days. Fig. 7.6k shows that this is a spell from 13<sup>th</sup> February to 2<sup>nd</sup> March. In 1925 the longest spell was just 6 days and was at the end of March. This included days with small rainfalls, but each was lower than the 0.85mm threshold.</p>
+<p>The 7-day spell in 1926 was also at the end of March. In 1927 there was also a long dry spell (14 days) at the end of March, and this also shows that just the longest spell is given. That year also had 13 consecutive dry days in January. If more detail is needed, then the three months could be considered individually.</p>
+<p>It sometimes causes confusion that the longest spell in a month can be longer than the month itself. We illustrate by calculating the longest spell length in April. The results are also given in the last column in Fig. 7.6j. They show that the longest dry spell in April 2024 was 43 days. This is confirmed from Fig. 7.6k, because 1<sup>st</sup> April 2024 “inherited” a dry spell from March, of 13 days, i.e.&nbsp;from 19<sup>th</sup> March. So, 1<sup>st</sup> April was already the 14<sup>th</sup> consecutive dry day and this had become 43 days by the ned of April. There is an option in the dialogue if you only wish to consider April itself. This option is used in Section 7.7.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.6k Data for January to April for 4 years</em></strong></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image467.png" style="width:1.41809in;height:3.5316in"></td>
+<td><img src="media/image462.png" style="width:1.46057in;height:3.55557in"></td>
+<td><img src="media/image504.png" style="width:1.56068in;height:3.60442in"></td>
+<td><img src="media/image482.png" style="width:1.34859in;height:3.43078in"></td>
+</tr>
+</tbody>
+</table>
+<p>As with the rainfall totals, it is sometimes useful to find the longest dry spell in the rainy season, (i.e.&nbsp;between the day of the start and the end) or in part of the season. As with the rainfall totals this uses the start and end dates each year. In the <strong><em>Climatic &gt; Prepare &gt; Spells</em></strong> dialogue, change the day range as was shown for the rainfall totals in Fig. 7.6c and Fig. 7.6e.</p>
+<p>Fig. 7.6l shows the results for the season, i.e.&nbsp;between the date of the start of the rains and the end of the season. The median value for the longest spell length is 14 days (2 weeks). The terciles are also given, showing that one year in 3 has a longest spell length of 12 days or less. But also a third of the years has a spell length of 18 days or more.</p>
+<p>Fig. 7.6m shows the longest spell lengths for the 120 days following planting. The results are similar, but without the longest spells shown in Fig. 7.6l.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.6l Longest dry-spell in the season</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.6m Longest spell in the first 120 days</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image480.png" style="width:3.01745in;height:3.05955in"></td>
+<td style="text-align: left;"><img src="media/image478.png" style="width:3.04182in;height:3.04182in"></td>
+</tr>
+</tbody>
+</table>
+<p>Many crops are particularly sensitive to dry spells during the flowering period. This is typically about 20 days (3 weeks). Suppose a crop that reaches the start of flowering 50 days after planting. Calculating the risk is currently a 2-stage process in R-Instat. First produce the new column, for the start of flowering, Fig. 7.6n. This is an instance where you can also transform the start_date as is shown in Fig. 7.6o.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.6n Calculate the start of flowering</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Calculate &gt; Calculation</em></strong></p></th>
+<th><strong><em>Fig. 7.6o</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image477. png" style="width:2.9459in;height:3.30876in"></td>
+<td><img src="media/image475 .png" style="width:2.89862in;height:3.2564in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting data are in Fig. 7.6p. The <strong><em>flower_date</em></strong> variable shows that the flowering period often starts late in December or in early January, but it is occasionally also in February.</p>
+<p>The <strong><em>Climatic &gt; Prepare &gt; Spells</em></strong> dialogue is now used from the <strong><em>start_flower</em></strong> day for <strong><em>20 days</em></strong>. The resulting variable is also shown in Fig. 7.6p and is seen often to be quite short. For example, the longest spell from early 2024 for the next few years is usually just 2 or 3 consecutive dry days.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.6p</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.6q</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image481.png" style="width:2.97498in;height:2.52035in"></td>
+<td style="text-align: left;"><img src="media/image483.png" style="width:2.92717in;height:2.89352in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are plotted in Fig. 7.6q using <strong><em>Climatic &gt; PICSA &gt; Rainfall Graph</em></strong> again. Only in 1/3 of the years is there a dry spell of one week or more. However, in 13 of the 77 years, i.e.&nbsp;one year in six, there was a dry spell of 10 days or more.</p>
+<p>The graph in Fig. 7.6q is from a variable date. In a particular year, once you know the planting date, or also from crops that are photoperiod sensitive, the dates are fixed. Once calculated, if the risk is high, then perhaps remedial action can be taken, such as planning for some irrigated water to be available for this period.</p>
+<p>A third aspect that can cause a problem during the season is a climatic extreme. This may be drought, as considered in the dry spells above. It could also be an extreme wind, or excessive rainfall causing flooding. Extremes are considered in detail in Chapter 11, hence only a single example is given here.</p>
+<p>A question posed in relation to rainfall in Niger, was the risk of more than 100m rain within a 3-day period. The argument was that while a single day with more than 100mm would be a problem, so would, say 40mm, on each of 3 days.</p>
+<p>Three day running totals were already used “behind the scenes” in calculating the start of the rains. Now these totals are needed explicitly. Use <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong>, as shown in Fig. 7.6r.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.6r Transform dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Transform</em></strong></p></th>
+<th><strong><em>Fig. 7.6s Resulting data totalled over 3 days</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image479.pn g" style="width:2.76554in;height:3.63142in"></td>
+<td><img src="media/image4 71.png" style="width:3.2882in;height:3.08744in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting daily data, in Fig. 7.6s, show an instance in February 1923 where the total is more than 100mm.</p>
+<p>Now the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue may be used again, as shown in Fig. 7.6t. The summaries are from <strong><em>January to March</em></strong> and the only summary is the <strong><em>Maximum</em></strong>, Fig. 7.6u.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.6t</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.6u Just get the maximum</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image473.png" style="width:2.9062in;height:3.15847in"></td>
+<td style="text-align: left;"><img src="media/image439.png" style="width:2.5901in;height:2.91316in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting summary data can now be plotted as shown in Fig. 7.6v and Fig. 7.6w. From Fig. 7.6w there is 100mm or more in about 4 years in 10.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.6v Time series of 3-day extremes</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.6w Cumulative distribution</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image441.png" style="width:3.25255in;height:3.24878in"></td>
+<td style="text-align: left;"><img src="media/image459.png" style="width:2.59782in;height:3.46376in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="it-rained-yesterday.-should-i-plant" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="it-rained-yesterday.-should-i-plant"><span class="header-section-number">8.7</span> It rained yesterday. Should I plant?</h2>
+<p>For Moorings, in Zambia, the definition for the start of the rains was the first occasion from 1 November with more than 20mm in 3 days.</p>
+<p>For successful planting the condition was added that there should not be a dry spell of more than 9 (consecutive) dry days in the next 21 days. In Section 7.3 the two columns (with and without the dry-spell condition) were compared, showing that replanting would be needed in 1 year in 4.</p>
+<p>That is an overall risk, because sometimes a planting opportunity was early and in other years there was no opportunity until December. If the data are examined more closely, they show that planting was possible by 6<sup>th</sup> November in 14 of the years. However, replanting was needed (i.e. the dry spell condition wasn’t satisfied) in 7 of these years. That is a risk of 1 year in 2 when very early planting was possible. Perhaps 1<sup>st</sup> November is too early to consider planting, unless you are willing to entertain the high risk.</p>
+<p>This question can be turned around. Suppose, in a particular year, there is a potential planting date on 7<sup>th</sup> November. What is the risk from planting then?</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.7aDry spell risk after planting</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.7b Result from 8 Nov and 8 Dec</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image454.png" style="width:2.88158in;height:3.39374in"></td>
+<td style="text-align: left;"><img src="media/image434.png" style="width:2.83089in;height:3.41229in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 7.7a the <strong><em>Day Range</em></strong> is from 8 November for 21 days. Another change is that 7<sup>th</sup> November is assumed to be rainy, i.e.&nbsp;not in a dry spell. So, the <strong><em>checkbox “Assume condition not satisfied at the start”</em></strong> is ticked.</p>
+<p>The results, in Fig. 7.7b indicate that planting early is quite risky. Four years have a dry spell of 10 days or more, even in the few years shown in Fig. 7.7b. If you change the dates in Fig. 7.7a by a month, then the same analysis shows just a single year now gives a problem. Interestingly that year was not a problem with the early planting.</p>
+<p>Summarising the two columns[^40] shows 32 years, about 1 year in 3, had a dry spell of more than 9 days with the early planting, compared with just 11 years, or 1 year in 8, from the later planting date</p>
+<p>What we lose on risk from early planting, we potentially gain by having a longer season length. In Section 7.4 the season length was</p>
+<p><strong><em>Length = end_season – start_doy.</em></strong></p>
+<p>The results were shown in Fig. 7.4q and showed that about 1/3 of the years had a season length of less than 4 months, etc. This figure is repeated as Fig. 7.7c</p>
+<p>Now that we know the start is on day 100 (8<sup>th</sup> November) and hence the length is, instead, found from:</p>
+<p><strong><em>Length =</em></strong> <strong><em>end_season – 100</em></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.7c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.7d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image442.png" style="width:3.14457in;height:2.20183in"></td>
+<td style="text-align: left;"><img src="media/image455.png" style="width:2.86213in;height:2.23999in"></td>
+</tr>
+</tbody>
+</table>
+<p>Comparing the information in Fig. 7.7c and 7.7d shows that with early planting, on day 100, there are virtually no years with a season length of less than 4 months. This is compared to 1/3 of the years overall (Fig. 7.7c). The variability is also considerably reduced, because the start is now fixed. The variability is now only because of the uncertainty of the end.</p>
+<p>With this early planting we could therefore perhaps plan for 120-day crop. That would have almost no risk in terms of season length. If the proposed crop needs (say) 600mm of water, we could now find the proportion of years with at least that total. That uses the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue, as shown in Fig. 7.7e.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.7e</em></strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image437.png" style="width:2.25091in;height:2.70109in"></td>
+<td><img src="media/image435.png" style="width:3.58516in;height:2.72005in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting totals can then be examined in various ways. The time-series graph, Fig. 7.7f, is one option. This indicates quite a high risk of less than 600mm. A crop needing only 500mm would have a much lower risk. There are only a few years with much less than 500mm.</p>
+<p>An alternative, with this early planting, could be to aim for a short-duration cereal crop, e.g.&nbsp;90 days and then to try for a short-season legume, that might be planted as the cereal is close to maturity. Fig. 7.7d indicates that this would often have had enough time for fodder, and occasionally would have long enough to mature.</p>
+</section>
+<section id="reduce-risks" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="reduce-risks"><span class="header-section-number">8.8</span> Reduce risks</h2>
+<p>In the previous section risks were calculated relative to a proposed planting date. In this section we examine the seasonal pattern of the risks. This enables a study of the following types of problem.</p>
+<ul>
+<li><p>For Moorings the risk of replanting was about one year in three if planting on 8<sup>th</sup> November. (Assuming replanting is needed if there is a dry spell of 10 days or longer in the following 21 days.) How does this risk depend on the date of planting? Does the risk ever approach zero?</p></li>
+<li><p>For the option of a 120-day crop that needs (say) at least 600mm of water, when would be the best days to plant?</p></li>
+</ul>
+<p>The method is similar for these two – and for other similar problems. For simplicity the 120-day total is considered first. There is no special dialogue, so the analysis proceeds step-by-step.</p>
+<p>First use the <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong> dialogue as shown in Fig. 7.8a. This transforms the rainfall data into 120-day moving totals. The resulting data are shown in Fig. 7.8b after reordering the columns. They show that in the 1922/23 season there was more than 600mm if planting was before 11<sup>th</sup> January.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image461.png" style="width:2.88645in;height:3.5359in"></td>
+<td style="text-align: left;"><img src="media/image463.png" style="width:2.63197in;height:3.3305in"></td>
+</tr>
+</tbody>
+</table>
+<p>These data re now summarised over the years, this time to get a value for each day of the year. This uses the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue, Fig. 7.8c. Use the <strong><em>Within Year</em></strong> option in Fig. 7.8c and complete the dialogue as shown.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image456.png" style="width:3.07124in;height:3.28872in"></td>
+<td style="text-align: left;"><img src="media/image453.png" style="width:2.85434in;height:2.92521in"></td>
+</tr>
+</tbody>
+</table>
+<p>In the Climatic Summaries sub-dialogue use the <strong><em>More</em></strong> tab as shown in Fig. 7.8d.</p>
+<p>This produces a new data frame shown in Fig. 7.8e.</p>
+<p>Repeat the dialogue in Fig. 7.8c, changing the 600mm to 450mm</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image457.png" style="width:2.39581in;height:3.30979in"></td>
+<td style="text-align: left;"><img src="media/image466.png" style="width:3.14726in;height:3.32863in"></td>
+</tr>
+</tbody>
+</table>
+<p>It now just remains to graph the results. This uses the <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong> dialogue, Fig. 7.8f. The results are in Fig. 7.8g[^41].</p>
+<p>In Fig 7.8g the higher (red) line is for 600mm. It shows the minimum risk corresponds to a planting on about 15<sup>th</sup> November and is then about 0.3 (30%). The lower line, for 450mm, is below 1 year in 10, for plantings from 1 November to about 10 December.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig.7.8g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image500.png" style="width:3.54759in;height:3.20014in"></td>
+<td style="text-align: left;"><img src="media/image440.png" style="width:2.57286in;height:3.19533in"></td>
+</tr>
+</tbody>
+</table>
+<p>One improvement in the presentation would be to smooth the lines given in Fig. 7.8g. They are quite smooth already, as there were 88 years of data. With shorter records the need for smoothing becomes greater.</p>
+<p>Moving averages are the simplest way of smoothing. Use <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong> as shown in Fig. 7.8h. This adds the 2 smoothed columns to the data frame.</p>
+<p>Note also that the risks are (of course) very high from March onwards. Hence filter the data on the day of year. The 1<sup>st</sup> March is s_doy = 214.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8i</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8j</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image465.png" style="width:2.93154in;height:2.97971in"></td>
+<td style="text-align: left;"><img src="media/image452.png" style="width:2.99269in;height:3.02322in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 7.8i shows plots of the data together with the smoothed lines. R and hence R-Instat has many other methods of smoothing data. One alternative method is shown below in Fig. 7.8q.</p>
+<p>The same ideas can be used to examine the risks of a long dry spell at different points in the season. We first consider the risk of a dry spell after a planting occasion, i.e.&nbsp;after a rain day. This uses the special <strong><em>Multiple Spells</em></strong> tab in the <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong> dialogue. In Fig. 7.8j the maximum spell length is taken over 21 days, and that can, of course, be changed as required.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8k</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8l</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image438.png" style="width:3.01867in;height:2.38822in"></td>
+<td style="text-align: left;"><img src="media/image430.png" style="width:2.96908in;height:1.91405in"></td>
+</tr>
+</tbody>
+</table>
+<p>The next step, as before, uses the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue, Fig.7.8k to calculate the proportion of years with a dry-spell <strong><em>longer than 9 days</em></strong> in the 21 days, following planting, i.e.&nbsp;to correspond to the default values in the <strong><em>Start of the Rains</em></strong> dialogue.</p>
+<p>Once calculated, repeat the operation with 7 days (for a more sensitive crop) and 12 days, perhaps to correspond to the extra days following a conservation farming strategy.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8m</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8n</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image432.png" style="width:2.58431in;height:3.32186in"></td>
+<td style="text-align: left;"><img src="media/image431.png" style="width:3.18362in;height:3.68719in"></td>
+</tr>
+</tbody>
+</table>
+<p>The data are shown in Fig. 7.8m where, for variety, we have used percentages rather than proportions.</p>
+<p>The dry-spell risks are shown in Fig. 7.8n. They show that, in early November, it is quite advantageous, in terms of risk, to have the 12-days, rather than the 9 days assurance for the dry spells. By early December all 3 curves have “flattened out”, hence there is no point in delaying planting – the risks are not getting lower.</p>
+<p>The messages would be clearer if the data in Fig. 7.8n are smoothed. This can be done in the same way as for the rainfall totals, shown earlier in Fig. 7.8h.</p>
+<p>Many crops are sensitive to a long dry spell round flowering. The calculation is slightly different to the one above, which assumed rain for planting on day zero. This time we need the unconditional risks, i.e.&nbsp;a dry spell might have started before the flowering period and have continued.</p>
+<p>Use the <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong> dialogue again, with the <strong><em>Spell</em></strong> tab, as shown in Fig. 7.8o. Then, with the same dialogue, use the <strong><em>Moving</em></strong> tab, Fig. 7.8p, to get the maximum over 20 days. This assumes that the flowering period is of 20 day’s duration.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 7.8o Ordinary spell lengths</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Transform</em></strong></p></th>
+<th><p><strong><em>Fig. 7.8pMaximum over 20 days</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Transform (again!)</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image428. png" style="width:3.02575in;height:2.94052in"></td>
+<td><img src="media/image433. png" style="width:2.63061in;height:2.99829in"></td>
+</tr>
+</tbody>
+</table>
+<p>The next steps are just as before, i.e.&nbsp;in Fig. 7.8k to Fig. 7.8n. They use the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue to get the percentage of years each day, with a longer dry spell than 7 or 9 days. The resulting percentages are then plotted, as before, using the <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong> dialogue.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8q Adding a loess smoother</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8r</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image427.png" style="width:2.81607in;height:3.24676in"></td>
+<td style="text-align: left;"><img src="media/image429.png" style="width:2.97378in;height:3.62442in"></td>
+</tr>
+</tbody>
+</table>
+<p>This time, for illustration, the smoothing has been done “on the fly”, as additional layers in the plot. Local smoothing has been used with loess, as explained in more detail in Chapter 8.</p>
+<p>The percentages are (as would be expected[^42]) slightly higher in Fig. 7.8r, compared with Fig. 7.8n. They show a minimum risk if the start of the flowering period is towards the end of January.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 7.8s</em></strong></th>
+<th><p><strong><em>Fig. 7.8t Plot the cumulative data</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Line Plot</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image424.png" class="img-fluid">{w idth=“2.312619203849519in” heig ht=“3.1737740594925636in”}</td>
+<td><img src="media/ima ge436.png" style="width:3.28926in;height:2.83853in"></td>
+</tr>
+</tbody>
+</table>
+<p>The final example examines the cumulative rainfall distribution each year, or season. This starts, again, with the <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong> dialogue, this time using the <strong><em>Cumulative</em></strong> button, Fig. 7.8s.</p>
+<p>This adds a column, called cumsum, Fig. 7.8s, giving the accumulated rainfall each year.</p>
+<p>Now use the <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong> dialogue to graph the cumulative data against the day of the year, Fig. 7.8t.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8u Facet sub-dialogue – by year</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8v Filter to choose the first 20 complete years</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image261.png" style="width:2.5613in;height:2.62596in"></td>
+<td style="text-align: left;"><img src="media/image278.png" style="width:3.48061in;height:2.59522in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig 7.8t, use <strong><em>Plot Options</em></strong> to put the different years each in their own graph (facet), Fig. 7.8u. Then use the <strong><em>Data Options</em></strong> button, which is on each dialogue, and is another way to get to the filtering system. Choose the first 20 years of data, Fig. 7.8u as 89 years are too many graphs to show together.</p>
+<p>The resulting graph is in Fig. 7.8w. Each graph starts at zero and rises to the annual (seasonal) total. So, for example 1938-39 was a year with over 1000mm, while 1933-34 had only about half that total.</p>
+<p>Vertical lines, in Fig. 7.8w, correspond to high rainfall and horizontal lines to dry spells. The 1932-33 season looked like a “bumpy year”.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8w Cumulative rainfall for 20 years at Moorings</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image258.png" style="width:6.00661in;height:2.94408in"></td>
+</tr>
+</tbody>
+</table>
+<p>If you remove the facets from the graphs specified in Fig. 7.8t and instead put the year factor in the main dialogue in <strong><em>Factor (Optional)</em></strong>, then the resulting graph is in Fig. 7.8x. This type of display can be useful for monitoring, as you can super-impose the current year. An example is shown below.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8x Single graph of cumulative rainfall (mm).</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8y</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image259.png" style="width:1.863in;height:2.06736in"></td>
+<td style="text-align: left;"><img src="media/image270.png" style="width:4.23175in;height:2.08071in"></td>
+</tr>
+</tbody>
+</table>
+<p>These graphs can be taken further. As an example, in Fig. 7.8y the green lines indicate the start of the rains each year, while the red lines show the date of the end of the season. The early and late starts, and ends, are therefore indicated. A long season is one where the lines are far apart, and so on. We explain, in Chapter 8, how these features can be added.</p>
+<p>Boxplots can alternatively be used to display the cumulative data. A challenge is to plot them at the end of each 10-day period. This is the first example of the use of the <strong><em>dekads</em></strong> in this guide, so return to the <strong><em>Climatic &gt; Dates &gt; Use Date</em></strong> dialogue and complete it as shown in Fig. 7.8z. The year is shifted, so the dekads start in August.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8z</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8aa</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image255.png" style="width:2.38318in;height:2.13536in"></td>
+<td style="text-align: left;"><img src="media/image256.png" style="width:3.59068in;height:2.35815in"></td>
+</tr>
+</tbody>
+</table>
+<p>First get a logical column, which is TRUE on the last day of each dekad, and FALSE otherwise[^43]. This uses the calculator, <strong><em>Prepare &gt; Column: Calculate &gt; Calculations.</em></strong> Complete it as shown in Fig. 7.8aa.</p>
+<p>Now <strong><em>filter</em></strong> so just the rows when the <strong><em>dek_diff</em></strong> variable is TRUE are used. The data are shown in Fig. 7.8 ab.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8ab Filtered for the last day of each dekad</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8ac</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image292.png" style="width:3.21329in;height:2.69555in"></td>
+<td style="text-align: left;"><img src="media/image257.png" style="width:2.82365in;height:2.6776in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now use <strong><em>Describe &gt; Specific &gt; Boxplot</em></strong>, Fig. 7.8ac. The results are in Fig. 7.8ad[^44].</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8ad Boxplots showing the cumulative rainfall at Moorings</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 7.8ae A new year</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image265.png" style="width:4.33254in;height:2.37555in"></td>
+<td style="text-align: left;"><img src="media/image245.png" style="width:1.69586in;height:2.44548in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 7.8ad shows the progression of the cumulative rainfall for the season towards the final totals. These had a median of 800mm, with a minimum less than 500mm and a maximum of well over 1000mm.</p>
+<p>One use of this type of plot is to monitor a new year. As an example, Fig. 7.8ae provides data, where the total has now risen to 340mm by the end of February. This information can now be super-imposed on the boxplots, as shown in Fig. 7.8ae with the blue points[^45]. This example shows a great cause for concern. The totals are very low, compared to the earlier 88 years of data.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 7.8ae Adding the current year to the boxplots</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image250.png" style="width:4.86214in;height:2.72681in"></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter_6_Preparing_summaries.html" class="pagination-link" aria-label="Preparing summaries">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="pagination-link" aria-label="Efficient use of R-Instat and R">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

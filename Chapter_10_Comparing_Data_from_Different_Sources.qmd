@@ -1,0 +1,90 @@
+# Comparing Data from Different Sources
+## Introduction
+
+The satellite and reanalysis data, discussed in Chapter 9, provides a
+wonderful resource that can supplement the historical station data that
+is described in this guide. The satellite data is usually from the early
+1980s, while some of the reanalysis data is from 1950. Table 10.1
+summarises some sources of rainfall data:
+
+  -----------------------------------------------------------------------
+  Table 10.1
+  -----------------------------------------------------------------------
+  ![](media/image115.png){width="6.268055555555556in"
+  height="1.9694444444444446in"}
+
+  -----------------------------------------------------------------------
+
+Some of these products also include other elements, including
+temperatures and ERA5 is for many elements.
+
+These data are already used extensively. However, often users access
+only one type, i.e. either station or satellite/reanalysis. This is
+often either because that is what the researcher is comfortable with, or
+only one type is easily available. We consider here how station and
+satellite data can be compared and then perhaps used together. There are
+a range of possible objectives from these comparisons including the
+following:
+
+a)  The satellite/reanalysis data, from the same location as a ground
+    station, can perhaps be considered as an additional station. As
+    such, perhaps the data can be used to complete, or infill missing
+    values in the station data.
+
+b)  Similarly, perhaps this new (satellite) station could be used to
+    support the quality-control of the station data.
+
+These objectives may be more interesting for countries where there is a
+relatively sparse station network. Where the network is dense,
+neighbouring ground stations may be used for these objectives.
+
+c)  The bonus is that the satellite data does provide a dense network.
+    For example, for CHIRPS the estimated daily rainfall data is on
+    roughly a 5km square, so the equivalent of about 400 (pseudo)
+    stations per square degree. Hence it provides estimated daily
+    rainfall data for the whole of Africa, and beyond with a pseudo
+    station that is always close to any given location.
+
+Comparisons between station and gridded data must recognise that they
+have not measured the same thing. Station data are measured at a point,
+while gridded data represent an area. The size of the area depends on
+the method with an example shown in Fig. 10.1a.
+
+In Barbados, Fig. 10.1a the point shown is a station called Husbands,
+the site of a regional climate centre. CIMH. The largest pixel is for
+the ERA5 reanalysis data and the smallest is for CHIRPS. This figure
+also shows that the pixel in coastal sites can sometimes be largely over
+the ocean and hence a neighbouring pixel may be more relevant.
+
++------------------------------------+---------------------------------+
+| ***Fig. 10.1a Pixel size for 3     | ***Fig. 10.1b Difference        |
+| methods in Barbados***             | between gridded and point data  |
+|                                    | for rainfall***                 |
+|                                    |                                 |
+|                                    | (Figure with permission from H. |
+|                                    | Greatrex)                       |
++====================================+=================================+
+| ![Chart Description automatically  | ![](media/image104.pn           |
+| generated](media/image11           | g){width="2.7712182852143483in" |
+| 2.png){width="3.094673009623797in" | height="2.506793525809274in"}   |
+| height="2.188830927384077in"}      |                                 |
++------------------------------------+---------------------------------+
+
+Fig 10.1b illustrates a reason for possible differences between area and
+point data for rainfall. The sketch shows a cloud, and hence possibly
+rain in part of the pixel, but not at the station in the top left. Hence
+the station may be zero, while the gridded data notes some rain. Thus,
+unless the satellite data are adjusted, we would expect more rain days
+(and potentially less extreme values) than at a point. This feature is
+particularly for rainfall, but may also be shown for other elements,
+such as sunshine hours, where there may be zeros in the data.
+
+The problem that is addressed in this chapter is essentially just the
+comparison of two variables, i.e. 2 columns of data, where the first is
+the station and the second is the satellite, or reanalysis data. This is
+essentially the same problem as in forecasting, where the forecast is
+compared with the actual data. Many of the methods are from software
+that was originally constructed for the forecasting problem.
+
+From a statistical point of view this problem is just the same as
+comparing

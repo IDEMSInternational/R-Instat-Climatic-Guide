@@ -1,0 +1,89 @@
+{
+  "index.qmd": {
+    "index.html": "5eea7dbd"
+  },
+  "intro.qmd": {
+    "intro.html": "6c73654d"
+  },
+  "summary.qmd": {
+    "summary.html": "f25506fb"
+  },
+  "references.qmd": {
+    "references.html": "665fb489"
+  },
+  "Chapter_1__Acknowledgments.qmd": {
+    "Chapter_1__Acknowledgments.html": "245ad8c7"
+  },
+  "Chapter_2__About_this_guide.qmd": {
+    "Chapter_2__About_this_guide.html": "8bd4f299"
+  },
+  "Chapter_1_About_this_guide.qmd": {
+    "Chapter_1_About_this_guide.html": "0b9f6219"
+  },
+  "Chapter_2_More_Practice_with_RInstat.qmd": {
+    "Chapter_2_More_Practice_with_RInstat.html": "34b90079"
+  },
+  "Chapter_3_Using_RInstat_effectively.qmd": {
+    "Chapter_3_Using_RInstat_effectively.html": "2364b70b"
+  },
+  "Chapter_4_Getting_the_data_into_shape.qmd": {
+    "Chapter_4_Getting_the_data_into_shape.html": "04bf8f47"
+  },
+  "Chapter_5_Quantity_and_quality.qmd": {
+    "Chapter_5_Quantity_and_quality.html": "c2e5a108"
+  },
+  "Chapter_6_Preparing_summaries.qmd": {
+    "Chapter_6_Preparing_summaries.html": "53fe8b05"
+  },
+  "Chapter_7_Tailored_Products.qmd": {
+    "Chapter_7_Tailored_Products.html": "27c0cb18"
+  },
+  "Chapter_8_Efficient_use_of_RInstat_and_R.qmd": {
+    "Chapter_8_Efficient_use_of_RInstat_and_R.html": "281ba8de"
+  },
+  "Chapter_9_Gridded_Data.qmd": {
+    "Chapter_9_Gridded_Data.html": "8eca05bc"
+  },
+  "Chapter_10_Comparing_Data_from_Different_Sources.qmd": {
+    "Chapter_10_Comparing_Data_from_Different_Sources.html": "bc681641"
+  },
+  "Chapter_11_Drawing_Maps.qmd": {
+    "Chapter_11_Drawing_Maps.html": "0d0c6dbf"
+  },
+  "Chapter_12_Extremes.qmd": {
+    "Chapter_12_Extremes.html": "86862ac5"
+  },
+  "Chapter_13_PICSA__Long_Before_the_season.qmd": {
+    "Chapter_13_PICSA__Long_Before_the_season.html": "2b2e672d"
+  },
+  "Chapter_14_The_Seasonal_forecast.qmd": {
+    "Chapter_14_The_Seasonal_forecast.html": "f0768d19"
+  },
+  "Chapter_15_Fitting_and_using_stochastic_models.qmd": {
+    "Chapter_15_Fitting_and_using_stochastic_models.html": "8b8d3e9d"
+  },
+  "Chapter_16_Withinday_data.qmd": {
+    "Chapter_16_Withinday_data.html": "b8e82ca6"
+  },
+  "Chapter_17_Circular_data_and_wind_roses.qmd": {
+    "Chapter_17_Circular_data_and_wind_roses.html": "cc18ed16"
+  },
+  "Chapter_18_Temperatures.qmd": {
+    "Chapter_18_Temperatures.html": "4cc833a0"
+  },
+  "Chapter_19_Drought_Indices__SPI.qmd": {
+    "Chapter_19_Drought_Indices__SPI.html": "1e20ec21"
+  },
+  "Chapter_20_Climate_Normals.qmd": {
+    "Chapter_20_Climate_Normals.html": "eb1f944e"
+  },
+  "Chapter_21_Various.qmd": {
+    "Chapter_21_Various.html": "85b3c403"
+  },
+  "Chapter_22_References.qmd": {
+    "Chapter_22_References.html": "09d69ae9"
+  },
+  "Chapter_23_Index.qmd": {
+    "Chapter_23_Index.html": "9df82ecb"
+  }
+}

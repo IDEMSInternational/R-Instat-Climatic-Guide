@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>15&nbsp; The Seasonal forecast – R-Instat Climatic Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter_15_Fitting_and_using_stochastic_models.html" rel="next">
+<link href="./Chapter_13_PICSA__Long_Before_the_season.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter_14_The_Seasonal_forecast.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R-Instat Climatic Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_1_About_this_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About this guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_2_More_Practice_with_RInstat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">More Practice with R-Instat</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_3_Using_RInstat_effectively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_4_Getting_the_data_into_shape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_5_Quantity_and_quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_6_Preparing_summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_7_Tailored_Products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_9_Gridded_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gridded Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_10_Comparing_Data_from_Different_Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing Data from Different Sources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_11_Drawing_Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_12_Extremes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_14_The_Seasonal_forecast.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_16_Withinday_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_17_Circular_data_and_wind_roses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_18_Temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_19_Drought_Indices__SPI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_20_Climate_Normals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_21_Various.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_22_References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_23_Index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Index</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">15.1</span> Introduction</a></li>
+  <li><a href="#the-y-variables---examining-the-rainfall-data" id="toc-the-y-variables---examining-the-rainfall-data" class="nav-link" data-scroll-target="#the-y-variables---examining-the-rainfall-data"><span class="header-section-number">15.2</span> The Y variables - Examining the rainfall data</a></li>
+  <li><a href="#rainfall-data-with-many-stations" id="toc-rainfall-data-with-many-stations" class="nav-link" data-scroll-target="#rainfall-data-with-many-stations"><span class="header-section-number">15.3</span> Rainfall data with many stations</a></li>
+  <li><a href="#the-x-variables-sea-surface-temperatures" id="toc-the-x-variables-sea-surface-temperatures" class="nav-link" data-scroll-target="#the-x-variables-sea-surface-temperatures"><span class="header-section-number">15.4</span> The X variables – Sea Surface Temperatures</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">15.1</span> Introduction</h2>
+<p>Many countries produce a seasonal forecast. (Hansen, Mason, Sun, &amp; Tall, 2011) provides a review for Sub-Saharan Africa. The forecast, for a given season, often results from a Regional Climate Outlook Forum (RCOF), updated and down-scaled by the National Meteorological Service (NMS). In some countries the forecast is a mixture of results from the global climate models (GCMs) and statistical methods relating historical climatic data to sea-surface temperatures. Fig. 13.1a and Fig. 13.1b give examples of the forecast from Ghana and the Caribbean.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig 13.1a Ghana rainfall forecast, April - June 2015</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 13.1b Caribbean rainfall forecast April – June 2015</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image606.gif" style="width:2.99164in;height:3.06824in"></td>
+<td style="text-align: left;"><img src="media/image623.png" style="width:3.00854in;height:2.74794in"></td>
+</tr>
+</tbody>
+</table>
+<p>When statistical methods are used, the Climate Predictability Tool (CPT) software is usually used to produce the forecast. CPT uses multiple regression with usually the rainfall as the y (dependent or predictand) variables and SSTs as the x’s (independent, or predictor) variables. There are usually many x (SST) variables and hence CPT offers the option of doing a principal component analysis first.</p>
+<p>When there are also many y (rainfall) variables, a canonical correlation analysis may precede the multiple regression analysis.</p>
+<p>R-Instat can export data for CPT. Hence one use of R-Instat is to prepare the y-variables (rainfall or temperature) for analysis with CPT. Traditionally these are 3-month rainfall totals, but any other summary is possible, for example 3-month total rain days, or the date of the start of the rains. The requirement is that there is one summary per year (per station) and the <strong><em>Climatic &gt; Prepare</em></strong> menu provides many options. This is considered in Section 13.2.</p>
+<p>The rainfall (or temperature data) are often station values, but they may also originate from other sources, e.g.&nbsp;reanalysis, or satellite or merged data. These are sometimes provided ready for CPT. Sometimes R-Instat could examine these data also and then prepare a subset for CPT. This option is considered in Section 13.3</p>
+</section>
+<section id="the-y-variables---examining-the-rainfall-data" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="the-y-variables---examining-the-rainfall-data"><span class="header-section-number">15.2</span> The Y variables - Examining the rainfall data</h2>
+<p>One use we propose for R-Instat is to examine the rainfall data, before it is analysed with CPT. The first example is data from Ghana, already prepared for CPT. The data are in the R-Instat library, hence use <strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic &gt; Ghana</em></strong> and open the file called <strong><em>rr-amj-1981-2014.txt</em></strong>. The data are shown in Fig. 13.2a.</p>
+<p>The first 2 lines are the locations (Lat and Long) of each station. Then there are the rainfall data, the 3-month totals from April to June, for the 34 years from 1981 to 2014. They are from the 22 synoptic stations in Ghana.</p>
+<p>We also need the locations of the station, but in a separate data frame. Return to the last dialogue and read the data again. This time read just the first 2 rows, Fig. 13.2b and give the file a new name.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.2a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 13.2b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image615.png" style="width:2.99806in;height:2.76823in"></td>
+<td style="text-align: left;"><img src="media/image607.png" style="width:3.02243in;height:3.2849in"></td>
+</tr>
+</tbody>
+</table>
+<p>The station data are now still the “wrong way round”. There is a dialogue to transpose, but it is simpler to use <strong><em>Prepare &gt; Column: Reshape &gt; Stack</em></strong>, Fig. 13.2c, as shown in Fig. 13.2d.</p>
+<p>In Fig. 13.2d put all the columns, except the first to be stacked and put the STN column to be “carried”.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.2c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 13.2d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image609.png" style="width:3.59348in;height:1.72939in"></td>
+<td style="text-align: left;"><img src="media/image602.png" style="width:2.47702in;height:2.10991in"></td>
+</tr>
+</tbody>
+</table>
+<p>In the stacked data the column called STN now has the Lat and Long. Now, Fig. 13.2e, use the <strong><em>Prepare &gt; Column: Reshape &gt; Unstack</em></strong>, as shown to produce the location data as shown in Fig. 13.2f.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.2e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 13.2f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image599.png" style="width:3.25053in;height:3.36062in"></td>
+<td style="text-align: left;"><img src="media/image642.png" style="width:2.77208in;height:3.35034in"></td>
+</tr>
+</tbody>
+</table>
+<p>The rainfall data are first examined briefly (as usual) with <strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summaries.</em></strong> Use all the columns. The results are shown in Fig. 13.2g. There is a problem with the station WEN, where the minimum is -999.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.2g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 13.2h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image624.png" style="width:3.11013in;height:2.21722in"></td>
+<td style="text-align: left;"><img src="media/image619.png" style="width:2.87085in;height:2.88154in"></td>
+</tr>
+</tbody>
+</table>
+<p>This could have been changed to a missing value when the data were imported. Now the change is made with the dialogue <strong><em>Climatic &gt; Tidy and Examine &gt; Replace Values</em></strong>. Fig 13.2h.</p>
+<p>Now stack the rainfall data using <strong><em>Climatic &gt; Tidy and Examine &gt; Stack</em></strong>, as shown in Fig. 13.2i.</p>
+<p>Now use <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong>, as shown in Fig. 13.2j. Include the <strong><em>Station</em></strong> as a <strong><em>facet</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 13.2i</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; Stack</em></strong></p></th>
+<th><strong><em>Fig. 13.2j</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image6 18.png" style="width:3.15839in;height:2.91378in"></td>
+<td><img src="media/image630.pn g" style="width:2.84737in;height:2.88209in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are roughly as shown in Fig. 13.2k. (If you would like to get the results exactly as Fig. 13.2k, then either follow the note below[^56] or open the file that is better prepared – called ghana1981-2014.rds and use the Climatic &gt; PICSA &gt; Rainfall Graph dialogue.)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.2k</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image617.png" style="width:6.26806in;height:3.05764in"></td>
+</tr>
+</tbody>
+</table>
+<p>The stations go from South to North in Fig. 13.2k. We see that the most Southerly station, Axim, is different to the other stations. The variability of the few stations in the North of Ghana is much less than those in the South. This is going to make the forecasting task much harder to expect much that is meaningful for the North.</p>
+<p>Next examine the correlations. They use the original data, but unstacking the data with the Stations from South to North will put the resulting columns in the same order.</p>
+<p>Hence (assuming you have the data in this order) use Climatic &gt; Tidy and Examine &gt; Unstack, as shown in Fig. 13.2l</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.2l</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 13.2m</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image620.png" style="width:3.02457in;height:2.95753in"></td>
+<td style="text-align: left;"><img src="media/image625.png" style="width:2.8682in;height:3.06266in"></td>
+</tr>
+</tbody>
+</table>
+<p>Next use <strong><em>Climatic &gt; Seasonal Forecast Support &gt; Correlations</em></strong>. Fig. 13.2m. The results provide further “food-for-thought. The most Southerly station (bottom row in Fig 13.2m) and the most Northerly (column to the right in Fig. 13.2m) each have quite a lot of blue values, i.e.&nbsp;negative correlations. There are just 5 stations in the North of Ghana (latitudes between 9°N and 11°N and the correlations there are low. If 2 stations have a low or zero correlation, then logically they should have a separate seasonal forecast. However, Fig. 13.1a shows the whole of the North has a single forecast.</p>
+<p>With this information we would be inclined to</p>
+<ol type="a">
+<li><p>Omit Axim as it seems so different</p></li>
+<li><p>Consider only using the stations from the South.</p></li>
+<li><p>Query including Akatsi, which is the furtherst to the Eaqst and has very low correlation with the other stations</p></li>
+<li><p>Look for more rainfall stations from the North.</p></li>
+</ol>
+<p>If, instread, all the stations are used in CPT, then the finalo stage is a multiple regression on each y-variable separately, as a function of the set of x-variables, and they are usually the principal components. Then the interest would be more in the individual results at a station level – and these are given by CPT.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.2n</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image621.png" style="width:5.91378in;height:5.0391in"></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, in <strong><em>Climatic &gt; Seasonal Forecast Support &gt; Correlations</em></strong> (Fig. 13.2m) use just the 5 columns from the North, (from Bole to Navrongo) and opt for a pairwise plot. This shows the size of the correlations clearly and confirms that the whole of the North should not have a single forecast.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.2o</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image614.png" style="width:6.11252in;height:3.49577in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rainfall-data-with-many-stations" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="rainfall-data-with-many-stations"><span class="header-section-number">15.3</span> Rainfall data with many stations</h2>
+<p>The second example is from Rwanda. The rainfall data are considered in this section. The data file is again in a form that reads directly into CPT. The file, in Excel, is shown in Fig. 13.3a. These data are again 3-month rainfall totals and are from March to May. They are for 37 years, from 1981 to 2017.</p>
+<p>These are estimated rainfall from ENACTS. This is a merged product, combining station data with estimated rainfall from satellite observations (Siebert, et al., 2019). In Fig. 13.3a the first column gives the latitude and row 5 gives the longitude of each grid point. So, the estimated rainfall total at 1.05°S and 28.54°E in 1981 was 550mm.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 13.3a</em></strong></th>
+<th><p><strong><em>Fig. 13.3b</em></strong></p>
+<p><strong><em>File &gt; Open</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image952 .png" style="width:3.00471in;height:2.94802in"></td>
+<td><img src="media/image969.p ng" style="width:2.95945in;height:3.26665in"></td>
+</tr>
+</tbody>
+</table>
+<p>In the data in Fig. 13.3a the rectangle of data for 1981 is followed by an approximate repeat of lines 4 and 5, followed by the data for 1982. And so on to 2017.</p>
+<p>If the data, from Excel are saved, then the default (by Excel) is to add the <strong><em>txt</em></strong> extension and this makes it easy to import into R-Instat.</p>
+<p>In R-Instat use <strong><em>File &gt; Open</em></strong>, Fig. 13.3b. Change the <strong><em>Lines to Skip</em></strong> to 4, so the first line is the longitudes.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 13.3c</em></strong></th>
+<th><p><strong><em>Fig. 13.3d Setting the filter</em></strong></p>
+<p><strong><em>(Omit level 1 and from 54 onwards)</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image951. png" style="width:2.93866in;height:3.87341in"></td>
+<td><img src="media/image940. png" style="width:2.97186in;height:2.96056in"></td>
+</tr>
+</tbody>
+</table>
+<p>These data, in Fig. 13.3c, need tidying. The first step is to delete the rows between each year. This uses a filter, so right click, choose Filter and then define a new filter on the first column. Part of the filter sub-dialogue is shown in Fig. 13.3d.</p>
+<p>When you return to the main dialogue, Fig. 13.3e choose to make the filtered data a subset. If you feel bold, then give the new name the same as the old one, so the original file is overwritten.</p>
+<p>There are now 1924 rows of data, i.e.&nbsp;52 rows each year, for 37 years.</p>
+<p>Now a year variable is added as shown in Fig. 13.3f. Check, Fig. 13.3f, that it will be the same length as the other columns of data.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 13.3e Making a subset</em></strong></th>
+<th><p><strong><em>Fig. 13.3f Adding a year variable</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Generate &gt; Regular Sequence</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image942.png" class="img-fluid">{wi dth=“2.4592377515310586in” hei ght=“2.761431539807524in”}</td>
+<td><img src="media/ima ge960.png" style="width:3.5354in;height:2.95258in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now all that remains is to stack the data, <strong><em>Climatic &gt; Tidy and Examine &gt; Stack</em></strong>, as shown in Fig. 13.3g. The re4sulting data are in Fig.13.3h. There are now 126984 rows of data, i.e.&nbsp;37 years from 52 * 66 = 3432 equally spaced locations.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 13.3g</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; Stack</em></strong></p></th>
+<th><strong><em>Fig. 13.3h The Rwanda ENACTS data so far</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image943. png" style="width:2.94677in;height:2.53538in"></td>
+<td><img src="media/image941 .png" style="width:2.96595in;height:3.39985in"></td>
+</tr>
+</tbody>
+</table>
+<p>We outline further “housekeeping” steps on these data to make it simpler to examine and to export back to CPT when needed:</p>
+<ol type="a">
+<li><p>Use <strong><em>Prepare &gt; Column: Text &gt; Transform &gt; Substring</em></strong> on the variable <strong><em>Lat</em></strong> into <strong><em>LatS</em></strong> from Start Value 2 to End Value</p>
+<ol start="5" type="1">
+<li></li>
+</ol></li>
+<li><p>Recall the <strong><em>last dialogue</em></strong> and put <strong><em>Lon</em></strong> into <strong><em>LonE</em></strong> from 2 to 6.</p></li>
+<li><p><strong><em>Select</em></strong> both these columns, (LatS and LonE), then <strong><em>right-click</em></strong> and make them <strong><em>Factors</em></strong>.</p></li>
+<li><p>Use <strong><em>Prepare &gt; Column: Factor: Factor &gt; Combine Factors</em></strong>. Choose <strong><em>LatS and LonE</em></strong>, make the separator an <strong><em>underscore</em></strong> and make the <strong><em>New Column Name:</em></strong> <strong><em>Location</em></strong>.</p></li>
+<li><p>Select LatS and LonE again. Right-click and <strong><em>Convert to Numeric</em></strong> columns.</p></li>
+<li><p>Use <strong><em>Prepare &gt; Column: Factor &gt; Recode Numeric</em></strong> and make a new column from <strong><em>Lats</em></strong> into <strong><em>Lat6S</em></strong>, with 10 break points at about (1.03, 1.25, 1.48, 1.7,1.93, 2.15, 2.38, 2.6, 2.83, 2.98).</p></li>
+<li><p>Recall the last dialogue and make LonE into Lon6E using (28.5, 28.74, 28.97, 29.2, 29.42, 29.64, 29.87, 30.1, 30.32, 30.54, 30.77, 31).</p></li>
+<li><p>Right click to delete the 2 columns Lat, Lon.</p></li>
+<li><p>Reorder the columns possibly as shown in Fig. 13.3i</p></li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.3i ENACTS data for Rwanda</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 13.3j The locations</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image953.png" style="width:3.45974in;height:2.74871in"></td>
+<td style="text-align: left;"><img src="media/image949.png" style="width:2.65551in;height:2.72261in"></td>
+</tr>
+</tbody>
+</table>
+<p>A Station (i.e.&nbsp;Location data frame is also needed for exporting back to CPT. From here:</p>
+<ol type="a">
+<li><p><strong><em>Right-click</em></strong> and choose <strong><em>Filter</em></strong> on the year column and put just the first year (1981) into a new data frame called <strong><em>Location</em></strong>.</p></li>
+<li><p>Delete the <strong><em>year and rain</em></strong> variables from the Location data frame.</p></li>
+</ol>
+<p>The resulting data frame is in Fig. 13.3j.</p>
+<p>Now look at the at the data. Start with a given part of Rwanda. Right-click and filter the data file to the <strong><em>last set of stations in Lat6S</em></strong> and <strong><em>Lon6E</em></strong>, i.e.&nbsp;the South-East corner. This is a 30km square and there should be 880 rows of data, Fig. 13.3k.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.3k SE corner (24 locations)</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 13.3l</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image965.png" style="width:3.02645in;height:2.21052in"></td>
+<td style="text-align: left;"><img src="media/image964.png" style="width:2.89415in;height:2.95551in"></td>
+</tr>
+</tbody>
+</table>
+<p>These data can now be graphed. The results from a <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong> of <strong><em>rain</em></strong> against <strong><em>year</em></strong> by <strong><em>location</em></strong> is in Fig. 13.3l. (A facetted graph by LonE and LatS, after making them factors, is an alternative).</p>
+<p>Fig. 13.3l the coherence (high correlation) between the different locations is clear. The last point (data from 2017) is a cause for concern. This is also indicated for 4 of the locations in Fig. 13.3k. This last year has less than half the rain of any of the other 36 years at most locations. That can greatly affect a regression model. Perhaps only fit using the data to 2016?</p>
+<p>Next, use <strong><em>Climatic &gt; Tidy and Examine &gt; Unstack</em></strong> for the <strong><em>rain</em></strong>, by the <strong><em>location</em></strong> and <strong><em>carry the year</em></strong>. This gives the 24 stations in separate columns and <strong><em>Climatic &gt; Seasonal Forecast Support &gt; Correlations</em></strong>, gives the results in Fig. 13.3m. They are all coloured dark red (compare with Fig. 13.2n) as all correlations are more than 0.8.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.3m</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image961.png" style="width:5.90613in;height:5.16868in"></td>
+</tr>
+</tbody>
+</table>
+<p>This can be repeated for further parts of Rwanda. We suggest that exporting the data from individual “blocks” of 24 or usually 36 stations for CPT, may enable separate local forecasts to be given?</p>
+<p>Change the filter to choose 12 blocks over the country, possibly Lat6S = (1, 5, 9) and Lon6E = (1, 4, 7, 10).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 13.3n Choosing 12 blocks as a filter</em></strong></p>
+<p><strong><em>Right-Click &gt; Filter &gt; Define New Filter</em></strong></p></th>
+<th><p><strong><em>Fig. 13.3oFacet with 2 variables</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Line Plot Options &gt; Facet</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/im age963.png" style="width:3.68059in;height:2.71639in"></td>
+<td>! <a href="media/image979.png"></a>{wi dth=“2.402188320209974in” heigh t=“2.6810597112860894in”}</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 13.3p</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image966.png" style="width:6.26806in;height:3.08056in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results in Fig. 13.3p show some part of the country, e.g.&nbsp;North-West – (top-left) with very high correlations, but also relatively little year-to-year variability to be explained, compared to other parts. (The blue set of graphs in the middle of Fig. 13.3p should be examined in more detail, as the large rainfall in about 1990 is just in a few locations – perhaps caused by data from a single station?). The low rainfall totals in 2017, mentioned above, is apparent in some parts of the country, but not all.</p>
+<p>Plots of further combinations could be useful. Then 2 alternative strategies for CPT (in addition to the default of using the 3432 stations individually) could be:</p>
+<ol type="a">
+<li><p>Use data from single blocks of interest, i.e.&nbsp;usually 36 locations over a 30km by 30km grid, to examine the forecast for specific parts of the country.</p></li>
+<li><p>Take the means (or medians) each year, for each of the blocks, so reducing the number of locations to 96 and use these data instead of the data individually for the 3432 locations.</p></li>
+</ol>
+</section>
+<section id="the-x-variables-sea-surface-temperatures" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="the-x-variables-sea-surface-temperatures"><span class="header-section-number">15.4</span> The X variables – Sea Surface Temperatures</h2>
+<p>Ghana data first.</p>
+<p>Then Rwanda data!</p>
+<p>For Rwanda data use <a href="http://iridl.ldeo.columbia.edu/SOURCES/.IRI/.Analyses/.ICPAC/.Models/.GFDL/.GFDL-CM2p5-FLOR-A06/.MONTHLY/.sst/index.html"><u>http://iridl.ldeo.columbia.edu/SOURCES/.IRI/.Analyses/.ICPAC/.Models/.GFDL/.GFDL-CM2p5-FLOR-A06/.MONTHLY/.sst/index.html</u></a></p>
+<p>The data were downloaded from this link&nbsp;<a href="http://iridl.ldeo.columbia.edu/SOURCES/.Models/.NMME/.GFDL-CM2p5-FLOR-A06/.MONTHLY/.sst/"><u>http://iridl.ldeo.columbia.edu/SOURCES/.Models/.NMME/.GFDL-CM2p5-FLOR-A06/.MONTHLY/.sst/</u></a>&nbsp; However you may decide to choose any other model of your choice.&nbsp;&nbsp;</p>
+<p>Those Sea Surface Temperature (SST) are GCM outputs from different source (GFDL, CFS2, NASA etc). Initialization is the process of locating and using the defined values for variable data that is used by a model or system. For our model we choose February as the month forecasts (MAM) were initialized.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="pagination-link" aria-label="PICSA -- Long Before the season">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="pagination-link" aria-label="Fitting and using stochastic models">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

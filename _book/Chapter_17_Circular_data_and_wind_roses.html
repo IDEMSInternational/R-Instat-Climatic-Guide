@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>18&nbsp; Circular data and wind roses – R-Instat Climatic Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter_18_Temperatures.html" rel="next">
+<link href="./Chapter_16_Withinday_data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter_17_Circular_data_and_wind_roses.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R-Instat Climatic Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_1_About_this_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About this guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_2_More_Practice_with_RInstat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">More Practice with R-Instat</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_3_Using_RInstat_effectively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_4_Getting_the_data_into_shape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_5_Quantity_and_quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_6_Preparing_summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_7_Tailored_Products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_9_Gridded_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gridded Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_10_Comparing_Data_from_Different_Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing Data from Different Sources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_11_Drawing_Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_12_Extremes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_14_The_Seasonal_forecast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_16_Withinday_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_17_Circular_data_and_wind_roses.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_18_Temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_19_Drought_Indices__SPI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_20_Climate_Normals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_21_Various.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_22_References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_23_Index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Index</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">18.1</span> Introduction</a></li>
+  <li><a href="#circular-data" id="toc-circular-data" class="nav-link" data-scroll-target="#circular-data"><span class="header-section-number">18.2</span> Circular data</a></li>
+  <li><a href="#graphs-for-wind-direction" id="toc-graphs-for-wind-direction" class="nav-link" data-scroll-target="#graphs-for-wind-direction"><span class="header-section-number">18.3</span> Graphs for wind direction</a></li>
+  <li><a href="#wind-roses" id="toc-wind-roses" class="nav-link" data-scroll-target="#wind-roses"><span class="header-section-number">18.4</span> Wind roses</a></li>
+  <li><a href="#more-displays-for-circular-data" id="toc-more-displays-for-circular-data" class="nav-link" data-scroll-target="#more-displays-for-circular-data"><span class="header-section-number">18.5</span> More displays for circular data</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">18.1</span> Introduction</h2>
+<p>Fig. 16.1a shows data from the R openair package. These are hourly data and the two columns called ws and wd are wind speed and direction. Fig. 16.1b shows a single wind rose and these are discussed in detail in Section 16.4. The wind rose is a circular stacked histogram that shows both wind speeds and wind directions on the same graph. They are a popular form of display by National Met Services (NMSs) for these data.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.1a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.1b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image876.png" style="width:2.62434in;height:2.68389in"></td>
+<td style="text-align: left;"><img src="media/image975.png" style="width:3.38802in;height:2.69815in"></td>
+</tr>
+</tbody>
+</table>
+<p><mark>For reference the command was as follows:</mark></p>
+<p><mark>last_graph &lt;- clifro::windrose(speed=ws, direction=wd, speed_cuts=c(3,6,9,12,15,18), col_pal="Dark2", ggtheme="linedraw") + ggplot2::labs(title="", caption="", subtitle="")</mark></p>
+<p>Wind direction is an example of circular data and this type of data needs some special treatment. Circular variables are common in climatic data. The obvious example is wind direction, but there are many others:</p>
+<ul>
+<li><p>Time in hours at which rainfall starts. The circle is 24 hours.</p></li>
+<li><p>The hour of the minimum temperature each day. The circle is again 24 hours.</p></li>
+<li><p>Day of the year when the season starts. The circle is 366 days.</p></li>
+<li><p>The month of maximum rainfall. The circle is 12 months.</p></li>
+</ul>
+<p>Special methods are needed to cope with circular data. Sometimes they can be avoided, and we have done this often in this guide. For example, the date of the start of the rains may be from November to January. If the year is always defined from January, then these data mist be handled as circular. But the complexity can be avoided by shifting the year to start in August, as was shown in Chapter 7.</p>
+<p>Section 16.2 considers the general idea of circular data and Section 16.3 shows some simple graphs. Then we return to wind roses in Section 16.4.</p>
+</section>
+<section id="circular-data" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="circular-data"><span class="header-section-number">18.2</span> Circular data</h2>
+<p>Wikipedia (Wikipedia contributors) shows a small example of 10, 20, 30 degrees to illustrate circular data. The mean is obviously 20. Now subtract 15 degrees, so the mean becomes 5. The data are now 355, 5, 15, so the usual formula for the mean is (355 + 5 + 15)/3 = 125 – obviously wrong. With circular data, once we “go over” zero, the usual formulae no longer apply.</p>
+<p>There are books on circular statistics, for example (Pewsey &amp; D., 2013) and, of course, R packages. R-Instat mainly uses the <strong><em>circular</em></strong> package. (Agostinelli &amp; Lund, n.d.).</p>
+<p>An example from the circular package is called wind. This has 310 observations on wind direction. The data in <strong><em>File &gt; Open from Library &gt; R package &gt; circular &gt; wind</em></strong>, just has a single variable. The description states it is five 15-minute observations per day, for 62 days, from 3am to 4am. It is for a single site from 29 January to 31 March 2001.</p>
+<p>Fig. 16.2a shows the data in R-Instat. The wind directions (column wind_dir) are in radians, i.e.&nbsp;they are an angle between 0 and 2pi (i.e. 2 * 3.14 = 6.28).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 16.2a Data from circular package</em></strong></th>
+<th><p><strong><em>Fig. 16.2b Adding a date variable</em></strong></p>
+<p><strong><em>Climatic &gt; Dates &gt; Generate Dates</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image955.png" class="img-fluid">{ width=“2.5966491688538933in” h eight=“3.298924978127734in”}</td>
+<td><img src="media/imag e954.png" style="width:3.48868in;height:3.35703in"></td>
+</tr>
+</tbody>
+</table>
+<p>Directional data are often given in degrees. Hence also use <strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong>, with the formula:</p>
+<p>wind_dir *360/(2*pi)</p>
+<p>Data should be given with their “structure”. The dialogue <strong><em>Climatic &gt; Dates &gt; Generate Dates</em></strong>, Fig. 16.2b is used to add the date column, then <strong><em>Prepare &gt; Column: Generate &gt; Regular Sequence</em></strong>, Fig. 16.2c, to add the time column.</p>
+<p>to give the directions in degrees. The results are all shown in Fig. 16.2a.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.2c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.2d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image900.png" style="width:2.59247in;height:2.27823in"></td>
+<td style="text-align: left;"><img src="media/image916.png" style="width:3.56423in;height:1.09762in"></td>
+</tr>
+</tbody>
+</table>
+<p>Start, as usual with a check on the data. Use <strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong> to give the results in Fig. 16.2d. The summaries for the 2 wind variables are of course for linear, rather than circular data. The analysis can begin. One aspect that is simpler here is that there are no missing values in these data.</p>
+<p>The structure of the data is ignored initially, to concentrate on the new summary statistics for circular data. Graphs are discussed in Section 16.3. A preview, in Fig. 16.2e indicates the data are reasonably concentrated near zero. From the graph we expect a mean just above zero, i.e.&nbsp;perhaps North-North-East, (where East = pi/2 = 1.57 in radians) and a standard deviation that indicates a good level of concentration of the data. Thus, we don’t expect the circular mean to be as large as 2.36 radians, or 135 degrees, as shown in Fig. 16.2d</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 16.2e A circular histogram of the wind data</em></strong></th>
+<th><p><strong><em>Fig. 16.2f The circular keyboard</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image928.png" class="img-fluid">{ width=“2.557014435695538in” hei ght=“2.6285608048993874in”}</td>
+<td><img src="media/imag e921.png" style="width:3.53404in;height:1.94911in"></td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong> and open the <strong><em>Circular</em></strong> keyboard, Fig. 16.2f. The initial step is to define the two variables wind_dir and wind_deg in Fig. 16.2a as circular. For wind_dir, click on the <strong><em>circular button</em></strong> and add the variable, <strong><em>wind_dir</em></strong>. Save the result back into the same variable, Fig. 16.2g.</p>
+<p>Then press <strong><em>Clear</em></strong>, and do the same for the wind_deg variable, Fig. 16.2h. In this case you need to replace the word “radians” by “degrees”.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.2g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.2h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image902.png" style="width:3.52704in;height:2.54731in"></td>
+<td style="text-align: left;"><img src="media/image919.png" style="width:2.53673in;height:2.54967in"></td>
+</tr>
+</tbody>
+</table>
+<p>It seems that nothing has happened. But now press the <img src="media/image898.png" style="width:0.2736in;height:0.30579in">icon on the toolbar, Fig. 16.2i to confirm that the two variables are now defined as circular. Press <img src="media/image950.png" style="width:0.26344in;height:0.23362in"> to close the metadata window.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.2i</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image929.png" style="width:4.65066in;height:1.76483in"></td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong><em>Clear</em></strong>, then the <strong><em>mean button</em></strong> and add the <strong><em>wind_dir</em></strong> column as shown in Fig. 16.2j. Un-check Save so the result is in the Output window, Fig. 16.2k.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.2j</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.2k</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image899.png" style="width:3.17135in;height:3.01584in"></td>
+<td style="text-align: left;"><img src="media/image939.png" style="width:2.81028in;height:1.62732in"></td>
+</tr>
+</tbody>
+</table>
+<p>The mean direction is 0.2922 radians (or 0.2922*360/(2*pi) = 16.7 degrees.)</p>
+<p>In the command in Fig. 16.2j the package name is given first, i.e.</p>
+<p>circular::mean.circular(wind_dir)</p>
+<p>Change the variable in Fig. 16.2j to <strong><em>wind_deg</em></strong> to give the result directly as 16.7 degrees, Fig. 16.2l.</p>
+<p>This result for the circular mean of 17 degrees is consistent with the graph, given in Fig. 16.2e. It is a long way from the result in Fig. 16.2d that has ignored the circular nature of the data (and is wrong!)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.2l</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.2m</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image948.png" style="width:2.40545in;height:1.71083in"></td>
+<td style="text-align: left;"><img src="media/image930.png" style="width:3.68074in;height:2.16253in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now examine the spread of the data. In the dialogue, <strong><em>Clear the expression again</em></strong>, and find the <strong><em>circular variance</em></strong> of the <strong><em>wind_dir</em></strong> variable. The result is seen to be 0.3443 from pressing the <strong><em>Try</em></strong> button. Pressing <strong><em>Ok</em></strong> puts this result into the output window.</p>
+<p><strong><em>Return to this dialogue</em></strong> and find the circular variance of the same data in degrees. The result is identical, i.e.&nbsp;0.3443, despite the numbers being very different! Some explanation is needed, because with ordinary (linear) data, that is not the case.</p>
+<p>Change the function to get the <strong><em>standard deviation</em></strong>, i.e.&nbsp;the sd key on the circular keyboard, rather than var. The formula is then</p>
+<p>circular::sd.circular(wind_deg).</p>
+<p>This gives the circular standard deviation as 0.9187, and again this is the same for the wind_dir variable.</p>
+<p>However, in addition, the circular standard deviation is not the square root of the circular variance. The var = 0.3443 and √0.3443 = 0.5868 which is quite a long way from the result above.</p>
+<p>The results for the variability (spread) of circular data require explanation, because they are so different to “ordinary” data.</p>
+<p>We need a formula. With angles (in degrees), x<sub>1</sub>, x<sub>2</sub>,… x<sub>n</sub> define:</p>
+<p>R = √((Σcos(x<sub>i</sub>))<sup>2</sup> +(Σsin(x<sub>i</sub>))<sup>2</sup>)</p>
+<p>R is called the resultant length, and r = R/n is called the mean resultant length. It is the <strong><em>rho key</em></strong> on the circular keyboard, with</p>
+<p>circular::rho.circular(wind_dir) or circular::rho.circular(wind_deg)</p>
+<p>In each case it gives the value of r = 0.6557 for these data.</p>
+<p>The mean resultant length, r, is between 0 and 1 and values near to 1 correspond to low variation.</p>
+<p>In the R circular package, and hence in R-Instat the var.circular = (1-r) = 0.3443 as found above. So, the circular variance is between 0 and 1 with 0 being no variation.</p>
+<p>Then, sd.circular = √(-2log(r), to be consistent with the definition first given in (Mardia, 1972).</p>
+<p>Also available in R-Instat is the angular.variance = 2 * (1-r) = 2 * var.circular.</p>
+<p>For these data, the angular.variance is the <strong><em>ang.var</em></strong> key = 0.6886</p>
+<p>And there is also the angular.deviation = √(angular variance)</p>
+<p>The angular.deviation is the ang.dev key = √0.6886 = 0.8298.</p>
+<p>To help with the interpretation, of these summaries, take a very simple example with 5 observations. In degrees take 10, 15, 20, 25 30, Fig. 16.2n. Round the circle they are not very spread out.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.2n</em></strong></p>
+<p><strong><em>File &gt; New Data Frame</em></strong></p></th>
+<th><strong><em>Fig. 16.2o</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image93 8.png" style="width:3.09826in;height:2.77737in"></td>
+<td><img src="media/image937.pn g" style="width:2.75709in;height:2.75709in"></td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong><em>Prepare &gt; Column: Calculations &gt; Calculate</em></strong> and produce <strong><em>data_rad = (data_deg/360)*2*pi</em></strong>.</p>
+<p>In radians, these data are 0.175, 0.262, 0.349, 0.436, 0.524 as shown in Fig. 16.2o.</p>
+<p>In <strong><em>Prepare &gt; Column: Calculations &gt; Calculate</em></strong> use the <strong><em>degrees</em></strong> and <strong><em>radians</em></strong> buttons to define each of these variables as circular.</p>
+<p>Then, with the <strong><em>sd button</em></strong>, the sd.circular = 0.1235 for each variable.</p>
+<p>The ordinary standard deviation for the data in radians is 0.138, i.e. is close. So, for circular data, with small spread the circular standard deviation can be interpreted roughly as the ordinary standard deviation, i.e.&nbsp;a typical distance from the circular mean (which is 0.349 radians), of the data – when measured in radians.</p>
+<p>Let’s confirm this, with even smaller spread. Divide all the values (in radians) by 2. The new circular standard deviation = 0.617, which is half the previous value. Of course, the ordinary standard deviation also halves, so the interpretation is ok.</p>
+<p>Now multiply the values by 10. In degrees, the values are now 100, 150, 200, 250, 300 so almost round the circle. This is therefore very large spread for the circular data. In radians this becomes 1.75, 2.62, 3.49, 4.36, 5.24. The maximum is 360 degrees = 2π = 6.28 radians.</p>
+<p>For the data in radians, the ordinary standard deviation is 1.38 and the circular standard deviation is the same. Hence, a very spread-out circular dataset has a circular standard deviation of more than 1. (Otieno Sango &amp; Anderson-Cook, 2003)</p>
+<p>The wind data, analysed in this section, had a circular standard deviation of 0.92 (radians). So quite large as can be seen from the graph in Fig. 16.2e.</p>
+<p>What of r and the circular variance = (1-r)? For the 5 values from 10, to 30 degrees, the circular variance = 0.0076. For large spread, e.g. the 5 values from 100 to 300 degrees the circular variance = 0.6123. So, the circular variance can be interpreted directly, with close to 0 being very concentrated data and close to 1 being very spread out – round the circle. The wind data had a spread – as measured by the circular variance of 0.3443, i.e.&nbsp;about 1/3.</p>
+<p>Other summary statistics, including the median are also available, through the circular package, and hence through R-Instat. These are the median and the quantiles, including the quartiles, the “maximum” and “minimum” and the range. Most are intuitively obvious for data that are “concentrated”, i.e.&nbsp;have small variability, but are more difficult to consider where data can be anywhere round the circle. And general definitions are needed.</p>
+<p>The median is defined by considering diameters that cut the circle in two. Look for the diameter with end-points P and Q, so that half the data points are in each semi-circle. Then the median is either P or Q and choose P, so that the data are more concentrated round it, compared to Q,</p>
+<p>For the wind data the median is 9.5 degrees, so a little lower than the mean.</p>
+<p>Once the median exists, the other quantiles, including the maximum and minimum, can go outwards from this point. The lower quartile is 355 degrees and the upper quartile is 37 degrees.</p>
+<p>The range is defined as the extent of the circle, minus the biggest gap of data. This is usually (but not necessarily) the maximum minus the minimum!</p>
+<p>The von Mises distribution is roughly the equivalent to the normal distribution for linear data, Fig. 16.2k. This has, similarly, 2 parameters and is symmetrical about the circular mean.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 16.2k Examples of von Mises distributions</em></strong></th>
+<th><strong><em>Fig. 16.2l</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><mark>Prefer from R-Instat</mark></p>
+<p><img src="media/image933. png" style="width:2.93974in;height:2.36025in"></p></td>
+<td><img src="media/image934 .png" style="width:3.07069in;height:2.58985in"></td>
+</tr>
+</tbody>
+</table>
+<p>The shape is dictated by the к parameter. К = 0 corresponds to the uniform distribution (round the circle) and large values of к correspond to a concentrated distribution, i.e.&nbsp;one with low variation.</p>
+<p>Estimating к is done by setting r = A<sub>1</sub>(к) = I<sub>1</sub>(к)/I<sub>0</sub>(к) = 1 – var.circular, where I<sub>1</sub> and I<sub>0</sub> are modified Bessel functions. In the R-Instat circular keyboard the function A1(к) is available, Fig. 16.2l. With a little trial and error we see that, for the wind data the appropriate value of к = 0.734, i.e.&nbsp;the shape is just above the blue line in Fig. 16.2k.</p>
+<p>Compared to the circular histogram, Fig. 16.2e it is not clear that a symmetrical distribution is appropriate. However, more important is that the wind data have structure that the above analysis has ignored. In particular, the data are 5 observations from each of 62 days. In any analysis this sort of structure should not be ignored.</p>
+<p>Hence get the mean each day and then analyse the resulting daily data. This is the circular mean, and uses the <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> as shown in Fig. 16.2m and Fig. 16.2n.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.2m</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong></p></th>
+<th><strong><em>Fig. 16.2n Circular sub-dialogue</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image932. png" style="width:2.99257in;height:3.29018in"></td>
+<td><img src="media/image926. png" style="width:2.95584in;height:2.0234in"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><img src="media/image931.p ng" style="width:2.96826in;height:1.71319in"></td>
+</tr>
+</tbody>
+</table>
+<p>These daily data have 62 records as shown in Fig. 16.2o. For example on 2<sup>nd</sup> February the mean wind direction was 355 degrees (or 6.19 radians). The 5 observations were all close in direction, with the minimum being 345 degrees and the maximum 0.5 degrees. The (circular) standard deviation was 0.1. The directions were much more variable on the next day, ranging from 303 degrees (roughly from the West) to 77 degrees (almost East) within the hour. The (circular) standard deviation was just over 1.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.2o</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.2p</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image885.png" style="width:3.05467in;height:2.70007in"></td>
+<td style="text-align: left;"><img src="media/image879.png" style="width:2.93636in;height:2.37431in"></td>
+</tr>
+</tbody>
+</table>
+<p>It is simply for illustration that the results, in Fig. 16.2o are given in both degrees and radians. As discussed above, the standard deviation is the same, whatever the units and the interpretation is similar to the ordinary standard deviation for the data in radians.</p>
+<p>The resulting daily data can now be plotted and summarised. As an example, a circular histogram is shown in Fig. 16.2p.</p>
+<p>These data are fine to illustrate the commands in the R circular package but not for real applications because they are all from a single year and the summaries, from January to March may also include some seasonality. In the following sections, we therefore largely consider data from multiple years.</p>
+</section>
+<section id="graphs-for-wind-direction" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="graphs-for-wind-direction"><span class="header-section-number">18.3</span> Graphs for wind direction</h2>
+<p>The example used is from <strong><em>File &gt; Open From Library &gt; Open from R &gt; R package &gt; openair</em></strong> that was shown earlier in Fig. 16.1a and Fig 16.1b. Open the dataset called <strong><em>mydata.</em></strong> It is hourly data on pollution concentrations plus wind speed (ws) and wind direction (wd). There are 65,533 records, shown again in Fig. 16.3a. The data are from London for 7.5 years from January 1998 to June 2005.</p>
+<p>Section 16.4 examines wind roses, that examine wind speeds and wind directions together. Here simpler plots are used to examine just the circular element, i.e.&nbsp;the wind directions in the variable called wd.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 16.3a Wind and pollution data</em></strong></th>
+<th><p><strong><em>Fig. 16.3b Checking the wind data</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Frequencies</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image876. png" style="width:2.99517in;height:3.06313in"></td>
+<td><img src="media/image878.p ng" style="width:2.52704in;height:3.07229in"></td>
+</tr>
+</tbody>
+</table>
+<p>First examine the wind direction data. One way uses the <strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Frequencies</em></strong> dialogue, Fig. 16.3b.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 16.3c Different values in the wd variable</em></strong></th>
+<th><p><strong><em>Fig. 16.3d Duplicating the wind variable</em></strong></p>
+<p><strong><em>Right click (in wd variable) &gt; Duplicate Column</em></strong></p>
+<p><mark>Redo with new duplicate column dialogue</mark></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image873. png" style="width:2.90208in;height:3.33472in"></td>
+<td><img src="media/image889 .png" style="width:3.1402in;height:2.53509in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are in Fig. 16.3c. They confirm that the data are measured to the nearest 10 degrees. There is one possible oddity, namely that there are 37 different directions and not 36. There are 608 hours with North, i.e.&nbsp;0 degrees and 1377 values at 360 degrees. One obvious reason for this feature is that there are calm days, i.e.&nbsp;zero wind speed, and hence no direction. This could reasonably be given the direction of zero. Use of the right-click and Filter however shows this is not the case.</p>
+<p>There are 4 alternative next steps to resolve this oddity in the data:</p>
+<ol type="1">
+<li><p>Ignore it and see what happens</p></li>
+<li><p>Omit one category, i.e.&nbsp;recode those observations as missing</p></li>
+<li><p>Recode the value 0 to be 360, or 360 to become 0, so the frequencies are added</p></li>
+<li><p>Contact the supplier to resolve the oddity.</p></li>
+</ol>
+<p>We tried option 4 first but had no response. The frequency at 360 degrees seems reasonable, compared to the values at 350 and 10 degrees, hence we adopt option 2, and set the zero-degree values to be missing.</p>
+<p>First use the <strong><em>Right-click &gt; Duplicate Column</em></strong> dialogue, Fig. 16.3d to avoid overwriting the original data in wd.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.3e Replace 0 by missing</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; Replace</em></strong></p></th>
+<th><p><strong><em>Fig. 16.3f Results from summary of 4 variables</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>![] (media/image872.png){wid th=“2.243173665791776in” heigh t=“2.243173665791776in”}</td>
+<td><img src="media/i mage871.png" style="width:3.82883in;height:1.86987in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now use <strong><em>Climatic &gt; Tidy and Examine &gt; Replace Values</em></strong>, Fig. 16.3e, to replace all instances of 0 by missing values. The result can be checked with the <strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong> dialogue, the results of which are in Fig. 16.3f. The new wd1 variable now has 608 missing values and ranges from 10 to 360 degrees.</p>
+<p>There isn’t yet a special climatic graph for these data, so the general graphics dialogues are used. Use <strong><em>Describe &gt; Specific &gt; Histogram</em></strong> with the variable wd1, Fig. 16.3g to give the result in Fig. 16.3h.</p>
+<p>Before making this graph circular, note an oddity in the results in Fig. 16.3h. There are exactly 6 directions that stand out. This could either be a real feature in the data, or an oddity caused by the grouping of the data when the histogram is constructed. The default in the ggplot2 system is 30 bins, and we just have 36 different values in the data. So here the grouping for the histogram is probably to blame.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.3g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.3h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image877.png" style="width:2.88257in;height:3.01017in"></td>
+<td style="text-align: left;"><img src="media/image870.png" style="width:3.09602in;height:3.25797in"></td>
+</tr>
+</tbody>
+</table>
+<p>So return to the dialogue and click on the Histogram Options button to set the number of bins to 36, Fig. 16.3i. We make the histogram a little more colourful at the same time.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.3i Setting bins in the histogram</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Histogram<br>
+Then Histogram Options</em></strong></p></th>
+<th><strong><em>Fig. 16.3j Ordinary histogram</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image895.png" class="img-fluid">{width=“2.63702646544182in” h eight=“3.539001531058618in”}</td>
+<td><img src="media/image 915.png" style="width:3.39483in;height:3.53747in"></td>
+</tr>
+</tbody>
+</table>
+<p>This is now ready to produce a circular plot. Return to the dialogue, use the Plot Options and the Y-axis tab, Fig. 16.3k. Set the axis limits for the y-axis as shown in Fig. 16.3k. Also press on the <strong><em>Coordinates</em></strong> tab in Fig. 16.3k and specify <strong><em>polar</em></strong> coordinates.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.3k</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Histogram<br>
+Then Plot Options &gt; Y-Axis and Coordinates</em></strong></p></th>
+<th><strong><em>Fig. 16.3l Histogram as a circular plot</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image897.pn g" style="width:2.85611in;height:2.65873in"></td>
+<td><img src="media/image886 .png" style="width:2.7277in;height:2.74353in"></td>
+</tr>
+</tbody>
+</table>
+<p>The “trick” of starting the Y-Axis with a negative value in Fig 16.3k, gives the “hole” in the circular plot.</p>
+<p>There is therefore a series of steps to constructing a circular plot in R-Instat. They could be avoided through using a special function, such as <strong><em>rose.diag</em></strong> in the circular package. One reason for continuing with the ggplot graphs is the ease with which multiple plots (facets) can be constructed.</p>
+<p>This is illustrated by examining whether there are obvious differences in the pattern of the wind directions at different times of the day.</p>
+<p>Use <strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong>, with the <strong><em>Dates</em></strong> keyboard, Fig. 16.3m and the <strong><em>hour</em></strong> key.</p>
+<p>Check the calculation by using the <strong><em>Try button</em></strong>, Fig. 16.3m and save the result into a variable called <strong><em>hour</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.3m Making an hour variable</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong></p></th>
+<th><p><strong><em>Fig. 16.3n Making a 3-hour variable</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image888.pn g" style="width:2.79402in;height:3.22341in"></td>
+<td><img src="media/image91 7.png" style="width:3.19143in;height:3.28906in"></td>
+</tr>
+</tbody>
+</table>
+<p>The hour variable is from 0 (midnight) to 23 (11pm). This can be used to give 24 plots, one for each hour. This is unnecessarily detailed, so combine the hours into blocks of 3. There are many ways this can be done in R-Instat. We choose the calculator again, with the DIV function, which is given by %/% in R and is on the Logical keyboard, Fig. 16.3n.</p>
+<p>The formula: <strong><em>threehour &lt;- (hour %/% 3)</em></strong> gives the values 0, 0, 0, 1, 1, 1,…,8,8,8 so multiplying by 3 and adding 1 gives the middle hour of each 3-hour period as shown in Fig. 16.3n.</p>
+<p><strong><em>Right-click</em></strong> and make the resulting variable into a <strong><em>factor</em></strong>. Then return to the <strong><em>histogram dialogue, Plot Options</em></strong> and use this variable as a <strong><em>facet</em></strong>, Fig. 16.3o. Also change the <strong><em>Y-axis limits</em></strong> to <strong><em>-600 to 600</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.3o</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Histogram<br>
+Plot Options &gt; Facets and Y-axis</em></strong></p></th>
+<th><strong><em>Fig. 16.3p Circular histogram with facets</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="m edia/image901.png" class="img-fluid">{widt h=“2.160592738407699in” height =“2.357010061242345in”}</td>
+<td><img src="media /image882.png" style="width:3.88977in;height:2.69512in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting graph is shown in Fig. 16.3p. There is no obviously consistent pattern for different times of the day.</p>
+<p>The next step is to summarise the hourly data to a daily basis. To enable this, use the <strong><em>Climatic &gt; Dates &gt; Make Date</em></strong> dialogue, Fig. 16.3q to make a Date column from the date-time column.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.3q</em></strong></p>
+<p><strong><em>Climatic &gt; Dates &gt; Make Date</em></strong></p></th>
+<th><p><strong><em>Fig. 16.3r Defining a variable as circular</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Define &gt; Circular</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image883. png" style="width:2.92682in;height:3.57307in"></td>
+<td><mark>The new dialogue when ready</mark></td>
+</tr>
+</tbody>
+</table>
+<p>Now use the <strong><em>Prepare &gt;Column: Define &gt; Circular</em></strong> to set the <strong><em>wd variable</em></strong> as <strong><em>circular, Fig 16.4r</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.4s Calculating circular summaries</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Reshape &gt; Summarise</em></strong></p></th>
+<th><strong><em>Fig. 16.4t</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image892.p ng" style="width:2.86119in;height:2.87671in"></td>
+<td><img src="media/image855 .png" style="width:3.25254in;height:1.0542in"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><img src="media/image851 .png" style="width:3.20904in;height:1.28062in"></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><img src="media/image86 7.png" style="width:3.26469in;height:0.96434in"></td>
+</tr>
+</tbody>
+</table>
+<p>Then use the <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries, Fig 16.4s</em></strong> to give the <strong><em>circular mean and standard deviation,</em></strong> Fig. 16.4t. One complication is that there are missing values in these data. We choose, in Fig. 16.4t, to allow up to 3 missing hours in the day.</p>
+<p>The resulting data frame has 2731 rows (days) of data, Fig. 16.4u. The summary in Fig. 16.4uhas a few missing daily values, when less than 21 hours are available.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.3u</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.3v</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image862.png" style="width:2.6617in;height:3.3775in"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 59%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td style="text-align: left;"><img src="media/image843.png" style="width:2.99242in;height:2.93222in"></td>
+</tr>
+</tbody>
+</table>
+<p>The obvious extension of this plotting is to consider the seasonality, e.g.&nbsp;to produce the plot on a monthly basis. This is left largely as a challenge[^57]. This produces the plot in Fig. 16.3u. This shows the predominant wind direction is consistent in each month, but some have an indication of bimodality.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.3u</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image849.png" style="width:6.12077in;height:2.36937in"></td>
+</tr>
+</tbody>
+</table>
+<p><mark>Discuss further once it is easy to have percentages and proportions in histograms.</mark></p>
+</section>
+<section id="wind-roses" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="wind-roses"><span class="header-section-number">18.4</span> Wind roses</h2>
+<p>In this section we consider graphs of the wind speed and the wind direction together. This is simpler, because of the special wind-rose dialogue using the R clifro package. <mark>(reference)</mark>.</p>
+<p>The steps in the previous section are followed. First, produce a single wind rose of the two columns, wind speed (ws) and direction (wd) together using the hourly data.</p>
+<p>Use <strong><em>Climatic &gt; Describe &gt; Wind Speed/Direction &gt; Wind Rose</em></strong>, Fig. 16.4a. Ignore the Windrose Options to investigate the default results from the hourly data.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.4a Default wind rose</em></strong></p>
+<p><strong><em>Climatic &gt; Describe &gt; Wind &gt; Wind Rose</em></strong></p></th>
+<th><p><strong><em>Fig. 16.4b Default wind-rose</em></strong></p>
+<p><strong><em>(5 wind speeds, colours: Blues, Theme: Minimal)</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image866.png" class="img-fluid"> {width=“2.7000404636920385in” height=“2.970044838145232in”}</td>
+<td><img src="media/image 853.png" style="width:3.27953in;height:2.73027in"></td>
+</tr>
+</tbody>
+</table>
+<p>Many wind roses will be produced, so a useful step is to fix on a suitable colour scheme and theme for the graphs.</p>
+<p>Return to the dialogue and choose <strong><em>Windrose Options</em></strong>, Fig. 16.4c. This shows that 12 is the default number of directions for the graph – lucky for us as the wd1 variable has 36 distinct values. Change the theme to Classical. Then choose the Colours tab and try Red-Yellow-Blue.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.4c Windrose Options</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.4d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image839.png" style="width:2.30567in;height:2.82653in"></td>
+<td style="text-align: left;"><img src="media/image844.png" style="width:3.57657in;height:2.8057in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting wind rose is in Fig. 16.4e. Changing the theme to linedraw (Fig. 16.4c) and the colours to Qualitative &gt; Dark2 gives Fig. 16.4f.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.4e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.4f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image352.png" style="width:2.99291in;height:2.79423in"></td>
+<td style="text-align: left;"><img src="media/image348.png" style="width:2.94076in;height:2.78765in"></td>
+</tr>
+</tbody>
+</table>
+<p>It is easy to add facets, and Fig. 16.4g shows the windspeeds and directions at different times of the day.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 16.2g Time of day as facets</em></strong></p>
+<p><strong><em>Climatic &gt; Describe &gt; Wind Speed/Direction &gt; Wind Rose - three-hour as facet and 4 columns</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image340.png" style="width:6.12628in;height:2.97762in"></td>
+</tr>
+</tbody>
+</table>
+<p>As in the previous section, the data are now summarised to a daily basis. This uses <strong><em>the Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> dialogue. We add the daily values of both the mean wind speed and the maximum speed in the 24 hours to the daily data frame.</p>
+<p>The daily data are shown in Fig. 16.4h.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.4h</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.4i</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image337.png" style="width:3.34714in;height:3.20161in"></td>
+<td style="text-align: left;"><img src="media/image342.png" style="width:2.64976in;height:2.54322in"></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.4j</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image341.png" style="width:6.12463in;height:2.34915in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="more-displays-for-circular-data" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="more-displays-for-circular-data"><span class="header-section-number">18.5</span> More displays for circular data</h2>
+<p>The wind roses, shown in Section 16.4 are essentially stacked histograms round a circle. As such they remain largely a circular plot, showing the wind direction and something of the wind speeds. If more detail is needed on the wind speeds, then boxplots may be useful. If necessary, they can also be displayed round a circle as is shown below.</p>
+<p>The daily data from the previous section are used again. The 12 directions used in Section 16.4 seem appropriate, so these are constructed. These are 30 degrees per category, and the only complication is that the first category is conveniently 345 to 15 degrees. This is therefore a 2-step process. The first step uses the <strong><em>Prepare &gt; Factor &gt; Recode Numeric</em></strong> dialogue, Fig. 16.5a. The 14 break points are:</p>
+<p>-1, 15, 45,75, 105, 135, 165, 195, 225, 255, 285, 315, 345, 361</p>
+<p>This gives a factor column with 13 levels (not 12!). The second step is to use <strong><em>Prepare &gt; Column: Factor &gt; Recode Factor</em></strong> to combine the first and last levels. In Fig. 16.5b make the new first label into (345, 15] and do the same to the last level. Give the new column a sensible name, Fig. 16.5b.</p>
+<p>If you prefer, then relabel each level in Fig. 16.5b to indicate the middle angle of that group, namely 0, 30, 60, 90,… , 0. Or you could use directions, i.e.&nbsp;N, NNE, etc.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.5a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.5b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image338.png" style="width:2.94119in;height:2.23234in"></td>
+<td style="text-align: left;"><img src="media/image353.png" style="width:2.91094in;height:2.2395in"></td>
+</tr>
+</tbody>
+</table>
+<p>Check, using <strong><em>Right-Click &gt; Levels/Labels</em></strong> that the new Direction variable has 12 levels.</p>
+<p>Use <strong><em>Describe &gt; Specific &gt; Boxplot</em></strong>, Fig. 16.5c, to get a boxplot of the wind speeds by these 12 directions.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.5c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.5d Maximum daily wind speeds, by direction</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image339.png" style="width:2.53439in;height:2.97656in"></td>
+<td style="text-align: left;"><img src="media/image346.png" style="width:3.45173in;height:3.53701in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 16.5c make the boxplots of variable width, so the width of each boxplot indicates the relative frequencies of each wind direction. One small problem in Fig. 16.5d is that the missing values are included as a 13<sup>th</sup> category. Use <strong><em>Right-Click &gt; Filter</em></strong> (or <strong><em>Data Options</em></strong> in the Boxplot dialogue) to omit the missing values in the wind speed column and repeat the boxplot. At the same time you may wish to use <strong><em>Plot Options &gt; Coordinates</em></strong> to make this into a circular plot, Fig. 16.5e.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.5e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.5f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image315.png" style="width:2.94854in;height:2.95557in"></td>
+<td style="text-align: left;"><img src="media/image324.png" style="width:2.97646in;height:2.95877in"></td>
+</tr>
+</tbody>
+</table>
+<p>There are alternative displays, from the Describe &gt; Specific &gt; Boxplot dialogue. Fig. 16.5f shows a violin plot(essentially a density plot instead of the boxplot[^58].</p>
+<p>Fig. 16.5g, shows the boxplot without the red outliers of Fig. 16.5e, while Fig. 16.5h adds the jittered points to the diagram.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.5g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 16.5h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image311.png" style="width:2.99266in;height:2.99984in"></td>
+<td style="text-align: left;"><img src="media/image302.png" style="width:2.97737in;height:2.98806in"></td>
+</tr>
+</tbody>
+</table>
+<p>Usually it will be informative to have a set of graphs to investigate a further factor at the same time. These are usually the seasonality, or the station. Fig. 16.5i shows the data for the mean daily windspeed (rather than the maximums, shown above) for each month.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.5i</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image333.png" style="width:6.15588in;height:2.93744in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 16.5i shows the data as linear plots and Fig. 16.5j as circular plots. We invite you to compare the two displays. The wind direction data are circular, so perhaps Fig. 16.5j is the more natural display. But, for some readers we suggest the comparisons between the months seem easier to make from Fig. 16.5i.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 16.5j</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image313.png" style="width:6.13792in;height:2.27129in"></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter_16_Withinday_data.html" class="pagination-link" aria-label="Within-day data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter_18_Temperatures.html" class="pagination-link" aria-label="Temperatures">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

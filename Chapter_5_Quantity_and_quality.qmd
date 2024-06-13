@@ -1,0 +1,562 @@
+# Quantity and quality?
+## Introduction
+
+Starting from this Chapter, we assume the data for analysis are "tidy"
+and are defined as a climatic data frame in R-Instat.
+
+  -----------------------------------------------------------------------------------------
+  ***Fig. 5.1a The Check Data menu***                    
+  ------------------------------------------------------ ----------------------------------
+  ![](media/image1116.png){width="3.071272965879265in"   
+  height="2.6721817585301837in"}                         
+
+  -----------------------------------------------------------------------------------------
+
+This chapter shows different ways to now look at the data. For many
+applications this stage can be done quickly, and the work then proceeds
+with the analyses described in the following chapters. But omit this
+stare at your peril. We often find users have gone immediately to the
+analyses they need, only to have to return later to look more critically
+at their data.
+
+From now on, in this guide, we will also assume that you are reasonably
+comfortable in your use of R-Instat. In Section 5.2 we outline what that
+means.
+
+Section 5.3 shows how to get a quick inventory of the data. We also
+consider how to tabulate and graph the primary, usually daily, data.
+Then Section 5.3 examines the data via boxplots. Boxplots are primarily
+an exploratory tool, but can also be used for presentation graphs.
+
+Finally, we consider some formal quality control checks on the data.
+What oddities might be in the data and what can be done about them.
+
+## An inventory -- what data do I have?
+
+Open the Rwanda workshop data, Fig. 5.2a. This is from 4 stations and
+has already been defined as climatic data as described in Chapter 4.
+
+Use the first menu item in the ***Climatic \> Check Data*** menu, Fig.
+5.1a to choose an ***Inventory*** plot, Fig. 5.2b.
+
+In Fig. 5.2b the Data and the Station receivers are completed
+automatically. This is because the data frame was defined as Climatic
+with these components. If not, then usually:
+
+a.  The data frame was not yet defined as climatic.
+
+b.  You are in the wrong data frame -- change it in the data selector in
+    the dialogue in Fig. 5.2b.
+
++-----------------------------------+----------------------------------+
+| ***Fig. 5.2a Rwanda workshop      | ***Fig. 5.2b Inventory           |
+| data***                           | Dialogue***                      |
+|                                   |                                  |
+| ***File \> Open from Library \>   | ***Climatic \> Check Data \>     |
+| Instat \> Climatic \> Rwanda \>   | Inventory***                     |
+| Rwanda Workshop Data.RDS***       |                                  |
++===================================+==================================+
+| ![](media/image1139.              | ![](media/image1150.             |
+| png){width="3.0161132983377077in" | png){width="2.973377077865267in" |
+| height="3.0676706036745407in"}    | height="2.575567585301837in"}    |
++-----------------------------------+----------------------------------+
+
+In Fig. 5.2b, add the 3 data columns for TMAX, TMIN and PRECIP and press
+Ok. The resulting inventory is in Fig. 5.2c.
+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.2c Default inventory plot***                  ***Fig. 5.2d Facet by element***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](media/image1144.png){width="2.9092760279965004in"   ![](media/image1110.png){width="3.0269050743657044in"
+  height="2.830469160104987in"}                           height="2.839443350831146in"}
+
+  ---------------------------------------------------------------------------------------------------------------
+
+Experiment with the display. For example, in Fig. 5.2d the ***Facet
+By***, in Fig. 5.2b has been set to be the ***Element***, rather than
+the ***Station***.
+
+One oddity in the data in Fig. 5.2c and 5.2d was the gap in the rainfall
+records in the 1980s at 2 of the stations. It is quite common to have
+rainfall records in the database without the corresponding temperature
+records, but the reverse is odd. The data were exported from the
+Clinsoft database and it was not clear why these data were absent. That
+is the idea of being able to produce an inventory.
+
+The value of the inventory presentation is that the information on many
+stations and elements can be shown together. However, the graphs show
+just when data was present or absent. They do not show the actual
+values.
+
+They can be supplemented by simple time series plots[^19].
+
+  -----------------------------------------------------------------------
+  ***Fig. 5.2e Rwanda temperature data***
+  -----------------------------------------------------------------------
+  ![](media/image1128.png){width="6.066142825896763in"
+  height="3.02500656167979in"}
+
+  -----------------------------------------------------------------------
+
+These plots give a useful indication of the data for analysis. One
+period in Kamembe Airport is marked in Fig. 5.2e as a cause for concern.
+In Fig. 5.2f the interactive plotting, using ***Describe \> View
+Graph*** is used to examine this part of the graph in more detail.
+
+  -------------------------------------------------------------------------------------------
+  ***Fig. 5.2f Examine the temperature data in more       
+  detail***                                               
+  ------------------------------------------------------- -----------------------------------
+  ![](media/image1138.png){width="2.9750185914260716in"   
+  height="3.30957895888014in"}                            
+
+  -------------------------------------------------------------------------------------------
+
+Fig 5.2g shows the same time series graph for the rainfall data at each
+site. There is a dry period in the year and hence the different years
+are clearly visible in these graphs.
+
+  -----------------------------------------------------------------------
+  ***Fig. 5.2g Rainfall data at the four stations***
+  -----------------------------------------------------------------------
+  ![](media/image1126.png){width="6.052942913385826in"
+  height="2.9319149168853893in"}
+
+  -----------------------------------------------------------------------
+
+The next dialogue is ***Climatic \> Check Data \> Display Daily***, Fig.
+5.2h. This produces a lot of output, so we first choose the filter the
+data to just the first station, Gisenyi[^20].
+
+When using this dialogue the items on the right (from Station down to
+Year) are completed automatically. If not, then you are probably in the
+wrong data frame
+
++-------------------------------+--------------------------------------+
+| ***Fig. 5.2h Examining daily  | ***Fig. 5.2i One year of the data*** |
+| values***                     |                                      |
+|                               |                                      |
+| ***Climatic \> Check Data \>  |                                      |
+| Display Daily***              |                                      |
++===============================+======================================+
+| ![](media/image1105.png)      | ![](media/image1                     |
+| {width="2.6560739282589676in" | 100.png){width="3.337146762904637in" |
+| height="3.423170384951881in"} | height="3.400753499562555in"}        |
++-------------------------------+--------------------------------------+
+
+. Complete the dialogue in Fig. 5.2h as shown. We have chosen to recode
+zero rainfalls to "---". This is an option so the rainy days are
+displayed more clearly in Fig. 5.2i. It indicates the dry period in the
+year is usually June and July. The dry period was a feature of Fig.
+5.2g.
+
+We have now almost come "full circle". In Fig. 4.4i the rainfall data
+from Garoua, Cameroon, were supplied for analysis arranged in a similar
+way to the data now shown in Fig. 5.2i. This is a very clear and
+sensible layout for the data, but to examine, not to analyse.
+
+The second tab in the same ***Climatic \> Check Data \> Display Daily***
+dialogue gives a simple graphical display of the data "by year". An
+example of the resulting display is in Fig. 5.2j. The results show both
+the missing periods as well as the dry parts of the year.
+
+  -----------------------------------------------------------------------
+  ***Fig. 5.2j. Daily rainfall for one station***
+  -----------------------------------------------------------------------
+  ![](media/image698.png){width="6.105915354330708in"
+  height="2.9670450568678914in"}
+
+  -----------------------------------------------------------------------
+
+## Using boxplots to check and present data
+
+Open the Dodoma data, using the RDS file from the Climatic \> Tanzania
+directory. This is already set as a climatic data frame as described in
+Chapter 4. It shows data from a single site, with multiple elements.
+
+Most of the examples in this Section use the special ***Climatic \>
+Check Data \> Boxplot*** dialogue. Boxplots are also available through
+the main Describe menu (Describe \> Specific \> Boxplot). The results
+are the same, but the Climatic Boxplot dialogue is usually simpler to
+complete.
+
++-----------------------------------+----------------------------------+
+| ***Fig. 5.3a Climatic boxplot     | ***Fig. 5.3b Seasonal pattern of |
+| dialogue***                       | sunshine hours***                |
+|                                   |                                  |
+| ***Climatic \> Check Data \>      |                                  |
+| Boxplot***                        |                                  |
++===================================+==================================+
+| ![](media/image700                | ![](media/image695.p             |
+| .png){width="3.146314523184602in" | ng){width="2.9883934820647418in" |
+| height="3.020275590551181in"}     | height="3.016061898512686in"}    |
++-----------------------------------+----------------------------------+
+
+The results, in Fig. 5.3b Show only one value, in September, is odd in
+being longer than the day length. Most days in the year have many
+sunshine hours, and the median is more than 10 hrs in the data for 6
+months, from June to November.
+
+Finding just a single obvious oddity in Fig. 5.3b out of the 20,450
+observations is a measure of the high quality of these data. We look in
+more detail at how to check for outliers in Sections 5.4 and 5.5. As a
+practical measure, setting the value to missing, would hardly affect the
+results and may be sensible if the non-computerised records are not
+easily available.
+
+As well as being a very useful exploratory method, boxplots are also
+often used in the methods section of reports and papers, to present the
+data being analysed. Thus they can be presentation as well as
+exploratory graphs.
+
+Fig. 5.2b shows the seasonal pattern for the sunshine data. Two simple
+changes to the dialogue in Fig. 5.3c show the time series, and hence a
+possible trend, is shown in Fig. 5.3d. The second change in Fig. 5.3c is
+to use the ***Variable Width*** option, to see which years have many
+missing values.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.3c Change to show the time series***         ***Fig. 5.3d***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image707.png){width="3.0568897637795276in"   ![](media/image697.png){width="2.9790977690288716in"
+  height="3.0768055555555556in"}                         height="3.0134984689413824in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+It is possible to show both the seasonality and the time-series
+together, as shown in Fig. 5.3e. The resulting figure is a bit crowded
+if months are used, so the graph is displayed for each of 4
+quarters[^21].
+
+  -----------------------------------------------------------------------
+  ***Fig. 5.3e***
+  -----------------------------------------------------------------------
+  ![](media/image694.png){width="6.056246719160105in"
+  height="2.9328455818022747in"}
+
+  -----------------------------------------------------------------------
+
+An example in Chapter 2, Section 2.4, compared the Dodoma station data
+on sunshine hours with the estimated values from the satellite data. It
+is important to check the quality of the data, whatever the source.
+Hence Fig. 5.3f shows the seasonal pattern of the satellite estimates of
+sunshine hours.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.3f Satellite estimates of sunshine at        ***Fig. 5.3g Suspect values mainly in early years***
+  Dodoma***                                              
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image693.png){width="2.9552602799650045in"   ![](media/image692.png){width="2.954428040244969in"
+  height="2.915323709536308in"}                          height="2.9476049868766405in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+Comparing Fig. 5.3f with Fig. 5.3b (the station data) shows
+encouragingly that the distributions seem very similar. However, there
+are also a number of values that are clearly longer than the day length
+at Dodoma. From discussion with the providers of the data (EUMETSAT) we
+learned that the early years may have radiation values (and hence
+sunshine hours) that are less reliable. This is confirmed through the
+time series plot for the satellite data, in Fig. 5.3g.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.3hBoxplots for the rainfall***               ***Fig. 5.3i Rainfall on rain days***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image696.png){width="3.0212062554680665in"   ![](media/image691.png){width="2.9721916010498686in"
+  height="3.0562204724409447in"}                         height="2.9926902887139106in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+Boxplots can be used for the rainfall data, as shown in Fig. 5.3i. The
+data plotted are just for rain days, with the variable width of each box
+indicating the number of rain days. The plot shows the unimodal pattern
+of the rainfall from November to April[^22].
+
++----------------------------------+-----------------------------------+
+| ***Fig. 5.3j Adding a second     | ***Fig. 5.3k Tmax and Tmin        |
+| layer to the plot***             | plotted together***               |
+|                                  |                                   |
+| Plot Options \> Layers \> Add    |                                   |
++==================================+===================================+
+| ![](media/image894.              | ![](media/image891                |
+| png){width="2.992442038495188in" | .png){width="2.970890201224847in" |
+| height="2.7443383639545056in"}   | height="3.033581583552056in"}     |
++----------------------------------+-----------------------------------+
+
+The Dodoma data includes Tmax and Tmin and these can, if required, be
+shown together on the same graph. An example is in Fig. 5.3k and one of
+the sub-dialogues to facilitate this graph is shown in Fig. 5.3j[^23]
+One feature in Fig. 5.3k is the larger variability of the Tmax data in
+the rainy season, i.e. from November to April.
+
+Graphs, once saved, can be also combined, using Describe \> Combine
+Graphs, as shown in Fig. 5.3l, with all 4 elements shown in Fig. 5.3m
+
++--------------------------------+-------------------------------------+
+| ***Fig. 5.3l Combining         | ***Fig. 5.3m The 4 elements in      |
+| graphs***                      | Dodoma***                           |
+|                                |                                     |
+| ***Describe \> Combine Graphs  |                                     |
+| \> Options***                  |                                     |
++================================+=====================================+
+| ![](media/image918.pn          | ![](media/image129                  |
+| g){width="2.758496281714786in" | 0.png){width="3.1666666666666665in" |
+| height="2.707830271216098in"}  | height="3.1666666666666665in"}      |
++--------------------------------+-------------------------------------+
+
+Other displays of these data are also possible. In Fig. 5.3k we observed
+the larger variation of the Tmax data in the rainy months (compared to
+both Tmin, and to Tmax in the dry months). This feature is shown more
+clearly through density plots as seen in Fig. 5.3p. This uses a dialogue
+from the ordinary Describe menu. The results in Fig. 5.3p indicate a
+roughly normal-type shape for the data, though with a slightly longer
+tail for Tmax in the rainy season[^24].
+
++-------------------------------+--------------------------------------+
+| ***Fig. 5.3o Producing        | ***Fig. 5.3p Density plots for Tmax  |
+| density plots***              | and Tmin by month***                 |
+|                               |                                      |
+| ***Describe \> Specific \>    |                                      |
+| Histogram***                  |                                      |
++===============================+======================================+
+| ![C:\\Users\\ROGERS\~1\\A     | ![](media/image8                     |
+| ppData\\Local\\Temp\\SNAGHTML | 96.png){width="3.3430457130358704in" |
+| 98d61a3.PNG](media/image880.p | height="3.8018930446194226in"}       |
+| ng){width="2.7408552055993in" |                                      |
+| h                             |                                      |
+| eight="2.7116983814523183in"} |                                      |
++-------------------------------+--------------------------------------+
+
+Often the data frame will include data from more than one station. This
+is illustrated briefly with the Rwanda data, from the library, that is
+from 4 stations. An example is shown in Fig. 5.3q. It shows relatively
+little seasonality, because Rwanda is close to the equator. One feature
+of the data is the higher variability and lower temperatures at the
+4^th^ stations, which is at a higher altitude compared to the other 3.
+For this presentation, in the ***Climatic \> Check Data \> Boxplot***
+dialogue, the option is then used to facet by the Station.
+
+  -----------------------------------------------------------------------
+  ***Fig. 5.3q Example for multiple stations, Tmin for 4 stations in
+  Rwanda***
+  -----------------------------------------------------------------------
+  ![](media/image887.png){width="6.1667082239720035in"
+  height="3.0204975940507435in"}
+
+  -----------------------------------------------------------------------
+
+## Quality control of temperature (and other) data
+
+The graphical displays in the previous 2 sections have indicated
+observations that need checking. The dialogue Climatic \> Check Data \>
+Temperatures, Fig. 5.4a, is designed to facilitate this checking. It has
+been designed specifically for temperature records, but with a
+flexibility to permit it to be used also for other elements.
+
+Fig. 5.4 has been completed for the Dodoma data. Initially with a single
+element (Tmax).
+
++------------------------------------+---------------------------------+
+| ***Fig. 5.4a***                    | ***Fig. 5.4b***                 |
+|                                    |                                 |
+| ***Climatic \> Check Data \> QC    |                                 |
+| Temperatures***                    |                                 |
++====================================+=================================+
+| ![C:\\Users\\                      | ![](media/image881.pn           |
+| ROGERS\~1\\AppData\\Local\\Temp\\S | g){width="2.8671358267716536in" |
+| NAGHTML13ef1d27.PNG](media/image88 | height="2.7212642169728785in"}  |
+| 4.png){width="3.123163823272091in" |                                 |
+| height="3.504679571303587in"}      |                                 |
++------------------------------------+---------------------------------+
+
+From the previous Section, Fig. 5.3k, Tmax at Dodoma is rarely less than
+20°C, and could usefully be checked each time. So, the first
+illustration of the dialogue uses the limits 20 and 40 for Tmax.
+
+The results are in Fig. 5.4b. R-Instat has filtered the Dodoma data and
+copied the "problem" rows into a new data frame. It shows there were
+just 13 occasions with Tmax \<=20 in the record. As shown in Fig. 5.4b,
+they include 9^th^ October 1989, when Tmax was equal to Tmin at 15.6°C.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.4c The available checks***                   ***Fig. 5.4d Checking for consecutive values***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image893.png){width="2.7496237970253716in"   ![](media/image834.png){width="3.316666666666667in"
+  height="1.6854516622922135in"}                         height="2.6708147419072614in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+More checks on the data are available, as shown in Fig. 5.4c. They are
+considered in turn:
+
+-   ***Acceptable range*** for each element, as shown in Fig. 5.4a
+    and b. This is very simplistic, because it does not allow for
+    seasonality in the data.
+
+-   ***Same*** examines consecutive days and, with the default setting,
+    indicates whenever 4 days or more have the same value. The idea is
+    that when many consecutive values are identical, it is possible they
+    were simply copied in, and not measured on each day. An example of
+    the results is in Fig. 5.4e.
+
+-   ***Jump*** notes whenever 2 consecutive days are different by more
+    that the threshold amount. The default is that any difference (jump)
+    of more than 10°C deserves further examination.
+
+-   ***Difference*** is only available when 2 elements have been
+    included, usually Tmax and Tmin. The default is to note whenever
+    Tmax \<= Tmin, but the difference could be altered.
+
+-   ***Outlier*** is the most complex and relates the value to the
+    boxplot outliers. A boxplot is conceptually fitted for each month at
+    each station and the outliers are then noted. The traditional limit
+    for boxplots has a coefficient of 1.5[^25], as used in all the
+    figures in Section 5.3. We find, with the large samples in climatic
+    data, this gives too many outliers, many of which are not
+    particularly surprising. We therefore usually use 2.5 or 3 (instead
+    of 1.5) as the multiplying value.
+
+You may choose to do multiple checks at the same time. We consider them
+in turn. Each time the dialogue is used, it produces a new data frame.
+
+In Fig. 5.4d we specify the ***Same*** check, for both Tmax and Tmin
+together.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.4e Results from the Same check***            ***Fig. 5.4f Jump of more than 10°C***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image846.png){width="2.9792082239720035in"   ![](media/image860.png){width="3.028753280839895in"
+  height="2.8092530621172354in"}                         height="2.7992268153980753in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+The results are in Fig. 5.4e. The first occurrence was in July 1965 when
+Tmax was 26.0°C on 4 consecutive days, while in October 1969 Tmin was
+consecutively 17.4°C. The results, in Fig. 5.4e also include further
+columns to note how many consecutive days and whether they were for Tmax
+or Tmin. In this case there were only 7 occurrences of the event, giving
+28 rows in total, so these extra columns are not so important.
+
+Fig. 5.4f shows the results from the test for jumps of more than 10°C.
+Here the logical column was always TRUE for Tmax, i.e. this event did
+not occur for Tmin. Sometimes Tmax drops because of rainfall, and this
+column is automatically included in the filtered data. The results in
+Fig. 5.4f include the size of the jump.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.4g Tmax within 1°C of Tmin***                ***Fig. 5.4h Outiers from corresponding boxplots***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image845.png){width="2.6875459317585304in"   ![](media/image832.png){width="3.334831583552056in"
+  height="1.1320406824146982in"}                         height="2.499064960629921in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+In the next check, the limit is set to 1°C. There are then, Fig. 5.4g,
+just 4 days when Tmax is within 1 degree of Tmin.
+
+The final check is equivalent to the boxplot outliers. The threshold in
+producing Fig. 5.4h was set to 2.5 and there were still 150 outliers to
+investigate. There are effectively 4 tests here, i.e. whether either
+Tmax or Tmin are too low, or too high. These correspond to the settings
+of the logical columns in Fig. 5.4h. Thus the first 3 rows all indicate
+a low value of Tmax, while the 4^th^ row is a low value for Tmin.
+
+Readers may be concerned in having to check 150 values. Our view is that
+these data are of high quality. This is 150 values out of more than
+40,000 (i.e. over 20,000 days for each of Tmin and Tmax), so less than
+0.5% of the values to be checked! Not bad.
+
+## Quality control for rainfall records
+
+The system for checking rainfall data is similar to that for the
+temperatures, described in Section 5.4.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 5.5a***                                       ***Fig. 5.5b***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](media/image833.png){width="3.053068678915136in"   ![](media/image836.png){width="2.846933508311461in"
+  height="2.969220253718285in"}                         height="3.6387970253718285in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+We continue with the Dodoma data. Two checks are undertaken in the
+dialogue in Fig. 5.5a. First is to note all values more than 100mm and
+second is to note when any 2 consecutive non-zero values are the same.
+
+Some of the results (after reordering columns for clarity) are in Fig.
+5.5b. There are 83 rows of data, from 6 occasions with more than 100mm
+(all look plausible) and 38 occasions when 2 consecutive days had the
+same rainfall. Looking at the results in Fig. 5.5b, perhaps the low
+values e.g. 0.3mm on 2 consecutive days is not so surprising, but 19.2mm
+on both the 5^th^ and 6^th^ January 1967 deserves further investigation.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.5c Same values after a filter***             ***Fig. 5.5d Checking for dry months***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image831.png){width="2.9309733158355207in"   ![](media/image842.png){width="3.0435115923009626in"
+  height="3.479775809273841in"}                          height="3.0732534995625547in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+The data in Fig. 5.5b are just in an ordinary data frame, so we check
+more closely by filtering out the values of 1mm or less. The results are
+in Fig. 5.5c. There are just 16 occasions, most of which are shown in
+Fig. 5.5b with exactly the same amount on 2 days. One way this arises is
+when the data are computerised initially on the wrong day. They are then
+transferred to the previous day, but the original is not deleted. A
+check with the paper records is all that is needed.
+
+The next option in Fig. 5.5a is called "Consecutive". This checks on the
+number of consecutive rain days. In some places a large number is rare.
+But sometimes temperature columns may be entered mistakenly. This then
+appears as many consecutive "rain" days, with relatively similar amounts
+on the successive days.
+
+The next option is called Dry Month and is shown in Fig. 5.5d. The
+explanation is given for Dodoma, where the rainy season is from November
+to April. The other months may be totally dry. If January (in the middle
+of the rainy season) is totally dry, then probably it was missing and
+recorded mistakenly as zero each day. What is more complicated is
+November (the usual start of the season) and April (the usual end). If
+November is totally dry, then it could be true and a late start to the
+season. Or the data are missing. The same goes for April.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 5.5e***                                      ***Fgi. 5.5f***
+  ---------------------------------------------------- ------------------------------------------------------
+  ![](media/image835.png){width="3.11877624671916in"   ![](media/image874.png){width="2.7583595800524936in"
+  height="3.303284120734908in"}                        height="3.0145352143482063in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+The results are in Fig. 5.5e. Right-click on the month column and use
+the Levels/Labels dialogue, Fig. 5.5f to give the results in Fig. 5.5g.
+This shows the zeros are primarily in November, but December is zero in
+2 years. There are no zero months in January to April.
+
+One way to find which years to investigate, is the make the year column
+in Fig. 5.5e into a Factor and then use the same Levels/Labels dialogue.
+The results are in Fig. 5.5h, showing the first years are 1935. 1936,
+1943, while the frequency of 31 in 1952 idicates that was one of the
+years when December was zero.
+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.5g It is a November/December problem***      ***Fig. 5.5hThese are the years***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](media/image865.png){width="2.5220581802274715in"   ![](media/image869.png){width="2.729306649168854in"
+  height="3.516259842519685in"}                          height="3.521013779527559in"}
+
+  ------------------------------------------------------------------------------------------------------------
+
+The final option is the outliers, using the limits from the skew
+boxplot. In Fig. 5.5i we omit the zero values and set the skewness
+weight to 3. This has identified just 3 possible outliers, and each is
+only just above the corresponding limit, see Fig 5.5j.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 5.5i Settings for the rainfall outliers***    ***Fig. 5.5j Possible outliers from skew boxplot***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](media/image859.png){width="2.978626421697288in"   ![](media/image890.png){width="3.272315179352581in"
+  height="1.497422353455818in"}                         height="0.9956594488188977in"}
+
+  -----------------------------------------------------------------------------------------------------------

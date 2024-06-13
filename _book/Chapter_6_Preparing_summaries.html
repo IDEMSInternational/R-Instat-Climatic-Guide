@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Preparing summaries – R-Instat Climatic Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter_7_Tailored_Products.html" rel="next">
+<link href="./Chapter_5_Quantity_and_quality.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter_6_Preparing_summaries.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R-Instat Climatic Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_1_About_this_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About this guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_2_More_Practice_with_RInstat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">More Practice with R-Instat</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_3_Using_RInstat_effectively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_4_Getting_the_data_into_shape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_5_Quantity_and_quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_6_Preparing_summaries.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_7_Tailored_Products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_9_Gridded_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gridded Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_10_Comparing_Data_from_Different_Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing Data from Different Sources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_11_Drawing_Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_12_Extremes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_14_The_Seasonal_forecast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_16_Withinday_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_17_Circular_data_and_wind_roses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_18_Temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_19_Drought_Indices__SPI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_20_Climate_Normals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_21_Various.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_22_References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_23_Index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Index</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
+  <li><a href="#preparing-the-data" id="toc-preparing-the-data" class="nav-link" data-scroll-target="#preparing-the-data"><span class="header-section-number">7.2</span> Preparing the data</a></li>
+  <li><a href="#annual-summaries" id="toc-annual-summaries" class="nav-link" data-scroll-target="#annual-summaries"><span class="header-section-number">7.3</span> Annual summaries</a></li>
+  <li><a href="#more-detailed-summaries---rainfall" id="toc-more-detailed-summaries---rainfall" class="nav-link" data-scroll-target="#more-detailed-summaries---rainfall"><span class="header-section-number">7.4</span> More detailed summaries - rainfall</a></li>
+  <li><a href="#options-for-missing-values" id="toc-options-for-missing-values" class="nav-link" data-scroll-target="#options-for-missing-values"><span class="header-section-number">7.5</span> Options for Missing values</a></li>
+  <li><a href="#processing-temperature-data" id="toc-processing-temperature-data" class="nav-link" data-scroll-target="#processing-temperature-data"><span class="header-section-number">7.6</span> Processing temperature data</a></li>
+  <li><a href="#more-detailed-summaries---temperatures" id="toc-more-detailed-summaries---temperatures" class="nav-link" data-scroll-target="#more-detailed-summaries---temperatures"><span class="header-section-number">7.7</span> More detailed summaries - temperatures</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.1</span> Introduction</h2>
+<p>In this chapter and the next, we use the <strong><em>Climatic &gt; Prepare</em></strong> menu to summarise data into a form ready for analysis and then present the results as graphs and tables. Here we consider monthly and annual summaries of rainfall, temperature and other elements. The next chapter uses similar ideas for more specialised summaries of the rainfall data, such as the start and length of the season.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.1aThe main climatic summary menu</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.1b Presenting the summary</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image868.png" style="width:2.983in;height:2.51056in"></td>
+<td style="text-align: left;"><img src="media/image850.png" style="width:3.09296in;height:2.54131in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Section 6.2 data from Ghana are used to illustrate the summary of rainfall data.</p>
+<p><mark>To be continued</mark></p>
+</section>
+<section id="preparing-the-data" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="preparing-the-data"><span class="header-section-number">7.2</span> Preparing the data</h2>
+<p>In the second tutorial (reference/link) we showed how to plot annual temperature data, after starting from the daily records. That was without making use of the special climatic menu. These ideas are repeated here and extended for rainfall. The climatic menu is used, and the example is with data from 2 stations. The first step is to prepare the data.</p>
+<p>Use <strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic &gt; Ghana</em></strong> and open the file called <strong><em>ghana_two_stations.rds</em></strong>, Fig. 6.2a. The data are from Saltpond, which is on the coast, with a bimodal pattern of rainfall, and Tamale, which is further North, and with unimodal rainfall. The rainfall starts in 1944 for each station. Other elements, Fig. 6.2a, start later.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.2a Data from 2 stations</em></strong></p>
+<p><strong><em>File&gt;Open from Library<br>
+&gt;Instat&gt;Browse&gt;Climatic&gt;Ghana</em></strong></p></th>
+<th><strong><em>Fig. 6.2b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image8 63.png" style="width:3.29027in;height:3.28453in"></td>
+<td><img src="media/image864.pn g" style="width:2.96822in;height:1.31673in"></td>
+</tr>
+</tbody>
+</table>
+<p>The data is in the right shape and already has a date column.</p>
+<p>First use <strong><em>Climatic &gt; Dates &gt; Infill</em></strong>, Fig. 6.2b, to check there are no missing dates. Some files simply omit the days when all data are missing.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.2c Infill missing dates</em></strong></p>
+<p><strong><em>Climatic &gt; Date &gt; Infill</em></strong></p></th>
+<th><strong><em>Fig. 6.2d Results from infilling</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image852 .png" style="width:3.01192in;height:2.63331in"></td>
+<td><img src="media/image800. png" style="width:3.04408in;height:0.74666in"></td>
+</tr>
+</tbody>
+</table>
+<p>Complete the dialogue as shown in Fig. 6.2c and press Ok. The number of rows in the data increases slightly to 53297 and the output window states that just under 300 rows have been added.</p>
+<p>Use <strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong> and complete the dialogue as shown in Fig. 6.2e. The results are in Fig. 6.2f. They show no missing values for the date column (which is good and a relief), and very few missing rainfall days. Most of those were infilled. The other variables have reasonable values. Hence we proceed.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.2e Checking the data</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong></p></th>
+<th><strong><em>Fig. 6.2f Results</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image803.png" class="img-fluid">{ width=“2.6116010498687663in” h eight=“2.139025590551181in”}</td>
+<td><img src="media/image 812.png" style="width:3.41444in;height:1.93744in"></td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong><em>Climatic &gt; Date &gt; Use Date</em></strong>, Fig. 6.2g. Then it is convenient to reorder the columns to put the date variables before the climatic data, Fig. 6.2h.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.2g Generate further date variables</em></strong></p>
+<p><strong><em>Climatic &gt; Date &gt; Use Date</em></strong></p></th>
+<th><p><strong><em>Fig. 6.2h Data</em></strong></p>
+<p><strong><em>After Right-click &gt; Reorder columns</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image796.png" class="img-fluid"> {width=“2.626457786526684in” he ight=“4.1896883202099735in”}</td>
+<td><img src="media/image 806.png" style="width:3.36829in;height:2.54636in"></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, in this preparation, use <strong><em>Climatic &gt; Define Climatic Data</em></strong>. The dialogue should fill automatically as shown in Fig. 6.2i. Check that the data are unique and press Ok.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.2</em></strong></p>
+<p><strong><em>Climatic &gt; Define Climatic Datai</em></strong></p></th>
+<th><p><strong><em>Fig. 6.2j A count column</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Transform</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image802. png" style="width:3.09696in;height:3.63753in"></td>
+<td><img src="media/image810.p ng" style="width:2.97829in;height:4.01954in"></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, a new step, because we would like to analyse the number of rain days as well as the rainfall totals. A new column, giving whether a day was rainy-or-not, is generated. We show two ways this new column can be generated.</p>
+<p>The first way is simple, but it generates a complicated R command, because it is a special case of a more general function. Use <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong>, and complete the dialogue as shown in Fig. 6.2j. This produces a new column, which takes the value 1 for each rain day, and 0 otherwise. We have explained in Chapter 2 why we use the seemingly odd value of 0.85mm as a threshold for rain[^26].</p>
+<p>Now try the second method, which generates a very simple R command. It uses R-Instat’s powerful calculator, from <strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong>, Fig. 6.2k</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.2k Using the calculator</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong></p></th>
+<th><strong><em>Fig. 6.2l Using the additional logical keyboard</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image807. png" style="width:3.07775in;height:2.54694in"></td>
+<td><img src="media/image798. png" style="width:2.96863in;height:1.87995in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting data are shown in Fig. 6.2m. The calculator has produced a logical column, while the transformation using Prepare &gt; Transform has a column of 0 for dry and 1 for rain. There are the same in R as it interprets TRUE as a 1 and False as a zero.</p>
+<p>They are now not both needed, so delete one of them. We have kept the logical column.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.2m Data</em></strong></p>
+<p><strong><em>After Right-click &gt; Reorder columns</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image817.png" style="width:3.80012in;height:2.89117in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annual-summaries" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="annual-summaries"><span class="header-section-number">7.3</span> Annual summaries</h2>
+<p>The data are now ready to produce annual (or other) summaries. So, use <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong>. It should initially be as shown in Fig. 6.3a. (If not, then you might be in a different data frame, or you may not have followed the steps in the section above.)</p>
+<p>We are going to produce the annual totals. Fig. 6.3a also indicates it is equally easy to produce the totals for any subset of the year.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.3a The climatic summary dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p></th>
+<th><strong><em>Fig. 6.3b The summaries sub-dialogue</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image821 .png" style="width:3.10171in;height:3.65872in"></td>
+<td><img src="media/image826.p ng" style="width:2.96984in;height:3.1662in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 6.3a add the rainfall column and then press the Summaries button. In the sub-dialogue <strong><em>untick the N Total</em></strong>, and keep the <strong><em>N Non Missing</em></strong> and the <strong><em>Sum</em></strong> as shown in Fig. 6.3b. Then press <strong><em>Return</em></strong> and <strong><em>Ok</em></strong>.</p>
+<p>Now return to the dialogue and use the Rainday column instead of rainfall.</p>
+<p>Also Press on the Summaries button again and untick the N Non Missing checkbox from Fig. 6.3b. Press Return and Ok again.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.3c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.3d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image814.png" style="width:2.63899in;height:2.93844in"></td>
+<td style="text-align: left;"><img src="media/image815.png" style="width:3.25415in;height:3.78318in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are in Fig. 6.3d. These data are now at the “year” levels and there are 146 rows, i.e.&nbsp;years, from the 2 sites together. We see that at Saltpond in 1944 the total rainfall was 724mm from 69 rain days. So, the mean rain per rain day is over 10mm and sometimes considerably so. For example, again from Fig. 6.3d in 1951 there was a total of 1428mm from 85 rain days.</p>
+<p>There were some missing values in the data, but we defer a discussion of this topic to the next section. Here we have been conservative in that the annual totals have been set to missing if there were any days missing in that year.</p>
+<p>Graphs of the data can now be produced. The PICSA project includes discussing time-series graphs with farmers. They must be simple to produce, but also very clear. The special dialogue for this is <strong><em>Climatic &gt; PICSA &gt; Rainfall Graph</em></strong>, Fig. 6.3e.</p>
+<p>In Fig. 6.3e, check you are using the correct (yearly) data frame and complete it as shown. In the sub-dialogue, opt to add the mean line, but (at this stage) without a label.</p>
+<p>In the sub-dialogue, click also on the Y-axis tab and set the lower limit to 0 (zero).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.3e PICSA-style rainfall graphs</em></strong></p>
+<p><strong><em>Climatic &gt; PICSA &gt; Rainfall Graph</em></strong></p></th>
+<th><strong><em>Fig. 6.3f Sub-dialogue to add lines</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image81 9.png" style="width:3.31225in;height:3.08749in"></td>
+<td><img src="media/image813.png" style="width:2.75709in;height:2.63208in"></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.3g PICSA-style graph for 2 stations</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image816.png" style="width:6.06534in;height:2.95472in"></td>
+</tr>
+</tbody>
+</table>
+<p>It can be very useful for researchers and also intermediaries, to see results from multiple stations. This is easy with R-Instat, where they can be in the same data frame. Fig. 6.3h therefore shows another example, with a facetted graph for 12 stations from xxx.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong><em>Fig. 6.3hPICSA-style rainfall graph for 12 stations from xxx</em></strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><mark>Graph to add</mark></p>
+<p>However, most farmers are particularly interested in the results from a single station that is as close as possible to their location. Hence once you have the appropriate graph for multiple stations, you can then filter the data to look at each station in turn. Filtering is either done from the right-click menu or from within each dialogue.</p>
+<p>Return to the <strong><em>previous PICSA dialogue</em></strong> and choose <strong><em>Data Options</em></strong> to give the sub-dialogue shown in Fig. 6.3i</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.3i Define a filter</em></strong></p>
+<p><strong><em>Climatic &gt; PICSA &gt; Rainfall Graph &gt; Data Options</em></strong></p></th>
+<th><strong><em>Fig. 6.3j Choose a single station</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="medi a/image818.png" class="img-fluid">{width= “2.0657567804024497in” height=” 2.5604385389326336in”}</td>
+<td><img src="media /image808.png" style="width:3.91022in;height:2.58761in"></td>
+</tr>
+</tbody>
+</table>
+<p>Choose to define a new Filter and complete the resulting sub-dialogue as shown in Fig. 6.3j. As shown in Fig. 6.3j, give the filter the same name as the station. That will make it easy later.</p>
+<p>Now return to the PICSA dialogue. Choose the <strong><em>sub-dialogue</em></strong> and change the lines to give <strong><em>terciles with labels.</em></strong> The resulting graph for just Saltpond is in Fig. 6.3k.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.3k Single station with terciles</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.3l Graph for the second station</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image809.png" style="width:2.96125in;height:2.92087in"></td>
+<td style="text-align: left;"><img src="media/image788.png" style="width:2.89738in;height:2.89738in"></td>
+</tr>
+</tbody>
+</table>
+<p>Repeat the filtering exercise above to <strong><em>set a filter for Tamale</em></strong>. The resulting graph with the line for the mean is in Fig. 6.3l.</p>
+<p>Similar graphs for the number of rain days is also sometimes needed for PICSA. They are now very easy to produce.</p>
+<p>Return to the Climatic &gt; PICSA &gt; Rainfall Graph dialogue, and simply change the Y-variable,</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.3m</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.3n</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image783.png" style="width:2.77738in;height:2.78274in"></td>
+<td style="text-align: left;"><img src="media/image779.png" style="width:3.28962in;height:3.28215in"></td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Return to the dialogue</em></strong> again, press <strong><em>Data Option</em></strong> and choose the filter you called <strong><em>Saltpond</em></strong>, Fig. 6.3o. You don’t need to define the filter as that was done earlier. You can just keep using it.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.3o</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.3p</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image770.png" style="width:2.4541in;height:2.73683in"></td>
+<td style="text-align: left;"><img src="media/image789.png" style="width:3.48981in;height:3.48981in"></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, in this section, we stress that the idea of the climatic menu is simply to make it even easier to do common climatic analyses. By “even easier” we mean easier than using the main dialogues in R-instat. If what you would like to do is not (yet) possible with the climatic menu it may still be possible with the ordinary use of R-Instat[^27]. It is important that you remain in charge and are not limited by the particular dialogues. As an example, suppose you would like to fit a trend line to the rainfall data. The PICSA graphs permit horizontal lines, but not trend lines. Perhaps the last graph, Fig. 6.3p has a downward slope?</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.3q Graph with “ordinary” dialogue</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Line Plot</em></strong></p></th>
+<th><strong><em>Fig. 6.3r Saltpond annual rainfall with trend line</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image768.p ng" style="width:2.98037in;height:2.74463in"></td>
+<td><img src="media/image775 .png" style="width:3.05394in;height:3.17823in"></td>
+</tr>
+</tbody>
+</table>
+<p>One way to check this possibility is through the “ordinary” graphics dialogues in R-Instat. So, use <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong> and complete the dialogue as shown in Fig. 6.3q. The results are in Fig. 6.3t. They perhaps hint at a possible trend[^28]. If there is a trend</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.3s Analysis for rainfall totals</em></strong></p>
+<p><strong><em>(Change Variable to sum_rainfall in Fig. 6.3q)</em></strong></p></th>
+<th><p><strong><em>Fig. 6.3t Cumulative or Exceedance Graph</em></strong></p>
+<p><strong><em>Climatic &gt; PICSA &gt; Cumulative/Exceedance Graph</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image767.pn g" style="width:2.89721in;height:3.03582in"></td>
+<td><img src="media/image764 .png" style="width:3.16711in;height:3.57535in"></td>
+</tr>
+</tbody>
+</table>
+<p>If there is a trend at Saltpond, perhaps it should also be evident in an analysis of the annual totals. Fig. 6.3s shows this is not the case.</p>
+<p>Our aim in the above discussion is primarily to discuss the value of the “ordinary” R-Instat dialogues, so users do not restrict all their analysis to the climatic menu. We return to trend analysis in Section 6.6, when we process the temperature data.</p>
+<p>Time series are not the only way to display the annual summaries. Use <strong><em>Climatic &gt; PICSA &gt; Cumulative/Exceedance Graph</em></strong>, and complete the dialogue as shown in Fig. 6.3t. If the filter is still operating, then remove it by including <strong><em>Data Options</em></strong> and choosing <strong><em>no_filter</em></strong> in the resulting subdialogue, Fig. 6.3u. The resulting graph is in Fig. 6.3v.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.3u Removing a filter</em></strong></p>
+<p><strong><em>(Data Options from dialogue)</em></strong></p></th>
+<th><strong><em>Fig. 6.3v Cumulative distributions</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image769.p ng" style="width:2.95154in;height:3.90298in"></td>
+<td><img src="media/image797. png" style="width:3.04261in;height:3.20707in"></td>
+</tr>
+</tbody>
+</table>
+<p>Statisticians like cumulative distributions, but many users prefer exceedance graphs. If that is your wish, then return to the dialogue in Fig. 6.3t and tick the box for an <strong><em>Exceedance Graph</em></strong>. The result is in Fig. 6.3w.</p>
+<p>These are just the inverse of each other. Starting with an amount – on the x-axis, you can read the probability of the total rainfall being less than this amount (cumulative graph) or greater than this amount (exceedance graph). So, if you need 800mm for a particular crop, then the exceedance graph informs you there is about a 75% chance of getting this amount, or more, at Saltpond and about a 90% chance at Tamale. The cumulate graph would show a 25% or 10% chance of failure, i.e.&nbsp;of getting less than this amount.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.3w Exceedance graph</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.3x Exceedance graph for rain days</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image824.png" style="width:2.83659in;height:2.97992in"></td>
+<td style="text-align: left;"><img src="media/image799.png" style="width:2.86216in;height:3.04293in"></td>
+</tr>
+</tbody>
+</table>
+<p>Finally change the variable in the dialogue in Fig. 6.3t to the number of rain days, to give the graph in Fig. 6.3x. The shapes are the same. The steeper the graphs the smaller the variability and Fig. 6.3v, w and x all show the totals are slightly more variable at Saltpond, compared to Tamale. This can be confirmed numerically using Describe &gt; Specific &gt; Summary Tables. Results are in Fig. 6.3y.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fig. 6.3y Numerical results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image804.png" style="width:3.02099in;height:3.32656in"></td>
+</tr>
+</tbody>
+</table>
+<p>The standard deviation of the annual totals is 273mm at Saltpond compared to 193mm at Tamale, while the means are relatively close. Similarly the standard deviation for the number of rain days is 13 days at Saltpond compared to 9 days at Tamale.</p>
+<p>This points to looking at the data in more detail. Hence monthly summaries are examined in the next section.</p>
+</section>
+<section id="more-detailed-summaries---rainfall" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="more-detailed-summaries---rainfall"><span class="header-section-number">7.4</span> More detailed summaries - rainfall</h2>
+<p>For many applications it is important to know about the seasonality of the data. In this section we therefore consider monthly (rather than annual) totals.</p>
+<p>In Fig. 6.2g <mark>(link)</mark> we used the Climatic &gt; Dates &gt; Use Date dialogue to add the months to the daily data and these are used in this section. Other possibilities with this dialogue are to produce quarters, dekads (10-day periods), pentades or weeks. Any of these periods can be used instead.</p>
+<p>Use <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong>. It was used initially in Fig. 6.3a to produce the annual summaries.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig.6.4a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.4b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image801.png" style="width:3.60435in;height:4.09049in"></td>
+<td style="text-align: left;"><img src="media/image780.png" style="width:2.37512in;height:3.68769in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 6.4a change the tab at the top to Annual + Within and complete as shown. Click on Summaries and choose just the 2 statistics shown in Fig. 6.4b. Then press Return and Ok.</p>
+<p>Now change from rainfall to Rainday in Fig. 6.4a and use the Summaries to just get the Sum, i.e.&nbsp;untick the N Non Missing.</p>
+<p>The resulting data frame is shown in Fig. 6.4c. There are 1751 rows of data, i.e.&nbsp;the 141 years for the 2 stations, times 12, because the data are now monthly. For example, at Saltpond, January 1944 had a total of 41mm from 2 rain days, whie June of the same year had 22 rain days and a total of 256mm.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.4c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.4d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image793.png" style="width:3.07108in;height:3.24673in"></td>
+<td style="text-align: left;"><img src="media/image792.png" style="width:2.8241in;height:3.23767in"></td>
+</tr>
+</tbody>
+</table>
+<p>One way to show the seasonal pattern is through boxplots. Use <strong><em>Describe &gt; Specific &gt; Boxplot</em></strong> and complete the dialogue as shown in Fig. 6.4d. Use the <strong><em>Plot Options</em></strong>, Fig. 6.4e, to include the stations as facets and give the results as in Fig 6.4f[^29].</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.4e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.4f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image781.png" style="width:2.65815in;height:2.73552in"></td>
+<td style="text-align: left;"><img src="media/image774.png" style="width:3.32867in;height:3.28715in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 6.4d, change the variable to <strong><em>sum_Rainday</em></strong> to also give the graph in Fig.6.4g.</p>
+<p>Both graphs show the different seasonal pattern at the 2 sites. June is the peak month of the rainy season at Saltpond and there is one year where the monthly total exceeded 800mm. In June, Fig. 6.4g also shows on average about half the days are rainy at Saltpond and that is similar to the number of rain days in Tamale in September.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.4g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.4h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image776.png" style="width:3.14358in;height:3.09357in"></td>
+<td style="text-align: left;"><img src="media/image751.png" style="width:2.91635in;height:2.79556in"></td>
+</tr>
+</tbody>
+</table>
+<p>Line plots can show the seasonal and time-series nature of the data together. As an example, use <strong><em>Describe &gt; Specific &gt; Line</em></strong> and complete as shown in Fig. 6.4h. In the Plot Options, use the Month as the factor for the facets, to give the graph as shown in Fig. 6.4i[^30]</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.4i</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image759.png" style="width:6.05397in;height:2.92973in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results in Fig. 6.4i show the interesting nature of the June rainfall totals at Saltpond and that the extreme monthly total was in 1962. It also shows the way Tamale consistently has more rainfall than Saltpond in July to September.</p>
+<p>The same type of graph can also be produced for the number of raindays, see Fig. 6.4j for a different layout[^31]. It also shows that the initial analysis of rainfall trends using the annual rainfall totals may have been over-simplistic. If trends do exist, then the next step could be to examine whether they are consistent, or not, during the year, i.e. for the different months. Thus, if rainfall seems to be decreasing, then is that in all months/seasons, or just in a part of the year. This issue is examined further in Section 6.6 when analysing the temperature records.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.4j Time series graphs for the 2 stations by month</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image757.png" style="width:6.06782in;height:2.90349in"></td>
+</tr>
+</tbody>
+</table>
+<p>In reports it can be useful to include the daily data for a sample of the years. Fig. 6.2k shows the daily data for Saltpond in 1962[^32], when June had exceptionally high rainfall.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.2k Daily data for Saltpond for 1962</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image790.png" style="width:2.94077in;height:4.57665in"></td>
+</tr>
+</tbody>
+</table>
+<p>There is nothing obviously wrong with the June data, but they look sufficiently curious, that a check back to the paper records and perhaps with nearby stations would seem sensible.</p>
+</section>
+<section id="options-for-missing-values" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="options-for-missing-values"><span class="header-section-number">7.5</span> Options for Missing values</h2>
+<p>Analyses need to be able to take account of missing values in the data. Statistical packages are usually “sensible” in their handling of missing values and R is no exception. However, defining how they are to be handled in each circumstance is the responsibility of the user and we consider here the options in R and R-Instat.</p>
+<p>To illustrate the problem Fig. 6.5a gives an inventory plot for the Ghana data. It shows there is hardly a problem for the rainfall data. The measurement of the other elements started later and there is a slightly greater proportion of missing values.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.5a</em></strong></p>
+<p><strong><em>Climatic &gt; Check Data Inventory</em></strong></p></th>
+<th><p><strong><em>Fig. 6.5b Default annual summaries of rainfall</em></strong></p>
+<p><strong><em>From &gt; Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image744.p ng" style="width:3.02824in;height:3.14148in"></td>
+<td><img src="media/image708. png" style="width:3.09181in;height:3.15433in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 6.5b shows some of the annual totals that were used for analysis in Section 6.3. A column in Fig. 6.3b shows also the number of missing values each year. It shows there were missing values in the last 2 years and the annual summary has therefore been set to missing. This is “safe” but it may be disappointing as the last 2 years totals have therefore been set to missing, and have therefore been excluded from the analysis.</p>
+<p>Repeating this point, the default in R, and hence in R-Instat, is that when there are any missing values (even just one day in the year) then the summary is set to missing.</p>
+<p>The opposite approach is also simple to undertake. This is where all the missing days are omitted, and the summary is then calculated using the remaining data. This uses the same <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue, but check the box labelled <strong><em>Omit Missing Values</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 6.5c Data with both summaries</em></strong></th>
+<th><p><strong><em>Fig. 6.5d Years with missing values</em></strong></p>
+<p><strong><em>Use Right-click &gt; Filter with (Total == NA)</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image748. png" style="width:2.97396in;height:3.0356in"></td>
+<td><img src="media/image746 .png" style="width:3.13029in;height:1.95156in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are in the last 2 columns of Fig. 6.5c. They show the total rainfall to be 665mm in Tamale in 2015 from 53 rain days – quite low compared with other years. In 2016 the values are 998mm with 67 rain days.</p>
+<p>R-Instat has added intermediate options described below. Before that, we consider what more can be done with just these 2 extremes.</p>
+<p>Fig. 6.5d shows the annual data for those years where there are missing values. There are just 9 years overall, 5 at Saltpond and 4 at Tamale. Hence, with data from 1944 to 2016, this leaves over 60 years of data at each site. Hence, one option is to accept the omission of those years and proceed, which is what was done in Section 6.3.</p>
+<p>A second possibility results from the observation, Fig. 6.5d, that in 3 of the 9 years there was just a single day missing in the year. Perhaps it is reasonable to accept the totals in those years and then just have 6 missing years overall.</p>
+<p>To go further we now look in more detail at the daily data. One coincidence is that both sites have missing data in 1949 and an examination is that this is for the same 3 months, i.e.&nbsp;from October to December. We don’t like coincidences and wonder why.</p>
+<p>More generally, the other years have just one or two months missing. If that were between November and February – when there is usually little rain, then perhaps the total could be accepted. In this case that is not the case. For example August 2015 is missing in Tamale, and this perhaps explains why the total and number of rain days was low in that year. Omitting it, as we did, in Section 6.3, was sensible.</p>
+<p>A more major possibility is that Saltpond collects data every 3 hours and Tamale collects hourly data. So perhaps the Met service has more detailed records that could help to infill the missing daily values.</p>
+<p>To see further options for missing values, return to the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue. Choose the <strong><em>Summaries</em></strong> button and the <strong><em>Missing Options</em></strong> tab, Fig. 6.5e. The setting we chose of 27 means that any year with a month or more missing, gives a missing summary. In this case, as shown in Fig. 6.5f, it has just given the annual totals for the 3 years with just a single missing day.</p>
+<p>In some examples the third option in Fig. 6.5e becomes important. Sometimes the data, as supplied, starts, or ends during a year. In this instance the first and/or the last year may be incomplete. For example the Tamale data in 1944 start in February, rather than January. This was not an issue, because January is relatively dry, but had they started in July 1944 that would have been different and should have been allowed for.</p>
+<p>In Fig. 6.5e this corresponds to setting the Option Not Missing to about 340 (days) rather than the Missing Days to 27.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.5e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.5f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image773.png" style="width:2.65784in;height:2.08662in"></td>
+<td style="text-align: left;"><img src="media/image772.png" style="width:3.43017in;height:2.02797in"></td>
+</tr>
+</tbody>
+</table>
+<p>A different, and more major, operation is to try to “infill” or complete the data, where there are missing values. There is a wide variety of methods, ranging from input of the mean value from that day of the year to using estimates from a neighbouring station, or from satellite observations. They are considered in <mark>Chapter xxx</mark>.</p>
+</section>
+<section id="processing-temperature-data" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="processing-temperature-data"><span class="header-section-number">7.6</span> Processing temperature data</h2>
+<p>The <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue applies to any element. With the Ghana data the annual temperature summaries can therefore be added to those of the rainfall calculated in Section 6.3.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.6a</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p></th>
+<th><strong><em>Fig. 6.6bInclude temperature extremes</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image778. png" style="width:3.01254in;height:3.21036in"></td>
+<td><img src="media/image782. png" style="width:2.93647in;height:2.63648in"></td>
+</tr>
+</tbody>
+</table>
+<p>Complete the dialogue as shown in Fig. 6.6a and then the Summaries sub-dialogue as shown in Fig. 6.6b. This produces the annual mean and the annual extremes of the daily minimum temperatures.</p>
+<p>Then use the Missing Options tab, shown in Fig. 6.6b and complete it as shown earlier in Fig. 6.5e. This will give the annual summaries if there are a few missing days, but not if a month or more is missing.</p>
+<p>Once you have these summaries, return to the dialogue in Fig. 6.6a and replace the minimum by the maximum temperatures.</p>
+<p>The measurement of temperatures started in 1960, hence the summary data are now filtered, prior to producing graphs.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.6c Annual temperature data</em></strong></p>
+<p><strong><em>Following Right-click &gt; Filter &gt; (Year &gt; 1959)</em></strong></p></th>
+<th><p><strong><em>Fig. 6.6d</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Line Plot</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image752 .png" style="width:3.14016in;height:2.15774in"></td>
+<td><img src="media/image760.pn g" style="width:2.84289in;height:2.38531in"></td>
+</tr>
+</tbody>
+</table>
+<p>Use the <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong> dialogue, and complete as shown in Fig. 6.6d. In the plot options, choose to <strong><em>Facet by the station</em></strong>[^33].</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.6e</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image765.png" style="width:5.98585in;height:3.0798in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 6.6e the data on the extremes must be treated with caution, because they are the values on a single day each year. There does appear to be a trend in the mean for Tmax, particularly at Tamale. This can be confirmed using the <strong><em>Model &gt; Three Variables &gt; Fit Model</em></strong> dialogue, which is described in more detail in Chapter xxx. The results show an estimated increase of 2.3°C for Tamale. The estimated increase for Saltpond was just 0.4°C and that was not statistically significant.</p>
+<p>The graph can be repeated for the minimum temperatures (not shown). Instead, Fig. 6.6 shows Tmax and Tmin together. The estimated trend in Tmin is an increase of 2.0°C per 100 years and is almost the same at the two sites. Fig. 6.6f also shows clearly the much greater diurnal range at Tamale, compared to Saltpond.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.6f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image753.png" style="width:6.06458in;height:3.00273in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 6.6f (and earlier in Fig. 6.6e) the mean line for Saltpond looks odd. In this Chapter the quality control steps, discussed in Chapter 5, have been omitted and, as usual, that was not a good idea! Fortunately, the daily data are available, so we return to these and do a simple time series plot of the daily records, Fig. 6.6g. This indicates an oddity in the data in about 1974.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.6g Tmax for Saltpond daily data by Date</em></strong></p>
+<p><strong><em>From Describe &gt; Specific &gt; Line Plot</em></strong></p></th>
+<th><strong><em>Fig. 6.6h Monthly means for Tmax</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image7 50.png" style="width:3.32047in;height:2.68146in"></td>
+<td><img src="media/image777.png" style="width:2.72012in;height:1.5in"></td>
+</tr>
+</tbody>
+</table>
+<p>This is confirmed in Fig. 6.6h, where the monthly means for Tmax at Saltpond are displayed for the 1970s[^34]. They show a drop of about 2 degrees from May 1974.</p>
+<p>The next step in this small investigation is to display the daily records, as shown in Fig. 6.6i. Looking at the daily data it became clear they were originally recorded in degrees Fahrenheit and (at least usually) just to the nearest degree. Hence, for clarity, the Tmax data were transformed back into Fahrenheit[^35] and then displayed, as shown in Fig. 6.6i.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.6i</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.6j</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image771.png" style="width:2.69896in;height:4.11481in"></td>
+<td style="text-align: left;"><img src="media/image749.png" style="width:3.29566in;height:3.85672in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 6.6i confirms the change was in May 1974, or possibly 30 April. In most years temperatures in May are about 0.5°C lower than April, or about 1°F. In the 1974 record it is 4 or 5 degrees Fahrenheit lower.</p>
+<p>Fig. 6.6j therefore repeats the analysis, shown earlier in Fig. 6.6e, but just from 1975. The results are now consistent with the data from Tmin at Saltpond and with the Tamale data. The trend for the mean is slightly higher at 3.2°C per 100 years.</p>
+<p>Analyses of the temperature records, like the above, are common. There is an immediate follow-up question that is often omitted, namely is the trend in the temperatures consistent through the year, or is it perhaps different in the rainy and dry seasons?</p>
+<p>As in Section 6.4 for the rainfall, we therefore extend the analysis and examine the monthly data.</p>
+</section>
+<section id="more-detailed-summaries---temperatures" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="more-detailed-summaries---temperatures"><span class="header-section-number">7.7</span> More detailed summaries - temperatures</h2>
+<p>We examine the possible trends in Tmin and Tmax, at the two stations, monthly. A specific question is whether there is evidence for a different trend in some months, compared to others.</p>
+<p>For simplicity, given the inhomogeneity of Tmax at Saltpond, the daily data are first filtered so only the data from 1975 are analysed, Fig. 6.7a.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 6.7a Filter the data (optional)</em></strong></p>
+<p><strong><em>Right-click &gt; Filter &gt; Define new</em></strong></p></th>
+<th><p><strong><em>Fig. 6.7bMonthly summaries</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p>
+<p><strong><em>Only summary is the mean</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image701.png" style="width:2.74164in;height:2.04112in"></td>
+<td><img src="media/image70 6.png" style="width:3.17611in;height:3.44477in"></td>
+</tr>
+</tbody>
+</table>
+<p>Then use <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong>, Fig. 9.7b. In Fig. 9.7b click on <strong><em>Summaries</em></strong> and just choose the <strong><em>mean</em></strong>.</p>
+<p>Then repeat for Tmax, to give the data as in Fig. 6.7c.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 6.7c Monthly means for Tmin and Tmax</em></strong></th>
+<th><p><strong><em>Fig. 6.7d</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Line Plot</em></strong></p>
+<p><strong><em>(Also use Plot Options with Month a Facet)</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image747. png" style="width:3.04795in;height:3.2116in"></td>
+<td><img src="media/image704. png" style="width:2.97447in;height:2.61065in"></td>
+</tr>
+</tbody>
+</table>
+<p>Then <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong>, as shown in Fig. 6.7d indicates a reasonably consistent slope at both sites, for each of the months, Fig. 6.7e.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.7e Trends by month for the two stations</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image705.png" style="width:6.11982in;height:2.97923in"></td>
+</tr>
+</tbody>
+</table>
+<p>However, this does not quite answer the question posed, namely that the trend is independent of the month, i.e.&nbsp;it is the same in each month.</p>
+<p>The modelling dialogues are needed to address this hypothesis. The menu is shown in Fig. 6.7f.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 6.7f The Model menu</em></strong></th>
+<th><p><strong><em>Fig. 6.7g Filter by Station</em></strong></p>
+<p><strong><em>Right-click &gt; Filter &gt; Define New</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="m edia/image745.png" class="img-fluid">{widt h=“2.062606080489939in” height= “2.4237357830271216in”}</td>
+<td><img src="media/ image703.png" style="width:3.8127in;height:2.28484in"></td>
+</tr>
+</tbody>
+</table>
+<p>In the modelling menu, Fig. 6.7f, the <strong><em>One Variable</em></strong> sub-menu permits a wide variety of distributions to be fitted to a single variable, i.e.&nbsp;a single column of data.</p>
+<p>Moving down in Fig. 6.7f the Two Variables sub-menu is designed to model a single y (dependent) variable against one x (independent) variable. An example would be Tmax against the year. That would be ok if we had annual data, as in Section 6.6, but we have the monthly data.</p>
+<p>In our case we need at least three variables. The dependent is initially Tmax and this is modelled as a function of both the year and month, i.e. we have a total of 3 variables.</p>
+<p>Once you use the modelling dialogues as a routine, then the General dialogues are usually used, or (below the line in Fig. 6.7f) the even more general Model dialogue, where you just give an R command.</p>
+<p>To simplify the modelling, first filter for a single station, Fig. 6.7g. Call the filter <strong><em>Saltpond</em></strong> (rather than Filter1).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 6.7h Make a new data frame</em></strong></th>
+<th><p><strong><em>Fig. 6.7i</em></strong></p>
+<p><strong><em>Model &gt; Three Variables &gt; Fit Model</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image702.p ng" style="width:2.98193in;height:2.99659in"></td>
+<td><img src="media/image699 .png" style="width:3.08916in;height:2.72983in"></td>
+</tr>
+</tbody>
+</table>
+<p>Return. to the main dialogue and opt to <strong><em>Apply as Subset</em></strong>, Fig. 6.7h.</p>
+<p>Now, for the first model. Use <strong><em>Model &gt; Three Variables &gt; Fit Model</em></strong> with the new Saltpond data frame and complete it as shown in Fig. 6.7i. Initially you have a ‘*’ between the year and month variables. This fits a different slope for each month, as shown earlier, for Saltpond, in Fig. 6.7e.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.7j</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.7k</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image564.png" style="width:3.30832in;height:1.28529in"></td>
+<td style="text-align: left;"><img src="media/image572.png" style="width:2.70761in;height:1.63468in"></td>
+</tr>
+</tbody>
+</table>
+<p>A lot of results are produced. Key information is the ANOVA table shown in Fig. 6.7j. This shows that there is a clear <strong><em>trend (year</em></strong>) and <strong><em>seasonality (month_abbr)</em></strong>. It also shows that there is no evidence of the interaction, i.e.&nbsp;the <strong><em>year:month_abbr</em></strong> explains very little variation in the data, and what it explains is not statistically significant.</p>
+<p>Hence, the separate slopes each month are not needed. A parallel line model is adequate.</p>
+<p>So, return to the dialogue in Fig. 6.7i and change the ‘*’ into a ‘+’. At the same time, click on the Display Options and choose to Save the Fitted Values, Fig. 6.7k.</p>
+<p>Before examining the results there is one small (optional) change that sometimes simplifies the interpretation. With the year as given, i.e. starting in 1975, the origin is almost 2000 years ago. Instead you could make 1975 as the origin, using <strong><em>Prepare &gt; Column: Calculations &gt; Calculate</em></strong> and making a new column, say <strong><em>yr &lt;- year -1975</em></strong>. Then use <strong><em>yr</em></strong> instead of year in the model.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.7l</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 6.7m</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image563.png" style="width:2.47772in;height:2.53505in"></td>
+<td style="text-align: left;"><img src="media/image570.png" style="width:3.55308in;height:2.50862in"></td>
+</tr>
+</tbody>
+</table>
+<p>Interpreting the model in Fig. 6.7l the trend (yr coefficient) is a possibly disturbing 3.4 degrees per 100 years. For the seasonality, the mean temperature in January 1975 was estimated as 29.9°C. February and March were each estimated to be an average of 0.6°C higher, i.e.&nbsp;about 30.5 degrees, while August had the lowest average temperatures.</p>
+<p>In some stations there is “local warming” where the station surroundings are more built up. Hence this should be checked, before assuming the large trend per year is a feature of global warming.</p>
+<p>A similar analysis for Tmin, again shows no evidence that a different trend is needed each month. Saving those fitted values also, as shown in Fig. 6.7m permits the parallel lines to be plotted, using <strong><em>Describe &gt; Specific &gt; Line Plot</em></strong>, as shown in Fig. 6.7n</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 6.7n Observed and fitted temperatures at Saltpond</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image565.png" style="width:6.0614in;height:2.97294in"></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter_5_Quantity_and_quality.html" class="pagination-link" aria-label="Quantity and quality?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter_7_Tailored_Products.html" class="pagination-link" aria-label="Tailored Products">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

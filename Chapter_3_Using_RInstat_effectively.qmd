@@ -1,0 +1,673 @@
+# Using R-Instat effectively
+## Introduction
+
+R-Instat is simply a front end to the R programming language, Wikipedia
+(2019). R started in the 1990s and consists of a relatively small core,
+that is maintained by the R development core team. There are then also
+over 12 thousand packages that extend R's capabilities. About 200 of
+these packages are included (behind the scenes) in R-Instat.
+
+The front end in R-Instat is written in Visual Basic.Net. This front end
+provides the menus and dialogues that are used to run R-Instat. The
+default view of R-Instat is shown in Fig. 3.1a. It has 2 windows, one
+showing part of the data and the other is for the results or output.
+
+  ---------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.1a***
+  ---------------------------------------------------------------------------------------------------------------------
+  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLc875082.PNG](media/image1134.png){width="6.158751093613298in"
+  height="3.271836176727909in"}
+
+  ---------------------------------------------------------------------------------------------------------------------
+
+R-Instat looks a little like a spreadsheet package, but there are
+differences. One, shown in Fig. 3.1, is that the results are in a
+separate window, rather than on successive sheets. Also, the data shown
+in Fig. 3.1a are stored in an R data frame (behind the scenes) and what
+you see is often only a small part of these data.
+
+Current spreadsheets have a limit of about 1million rows. This not a
+limit in R, (or therefore in R-Instat) where your machine's memory
+imposes a limit that is usually larger. However, the effort of
+continually copying all the data to the front end would slow R-Instat
+and hence (by default) we just show the first 1000 rows of data and the
+first 30 columns[^8].
+
+One way to see all the data in the current data frame[^9] is shown in
+Fig. 3.1b. Just ***right-click*** on the tab at the bottom and choose
+***View Data Frame,*** Fig. 3.1c.
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.1b***                                         ***Fig. 3.1c***
+  ------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
+  ![](media/image1149.png){width="2.1374267279090113in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLc9d2c55.PNG](media/image1146.png){width="3.9064785651793525in"
+  height="2.0438856080489938in"}                          height="2.8405096237970255in"}
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The same result could alternatively be done through ***Prepare \> Data
+Frame \> View data*** as shown in Fig. 3.1d. This gives a dialogue. From
+here, as shown in Fig. 3.1e, you can choose any of the open Data Frames.
+Then click Ok to again show the data in R, Fig. 3.1c.
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.1d***                                         ***Fig. 3.1e***
+  ------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
+  ![](media/image1148.png){width="2.9987478127734035in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLc9b3538.PNG](media/image1160.png){width="2.9707206911636046in"
+  height="2.4772265966754157in"}                          height="2.9802416885389325in"}
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The menu and dialogue in Fig. 3.1d and 3.1e are all part of the
+"front-end" of R-Instat. When you click Ok, R-Instat constructs an R
+command and sends it to R. The results are then returned to the
+front-end.
+
+The output (results) window shows the R command that has been sent, as
+well as the output, if any. ***Right-click*** in the ***Output
+Window***, Fig. 3.1f, if you wish to turn this off for future commands.
+
+In the data window ***right-click in the name field*** to provide some
+common options, Fig. 3.1g. Alternatively, each of these options is
+available from the ***Prepare Menu***.
+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.1f***                                         ***Fig. 3.1g***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](media/image1174.png){width="3.0241666666666664in"   ![](media/image1151.png){width="2.9767508748906386in"
+  height="2.0632163167104114in"}                          height="2.69in"}
+
+  ---------------------------------------------------------------------------------------------------------------
+
+The data and output windows are the most important in R-Instat. There
+are four more windows. The use of the two metadata windows is described
+in Section 3.2 and the Log plus Script Windows are described in Section
+3.3.
+
+## Column and data frame metadata
+
+The R data frames used through R-Instat contain data together with some
+metadata. The name of each variable is part of the metadata as is a
+label for each variable. R-Instat has data in a set of
+***data-sheets***. An R-Instat ***data sheet*** is an R data frame with
+added metadata. The added information includes information on key
+columns together with links to other sheets. This helps R-Instat keep
+track of multiple data frames that are connected, such as the monthly
+summaries calculated from the daily data. A data sheet also keeps
+information on objects that have been produced and saved, such as graphs
+and models.
+
+  -----------------------------------------------------------------------
+  ***Fig. 3.2aThe toolbar and View menu***
+  -----------------------------------------------------------------------
+  ![](media/image1179.png){width="5.884278215223097in"
+  height="2.321505905511811in"}
+
+  -----------------------------------------------------------------------
+
+Use the ![](media/image1147.png){width="0.32342629046369203in"
+height="0.29291447944007in"} icon on the toolbar, (Fig. 3.2a) or ***View
+\> Column Metadata*** to see the metadata currently associated with each
+open data frame. An example is in the top left in Fig. 3.2b.
+
+  ---------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.2b***
+  ---------------------------------------------------------------------------------------------------------------------
+  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML5265ebf.PNG](media/image1152.png){width="6.193180227471566in"
+  height="3.7589031058617675in"}
+
+  ---------------------------------------------------------------------------------------------------------------------
+
+As with Excel you can open multiple data frames when using R-Instat. The
+column metadata shown in Fig. 3.2b has tabs at the bottom, just like the
+data (also shown in Fig. 3.2b), so you can check on the metadata for any
+data frame. An R-Instat ***data book*** is the set of open ***data
+sheets.***
+
+Using ***View \> Data Frame Metadata***, Fig. 3.2b (top right) opens
+another window in which each row shows the metadata on a data sheet. The
+information in Fig. 3.2b includes the name of the sheet, an optional
+descriptive label, and the number of columns currently in the sheet.
+
+If you use ***File \> Save As \> File Data As,*** Fig. 3.2c, at any
+stage, then R-Instat saves the whole data book, i.e. all the data
+frames, together with all the associated meta data, into a single file.
+This file has the extension RDS and this data book can later be
+re-opened in R-Instat[^10]. Good practice is usually to work on a single
+topic in each data book, i.e. the different data sheets are usually
+interconnected. As with Excel, there is nothing stopping you having all
+sorts of unconnected data sheets in the same book, but this usually
+complicates your work.
+
+Some tasks are made simpler through the Column Metadata window, Fig.
+3.2d. You can double-click in the name field of any column to change the
+name. You can add or change the label in the same way, Fig. 3.2. For
+numeric columns R chooses the number of significant figures to display.
+That is also shown in the metadata and can be changed[^11]. In addition,
+as shown in Fig. 3.2c, right clicking on the left-hand side gives the
+same popup menu of common tasks as is available from the data view.
+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.2c***                                         ***Fig. 3.2d***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](media/image1137.png){width="2.7479910323709538in"   ![](media/image1226.png){width="3.1687871828521437in"
+  height="2.1073818897637797in"}                          height="3.7432458442694663in"}
+
+  ---------------------------------------------------------------------------------------------------------------
+
+Each Window button in the toolbar, Fig. 3.2e and the Options in the View
+Menu, Fig. 3.2f act like an on-off switch. So now use the curly arrow to
+reset to the default of the data and output windows side by side.
+
+  --------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.2e***                                         ***Fig. 3.2f***
+  ------------------------------------------------------- ------------------------------------------------------
+  ![](media/image1225.png){width="2.7795439632545933in"   ![](media/image1219.png){width="2.180667104111986in"
+  height="2.5554516622922137in"}                          height="2.7015277777777778in"}
+
+  --------------------------------------------------------------------------------------------------------------
+
+In this section we have added more of the 6 Windows available in
+R-Instat. The opposite is also useful. Once in the default layout,
+switching off the Data Window gives just the Output (Results) Window. Or
+switch off the Output Window to look at more columns of data. However,
+in that case remember to switch on the Output window to see any further
+results.
+
+## Graphs
+
+Base R has a comprehensive graphics system, and this is used by many R
+packages. The grammar of graphics, Wilkinson (2005) is an influential
+book and has led to the exciting ggplot package (gg for grammar of
+graphics) and graphics system in R. One challenge we had in constructing
+R-Instat was to make the ggplot system easy to use. Almost all the
+graphs in this guide use this system. One example that does not, is the
+adjusted boxplot shown in Fig. 3.5i.
+
+In this section we describe key concepts of the ggplot system and of our
+implementation.
+
+One concept is "facets". Fig. 2.4u is an example of a facetted graph,
+where there is one facet for each month. The default is for the x and y
+scales to be the same for each graph[^12], so the months can be compared
+easily. Also, you are not diverted by lots of axis scales for each
+month.
+
+Some multiple graphs show different information in each pane, as was
+seen in Fig. 2.4m.
+
+Within a graph you can have multiple layers. So, there are 2 layers in
+Fig. 2.4r, one for the station and the other for the satellite data. In
+Chapter 10 one layer in a map shows the districts in a country and
+another shows the position of each climatic station.
+
+In each layer there is a geometric shape, or geom. A geom may be a
+point, a line, a boxplot etc.
+
+In R-Instat the common geoms have their own dialogue as shown in Fig.
+3.3a. We choose a boxplot in Fig. 3.3b for Tmax at Dodoma by month.
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.3a***                                         ***Fig. 3.3b***
+  ------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------
+  ![](media/image1224.png){width="2.7233081802274715in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLa085dd4.PNG](media/image1222.png){width="2.960900043744532in"
+  height="2.9685115923009624in"}                          height="3.381676509186352in"}
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Every graphics dialogue includes the option to save the resulting graph,
+by giving it a name. In Fig. 3.3b we called the graph Tmax_boxplot. This
+ggplot graph is now saved as part of the metadata associated with the
+Dodoma data frame.
+
+If you don't give a name, then the default name of last_graph is given
+automatically. But, of course, that name is overwritten when you do the
+next graph.
+
+  --------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.3c***                                        ***Fig. 3.3d***
+  ------------------------------------------------------ -------------------------------------------------------
+  ![](media/image1230.png){width="3.014453193350831in"   ![](media/image1239.png){width="3.0348807961504813in"
+  height="2.811914916885389in"}                          height="2.83132217847769in"}
+
+  --------------------------------------------------------------------------------------------------------------
+
+Double-click in the graph, Fig, 3.3d to turn it blue. This also produces
+the popup menu and the graph can be copied to the clipboard.
+
+An alternative is shown in Fig. 3.3e. ***Click*** on graph icon
+![](media/image1236.png){width="0.315670384951881in"
+height="0.25253608923884513in"} in the toolbar to show the last graph in
+R's viewer. This only shows a single graph, but the Window can be
+resized and, as shown in Fig. 3.3e, there are now many options to save
+the graph, or to copy it to the clipboard.
+
+This toolbar option is only for the most recent graph. The ***Describe
+\> View Graph*** dialogue, Fig. 3.3f provides the option to view any of
+the saved graphs in this way[^13].
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.3e The R graph viewer***                                                                                    ***Fig. 3.3f Options for viewing graphs***
+  --------------------------------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
+  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLa31a91e.PNG](media/image1213.png){width="2.933834208223972in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLa3be5f8.PNG](media/image1235.png){width="3.0407852143482064in"
+  height="3.179398512685914in"}                                                                                         height="2.081327646544182in"}
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+We use the dialogue in Fig. 3.3f to show a third way to examine graphs;
+one that makes use of the excellent plotly package. This is called the
+Interactive Viewer in Fig. 3.3f. This opens the graph in a browser
+(though you don't need to be online) as shown in Fig. 3.3g.
+
+  -----------------------------------------------------------------------
+  ***Fig.3.3g The (plotly) interactive viewer for ggplot graphs***
+  -----------------------------------------------------------------------
+  ![](media/image1218.png){width="6.0783005249343836in"
+  height="3.5125656167979002in"}
+
+  -----------------------------------------------------------------------
+
+In Fig. 3.3g the data for October are shown. This demonstrates that the
+boxplot shows the median (30.6°C), the quartiles, etc. In addition, you
+can hover over any point to find its value and zoom if a part of the
+plot is of special interest. This is a system worth exploring, so we add
+a second example. This also shows the value of facets in a graph.
+
+Use ***Describe \> Specific \> Scatterplot*** to examine Tmax as the Y
+variable against Tmin as the X, Fig. 3.3h.
+
++------------------------------------+---------------------------------+
+| ***Fig. 3.3h Initial use of        | ***Fig. 3.3i Resulting graph*** |
+| scatterplot (geom point)***        |                                 |
+|                                    |                                 |
+| ***Describe \> Specific \> Scatter |                                 |
+| Plot***                            |                                 |
++====================================+=================================+
+| ![](media/image1192                | ![](media/image1202.p           |
+| .png){width="3.1297145669291337in" | ng){width="2.701648075240595in" |
+| height="2.9541699475065615in"}     | height="2.9195220909886266in"}  |
++------------------------------------+---------------------------------+
+
+The resulting graph is relatively uninformative, except to demonstrate
+there is a lot of data. And you don't need a special graphics system for
+a single graph like this. It does show there are a few outlying points
+that require closer investigation.
+
+More concerning, as a principle, is that these are time series data. One
+property of time series is the seasonality and we could allow for this
+by looking separately at each month.
+
+Return to the dialogue in Fig. 3.3h. Click on ***Plot Options*** and add
+the ***month*** factor as a facet, Fig. 3.3j. Press Return on the
+sub-dialogue. Then make the ***By Variable*** also the ***month***
+factor and the L***abel Variable*** the ***Date***. Click OK to produce
+the result shown in Fig. 3.3k.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.3j Plot options sub-dialogue***              ***Fig. 3.3kTmax v Tmin by month***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image1201.png){width="2.646576990376203in"   ![](media/image1209.png){width="3.072049431321085in"
+  height="2.242176290463692in"}                          height="3.263601268591426in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+One feature of the graph in Fig. 3.3k is that there is the same x and y
+scales for each graph. This is appropriate here and has then the big
+advantage that the graph is not cluttered with many axes, so the data
+are more easily compared.
+
+As with the overall graph in Fig 3.3i, one aspect to be investigated,
+from Fig. 3.3k, is the outliers. This is easily done via the interactive
+viewer. So, return to ***Describe \> View Graph*** and choose the last
+graph, possibly called scatter_Tmax.Tmin from Fig. 3.3h (or just
+last_graph if no name was given).
+
+  -----------------------------------------------------------------------
+  ***Fig 3.3l Interactive view***
+  -----------------------------------------------------------------------
+  ![](media/image1210.png){width="6.161750874890639in"
+  height="2.648064304461942in"}
+
+  -----------------------------------------------------------------------
+
+The new feature in Fig. 3.3l is that you can now hover over any point
+and see the values in more detail. The example shown in Fig. 3.3l is
+that on 9 October 1989 both Tmax and Tmin were 15.6°C. Worth checking!
+From the graph 15.6°C is very sensible for Tmin but not for Tmax[^14].
+
+Other dialogues also provide useful graphs. As an example, use
+***Describe \> Multivariate \> Correlations***, Fig. 3.3m as in Chapter
+2.
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.3m***                                        ***Fig. 3.3n***
+  ------------------------------------------------------ ---------------------------------------------------------------------------------------------------------------------
+  ![](media/image1216.png){width="2.706126421697288in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLaa5e48d.PNG](media/image1200.png){width="3.306842738407699in"
+  height="1.9848436132983378in"}                         height="3.208082895888014in"}
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Complete the dialogue as shown in Fig. 3.3n. Click on the Options button
+and complete the sub-dialogue as shown in Fig. 3.3o. The resulting
+display is in Fig. 3.3p.
+
+For the data this indicates that both Tmax and Tmin have roughly normal
+distributions each month. The correlations are quite low. As with the
+other graphs more detail can be found from the plotly interactive
+display.
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.3o Correlations sub-dialogue***                                                                              ***Fig. 3.3p Distributions, scatterplot and
+                                                                                                                         correlations***
+  ---------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------
+  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLaa7a41f.PNG](media/image1184.png){width="2.6294061679790026in"   ![](media/image1189.png){width="3.326188757655293in"
+  height="2.8274879702537183in"}                                                                                         height="3.118300524934383in"}
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This is an example of a graphical display where the different panes show
+different types of display. Indeed, one pane is numeric. We used to
+think that a display in a graph was distinct from displaying tables of
+results. But Fig. 3.3p is like a 2 by 2 table, one cell of which
+contains numbers, while the others contain graphs.
+
+Finish this section with a little "housekeeping". Several objects
+(graphs) have been produced and perhaps are now no longer needed. Use
+***Prepare \> R Objects \> Delete***, Fig. 3.3q.
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.3q Menu to manage R objects***                ***Fig. 3.3r Delete objects no longer needed***
+  ------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------
+  ![](media/image1197.png){width="2.2876793525809274in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTMLb0219a7.PNG](media/image1203.png){width="3.70708552055993in"
+  height="2.877690288713911in"}                           height="2.5941666666666667in"}
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+We choose to delete all the objects, Fig. 3.3r.
+
+## The log and script windows
+
+The final two Windows in R-Instat are for the Log Window and the Script
+Window.
+
+The R programming language is very powerful, but with a relatively steep
+learning curve. R-Instat gives easy access to a subset of R. However, a
+click-and-point system always has limitations. We consider here some
+options if these limitations are ever a constraint.
+
+The log file keeps a record of all the R-commands that have been issued
+during a session of R-Instat. Use the toolbar option
+![](media/image1276.png){width="0.288507217847769in"
+height="0.2764862204724409in"}, Fig. 3.2e, or ***View \> Log Window***
+to open the log file.
+
+In the Log file, the ***right-click menu*** gives various options, Fig.
+3.4a, including saving the log file. That action is the same as using
+***File \> Save As \> Save Log As***, shown earlier in Fig. 3.2c.
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.4a The Log Window***                         ***Fig. 3.4b The Filter Dialogue***
+  ------------------------------------------------------ ----------------------------------------------------------------------------------------------------------------------
+  ![](media/image1293.png){width="3.025767716535433in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML6b171e8.PNG](media/image1280.png){width="2.9556944444444446in"
+  height="1.6994028871391076in"}                         height="2.965126859142607in"}
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The Log file keeps an exact record of what you have done so far in your
+R-Instat work. That is useful. If, later, you ever had to justify how
+you produced results, then this is your record of what was done.
+
+If you need to ask for help, then we will usually want to relate
+anything extra to the best you have been able to do so far. A skilled R
+user can see exactly what was done through the log file.
+
+If R is used directly, then we suggest it be used through RStudio. The
+log file can be run in RStudio and should produce the same results.
+Hence, an analysis could start in R-Instat and then continue in RStudio
+if further results are needed that cannot be done through R-Instat.
+
+Sometimes a dialogue can almost do an analysis, but not quite. If small
+changes are needed to a command then they can be done, in R-Instat, with
+the Script Window
+
+A guide called "Reading, Tweaking and Using R Commands",
+[reference]{.mark} allows users to adapt the commands behind any
+dialogue. This situation is illustrated with an example.
+
+We show how to use adjusted boxplots (Hubert & Vandervieren, 2008) for
+each month with the rainfall data from Dodoma. This is first illustrated
+with the ordinary boxplots that are available (and very useful).
+However, for the rainfall we would like to have adjusted boxplots
+because of the skewness of the data. They are available in the R
+package, called ***robustbase*** [reference]{.mark} that is already used
+by R-Instat. But adjusted boxplots are not yet available -- at least
+when this guide was first written.
+
+First the data are filtered for just the rain days. Then the boxplots
+are produced.
+
+With the Dodoma data, as used in Chapter 2, use the ***right-click***
+menu (or ***Prepare \> Data Frame \> Filter***) to give the Filter
+dialogue, Fig. 3.4b. Note, in Fig. 3.4b, that the Ok button is not yet
+enabled. There is also a Script button on the bottom right of the
+dialogue, and this is also disabled. Every dialogue has the same set of
+five buttons at the bottom. Hence, every dialogue has a ***Script***
+button and here we show how it can be used. In Fig. 3.4b, press on the
+***Define New Filter*** button to open the Filter sub-dialogue. In the
+sub-dialogue, Fig. 3.4c.
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.4c The filter sub-dialogue***                 ***Fig. 3.4d The filter dialogue completed***
+  ------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------
+  ![](media/image1305.png){width="3.1675339020122486in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML6c2cda1.PNG](media/image1283.png){width="2.766781496062992in"
+  height="2.7031200787401577in"}                          height="2.775612423447069in"}
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+In the sub-dialogue, choose the ***Rain*** variable and make the
+condition as ***Rain \> 0.85***. Then click the ***Add Condition***
+button, then press the ***Return*** button. A filter has now been
+selected and hence the Ok button is now enabled. We don't need the To
+Script button at this stage, but note that it has also been enabled.
+
+Now use the ***Describe \> Specific \> Boxplot*** dialogue and complete
+it as shown in Fig. 3.4e.
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.4e The boxplot dialogue***                                                                                   ***Fig. 3.4f Boxplots with width
+                                                                                                                         proportional to the number of rain days***
+  ---------------------------------------------------------------------------------------------------------------------- ------------------------------------------
+  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML6cfc546.PNG](media/image1273.png){width="2.8051170166229222in"   ![](media/image1330.png){width="3.125in"
+  height="3.203753280839895in"}                                                                                          height="3.125in"}
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The results are in Fig. 3.4f. They are useful, and pleasantly colourful,
+but the number of outliers shows that the ordinary boxplot is not ideal
+for data that are as skew as daily rainfall.
+
+So, return to the boxplot dialogue in Fig. 3.4e and press the ***To
+Script*** button. The commands are as shown in Fig. 3.4g
+
++-----------------------------------------------------------------------+
+| ***Fig. 3.4g Script window for the boxplot commands***                |
++=======================================================================+
+| 1.  Dodoma \<- data_book\$get_data_frame(data_name=\"Dodoma_merge\")  |
+|                                                                       |
+| 2.  last_graph \<- ggplot2::ggplot(data=Dodoma_merge,                 |
+|     mapping=ggplot2::aes(y=Rain, x=month)) +                          |
+|     ggplot2::geom_boxplot(varwidth=TRUE, outlier.colour=\"red\") +    |
+|     theme_grey()                                                      |
+|                                                                       |
+| 3.  data_book\$add_graph(graph_name=\"last_graph\", graph=last_graph, |
+|     data_name=\"Dodoma\")                                             |
+|                                                                       |
+| 4.  data_book\$get_graphs(data_name=\"Dodoma\",                       |
+|     graph_name=\"last_graph\")                                        |
+|                                                                       |
+| 5.  rm(list=c(\"last_graph\", \"Dodoma\"))                            |
++-----------------------------------------------------------------------+
+
+The second line -- that starts last_graph is the only line that needs to
+change. The equivalent command, from the robustbase package, is as
+follows:
+
+last_graph \<- robustbase::adjbox(Rain \~ month, data =Dodoma_merge,
+col=\"red\", varwidth=TRUE).
+
+  -----------------------------------------------------------------------
+  ***Fig. 3.4h***
+  -----------------------------------------------------------------------
+  ![](media/image1304.png){width="6.059426946631671in"
+  height="2.582607174103237in"}
+
+  -----------------------------------------------------------------------
+
+So paste or type that command into the Script Window, which should then
+look as shown in Fig. 3.4h. To run the commands from the Script Window
+click on the Run All button at the top of Fig. 3.4h.
+
+If there is an error, then correct the typing into Fig. 3.4h. Now, to be
+cautious, right-click, see Fig. 3.4h and this permits you to run the
+commands one line at a time. It is highly likely that line 2 is the
+problem so first go to line 1 and then run line 1, using Run Current
+Line, or pressing \<Ctrl\> + \<Enter\>. Do the same for line 2. If that
+works then continue with the rest of the lines and the graph, shown in
+Fig. 3.4i should appear.
+
+  -----------------------------------------------------------------------
+  ***Fig. 3.4i Skew boxplot***
+  -----------------------------------------------------------------------
+  ![](media/image1323.png){width="3.0629844706911635in"
+  height="2.541402012248469in"}
+
+  -----------------------------------------------------------------------
+
+This example has used the Script Window for a new command. More often
+the script window is for more modest changes, where an option is added
+or changed for an existing command.
+
+If the command above were in a new package, that was not currently
+loaded into R-Instat, then the code in line 2 would not be recognised.
+In that case you would have add an extra line at the top of the script
+window to load the package, e.g. ***install.packages(\"robustbase\").***
+This assumes you are connected to the internet. It also only need be
+done once. This package is then installed in R and can be used on
+subsequent occasions in R-Instat without that line being added.
+
+## Don't let the computer laugh at you!
+
+R-Instat is designed to facilitate the analysis of climatic data. This
+may be through using the general facilities (File, Prepare, Describe and
+Model menus), or through using the special climatic menu that is
+introduced in Chapter 4.
+
+R-Instat is simply a click and point front-end to the R programming
+language. It is particularly for users who do not wish to spend time
+mastering the R language. There is also a special guide for those who
+would wish to start with R-Instat and then consider migrating to using R
+"properly".
+
+All software has limitations and it is important to recognise when using
+R-Instat, or perhaps your favourite spreadsheet package is not the
+correct solution for your work. We give an example below. Otherwise you
+may fall into the "copy-paste" trap. This is where you do a very routine
+job repeatedly, e.g. copy \> paste, copy \> paste, .... Humans are not
+good at boring and repetitive jobs and they make mistakes.
+
+Computers, on the other hand, can be programmed to handle repetitive
+tasks brilliantly and very quickly. That's why, if the computer watches
+you doing copy \>paste, copy \> paste etc, while it has little to do --
+then it is probably laughing at you!
+
+Here is an example. It is of a type we discuss in more detail in Chapter
+4. Here it is mainly designed to help you to recognise when your
+software, and perhaps your skill set is insufficient for the task in
+hand.
+
+Climatic data from Garoua, Cameroon have been provided by the Cameroon
+Met Service and are now available in the R-Instat library, Fig. 3.5a.
+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.5a Garoua data in R-Instat***                ***Fig. 3.5b Maximum temperature data***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](media/image1318.png){width="2.741365923009624in"   ![](media/image1309.png){width="3.353319116360455in"
+  height="2.056022528433946in"}                          height="2.047866360454943in"}
+
+  -------------------------------------------------------------------------------------------------------------
+
+Fig. 3.5a shows the "standard" layout of the data for R-Instat climatic
+analyses. Spreadsheet packages like Excel, recognise this as a
+"list"[^15]. Each column in Fig. 3.5a is of a single "type" -- most are
+numeric. The different elements each have their own column. In Fig. 3.5a
+each row has the data for a single day. In this file there 21915 rows
+(days) of data.
+
+The starting point for these data looked very different. Some of the
+initial data for Tmax are shown in Fig. 3.5b. In Fig. 3.5b each day of
+the month has its own column, so there are 31 columns in the sheet. We
+find this to be a common "shape". One additional problem in Fig. 3.5b is
+that each sheet has only about 3 years of data, so they are split across
+16 different sheets.
+
+The rainfall is in a different "shape" to the temperatures as shown in
+Fig. 3.5c and Fig. 3.5d.
+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 3.5c Rainfall data for Garoua***                ***Fig. 3.5d More of the year of rainfall data***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](media/image1296.png){width="3.0532458442694663in"   ![](media/image1302.png){width="3.1601771653543307in"
+  height="1.6980621172353456in"}                          height="1.7202580927384077in"}
+
+  ---------------------------------------------------------------------------------------------------------------
+
+For the rainfall, each year is in a separate sheet. At the bottom of
+each sheet there are some monthly and annual totals. Hence the rainfall
+is a mixture of data and summary values.
+
+There are three obvious ways you can proceed to change the shape of the
+data from Fig. 3.5b, c and d into the shape shown in Fig. 3.5a. The
+first is to use Excel (or another spreadsheet), the second is to use
+R-Instat and the third is to write a program, using R commands -- or
+another language, such as Python.
+
+What might you do with a spreadsheet? Here is a possible way:
+
+1)  It would be good to have all the years of data in a single sheet.
+    Start with the first year, which is 1999 for the rainfall. Copy just
+    the data -- not the monthly summaries -- into a new sheet.
+
+2)  Now go to the next year, i.e. 2000 and copy the data below those of
+    1999.
+
+3)  Now go to 2001 and copy and paste again. The computer is starting to
+    laugh, and you have a long way to go.
+
+4)  You persevere and have all the years in your new sheet.
+
+5)  Now you want to paste the February data below January, etc. This is
+    11 more goes at copy \> paste.
+
+6)  You are bored, so you look briefly at the temperature data in Fig.
+    3.5d. You realise, in horror, that you will have 31 copy \> paste to
+    do there, with one column currently for each month.
+
+7)  You give up, realising there must be a better way. That's partly
+    because you realise the computer is laughing hysterically!
+
+We took the third option and wrote a program in R. In Chapter 4 we
+examine whether using R-Instat would be possible (without the computer
+laughing at you too much).
+
+However, there is a general message. R-Instat is merely executing R
+commands through a click-and-point environment. This approach will
+always be limited, for some tasks, compared to using the command
+language directly. So, should you find that an analysis requires a lot
+of repetition from you, then check whether it is time to use R directly.
+
+When you start using R-Instat it does not mean you need to abandon using
+a spreadsheet. Similarly using R directly does not necessarily mean
+abandoning R-Instat. When you use R-Instat it automatically generates a
+log file with the R commands. This file runs in RStudio. So, you could
+then continue using R directly (through RStudio) for those tasks where
+R-Instat has been found to be limiting.

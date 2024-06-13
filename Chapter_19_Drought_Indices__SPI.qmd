@@ -1,0 +1,165 @@
+# Drought Indices -- SPI
+## Introduction
+
+The Standardised Precipitation Index (SPI) is acknowledged as an obvious
+index to monitor drought, e.g. (Keyantash & (Eds), 2018). It is
+described in the WMO guide (Svoboda, Hayes, & Wood, 2012).
+
+There are various R packages to implement SPI and R-Instat includes the
+command from the SPEI package (Beguería & Vicente-Serrano, 2017). This
+permits the calculation of the SPI index, as described by WMO and an
+SPEI index that includes evapotranspiration, (Vicente-Serrano, Beguería,
+& López-Moreno, 2010).
+
+The SPI index is promoted as being superior to the Palmer Drought
+Severity Index. This is based on an original index by (Palmer, 1965),
+generalised by (Wells, Goddard, & Hayes, 2004) and implemented in their
+R package, called scPDSI (Zhong, Chen, Wang, & Chengguang, 2018) to
+produce both the self-calibrating and the conventional Palmer index.
+
+## Using the SPI index 
+
+For illustration use the Nigerian data from Samaru, ***File \> Open from
+Library \> Instat \> Browse \> Climatic \> Nigeria***, Fig. 12.2a. The
+data frame, called samaru56t, has already been defined as climatic and
+has 56 years of daily rainfall data.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 18.2a***                                      ***Fig. 18.2b***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](media/image332.png){width="2.754974846894138in"   ![](media/image312.png){width="3.198131014873141in"
+  height="3.516872265966754in"}                         height="3.513098206474191in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+The SPI index is usually used on monthly data, though this is not
+essential. Hence use ***Climatic \> Prepare \> Climatic Summaries***, as
+shown in Fig. 18.2b. On the ***Summaries sub-dialogue*** choose the
+***Count not missing*** and the ***Sum***. The monthly totals are shown
+in Fig. 18.2a.
+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 18.2c***                                      ***Fig. 18.2d***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](media/image319.png){width="2.616885389326334in"   ![](media/image305.png){width="3.352402668416448in"
+  height="3.7938856080489938in"}                        height="3.8009251968503937in"}
+
+  -----------------------------------------------------------------------------------------------------------
+
+Now use Climatic \> Prepare \> SPI, Fig. 18.2d. Complete the dialogue as
+shown in Fig. 18.2d, giving the resulting column the name spi1, because
+the index is for single months.
+
+Then return to the SPI dialogue. Change the time scale to 3 (months) and
+the name of the resulting column to spi3.
+
+Repeat again, changing the time scale to 12, i.e. to a full year and
+change the name to spi12.
+
+The first years of the resulting data are shown in Fig. 18.2e. The
+results are interpreted and the graphed.
+
+To help with the interpretation Fig. 18.2f shows boxplots of the monthly
+data.
+
++---------------------------------+------------------------------------+
+| ***Fig. 18.2e spi1, spi3 and    | ***Fig. 18.2f***                   |
+| spi12***                        |                                    |
+|                                 | ***Describe \> Specific Boxplot:   |
+|                                 | sum_rain by month***               |
++=================================+====================================+
+| ![](media/image321.pn           | ![](media/image33                  |
+| g){width="2.8649070428696413in" | 4.png){width="3.175556649168854in" |
+| height="3.703416447944007in"}   | height="3.468993875765529in"}      |
++---------------------------------+------------------------------------+
+
+First examine March 1928, that has an spi1 index of +2. This has
+resulted from the rainfall total of 52.6mm. Fig. 18.2f shows that this
+is very large for March -- it is the 2^nd^ highest from the 56 years.
+Hence positive values of 2 (or more) indicate very rainy compared to the
+norm. March 1929 had 12.7mm, and the spi1 index of 1.06 indicates that
+even this value is quite large. Often the March total is zero.
+
+August 1928 had a modestly negative value of spi1 = -0.456. This was
+from the August total of 233mm, and the boxplot indicated that this is
+slightly lower than average. In contrast, August 1929 had 356mm, which
+is higher than the average, and corresponds to the spi1 index of +1.
+
+The spi3 index fist calculates the 3-month running sums. Hence it
+indicates how they compare with what is expected. For example, from Fig.
+18.2e, April to June 1928 is all each individually higher than expected.
+Hence the April to June 1928 total is surprisingly high and has an spi3
+index of +1.83.
+
+The 12-month index gives information about the annual (running) totals.
+To investigate these, use the Climatic \> Prepare \> Climatic Summaries
+again. Change the top button in Fig. 18.2b to Annual to give a data
+frame with 56 values. Now use either ***Prepare \> Column: Calculations
+\> Calculate*** or ***Prepare Column: Calculate \> Column Summaries***
+on the ***sum_rain*** variable to show the annual mean is 1068mm and the
+standard deviation is 178.5mm.
+
+The total in 1928 was 1262mm. This is higher than the mean of 1068mm and
+hence a positive spi12 value is expected for December 1928 in Fig.
+18.2e. If we standardise the annual total, i.e. evaluate:
+
+(1262 -- mean)/sd = (1262 -- 1068) /178.5 = +1.086, which is close to
+the spi12value of 1.074.
+
+In 1929, the total was 1284mm and the standardised value was (1284 --
+1068)/178.5 = 1.21, again close to the spi12 index for December 1929 in
+Fig. 18.2e, of 1.18.
+
+The calculations to produce the spi index is relatively complex. A
+distribution is fitted to the data and then the equivalents from the
+normal distribution are found. For the annual totals, the distribution
+is already close to normal, as is shown by the density plot in Fig.
+18.2g. Then the normal distribution is used, as in Fig. 18.2h, where the
+value for 1928 is indicated. The results are then standardised, which
+just changes the x-axis in Fig. 18.2h to go from roughly -2 to + 2. In
+fig 18.2h -2 corresponds to a value of 1068 -- 2 \* 178.5 = 711mm. A
+value of 711mm has a probability of 1 year in 40 (probability of about
+0.025) of occurring and represents a severe drought. (Most readers will
+remember the value of ± 1.96, i.e. about ± 2 that gives the 5% points
+from the standard normal distribution.)
+
++----------------------------------+-----------------------------------+
+| ***Fig. 18.2g Density graph of   | ***Fig. 18.2h Normal plot showing |
+| annual totals***                 | 1928 total***                     |
+|                                  |                                   |
+| ***Describe \> Specific \>       | ***Model \> Probability           |
+| Histogram with density***        | Distributions \> Show Model***    |
++==================================+===================================+
+| ![](media/image323.p             | ![](media/image335.               |
+| ng){width="2.9731157042869643in" | png){width="3.0730129046369203in" |
+| height="3.222425634295713in"}    | height="3.253115704286964in"}     |
++----------------------------------+-----------------------------------+
+
+The indices from Fig. 18.2e can be plotted in a variety of ways. The
+"standard" time series graphs look cluttered, as they include the
+seasonality within the graph. Fig. 18.2i presents graphs of spi1 and
+spi12 separately for each of the months. It shows that spi1 is
+meaningless in the dry months (November to February). Lines at 0 and -2
+have been added and show largely that any problem is towards the later
+years.
+
+  -----------------------------------------------------------------------
+  ***Fig. 18.2i***
+  -----------------------------------------------------------------------
+  ![](media/image331.png){width="6.113659230096238in"
+  height="3.0128029308836397in"}
+
+  -----------------------------------------------------------------------
+
+## The SPEI index
+
+[Need to add this section. It works "trivially" by giving a
+water-ba;ance variable instead of the rainfall. So, it could be within
+R-Instat that we just use the Climatic \> Prepare \> Transform dialogue
+first, to get the water balance, and then return to the SPI
+dialogue.]{.mark}
+
+## Palmer Drought Severity Index
+
+[Check first whether we add it to the dialogue, add another dialogue, or
+try to give it as a command.]{.mark}
