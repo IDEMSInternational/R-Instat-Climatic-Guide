@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; Extremes – R-Instat Climatic Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter_13_PICSA__Long_Before_the_season.html" rel="next">
+<link href="./Chapter_11_Drawing_Maps.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter_12_Extremes.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R-Instat Climatic Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_1_About_this_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About this guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_2_More_Practice_with_RInstat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">More Practice with R-Instat</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_3_Using_RInstat_effectively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_4_Getting_the_data_into_shape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_5_Quantity_and_quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_6_Preparing_summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_7_Tailored_Products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_9_Gridded_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gridded Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_10_Comparing_Data_from_Different_Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing Data from Different Sources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_11_Drawing_Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_12_Extremes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_14_The_Seasonal_forecast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_16_Withinday_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_17_Circular_data_and_wind_roses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_18_Temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_19_Drought_Indices__SPI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_20_Climate_Normals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_21_Various.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_22_References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_23_Appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Appendix</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">13.1</span> Introduction</a></li>
+  <li><a href="#getting-the-extremes" id="toc-getting-the-extremes" class="nav-link" data-scroll-target="#getting-the-extremes"><span class="header-section-number">13.2</span> Getting the extremes</a></li>
+  <li><a href="#climdex-indices---precipitation" id="toc-climdex-indices---precipitation" class="nav-link" data-scroll-target="#climdex-indices---precipitation"><span class="header-section-number">13.3</span> Climdex Indices - precipitation</a></li>
+  <li><a href="#climdex-temperatures" id="toc-climdex-temperatures" class="nav-link" data-scroll-target="#climdex-temperatures"><span class="header-section-number">13.4</span> Climdex – Temperatures</a></li>
+  <li><a href="#using-the-climdex-indices" id="toc-using-the-climdex-indices" class="nav-link" data-scroll-target="#using-the-climdex-indices"><span class="header-section-number">13.5</span> Using the climdex indices</a></li>
+  <li><a href="#extreme-value-analysis" id="toc-extreme-value-analysis" class="nav-link" data-scroll-target="#extreme-value-analysis"><span class="header-section-number">13.6</span> Extreme value analysis</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">13.1</span> Introduction</h2>
+<p>Starting with daily, or sub-daily data the analysis proceeds in two stages. The first is to get the extremes and the second is to analyse them. The data from two stations in Ghana are used for illustration. Use <strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic &gt; Ghana</em></strong> and open the RDS file called <strong><em>Ghana two stations</em></strong>. From Fig 11.1a we see the data start in 1944, though the elements, other than rainfall start later.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.1a Two stations from Ghana</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.1b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image98.png" style="width:3.03243in;height:2.83534in"></td>
+<td style="text-align: left;"><img src="media/image113.png" style="width:2.95096in;height:2.53564in"></td>
+</tr>
+</tbody>
+</table>
+<p>In the Climatic menu the data are already in the right “shape” and there is a date column, see Fig. 11.1a. So start by checking whether there are any missing dates to infill, Fig. 11.1b.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 67%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.1c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.1d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image97.png" style="width:2.62024in;height:1.99238in" alt="C:\Users\ROGERS~1\AppData\Local\Temp\SNAGHTML177df15.PNG"></td>
+<td style="text-align: left;"><img src="media/image100.png" style="width:3.32767in;height:1.5196in"></td>
+</tr>
+</tbody>
+</table>
+<p>In <strong><em>Climatic &gt; Dates Infill Missing Dates</em></strong>, include the <strong><em>Station</em></strong>, Fig. 11.1c. The results, in Fig. 11.1d, indicate that there were 5 missing months in the record at Saltpond and four at Tamale. There are now 53297 rows of data.</p>
+<p>Now use <strong><em>Climatic &gt; Dates &gt; Use Date</em></strong>, Fig. 11.1e, and complete as shown.</p>
+<p>Then use Climatic &gt; Define Climatic data. It should complete automatically. Check for uniqueness and then press OK.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.1e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.1f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image90.png" style="width:2.28208in;height:3.2166in"></td>
+<td style="text-align: left;"><img src="media/image88.png" style="width:3.49147in;height:4.14862in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now use <strong><em>Climatic &gt; Check Data &gt; Inventory</em></strong>, Fig. 11.1g. Include the elements down to wind speed.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.1g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.1h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image99.png" style="width:2.7294in;height:3.16914in"></td>
+<td style="text-align: left;"><img src="media/image89.png" style="width:3.32049in;height:3.20243in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results show the other elements started roughly in 1960. There are relatively few missing values in the rainfall, and the other elements are also reasonably complete.</p>
+<p>The same Climatic &gt; Check Data menu has options for quality control checks. These are assumed, as we proceed to examine the extremes.</p>
+</section>
+<section id="getting-the-extremes" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="getting-the-extremes"><span class="header-section-number">13.2</span> Getting the extremes</h2>
+<p>In the <strong><em>Climatic &gt; Prepare</em></strong> menu there are four dialogues that get extremes. They are considered briefly and then <strong><em>Climatic &gt; Prepare &gt; Extremes</em></strong> is examined in detail.</p>
+<p>The <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong>, Fig. 11.2b has already been used extensively in this guide.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>The ClimzaFig. 11.2a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.2b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image91.png" style="width:2.99269in;height:3.23755in"></td>
+<td style="text-align: left;"><img src="media/image56.png" style="width:2.91342in;height:3.13521in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 11.2c we can choose the extremes, i.e.&nbsp;the minimum and/or maximum. These can be annual, as shown in Fig. 11.2b, or for a part of the year, or perhaps monthly.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.2c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.2d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image55.png" style="width:2.86209in;height:3.15145in"></td>
+<td style="text-align: left;"><img src="media/image52.png" style="width:2.80257in;height:3.28784in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 11.2d shows the <strong><em>Climatic &gt; Prepare &gt; Spells</em></strong> dialogue. This automatically gives the extreme, i.e.&nbsp;longest spell each year. This may be the longest dry spell for rainfall, or the longest hot (or cold) spell for temperatures, etc.</p>
+<p>The Climdex system is covered in Sections 11.3 and 11.4. Hence now consider <strong><em>the Climatic &gt; Prepare &gt; Extremes</em></strong> dialogue, Fig. 11.2e.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.2e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.2f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image51.png" style="width:2.98703in;height:4.10977in"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><mark>To be continued</mark></p>
+</section>
+<section id="climdex-indices---precipitation" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="climdex-indices---precipitation"><span class="header-section-number">13.3</span> Climdex Indices - precipitation</h2>
+<p>A set of 27 climate change indices have resulted from WMO meetings and reports. They are described in <a href="http://etccdi.pacificclimate.org/list_27_indices.shtml"><u>http://etccdi.pacificclimate.org/list_27_indices.shtml</u></a> and implemented through an R package called climdex.pcic. The pcic stands for Pacific Islands Impacts Consortium, but the indices are general.</p>
+<p>Each index can produce an annual summary, and some offer the option of monthly summaries. The are a single dialogue in R-Instat. Sixteen of the indices are temperature-based. The other 11 are rainfall indices.</p>
+<p>The Dodoma data from Tanzania are used for illustration. Use <strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic &gt; Tanzania</em></strong> and open the file called Dodoma.rds. It is already defined as a climatic dataset. Hence the climatic dialogues can be used immediately.</p>
+<p>The annual summaries from climdex are compared with those used in Chapters 6 and 7. Hence start with the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong>, Fig. 11.3b.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.3b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image54.png" style="width:3.15337in;height:3.60962in"></td>
+<td style="text-align: left;"><img src="media/image53.png" style="width:2.8408in;height:3.59358in"></td>
+</tr>
+</tbody>
+</table>
+<p>Press <strong><em>Summaries</em></strong> on the main dialogue and choose the summaries indicated in Fig. 11.3c. Then choose the <strong><em>Missing Options</em></strong> tab to give Fig. 11.3d. The default in climdex is to set the summary to missing if more than 15 days in the year are missing, so the same is done here.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.3d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image49.png" style="width:3.00805in;height:2.94734in"></td>
+<td style="text-align: left;"><img src="media/image50.png" style="width:2.98272in;height:2.19917in"></td>
+</tr>
+</tbody>
+</table>
+<p>The result is two annual summaries, Fig. 11.3e, that are like two of the climdex indices. They are ready to draw graphs, fir trend lines and so on. The data frame, in Fig. 11.3e, has 79 rows, because there are 79 years of data</p>
+<p>Use <strong><em>Climatic &gt; Prepare &gt; Climdex</em></strong>, Fig. 11.3f. The dialogue should fill automatically. If not, then check you are using the correct data frame.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.3f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image57.png" style="width:2.27533in;height:3.59173in"></td>
+<td style="text-align: left;"><img src="media/image48.png" style="width:3.6113in;height:3.6113in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 11.3f click on <strong><em>Indices</em></strong>. Complete the settings as shown in Fig. 11.3g and then choose the <strong><em>precipitation tab</em></strong>. The numbers for each index match those given in <a href="http://etccdi.pacificclimate.org/list_27_indices.shtml"><u>http://etccdi.pacificclimate.org/list_27_indices.shtml</u></a> . For illustration<strong><em>, tick everything</em></strong> there and press <strong><em>Return</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.3h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image982.png" style="width:3.09732in;height:2.62261in"></td>
+<td style="text-align: left;"><img src="media/image984.png" style="width:2.88531in;height:2.86252in"></td>
+</tr>
+</tbody>
+</table>
+<p>This results in 11 further columns, for each of the precipitation indices. They are added to the yearly data frame and shown in Fig. 11.3i. Each is described briefly, before continuing with the analysis.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3i</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image980.png" style="width:6.15578in;height:2.99946in"></td>
+</tr>
+</tbody>
+</table>
+<p>The indices are defined as shown in table 11.3a. In Fig. 11.3i the variable max_rain, from the Climatic &gt; Prepare &gt; Climatic Summaries is seen to be the same as Rx1day. We consider briefly how to get each of these indices using the other R-Instat dialogues.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 15%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Table 11.3a Precipitation indices from climdex</em></strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong><em>Number</em></strong></td>
+<td><strong><em>Name</em></strong></td>
+<td><strong><em>Description</em></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">17</td>
+<td>Rx1day</td>
+<td>Annual maximum</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">18</td>
+<td>Rx5day</td>
+<td>Maximum from 5-day running totals</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">19</td>
+<td>SRII</td>
+<td>Simple intensity index, i.e.&nbsp;Annual total/Number of rain days</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td>R10mm</td>
+<td>Annual number of rain-days with 10mm or more</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">21</td>
+<td>R20mm</td>
+<td>Annual number of rain-days with 20mm or more</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">22</td>
+<td>Rnnmm</td>
+<td>Annual number of days with ≥ nn(mms). User chooses value of nn</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">23</td>
+<td>CDD</td>
+<td>Longest dry spell in the year (dry is &lt;1mm)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">24</td>
+<td>CWD</td>
+<td>Longest spell of successive rain days (rain is &gt;=1mm)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">25</td>
+<td>R95p</td>
+<td>Annual total greater than 95<sup>th</sup> percentile in base period</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">26</td>
+<td>R99p</td>
+<td>Ditto for 99<sup>th</sup> percentile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">27</td>
+<td>PRCPTOT</td>
+<td>Total annual rainfall (from days with ≥ 1mm)</td>
+</tr>
+</tbody>
+</table>
+<p>This comparison is partly to help users understand exactly what each index is measuring. In addition the regular dialogues provide additional flexibility, if needed to examine the indices in more detail.</p>
+<p>The second summary, produced earlier is the total annual rainfall, called sum_rain in Fig. 11.3i. This is almost the same as the climdex index 27, PRCPTOT. For example sum_rain = 523mm in 1935, compared to 514mm for PRCPTOT.</p>
+<p>The small difference is because the sum_rain has totalled all the rain days, while PRCPTOT only considers those with at least 1mm.</p>
+<p>Check this with <strong><em>Prepare &gt; Column: Calculate &gt; Calculation</em></strong>. With the <strong><em>Logical keyboard</em></strong> make a new column, called rain1, Fig. 11.3j, with:</p>
+<p>rain1 &lt;- <strong><em>ifelse(rain&lt;1, 0, rain)</em></strong>, or equivalently rain1 &lt;- <strong><em>(rain&gt;=1) * rain</em></strong>.</p>
+<p>Then use <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> with the new <strong><em>rain1</em></strong> variable to check the annual totals now agree with those from climdex.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3j</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.3k</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image983.png" style="width:3.23706in;height:2.38342in"></td>
+<td style="text-align: left;"><img src="media/image976.png" style="width:2.73123in;height:3.50223in"></td>
+</tr>
+</tbody>
+</table>
+<p>From the rain5 variable, the <strong><em>Climatic &gt; Prepare &gt; Extremes</em></strong> is an alternative dialogue to give the annual maxima, Fig. 11.3l. This gives the same results as the climdex Rx5day variable. It also gives a further the day in the year of the maximum. This could be used in a study to investigate whether there is any evidence for a trend in <strong><em>when the maximum occurs</em></strong> as well as its value.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 11.3l</em></strong></th>
+<th><p><strong><em>Fig. 11.3m</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climatic Summaries<br>
+with sub-dialogue</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image98 6.png" style="width:3.19083in;height:4.30955in"></td>
+<td><img src="media/image977.pn g" style="width:2.83805in;height:2.9135in"></td>
+</tr>
+</tbody>
+</table>
+<p>The “Simple intensity index”, SRII is essentially the mean rain per rain day, (just using the values of days with more than 1mm). In Fig. 11.3i it is just PRCPTOT/Rnnmm, because we chose 1mm as the threshold. For example, in 1935 there were 36 rain days with a total of 514mm. Hence</p>
+<p>SRII<sub>1935</sub> = 514/36 = 14.26mm</p>
+<p>The next 2 indices, R10mm and R20mm are just the number days each year with 10mm, and 20mm or more, each year. They can also be given using the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue.</p>
+<p>The indices CDD and CWD give the maximum dry-spell length and rain-spell lengths, where rain = 1mm. They are special cases of the <strong><em>Climatic &gt; Prepare &gt; Spells</em></strong> dialogue, Fig. 11.3n. The data in Fig. 11.3i show that the CDD index for the whole calendar year is probably of little interest, for this site, because the months of May to October are usually dry. Hence the longest dry-spell of 197 days, in 1935, is not a surprise. However, assessing evidence for trends in the longest dry-spell during the season, perhaps from 1 January to 31 March, may be useful.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3n Spells dialogue to give CWD index</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.3o Filter sub-dialogue for rain days in baseline years</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image978.png" style="width:2.80286in;height:3.43011in"></td>
+<td style="text-align: left;"><img src="media/image985.png" style="width:3.18575in;height:3.27396in"></td>
+</tr>
+</tbody>
+</table>
+<p>The final 2 precipitation indices are R95p and R99p. They are the total rainfall each year from heavy rain days. The definition of “heavy” is relative to the baseline years. The first step is therefore to find the thresholds. The process is as follows:</p>
+<ol type="1">
+<li><p><strong><em>Filter</em></strong> the Dodoma data to the baseline years and just the rain days, Fig. 11.3.</p></li>
+<li><p>Use the <strong><em>Prepare &gt; Column: Calculate &gt; Column Summaries</em></strong>, Fig. 11.3p, with the <strong><em>percentile summary</em></strong>, Fig. 11.3q, to give the 95% and 99% points of the rain variable. The 95% point, Fig. 11.3q, = 45.57mm and the 99% point = 67.3mm</p></li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 11.3p</em></strong></th>
+<th><strong><em>Fig. 11.3q</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image981. png" style="width:2.96in;height:3.47896in"></td>
+<td><p><img src="media/image1391. png" style="width:3.05709in;height:1.34768in"></p>
+<p><strong><em>Result in the output window</em></strong></p>
+<p><img src="media/image1388 .png" style="width:3.0555in;height:1.06052in"></p></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="1">
+<li><p>Now <strong><em>filter</em></strong> to use just the days for the whole record where (rain &gt; 45.57), Fig. 11.3r. .</p></li>
+<li><p><strong><em>Use Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> to give the sum and number of observations, Fig. 11.3s</p></li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3r</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 11.3s</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1390.png" style="width:2.99691in;height:3.28174in"></td>
+<td style="text-align: left;"><img src="media/image1380.png" style="width:2.67101in;height:3.55655in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting data are in Fig. 11.3t. The new sum_rain variable gives the same values as the R95p. In the first year, the total was 210.3mm from 3 rain days.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.3t</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1384.png" style="width:3.06752in;height:3.32573in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="climdex-temperatures" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="climdex-temperatures"><span class="header-section-number">13.4</span> Climdex – Temperatures</h2>
+<p>The 16 temperature indices are shown in Table 11.4a.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 15%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Table 11.4a Temperature indices from climdex</em></strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong><em>Number</em></strong></td>
+<td><strong><em>Name</em></strong></td>
+<td><strong><em>Description</em></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td>FD</td>
+<td>Number of frost days, when daily minimum temperature, Tn &lt;0.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td>SU</td>
+<td>Number of “Summer” days, when daily maximum temperature, Tx &gt; 25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td>ID</td>
+<td>Number of icing days, when Tx &lt; 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td>TR</td>
+<td>Number of tropical nights, when Tn &gt; 20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td>GSL</td>
+<td>Growing season length. Number of days between first span of 6 consecutive days with daily Tmean &gt; 5°C and first span of 6 days (after July 1<sup>st</sup>) with Tmean &lt; 5°C. (July to June in Southern hemisphere.)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td>TXx</td>
+<td>Annual or monthly maximum of Tx</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td>TNx</td>
+<td>Annual or monthly maximum of Tn</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td>TXn</td>
+<td>Annual or monthly minimum of Tx</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td>TNn</td>
+<td>Annual or monthly minimum of Tn</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">10</td>
+<td>TN10p</td>
+<td>Percentage of days when Tn &lt; 10<sup>th</sup> percentile from the baseline</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11</td>
+<td>TX10p</td>
+<td>Ditto for Tx &lt; 10<sup>th</sup> percentile</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">12</td>
+<td>TN90p</td>
+<td>Ditto for Tn &gt; 90<sup>th</sup> percentile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">13</td>
+<td>TX90p</td>
+<td>Ditto for Tx &gt; 90<sup>th</sup> percentile</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">14</td>
+<td>WSDI</td>
+<td>Warm spell duration index, the annual number of day where at least 6 consecutive days are warmer than the 90<sup>th</sup> percentile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">15</td>
+<td>CSDI</td>
+<td>Cold spell duration index, the annual number of days when at least 6 consecutive days are colder than the 10<sup>th</sup> percentile</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">16</td>
+<td>DTR</td>
+<td>Mean temperature range, i.e.&nbsp;mean difference between Tx and Tn</td>
+</tr>
+</tbody>
+</table>
+<p>They are again illustrated with the Dodoma data. Use Climatic &gt; Prepare &gt; Climdex, Fig. 11.4a and complete the Temperature sub-dialogue as shown in Fig. 11.4b.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 11.4a The Climdex dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climdex</em></strong></p></th>
+<th><strong><em>Fig. 11.4b Climdex temperature sub-dialogue</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>![] (media/image1381.png){wid th=“2.3313899825021873in” heig ht=“2.152358923884514in”}</td>
+<td><img src="media/ima ge1378.png" style="width:3.75901in;height:2.7698in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are in Fig. 11.4c. Some results are obvious; in particular in the later years, shown in Fig. 11.4c, there are about 30% of days per year in TN90p, i.e.&nbsp;with Tn higher than the 90% point from the 1961-90 baseline. And TN10p has very low values. The change in Tn is clearer than that of the maximum temperatures, Tx.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 11.4c</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1383.png" style="width:6.06997in;height:3.98859in"></td>
+</tr>
+</tbody>
+</table>
+<p>As in Section 11.3, some of the temperature indices can be calculated through the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue. For example completing Fig. 11.4d and Fig. 11.4e as shown produces the indices TNn and TNx.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 11.4d</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p></th>
+<th><strong><em>Fig. 11.4e Choosing the max and min</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1386. png" style="width:3.0453in;height:3.37138in"></td>
+<td><img src="media/image1382.p ng" style="width:2.89033in;height:2.77757in"></td>
+</tr>
+</tbody>
+</table>
+<p>The calculations for 6 of the indices is more complex. They are numbered 10 to 15 in Table 11.4a and depend on the temperatures in the baseline period, usually 1961 to 1990. In this case the 10% and 90% points are found, in turn, for each day of the year[^48] and these values are then compared with the temperature on that day for the record.</p>
+</section>
+<section id="using-the-climdex-indices" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="using-the-climdex-indices"><span class="header-section-number">13.5</span> Using the climdex indices</h2>
+<p><mark>To be completed</mark></p>
+</section>
+<section id="extreme-value-analysis" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="extreme-value-analysis"><span class="header-section-number">13.6</span> Extreme value analysis</h2>
+<p><mark>Using the extRemes package</mark></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter_11_Drawing_Maps.html" class="pagination-link" aria-label="Drawing Maps">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="pagination-link" aria-label="PICSA -- Long Before the season">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>21&nbsp; Climate Normals – R-Instat Climatic Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter_21_Various.html" rel="next">
+<link href="./Chapter_19_Drought_Indices__SPI.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter_20_Climate_Normals.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R-Instat Climatic Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_1_About_this_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About this guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_2_More_Practice_with_RInstat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">More Practice with R-Instat</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_3_Using_RInstat_effectively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_4_Getting_the_data_into_shape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_5_Quantity_and_quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_6_Preparing_summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_7_Tailored_Products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_9_Gridded_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gridded Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_10_Comparing_Data_from_Different_Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing Data from Different Sources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_11_Drawing_Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_12_Extremes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_14_The_Seasonal_forecast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_16_Withinday_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_17_Circular_data_and_wind_roses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_18_Temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_19_Drought_Indices__SPI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_20_Climate_Normals.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_21_Various.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_22_References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_23_Appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Appendix</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">21.1</span> Introduction</a></li>
+  <li><a href="#precipitation-normals" id="toc-precipitation-normals" class="nav-link" data-scroll-target="#precipitation-normals"><span class="header-section-number">21.2</span> Precipitation normals</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">21.3</span> Missing values</a></li>
+  <li><a href="#temperature-normals" id="toc-temperature-normals" class="nav-link" data-scroll-target="#temperature-normals"><span class="header-section-number">21.4</span> Temperature normals</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">21.1</span> Introduction</h2>
+<p>The calculation of climate normals in this chapter is based largely on (World Meteorological Organization (WMO), 2017). We also consider the adaptation of the guidelines to the calculations of the normals in the US, as described in (Arguez, et al., 2012).</p>
+<p>A climatological standard normal now refers to the most recent 30-year period finishing in a zero, i.e.&nbsp;currently 1981-2010, and soon to be 1991-2020. In addition, the 1961-1990 period is retained as a standard reference period for assessing long-term climate change.</p>
+<p>A distinction is made in (World Meteorological Organization (WMO), 2017), between “Principal Climatological Parameters” and “Secondary Parameters”. There are 8 primary parameters including monthly total rainfall (precipitation) and the total number of rain days, Table 19.1a.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 75%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Table 19.1a WMO Principal Climatological Parameters</em></strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Parameter</strong></td>
+<td><strong>Units</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Precipitation total</td>
+<td>mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Precipitation days (Precip ≥ 1mm)</td>
+<td>days</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean Tmax</td>
+<td>°C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean Tmin</td>
+<td>°C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean Tavg</td>
+<td>°C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean sea-level pressure</td>
+<td>hPa</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean vapour pressure</td>
+<td>hPa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total hours of sunshine</td>
+<td>hours</td>
+</tr>
+</tbody>
+</table>
+<p>The quintile boundaries for rainfall (mm) and the mean number of days with more than 5, 10, 50, 100 and 150mm are secondary parameters. Temperature thresholds and extremes are also included.</p>
+<p>These are intended as guidelines and are adapted by individual countries. Examples from the US are shown in Table 19.1b. This table is adapted from Table 5 in (Arguez, et al., 2012). The units have been changed to millimetres for rainfall and °C for temperatures (US uses inches and Fahrenheit.)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Table 19.1b Monthly and annual normals for a station in Chicago, from (Arguez, et al., 2012)</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Variable</td>
+<td>J</td>
+<td>F</td>
+<td>M</td>
+<td>A</td>
+<td>M</td>
+<td>J</td>
+<td>J</td>
+<td>A</td>
+<td>S</td>
+<td>O</td>
+<td>N</td>
+<td>D</td>
+<td>Ann</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tmax (°C)</td>
+<td>-0.3</td>
+<td>2.1</td>
+<td>8.2</td>
+<td>15.1</td>
+<td>21.2</td>
+<td>26.6</td>
+<td>29.0</td>
+<td>27.8</td>
+<td>24.1</td>
+<td>17.1</td>
+<td>9.2</td>
+<td>1.8</td>
+<td>15.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tavg (°C)</td>
+<td>-4.0</td>
+<td>-1.8</td>
+<td>3.8</td>
+<td>10.2</td>
+<td>16.1</td>
+<td>21.7</td>
+<td>24.4</td>
+<td>23.4</td>
+<td>19.1</td>
+<td>12.3</td>
+<td>5.3</td>
+<td>-1.7</td>
+<td>10.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tmin (°C)</td>
+<td>-7.7</td>
+<td>-5.7</td>
+<td>-0.6</td>
+<td>5.4</td>
+<td>10.9</td>
+<td>16.7</td>
+<td>19.7</td>
+<td>19.0</td>
+<td>14.2</td>
+<td>7.6</td>
+<td>1.4</td>
+<td>-5.2</td>
+<td>6.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DTR (°C)</td>
+<td>7.4</td>
+<td>7.8</td>
+<td>8.8</td>
+<td>9.7</td>
+<td>10.3</td>
+<td>9.9</td>
+<td>9.3</td>
+<td>8.8</td>
+<td>9.9</td>
+<td>9.5</td>
+<td>7.8</td>
+<td>7.0</td>
+<td>8.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Precip(mm)</td>
+<td>52</td>
+<td>49</td>
+<td>69</td>
+<td>92</td>
+<td>105</td>
+<td>103</td>
+<td>102</td>
+<td>101</td>
+<td>84</td>
+<td>82</td>
+<td>87</td>
+<td>65</td>
+<td>993</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HDD</td>
+<td>692</td>
+<td>564</td>
+<td>451</td>
+<td>249</td>
+<td>104</td>
+<td>17</td>
+<td>1</td>
+<td>2</td>
+<td>43</td>
+<td>194</td>
+<td>391</td>
+<td>620</td>
+<td>3327</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CDD</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>7</td>
+<td>34</td>
+<td>117</td>
+<td>188</td>
+<td>160</td>
+<td>66</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>581</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Days Tmax &gt; 32.2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0.6</td>
+<td>3.1</td>
+<td>6.3</td>
+<td>3.8</td>
+<td>1.2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>15.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Days with Tmin &lt; 10</td>
+<td>1.4</td>
+<td>2.9</td>
+<td>10.6</td>
+<td>23.5</td>
+<td>30.5</td>
+<td>30</td>
+<td>31</td>
+<td>31</td>
+<td>30</td>
+<td>28.1</td>
+<td>13.1</td>
+<td>2.9</td>
+<td>235</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Precip 25%</td>
+<td>29</td>
+<td>26</td>
+<td>41</td>
+<td>54</td>
+<td>63</td>
+<td>70</td>
+<td>53</td>
+<td>57</td>
+<td>40</td>
+<td>49</td>
+<td>48</td>
+<td>38</td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Precip 75%</td>
+<td>75</td>
+<td>66</td>
+<td>90</td>
+<td>119</td>
+<td>141</td>
+<td>124</td>
+<td>115</td>
+<td>143</td>
+<td>117</td>
+<td>93</td>
+<td>133</td>
+<td>80</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Precip &gt; 0.2mm[^59]</td>
+<td>10.7</td>
+<td>8.8</td>
+<td>11.2</td>
+<td>11.1</td>
+<td>11.4</td>
+<td>10.3</td>
+<td>9.9</td>
+<td>9</td>
+<td>8.2</td>
+<td>10.2</td>
+<td>11.2</td>
+<td>11.1</td>
+<td>123.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Precip &gt; 25mm</td>
+<td>0.2</td>
+<td>0.2</td>
+<td>0.3</td>
+<td>0.9</td>
+<td>1</td>
+<td>1.3</td>
+<td>1</td>
+<td>1.3</td>
+<td>0.7</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>0.5</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>One differences is for rainfall, where WMO suggests quintiles, i.e.&nbsp;20%, to 80%, while the US uses quartiles (25% and 75%). Heating (HDD) and cooling degree days are also including. A heating degree day is defined as a value of Tavg above 18°C (65 degrees Fahrenheit), while CDDs are temperatures below that level.</p>
+<p>The WMO lower threshold for rainfall is proposed as ≥ 1mm. We have largely used 0.85mm as a practical lower limit in this guide. We claim this is consistent with the WMO value of ≥1mm. For practical purposes, as data are recorded to 0.1mm the WMO value is effectively &gt; 0.95mm. For consistency between stations (which is important for climate normals) the value of 0.85mm is about the same. But it allows for differences in rounding at different stations. This can occur in 2 ways. If data were originally in inches, then 0.01inch = 0.3mm. The value of 0.9mm is not possible, because 0.03inches = 0.8mm, while 0.04inches = 1mm.</p>
+<p>In addition, some observers round data more than others. An observer who rounds 0.9mm to 1mm would have that day counted as rain, while the more precise observer, recording the same value as 0.9mm would have it omitted as dry.</p>
+<p>For these reasons, we claim the proposed threshold value of 0.85mm is a practical was of implementing the WMO ≥1mm threshold.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 19.1a Inventory for Dodoma</em></strong></p>
+<p><strong><em>Climatic &gt; Check Data &gt; Inventory</em></strong></p></th>
+<th><p><strong><em>Fig. 19.1b Subset with 30 years</em></strong></p>
+<p>Right-click &gt; Filter (to year from 1981 to 2010)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image320. png" style="width:2.95767in;height:2.99414in"></td>
+<td><img src="media/image326. png" style="width:2.86941in;height:3.01892in"></td>
+</tr>
+</tbody>
+</table>
+<p>In principle, producing normals is straightforward as is shown in Section 19.2 with examples using rainfall data. Complications relate largely to the presence of missing values in the reference period and this is discussed in Section 19.3.</p>
+<p>The Dodoma data are used as an example. <strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic &gt; Tanzania &gt; Dodoma.rds</em></strong>.</p>
+<p>The data are already defined as climatic. An inventory is shown in Fig. 19.1a. IT shows there are virtually no missing values in the rainfall, either in the 30 years from 1961 or in the most recent period, from 1981 to2010. A subset of the data is produced as shown in Fig. 19.1b, and rainfall normals from 1981-2010 are shown in Section 19.2.</p>
+<p>There are also relatively few missing values in the temperatures. They are considered in Section 19.3, where we also explain the WMO recommendations for coping with missing values.</p>
+<p>The sunshine records only started in 1973, and so could not be used for 1961-90 normals. And there are far too many missing values for them to be used in 1981-2010, unless they can be merged with satellite data. This is considered in Section 19.4.</p>
+<p>The examples here are for a single station. Usually they would be done for a whole set of stations in a single file, and that is no more work. The process, in R-Instat, currently involves three successive steps. There seems to be no R-package for this task. We expect to construct one for R and hence R-Instat, in the future.</p>
+</section>
+<section id="precipitation-normals" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="precipitation-normals"><span class="header-section-number">21.2</span> Precipitation normals</h2>
+<p>From Fig. 19.1b the Dodoma data are now from 1981 to 2010. We have chosen to keep the year from January to December, though there could be a case for July to June, as that would mean each “year” would be a complete season. The rains in Dodoma are from November to April. In (World Meteorological Organization (WMO), 2017), mention is made of climate normals being for seasons rather than annual, but no details are given, In Tanzania part of the country is unimodal and part is bimodal, so comparisons of the normals between stations would be easier with a consistent definition and January to December therefore seems justified.</p>
+<p>The first 2 normals in Table 19.1a are the precipitation totals and the number of rain days. As preparation, calculate the rain days as shown in Fig. 19.2a. In Fig. 19.2a the 0.85mm threshold has been used, which we claimed above, is consistent with the WMO definition of rain ≥ 1mm. (Use 0.95mm is you don’t agree!)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 19.2a Add a variable for raindays</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Transform</em></strong></p></th>
+<th><strong><em>Fig. 19.2b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image343.png" style="width:2.7959in;height:3.43268in"></td>
+<td><img src="media/image32 2.png" style="width:3.22887in;height:3.40943in"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting daily data are in Fig. 19.2b. The rainday variable can be seen to be 1 on rain days, and 0 otherwise.</p>
+<p>Getting the monthly normals is a 2-step process and the annual normals adds a 3rd step.</p>
+<p>The first step uses the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong>, as shown in Fig. 19.2c, to give the monthly rainfall totals for each year.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 19.2c</em></strong></p>
+<p><strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong></p></th>
+<th><strong><em>Fig. 19.2d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image325. png" style="width:2.9982in;height:3.77487in"></td>
+<td><img src="media/image298.p ng" style="width:2.87745in;height:2.99879in"></td>
+</tr>
+</tbody>
+</table>
+<p>Complete the dialogue as shown in Fig. 19.2c and choose just the 3 summaries from the sub-dialogue, as shown in Fig. 19.2d. This generates a new data frame with 30 (years) by 12 (months), i.e.&nbsp;360 rows of data. It will be multiples of 360 rows if there is more than one station.</p>
+<p>Return to the dialogue, change the variable, in Fig. 19.2c, to <strong><em>raindays</em></strong> and omit the <strong><em>Maximum</em></strong> and also the <strong><em>N Non Missing</em></strong> summary – it isn’t needed, because it is just the same as for the rain column.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.2e The resulting monthly data</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 9.2f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image280.png" style="width:2.62242in;height:3.38293in"></td>
+<td style="text-align: left;"><img src="media/image294.png" style="width:3.3985in;height:3.33405in"></td>
+</tr>
+</tbody>
+</table>
+<p>Check the resulting data frame, shown in Fig. 19.2e. For example, the first row shows there was a total of 26.4mm from 5 rain days in 1981[^60]. The maximum daily value was 14.4mm in January 1981. In Fig. 19.2e, check there are no missing months. With the setting for missing values unchecked in Fig. 19.2c, a month will be set to missing if there is even a single missing day in that month. We consider this issue at the start of Section 19.3.</p>
+<p>The (World Meteorological Organization (WMO), 2017) describes four different parameters that can become monthly normals. From the daily data it may be a mean, or a sum, or a count or an extreme. In Fig. 19.2e there are 3 of these types. Thus, the rainfall totals are an example of a sum, the number of rain days is a count, and the maximum rainfall is an example of an extreme. Once temperature data are considered, there will also be examples of means.</p>
+<p>The second step is to produce the climate normals from these monthly data. This uses the “ordinary” summary dialogue in R-Instat, from <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong>, Fig 19.2f, rather than the special climatic summary. This time the only summary needed is the mean, Fig. 19.2g.</p>
+<p>The results are a new data frame with just 12 rows, giving the monthly climate normals, Fig. 19.2h. With multiple stations this would be a data frame with 12 rows for each station. These can now be copied to a table or presented graphically. With multiple stations this would be in a facetted graph.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.2g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.2h The climate normals</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image282.png" style="width:2.86638in;height:3.12462in"></td>
+<td style="text-align: left;"><img src="media/image306.png" style="width:2.80561in;height:3.19153in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 19.2i gives a simple graph of the mean monthly totals with the data from Fig. 19.2h as labels. Fig. 19.2j shows the rain days, where the months have been changed into the more natural seasonal order.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.2i</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.2j</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image275.png" style="width:3.00801in;height:2.98747in"></td>
+<td style="text-align: left;"><img src="media/image281.png" style="width:3.01856in;height:2.99441in"></td>
+</tr>
+</tbody>
+</table>
+<p>Secondary parameters for the rainfall, suggested by (World Meteorological Organization (WMO), 2017) are the extremes, the quintile boundaries and the number of rain days above defined thresholds.</p>
+<p>The quintile boundaries are the 0%, 20%, 40%, 60%, 80%, 100% points, where the 0% and 100% are the monthly extremes. Countries are unlikely to need them all and this is where the US has chosen quartiles, i.e.&nbsp;25% and 75% instead of quintiles.</p>
+<p>In R-Instat either can be found from adapting the second stage of the calculations. If you would like the extremes and quartiles then use Prepare &gt; Column: Reshape &gt; Column Summaries again, Fig. 19.2f, but just for the sum_rain variable. In the summaries, Fig. 19.2g use the Minimum and Maximum for the extremes and the Lower and Upper Quartiles if they are what you wish.</p>
+<p>If you prefer the quintiles (say 20% and 80% points), use the <strong><em>More</em></strong> tab, in Fig. 19.2g, to provide further summaries, Fig. 19.2k, where the 0.2 gives the 20% point. Currently only a single value is allowed, so use the dialogue a second time to add the 80% point.</p>
+<p>Section 4.5 in (World Meteorological Organization (WMO), 2017) proposes a definition for the quintile boundaries. R, and hence R-Instat, have 9 alternative methods for the calculation of quantiles (including therefore quintiles). The default in R is method 7 and this, fortunately, coincides with the method proposed in (World Meteorological Organization (WMO), 2017).</p>
+<p>Fig. 19.2l shows the normals for the mean, as in Fig. 19.2i, as a line plot. It is together with the minimum, 20%, 80% and maximums for the 1981-2010 period. Note that the minimums and maximums are for the monthly data, i.e.&nbsp;the maximum of the monthly totals. For the rainfall data it is also useful to have the daily maximums.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.2k</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.2l</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image279.png" style="width:2.35191in;height:2.54007in"></td>
+<td style="text-align: left;"><img src="media/image277.png" style="width:3.14897in;height:3.18948in"></td>
+</tr>
+</tbody>
+</table>
+<p>It is important to be clear on the differences between the two maximums. In January in Fig. 19.2m shows the largest monthly total was 331mm.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.2m</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image260.png" style="width:5.71349in;height:3.02829in"></td>
+</tr>
+</tbody>
+</table>
+<p>Also, in January, the maximum daily rainfall in the 30 years was 113mm.</p>
+<p>The quartile or quintile boundaries are calculated from the monthly summaries, (i.e.&nbsp;the second stage in the calculations). The mean number of days above different thresholds needs the daily data.</p>
+<p>In <strong><em>Climatic &gt; Prepare &gt; Transform</em></strong>, Fig. 19.2a change the threshold from 0.85mm to 5mm, 10mm, etc and then summarise the resulting column(s) as described above.</p>
+<p>In practice, decide on the thresholds at the start, and then produce the summaries together with the 1mm threshold.</p>
+<p>The resulting normals are in Fig. 19.2m for 5mm, 10mm and 25mm.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.2n</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.2o</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image314.png" style="width:2.98869in;height:2.75327in"></td>
+<td style="text-align: left;"><img src="media/image304.png" style="width:2.91184in;height:2.8491in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 19.2n presents the normals of the number of rain days at Dodoma[^61]. It shows that there was an average of 10 rain days in January. Of these, just under half were between 1mm and 5mm and there were about 2 days per month, on average, with more than 25mm.</p>
+<p>So far, we have considered monthly normals for the 1981-2010 rainfall data. The third stage is to produce annual normals. The (World Meteorological Organization (WMO), 2017) recommend producing them from the monthly normals, i.e.&nbsp;from the data in Fig. 19.2m, rather than from the monthly data, e.g.&nbsp;Fig 19.2e. If there are no missing values the results are essentially the same.</p>
+<p>From the monthly normals in Fig. 19.2m use <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> again, Fig. 19.2o, with the five variables <strong><em>meanrain, rainday, rainday5, rainday10</em></strong> and <strong><em>rainday25</em></strong>. In Fig. 19.2o press the <strong><em>Summaries</em></strong> sub-dialogue and just get the <strong><em>Sum</em></strong>. Also, in Fig. 19.2o, the results could be stored in another data frame if the calculations were for multiple stations. We choose here to give the results in the <strong><em>output window</em></strong> instead, Fig. 19.2p.</p>
+<p>Now return to the dialogue in Fig. 19.2o. Use the variable <strong><em>maxrain</em></strong> instead and change the summary to just produce the <strong><em>maximum</em></strong>.</p>
+<p>The annual results, in Fig. 19.2p show the mean annual rainfall was 595mm from 43 rain days, of which, on average 7 days has 25mm or more. So, the mean rain per rain day was on average 14mm and about one rain day in six had 25mm or more. The largest ever daily rainfall was 113mm.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 54%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 19.2p</em></strong></th>
+<th><p><strong><em>Fig. 19.2q</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries (after making year a factor)</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image 297.png" style="width:3.38801in;height:1.6163in"></td>
+<td><img src="media/image293.png" style="width:2.65829in;height:2.63924in"></td>
+</tr>
+</tbody>
+</table>
+<p>The (World Meteorological Organization (WMO), 2017) recommendation of calculating the annual normals from the monthly values does not work for the quintiles. In the calculations above we have used the nice property that “the sum of the means is the same as the mean of the sums”. So, in the figures above, totalling the monthly values in Fig. 19.2e to give the 30 annual values and then taking the mean over the years, still gives the value of 595mm that we found doing it “the other way round”.</p>
+<p>One limitation with this recommendation is that it is not possible to calculate the annual normal quintiles, i.e.&nbsp;the variables minrain, 20% (q20) , q80 and maxrain, see Fig. 19.2m, from their monthly counterparts. The same applies to the quartiles, see Table 19.1b above, from (Arguez, et al., 2012) where the annual quartiles have been omitted.</p>
+<p>These quintiles, including the annual extremes, are useful. As there are no missing values in the data, they are calculated from the individual monthly values, shown in Fig. 19.2e.</p>
+<p>With the monthly data frame, Fig. 19.2e, right-click in the year name and make the year into a factor column. Then use <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> again as shown in Fig. 19.2q, for the sumrain variable.</p>
+<p>In the summaries sub-dialogue just get the <strong><em>Sum</em></strong>. The resulting data frame is shown in Fig. 19.2r.</p>
+<p>Use the <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> in this new data frame. With the <strong><em>Summaries</em></strong> sub-dialogue give the <strong><em>Mean, Minimum,</em></strong> <strong><em>Maximum</em></strong> and the <strong><em>0.2 percentile</em></strong> (on the More tab). Use the same dialogue again, and change 0.2 to 0.8 to give the 80% point.</p>
+<p>The results are in Fig. 19.2s. The first value simply confirms that the mean is the same, whichever way it is calculated. The lowest year had a total of 330mm and the highest was 864mm. The 20% point for the annual rainfall total was 487mm and the 80% point was 717mm.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 19.2r</em></strong></th>
+<th><p><strong><em>Fig. 19.2s Annual results</em></strong></p>
+<p><strong><em>From Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image307.png" class="img-fluid">{wid th=“2.3395986439195102in” heig ht=“2.445317147856518in”}</td>
+<td><img src="media/im age303.png" style="width:3.72906in;height:1.66129in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="missing-values" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">21.3</span> Missing values</h2>
+<p>Make a copy of the rainfall column, to illustrate how to cope with missing values.</p>
+<p><strong><em>Right-click</em></strong> in the <strong><em>rain variable</em></strong>, Fig. 19.3a and choose <strong><em>Duplicate Column</em></strong>. Call the resulting variable <strong><em>rainm</em></strong>, Fig. 19.3b.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.3a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.3b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image291.png" style="width:3.04597in;height:3.03483in"></td>
+<td style="text-align: left;"><img src="media/image296.png" style="width:2.8682in;height:2.8682in"></td>
+</tr>
+</tbody>
+</table>
+<p>In the resulting column, double-click on 7<sup>th</sup>, 8<sup>th</sup> and 9<sup>th</sup> January and make the values into NA. Scroll down and make 1<sup>st</sup> to 5<sup>th</sup> February 1981 into NA.</p>
+<p>Then use Climatic &gt; Prepare &gt; Transform, Fig. 19.3c, to make a column called raindaym. The resulting data are shown in Fig. 19.3d.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.3c</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.3d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image310.png" style="width:2.96479in;height:4.01119in"></td>
+<td style="text-align: left;"><img src="media/image289.png" style="width:2.98045in;height:2.99647in"></td>
+</tr>
+</tbody>
+</table>
+<p>The guidelines in (World Meteorological Organization (WMO), 2017) depend on what type of parameter you are calculating, i.e.&nbsp;sum, mean, count or extreme.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 19.3e</em></strong></th>
+<th><p><strong><em>Fig. 19.3f</em></strong></p>
+<p><strong><em><mark>Redo when new option available</mark></em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image593.pn g" style="width:2.73937in;height:3.50534in"></td>
+<td><img src="media/image58 2.png" style="width:3.22799in;height:2.81685in"></td>
+</tr>
+</tbody>
+</table>
+<p>It is strict for a sum parameter, so here for the total monthly rainfall. If there are <strong><em>any</em></strong> missing values, it proposes the monthly sum be set to missing.</p>
+<p>This is also one of the default settings in R, and hence in R-Instat. So, repeat the <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong> dialogue, from Fig. 19.2b, also shown in Fig. 19.3e, for the new <strong><em>rainm</em></strong> variable. Just get the <strong><em>sum</em></strong>.</p>
+<p>The maximum daily rainfall is an extreme. When there are missing values in the month, the extreme is found for those that remain present. So, return to the <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> dialogue, tick the <strong><em>Omit Missing Values</em></strong> checkbox in the dialogue shown in Fig. 19.3e. Click the <strong><em>Summaries button</em></strong> and change the summary to give just the <strong><em>Maximum</em></strong>.</p>
+<p>When the parameter is a count, like the number of rain days, (or a mean), there is an intermediate recommendation, shown in Fig. 19.3f. The monthly summary is set to missing if there are 11 or more missing days in the month, or if 5, or more, consecutive days are missing[^62].</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.3g</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.3h</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image581.png" style="width:2.63872in;height:2.63325in"></td>
+<td style="text-align: left;"><img src="media/image577.png" style="width:3.35593in;height:2.69319in"></td>
+</tr>
+</tbody>
+</table>
+<p>Return to the <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> dialogue, Fig. 19.3e, yet again and use the <strong><em>raindaym</em></strong> variable. Click on the Summaries and choose <strong><em>N Non Missing</em></strong> and <strong><em>Sum</em></strong>. On the main dialogue also tick the Add Date Column[^63] checkbox.</p>
+<p>The results are shown in Fig. 19.3h. With the missing values, the first 2 months in 1981 are set to missing for the rainfall total and neither month is missing for the maximum. For the number of rain days, the first month is summarised, because just 3 days were missing. The second has been set to NA, because 5 consecutive days were missing.</p>
+<p>With missing values (World Meteorological Organization (WMO), 2017) propose one further adjustment for the count-type normals, that are here represented by the number of rain days. The first row of data in Fig. 19.3h shows there were 4 rain days in the 28 non-missing days in January 1981. There are 31 days in January and hence the value is multiplied by 31/28, which gives an estimate of 4.4 rain days in the full month.</p>
+<p>To handle this adjustment, use <strong><em>Climatic &gt; Date &gt; Use Date</em></strong> as shown in Fig. 19.3i. Just choose the check-box for <strong><em>Days in Month</em></strong>. The resulting column is also shown in Fig. 19.3h. Now use <strong><em>Prepare &gt; Column: Calculate &gt; Calculations</em></strong> and complete it as shown in Fig. 19.3j. The resulting variable is also shown in Fig. 19.3h.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 19.3i Number of days in each month</em></strong></p>
+<p><strong><em>Climatic &gt; Date &gt; Use Date</em></strong></p></th>
+<th><strong><em>Fig. 19.3j</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image580.pn g" style="width:2.79055in;height:2.93129in"></td>
+<td><img src="media/image57 8.png" style="width:3.18348in;height:2.97719in"></td>
+</tr>
+</tbody>
+</table>
+<p>The second stage in the calculations is the summary of the normal for each month, as shown in Section 19.2. The recommendation is that the monthly normals should only be calculated where there are at least 80%, i.e.&nbsp;24 of the 30 years that are not missing. In the example here, there is missing in only a single year. Hence the second and third stages can proceed as described in Section 19.2.</p>
+<p>This same rule of needing 80% of the years also applies to the calculations of the monthly quintiles. The annual quintiles, unlike the other normal, can not be calculated from the monthly normal. Hence annual quintiles should not be calculated if there are missing months in the data.</p>
+</section>
+<section id="temperature-normals" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="temperature-normals"><span class="header-section-number">21.4</span> Temperature normals</h2>
+<p>In (World Meteorological Organization (WMO), 2017) the monthly (and annual) mean values of the (daily) Tmax, Tmin and Tmean are in the list of Principal normals, <a href="#bookmark=id.4anzqyu"><u>Table 19.1a</u></a>, while the monthly extremes and the count of the number of days that Tmax exceeds 25˚C, 30˚C, 35˚C and 40˚C are listed as secondary. The only equivalent threshold for Tmin is the count less than 0˚C, which is rarely useful in Africa. In (Arguez, et al., 2012) the count less than 10˚C is used, see <a href="#bookmark=id.2pta16n"><u>Table 19.1b</u></a> and that may be more relevant.</p>
+<p>There are missing values in the temperature record. The inventory in Fig. 19.1a indicated that there are not many missing values, but a more accurate check may be useful. One way again uses <strong><em>Climatic &gt; Check Data &gt; Inventory</em></strong>, as shown in Fig. 19.4a, but with a different layout of the data. The result is in Fig. 19.4b.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 19.4a Detailed inventory</em></strong></p>
+<p><strong><em>Climatic &gt; Check Data &gt; Inventory</em></strong></p></th>
+<th><strong><em>Fig. 19.4b Results for Tmax and Tmin 1981-2010</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>! <a href="media/image576.png"></a>{wi dth=“2.362328302712161in” heig ht=“2.666806649168854in”}</td>
+<td><img src="media/im age579.png" style="width:3.62922in;height:3.40702in"></td>
+</tr>
+</tbody>
+</table>
+<p>This confirms that there are only a few missing values. A more precise result would be through a table. This is not currently an automatic option in R-Instat. However, it can easily be given as was shown in Chapter 8, giving the results in Fig. 19.4c. They show the thin red lines in Fig. 19.4b refer to isolated single missing days. There are just 2 years with at least a missing month for Tmax and one year for Tmin. The analysis can continue.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.4c Count of missing values in Tmax, Dodoma 1981-2010</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image569.png" style="width:6.26806in;height:4.25625in"></td>
+</tr>
+</tbody>
+</table>
+<p>Tmin is used for illustration. The main dialogue is <strong><em>Climatic &gt; Prepare &gt; Climatic Summaries</em></strong>, Fig. 19.4d.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.4d</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.4e</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image588.png" style="width:2.94936in;height:3.67289in"></td>
+<td style="text-align: left;"><img src="media/image596.png" style="width:2.99394in;height:3.0913in"></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.4f</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.4g</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image587.png" style="width:2.79883in;height:1.23229in"></td>
+<td style="text-align: left;"><img src="media/image613.png" style="width:3.3478in;height:2.8663in"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><img src="media/image598.png" style="width:2.74314in;height:1.68997in"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are shown in Fig. 19.4g. For example, in July 1984 the minimum of Tmin was 12.3˚C, the mean was 14.0˚C and the maximum was 15.8 ˚C. These were from 30 days, because one day was missing. 25 out of the 30 days were less than 15 ˚C. This count is adjusted as described in Fig. 19.3i, i.e.&nbsp;use Climatic &gt; Dates &gt; Use Date to add a variable giving the number of days in each month and then adjust the count of days less than 15 ˚C by:</p>
+<p>Countlt15/count_non_missing * days_in month.</p>
+<p>This gives the last variable shown in Fig. 19.4g.</p>
+<p>The second stage is to average over the years. This uses <strong><em>Prepare &gt; Column: Reshape &gt; Column Summaries</em></strong> as for the rainfall normals, Fig. 19.4h.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.4h</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.4i</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image601.png" style="width:2.64831in;height:2.63875in"></td>
+<td style="text-align: left;"><img src="media/image594.png" style="width:3.44252in;height:2.52764in"></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 19.4j</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 19.4k</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image586.png" style="width:3.28187in;height:3.19849in"></td>
+<td style="text-align: left;"><img src="media/image590.png" style="width:2.4934in;height:3.37342in"></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter_19_Drought_Indices__SPI.html" class="pagination-link" aria-label="Drought Indices -- SPI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter_21_Various.html" class="pagination-link" aria-label="Various">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

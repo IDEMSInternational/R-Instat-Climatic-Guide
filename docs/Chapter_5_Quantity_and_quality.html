@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Quantity and quality? – R-Instat Climatic Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter_6_Preparing_summaries.html" rel="next">
+<link href="./Chapter_4_Getting_the_data_into_shape.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter_5_Quantity_and_quality.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R-Instat Climatic Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_1_About_this_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About this guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_2_More_Practice_with_RInstat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">More Practice with R-Instat</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_3_Using_RInstat_effectively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_4_Getting_the_data_into_shape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_5_Quantity_and_quality.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_6_Preparing_summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_7_Tailored_Products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_9_Gridded_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gridded Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_10_Comparing_Data_from_Different_Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing Data from Different Sources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_11_Drawing_Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_12_Extremes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_14_The_Seasonal_forecast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_16_Withinday_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_17_Circular_data_and_wind_roses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_18_Temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_19_Drought_Indices__SPI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_20_Climate_Normals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_21_Various.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_22_References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_23_Appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Appendix</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a></li>
+  <li><a href="#an-inventory-what-data-do-i-have" id="toc-an-inventory-what-data-do-i-have" class="nav-link" data-scroll-target="#an-inventory-what-data-do-i-have"><span class="header-section-number">6.2</span> An inventory – what data do I have?</a></li>
+  <li><a href="#using-boxplots-to-check-and-present-data" id="toc-using-boxplots-to-check-and-present-data" class="nav-link" data-scroll-target="#using-boxplots-to-check-and-present-data"><span class="header-section-number">6.3</span> Using boxplots to check and present data</a></li>
+  <li><a href="#quality-control-of-temperature-and-other-data" id="toc-quality-control-of-temperature-and-other-data" class="nav-link" data-scroll-target="#quality-control-of-temperature-and-other-data"><span class="header-section-number">6.4</span> Quality control of temperature (and other) data</a></li>
+  <li><a href="#quality-control-for-rainfall-records" id="toc-quality-control-for-rainfall-records" class="nav-link" data-scroll-target="#quality-control-for-rainfall-records"><span class="header-section-number">6.5</span> Quality control for rainfall records</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
+<p>Starting from this Chapter, we assume the data for analysis are “tidy” and are defined as a climatic data frame in R-Instat.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 59%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.1a The Check Data menu</em></strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1116.png" style="width:3.07127in;height:2.67218in"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This chapter shows different ways to now look at the data. For many applications this stage can be done quickly, and the work then proceeds with the analyses described in the following chapters. But omit this stare at your peril. We often find users have gone immediately to the analyses they need, only to have to return later to look more critically at their data.</p>
+<p>From now on, in this guide, we will also assume that you are reasonably comfortable in your use of R-Instat. In Section 5.2 we outline what that means.</p>
+<p>Section 5.3 shows how to get a quick inventory of the data. We also consider how to tabulate and graph the primary, usually daily, data. Then Section 5.3 examines the data via boxplots. Boxplots are primarily an exploratory tool, but can also be used for presentation graphs.</p>
+<p>Finally, we consider some formal quality control checks on the data. What oddities might be in the data and what can be done about them.</p>
+</section>
+<section id="an-inventory-what-data-do-i-have" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="an-inventory-what-data-do-i-have"><span class="header-section-number">6.2</span> An inventory – what data do I have?</h2>
+<p>Open the Rwanda workshop data, Fig. 5.2a. This is from 4 stations and has already been defined as climatic data as described in Chapter 4.</p>
+<p>Use the first menu item in the <strong><em>Climatic &gt; Check Data</em></strong> menu, Fig. 5.1a to choose an <strong><em>Inventory</em></strong> plot, Fig. 5.2b.</p>
+<p>In Fig. 5.2b the Data and the Station receivers are completed automatically. This is because the data frame was defined as Climatic with these components. If not, then usually:</p>
+<ol type="a">
+<li><p>The data frame was not yet defined as climatic.</p></li>
+<li><p>You are in the wrong data frame – change it in the data selector in the dialogue in Fig. 5.2b.</p></li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 5.2a Rwanda workshop data</em></strong></p>
+<p><strong><em>File &gt; Open from Library &gt; Instat &gt; Climatic &gt; Rwanda &gt; Rwanda Workshop Data.RDS</em></strong></p></th>
+<th><p><strong><em>Fig. 5.2b Inventory Dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Check Data &gt; Inventory</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1139. png" style="width:3.01611in;height:3.06767in"></td>
+<td><img src="media/image1150. png" style="width:2.97338in;height:2.57557in"></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 5.2b, add the 3 data columns for TMAX, TMIN and PRECIP and press Ok. The resulting inventory is in Fig. 5.2c.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.2c Default inventory plot</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.2d Facet by element</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1144.png" style="width:2.90928in;height:2.83047in"></td>
+<td style="text-align: left;"><img src="media/image1110.png" style="width:3.02691in;height:2.83944in"></td>
+</tr>
+</tbody>
+</table>
+<p>Experiment with the display. For example, in Fig. 5.2d the <strong><em>Facet By</em></strong>, in Fig. 5.2b has been set to be the <strong><em>Element</em></strong>, rather than the <strong><em>Station</em></strong>.</p>
+<p>One oddity in the data in Fig. 5.2c and 5.2d was the gap in the rainfall records in the 1980s at 2 of the stations. It is quite common to have rainfall records in the database without the corresponding temperature records, but the reverse is odd. The data were exported from the Clinsoft database and it was not clear why these data were absent. That is the idea of being able to produce an inventory.</p>
+<p>The value of the inventory presentation is that the information on many stations and elements can be shown together. However, the graphs show just when data was present or absent. They do not show the actual values.</p>
+<p>They can be supplemented by simple time series plots[^19].</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.2e Rwanda temperature data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1128.png" style="width:6.06614in;height:3.02501in"></td>
+</tr>
+</tbody>
+</table>
+<p>These plots give a useful indication of the data for analysis. One period in Kamembe Airport is marked in Fig. 5.2e as a cause for concern. In Fig. 5.2f the interactive plotting, using <strong><em>Describe &gt; View Graph</em></strong> is used to examine this part of the graph in more detail.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 59%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.2f Examine the temperature data in more detail</em></strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1138.png" style="width:2.97502in;height:3.30958in"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Fig 5.2g shows the same time series graph for the rainfall data at each site. There is a dry period in the year and hence the different years are clearly visible in these graphs.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.2g Rainfall data at the four stations</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1126.png" style="width:6.05294in;height:2.93191in"></td>
+</tr>
+</tbody>
+</table>
+<p>The next dialogue is <strong><em>Climatic &gt; Check Data &gt; Display Daily</em></strong>, Fig. 5.2h. This produces a lot of output, so we first choose the filter the data to just the first station, Gisenyi[^20].</p>
+<p>When using this dialogue the items on the right (from Station down to Year) are completed automatically. If not, then you are probably in the wrong data frame</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 5.2h Examining daily values</em></strong></p>
+<p><strong><em>Climatic &gt; Check Data &gt; Display Daily</em></strong></p></th>
+<th><strong><em>Fig. 5.2i One year of the data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1105.png" class="img-fluid"> {width=“2.6560739282589676in” height=“3.423170384951881in”}</td>
+<td><img src="media/image1 100.png" style="width:3.33715in;height:3.40075in"></td>
+</tr>
+</tbody>
+</table>
+<p>. Complete the dialogue in Fig. 5.2h as shown. We have chosen to recode zero rainfalls to “—”. This is an option so the rainy days are displayed more clearly in Fig. 5.2i. It indicates the dry period in the year is usually June and July. The dry period was a feature of Fig. 5.2g.</p>
+<p>We have now almost come “full circle”. In Fig. 4.4i the rainfall data from Garoua, Cameroon, were supplied for analysis arranged in a similar way to the data now shown in Fig. 5.2i. This is a very clear and sensible layout for the data, but to examine, not to analyse.</p>
+<p>The second tab in the same <strong><em>Climatic &gt; Check Data &gt; Display Daily</em></strong> dialogue gives a simple graphical display of the data “by year”. An example of the resulting display is in Fig. 5.2j. The results show both the missing periods as well as the dry parts of the year.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.2j. Daily rainfall for one station</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image698.png" style="width:6.10592in;height:2.96705in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="using-boxplots-to-check-and-present-data" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="using-boxplots-to-check-and-present-data"><span class="header-section-number">6.3</span> Using boxplots to check and present data</h2>
+<p>Open the Dodoma data, using the RDS file from the Climatic &gt; Tanzania directory. This is already set as a climatic data frame as described in Chapter 4. It shows data from a single site, with multiple elements.</p>
+<p>Most of the examples in this Section use the special <strong><em>Climatic &gt; Check Data &gt; Boxplot</em></strong> dialogue. Boxplots are also available through the main Describe menu (Describe &gt; Specific &gt; Boxplot). The results are the same, but the Climatic Boxplot dialogue is usually simpler to complete.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 5.3a Climatic boxplot dialogue</em></strong></p>
+<p><strong><em>Climatic &gt; Check Data &gt; Boxplot</em></strong></p></th>
+<th><strong><em>Fig. 5.3b Seasonal pattern of sunshine hours</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image700 .png" style="width:3.14631in;height:3.02028in"></td>
+<td><img src="media/image695.p ng" style="width:2.98839in;height:3.01606in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results, in Fig. 5.3b Show only one value, in September, is odd in being longer than the day length. Most days in the year have many sunshine hours, and the median is more than 10 hrs in the data for 6 months, from June to November.</p>
+<p>Finding just a single obvious oddity in Fig. 5.3b out of the 20,450 observations is a measure of the high quality of these data. We look in more detail at how to check for outliers in Sections 5.4 and 5.5. As a practical measure, setting the value to missing, would hardly affect the results and may be sensible if the non-computerised records are not easily available.</p>
+<p>As well as being a very useful exploratory method, boxplots are also often used in the methods section of reports and papers, to present the data being analysed. Thus they can be presentation as well as exploratory graphs.</p>
+<p>Fig. 5.2b shows the seasonal pattern for the sunshine data. Two simple changes to the dialogue in Fig. 5.3c show the time series, and hence a possible trend, is shown in Fig. 5.3d. The second change in Fig. 5.3c is to use the <strong><em>Variable Width</em></strong> option, to see which years have many missing values.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.3c Change to show the time series</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.3d</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image707.png" style="width:3.05689in;height:3.07681in"></td>
+<td style="text-align: left;"><img src="media/image697.png" style="width:2.9791in;height:3.0135in"></td>
+</tr>
+</tbody>
+</table>
+<p>It is possible to show both the seasonality and the time-series together, as shown in Fig. 5.3e. The resulting figure is a bit crowded if months are used, so the graph is displayed for each of 4 quarters[^21].</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.3e</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image694.png" style="width:6.05625in;height:2.93285in"></td>
+</tr>
+</tbody>
+</table>
+<p>An example in Chapter 2, Section 2.4, compared the Dodoma station data on sunshine hours with the estimated values from the satellite data. It is important to check the quality of the data, whatever the source. Hence Fig. 5.3f shows the seasonal pattern of the satellite estimates of sunshine hours.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.3f Satellite estimates of sunshine at Dodoma</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.3g Suspect values mainly in early years</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image693.png" style="width:2.95526in;height:2.91532in"></td>
+<td style="text-align: left;"><img src="media/image692.png" style="width:2.95443in;height:2.9476in"></td>
+</tr>
+</tbody>
+</table>
+<p>Comparing Fig. 5.3f with Fig. 5.3b (the station data) shows encouragingly that the distributions seem very similar. However, there are also a number of values that are clearly longer than the day length at Dodoma. From discussion with the providers of the data (EUMETSAT) we learned that the early years may have radiation values (and hence sunshine hours) that are less reliable. This is confirmed through the time series plot for the satellite data, in Fig. 5.3g.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.3hBoxplots for the rainfall</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.3i Rainfall on rain days</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image696.png" style="width:3.02121in;height:3.05622in"></td>
+<td style="text-align: left;"><img src="media/image691.png" style="width:2.97219in;height:2.99269in"></td>
+</tr>
+</tbody>
+</table>
+<p>Boxplots can be used for the rainfall data, as shown in Fig. 5.3i. The data plotted are just for rain days, with the variable width of each box indicating the number of rain days. The plot shows the unimodal pattern of the rainfall from November to April[^22].</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 5.3j Adding a second layer to the plot</em></strong></p>
+<p>Plot Options &gt; Layers &gt; Add</p></th>
+<th><strong><em>Fig. 5.3k Tmax and Tmin plotted together</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image894. png" style="width:2.99244in;height:2.74434in"></td>
+<td><img src="media/image891 .png" style="width:2.97089in;height:3.03358in"></td>
+</tr>
+</tbody>
+</table>
+<p>The Dodoma data includes Tmax and Tmin and these can, if required, be shown together on the same graph. An example is in Fig. 5.3k and one of the sub-dialogues to facilitate this graph is shown in Fig. 5.3j[^23] One feature in Fig. 5.3k is the larger variability of the Tmax data in the rainy season, i.e.&nbsp;from November to April.</p>
+<p>Graphs, once saved, can be also combined, using Describe &gt; Combine Graphs, as shown in Fig. 5.3l, with all 4 elements shown in Fig. 5.3m</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 5.3l Combining graphs</em></strong></p>
+<p><strong><em>Describe &gt; Combine Graphs &gt; Options</em></strong></p></th>
+<th><strong><em>Fig. 5.3m The 4 elements in Dodoma</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image918.pn g" style="width:2.7585in;height:2.70783in"></td>
+<td><img src="media/image129 0.png" style="width:3.16667in;height:3.16667in"></td>
+</tr>
+</tbody>
+</table>
+<p>Other displays of these data are also possible. In Fig. 5.3k we observed the larger variation of the Tmax data in the rainy months (compared to both Tmin, and to Tmax in the dry months). This feature is shown more clearly through density plots as seen in Fig. 5.3p. This uses a dialogue from the ordinary Describe menu. The results in Fig. 5.3p indicate a roughly normal-type shape for the data, though with a slightly longer tail for Tmax in the rainy season[^24].</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 5.3o Producing density plots</em></strong></p>
+<p><strong><em>Describe &gt; Specific &gt; Histogram</em></strong></p></th>
+<th><strong><em>Fig. 5.3p Density plots for Tmax and Tmin by month</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image880.p ng" class="img-fluid" alt="C:\Users\ROGERS~1\A ppData\Local\Temp\SNAGHTML 98d61a3.PNG">{width=“2.7408552055993in” h eight=“2.7116983814523183in”}</td>
+<td><img src="media/image8 96.png" style="width:3.34305in;height:3.80189in"></td>
+</tr>
+</tbody>
+</table>
+<p>Often the data frame will include data from more than one station. This is illustrated briefly with the Rwanda data, from the library, that is from 4 stations. An example is shown in Fig. 5.3q. It shows relatively little seasonality, because Rwanda is close to the equator. One feature of the data is the higher variability and lower temperatures at the 4<sup>th</sup> stations, which is at a higher altitude compared to the other 3. For this presentation, in the <strong><em>Climatic &gt; Check Data &gt; Boxplot</em></strong> dialogue, the option is then used to facet by the Station.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.3q Example for multiple stations, Tmin for 4 stations in Rwanda</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image887.png" style="width:6.16671in;height:3.0205in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="quality-control-of-temperature-and-other-data" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="quality-control-of-temperature-and-other-data"><span class="header-section-number">6.4</span> Quality control of temperature (and other) data</h2>
+<p>The graphical displays in the previous 2 sections have indicated observations that need checking. The dialogue Climatic &gt; Check Data &gt; Temperatures, Fig. 5.4a, is designed to facilitate this checking. It has been designed specifically for temperature records, but with a flexibility to permit it to be used also for other elements.</p>
+<p>Fig. 5.4 has been completed for the Dodoma data. Initially with a single element (Tmax).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 5.4a</em></strong></p>
+<p><strong><em>Climatic &gt; Check Data &gt; QC Temperatures</em></strong></p></th>
+<th><strong><em>Fig. 5.4b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image88 4.png" style="width:3.12316in;height:3.50468in" class="figure-img"></p>
+<figcaption>C:\Users\ ROGERS~1\AppData\Local\Temp\S NAGHTML13ef1d27.PNG</figcaption>
+</figure>
+</div></td>
+<td><img src="media/image881.pn g" style="width:2.86714in;height:2.72126in"></td>
+</tr>
+</tbody>
+</table>
+<p>From the previous Section, Fig. 5.3k, Tmax at Dodoma is rarely less than 20°C, and could usefully be checked each time. So, the first illustration of the dialogue uses the limits 20 and 40 for Tmax.</p>
+<p>The results are in Fig. 5.4b. R-Instat has filtered the Dodoma data and copied the “problem” rows into a new data frame. It shows there were just 13 occasions with Tmax &lt;=20 in the record. As shown in Fig. 5.4b, they include 9<sup>th</sup> October 1989, when Tmax was equal to Tmin at 15.6°C.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.4c The available checks</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.4d Checking for consecutive values</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image893.png" style="width:2.74962in;height:1.68545in"></td>
+<td style="text-align: left;"><img src="media/image834.png" style="width:3.31667in;height:2.67081in"></td>
+</tr>
+</tbody>
+</table>
+<p>More checks on the data are available, as shown in Fig. 5.4c. They are considered in turn:</p>
+<ul>
+<li><p><strong><em>Acceptable range</em></strong> for each element, as shown in Fig. 5.4a and b. This is very simplistic, because it does not allow for seasonality in the data.</p></li>
+<li><p><strong><em>Same</em></strong> examines consecutive days and, with the default setting, indicates whenever 4 days or more have the same value. The idea is that when many consecutive values are identical, it is possible they were simply copied in, and not measured on each day. An example of the results is in Fig. 5.4e.</p></li>
+<li><p><strong><em>Jump</em></strong> notes whenever 2 consecutive days are different by more that the threshold amount. The default is that any difference (jump) of more than 10°C deserves further examination.</p></li>
+<li><p><strong><em>Difference</em></strong> is only available when 2 elements have been included, usually Tmax and Tmin. The default is to note whenever Tmax &lt;= Tmin, but the difference could be altered.</p></li>
+<li><p><strong><em>Outlier</em></strong> is the most complex and relates the value to the boxplot outliers. A boxplot is conceptually fitted for each month at each station and the outliers are then noted. The traditional limit for boxplots has a coefficient of 1.5[^25], as used in all the figures in Section 5.3. We find, with the large samples in climatic data, this gives too many outliers, many of which are not particularly surprising. We therefore usually use 2.5 or 3 (instead of 1.5) as the multiplying value.</p></li>
+</ul>
+<p>You may choose to do multiple checks at the same time. We consider them in turn. Each time the dialogue is used, it produces a new data frame.</p>
+<p>In Fig. 5.4d we specify the <strong><em>Same</em></strong> check, for both Tmax and Tmin together.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.4e Results from the Same check</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.4f Jump of more than 10°C</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image846.png" style="width:2.97921in;height:2.80925in"></td>
+<td style="text-align: left;"><img src="media/image860.png" style="width:3.02875in;height:2.79923in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are in Fig. 5.4e. The first occurrence was in July 1965 when Tmax was 26.0°C on 4 consecutive days, while in October 1969 Tmin was consecutively 17.4°C. The results, in Fig. 5.4e also include further columns to note how many consecutive days and whether they were for Tmax or Tmin. In this case there were only 7 occurrences of the event, giving 28 rows in total, so these extra columns are not so important.</p>
+<p>Fig. 5.4f shows the results from the test for jumps of more than 10°C. Here the logical column was always TRUE for Tmax, i.e.&nbsp;this event did not occur for Tmin. Sometimes Tmax drops because of rainfall, and this column is automatically included in the filtered data. The results in Fig. 5.4f include the size of the jump.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.4g Tmax within 1°C of Tmin</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.4h Outiers from corresponding boxplots</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image845.png" style="width:2.68755in;height:1.13204in"></td>
+<td style="text-align: left;"><img src="media/image832.png" style="width:3.33483in;height:2.49906in"></td>
+</tr>
+</tbody>
+</table>
+<p>In the next check, the limit is set to 1°C. There are then, Fig. 5.4g, just 4 days when Tmax is within 1 degree of Tmin.</p>
+<p>The final check is equivalent to the boxplot outliers. The threshold in producing Fig. 5.4h was set to 2.5 and there were still 150 outliers to investigate. There are effectively 4 tests here, i.e.&nbsp;whether either Tmax or Tmin are too low, or too high. These correspond to the settings of the logical columns in Fig. 5.4h. Thus the first 3 rows all indicate a low value of Tmax, while the 4<sup>th</sup> row is a low value for Tmin.</p>
+<p>Readers may be concerned in having to check 150 values. Our view is that these data are of high quality. This is 150 values out of more than 40,000 (i.e.&nbsp;over 20,000 days for each of Tmin and Tmax), so less than 0.5% of the values to be checked! Not bad.</p>
+</section>
+<section id="quality-control-for-rainfall-records" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="quality-control-for-rainfall-records"><span class="header-section-number">6.5</span> Quality control for rainfall records</h2>
+<p>The system for checking rainfall data is similar to that for the temperatures, described in Section 5.4.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.5a</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.5b</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image833.png" style="width:3.05307in;height:2.96922in"></td>
+<td style="text-align: left;"><img src="media/image836.png" style="width:2.84693in;height:3.6388in"></td>
+</tr>
+</tbody>
+</table>
+<p>We continue with the Dodoma data. Two checks are undertaken in the dialogue in Fig. 5.5a. First is to note all values more than 100mm and second is to note when any 2 consecutive non-zero values are the same.</p>
+<p>Some of the results (after reordering columns for clarity) are in Fig. 5.5b. There are 83 rows of data, from 6 occasions with more than 100mm (all look plausible) and 38 occasions when 2 consecutive days had the same rainfall. Looking at the results in Fig. 5.5b, perhaps the low values e.g.&nbsp;0.3mm on 2 consecutive days is not so surprising, but 19.2mm on both the 5<sup>th</sup> and 6<sup>th</sup> January 1967 deserves further investigation.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.5c Same values after a filter</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.5d Checking for dry months</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image831.png" style="width:2.93097in;height:3.47978in"></td>
+<td style="text-align: left;"><img src="media/image842.png" style="width:3.04351in;height:3.07325in"></td>
+</tr>
+</tbody>
+</table>
+<p>The data in Fig. 5.5b are just in an ordinary data frame, so we check more closely by filtering out the values of 1mm or less. The results are in Fig. 5.5c. There are just 16 occasions, most of which are shown in Fig. 5.5b with exactly the same amount on 2 days. One way this arises is when the data are computerised initially on the wrong day. They are then transferred to the previous day, but the original is not deleted. A check with the paper records is all that is needed.</p>
+<p>The next option in Fig. 5.5a is called “Consecutive”. This checks on the number of consecutive rain days. In some places a large number is rare. But sometimes temperature columns may be entered mistakenly. This then appears as many consecutive “rain” days, with relatively similar amounts on the successive days.</p>
+<p>The next option is called Dry Month and is shown in Fig. 5.5d. The explanation is given for Dodoma, where the rainy season is from November to April. The other months may be totally dry. If January (in the middle of the rainy season) is totally dry, then probably it was missing and recorded mistakenly as zero each day. What is more complicated is November (the usual start of the season) and April (the usual end). If November is totally dry, then it could be true and a late start to the season. Or the data are missing. The same goes for April.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.5e</em></strong></th>
+<th style="text-align: left;"><strong><em>Fgi. 5.5f</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image835.png" style="width:3.11878in;height:3.30328in"></td>
+<td style="text-align: left;"><img src="media/image874.png" style="width:2.75836in;height:3.01454in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are in Fig. 5.5e. Right-click on the month column and use the Levels/Labels dialogue, Fig. 5.5f to give the results in Fig. 5.5g. This shows the zeros are primarily in November, but December is zero in 2 years. There are no zero months in January to April.</p>
+<p>One way to find which years to investigate, is the make the year column in Fig. 5.5e into a Factor and then use the same Levels/Labels dialogue. The results are in Fig. 5.5h, showing the first years are 1935. 1936, 1943, while the frequency of 31 in 1952 idicates that was one of the years when December was zero.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.5g It is a November/December problem</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.5hThese are the years</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image865.png" style="width:2.52206in;height:3.51626in"></td>
+<td style="text-align: left;"><img src="media/image869.png" style="width:2.72931in;height:3.52101in"></td>
+</tr>
+</tbody>
+</table>
+<p>The final option is the outliers, using the limits from the skew boxplot. In Fig. 5.5i we omit the zero values and set the skewness weight to 3. This has identified just 3 possible outliers, and each is only just above the corresponding limit, see Fig 5.5j.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 5.5i Settings for the rainfall outliers</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 5.5j Possible outliers from skew boxplot</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image859.png" style="width:2.97863in;height:1.49742in"></td>
+<td style="text-align: left;"><img src="media/image890.png" style="width:3.27232in;height:0.99566in"></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter_4_Getting_the_data_into_shape.html" class="pagination-link" aria-label="Getting the data into shape">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter_6_Preparing_summaries.html" class="pagination-link" aria-label="Preparing summaries">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

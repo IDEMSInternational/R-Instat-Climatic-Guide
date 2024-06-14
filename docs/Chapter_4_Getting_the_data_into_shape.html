@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Getting the data into shape – R-Instat Climatic Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter_5_Quantity_and_quality.html" rel="next">
+<link href="./Chapter_3_Using_RInstat_effectively.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter_4_Getting_the_data_into_shape.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R-Instat Climatic Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_1_About_this_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About this guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_2_More_Practice_with_RInstat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">More Practice with R-Instat</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_3_Using_RInstat_effectively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_4_Getting_the_data_into_shape.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_5_Quantity_and_quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_6_Preparing_summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_7_Tailored_Products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tailored Products</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_8_Efficient_use_of_RInstat_and_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficient use of R-Instat and R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_9_Gridded_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gridded Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_10_Comparing_Data_from_Different_Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing Data from Different Sources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_11_Drawing_Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Drawing Maps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_12_Extremes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Extremes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_13_PICSA__Long_Before_the_season.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PICSA – Long Before the season</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_14_The_Seasonal_forecast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Seasonal forecast</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_15_Fitting_and_using_stochastic_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Fitting and using stochastic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_16_Withinday_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Within-day data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_17_Circular_data_and_wind_roses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Circular data and wind roses</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_18_Temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Temperatures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_19_Drought_Indices__SPI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Drought Indices – SPI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_20_Climate_Normals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Climate Normals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_21_Various.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Various</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_22_References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter_23_Appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Appendix</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#climatic-data-that-is-ready" id="toc-climatic-data-that-is-ready" class="nav-link" data-scroll-target="#climatic-data-that-is-ready"><span class="header-section-number">5.2</span> Climatic data that is “ready”</a></li>
+  <li><a href="#the-r-instat-climatic-system" id="toc-the-r-instat-climatic-system" class="nav-link" data-scroll-target="#the-r-instat-climatic-system"><span class="header-section-number">5.3</span> The R-Instat Climatic System</a></li>
+  <li><a href="#tidying-the-data" id="toc-tidying-the-data" class="nav-link" data-scroll-target="#tidying-the-data"><span class="header-section-number">5.4</span> Tidying the Data</a></li>
+  <li><a href="#transferring-data-from-climsoft" id="toc-transferring-data-from-climsoft" class="nav-link" data-scroll-target="#transferring-data-from-climsoft"><span class="header-section-number">5.5</span> Transferring data from Climsoft</a></li>
+  <li><a href="#satellite-data" id="toc-satellite-data" class="nav-link" data-scroll-target="#satellite-data"><span class="header-section-number">5.6</span> Satellite data</a></li>
+  <li><a href="#what-can-go-wrong" id="toc-what-can-go-wrong" class="nav-link" data-scroll-target="#what-can-go-wrong"><span class="header-section-number">5.7</span> What can go wrong?</a></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next"><span class="header-section-number">5.8</span> What’s next?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting the data into shape</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<p>R-Instat provides a menu-driven front-end to R. It is designed to make it easy to analyse any sort of data, including climatic data. The climatic menu is designed to make many analyses of the historical climatic records even easier. Most of this guide uses the various menus and dialogues in this special climatic menu.</p>
+<p>If your analysis is not practical using the special climatic menu it may still be possible using the general menus in R-Instat. After all many climatic analyses are done with other statistical software and they do not have a special climatic menu.</p>
+<p>“Click and point” systems all have limitations, or they would lose the simplicity of use that is a major driving force in their production. If your analyses cannot be done using R-Instat, then one strategy would be to use R itself. The “tweaking” guide shows how R-Instat can be extended, but you may also find that using RStudio is not as hard as you feared.</p>
+<p>This Chapter introduce the climatic menu in R-Instat and shows how climatic data is arranged for analysis.</p>
+</section>
+<section id="climatic-data-that-is-ready" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="climatic-data-that-is-ready"><span class="header-section-number">5.2</span> Climatic data that is “ready”</h2>
+<p>In Chapters 2 and 3 we examined data from Moorings, Zambia and Dodoma in Tanzania that were both in the right “shape” for an immediate analysis. Here we illustrate with more examples that are “ready”. In the following sections of this chapter we show how the Climatic menu, or the general Prepare menu can help to organise data into the same shape.</p>
+<p>If your data are already in the same shape as the examples below then much of the content from Section 4.4 can be omitted.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.2a Importing a csv file</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.2b Data for 2 stations from Guinea</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1303.png" style="width:2.87481in;height:2.91749in"></td>
+<td style="text-align: left;"><img src="media/image1299.png" style="width:3.18946in;height:2.27875in"></td>
+</tr>
+</tbody>
+</table>
+<p>Go to <strong><em>File &gt; Open from Library</em></strong>. Choose <strong><em>Load From Instat Collection</em></strong>, then <strong><em>Browse</em></strong>. Go to the <strong><em>Climatic directory</em></strong> and then <strong><em>Guinea</em></strong>. The data we require are in 2 forms, both an R file with the RDS extension and a csv file that can be read into Excel.</p>
+<p><strong><em>Use</em></strong> the file <strong><em>Guinea2.csv</em></strong>.</p>
+<p>The new feature, compared to the data in Chapter 2, is that there are multiple stations. Right-click in the first Column, Fig. 4.2c, and choose the Levels/Labels dialogue. The result, in Fig 4.2d shows there are 2 stations, Kankan with about 24 thousand rows (days) and Koundara with about 16 thousand days.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.2c Choose Levels/Labels</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.2d The Levels/Labels dialogue confirms 2 stations</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1306.png" style="width:2.1535in;height:3.25292in"></td>
+<td style="text-align: left;"><img src="media/image1275.png" style="width:3.7725in;height:2.58565in"></td>
+</tr>
+</tbody>
+</table>
+<p>A second data file is from Western Kenya. Go back to the <strong><em>File &gt; Open From Library</em></strong> dialogue. <strong><em>Browse</em></strong> again to the <strong><em>climatic</em></strong> directory. Choose <strong><em>Kenya</em></strong> and then the file <strong><em>WesternKenya.RDS</em></strong>.</p>
+<p>This opens 3 data frames in R-Instat, 2 of which are shown in Fig. 4.2e and Fig. 4.2f.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.2e Name and location of each station</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.2f Rainfall data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1281.png" style="width:3.90665in;height:2.77973in"></td>
+<td style="text-align: left;"><img src="media/image1271.png" style="width:2.21072in;height:2.81451in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 4.2e gives details of each station. The locations are included, which will be useful, in Chapter xxx when we draw maps. Fig. 4.2f gives the rainfall data for just over 50 stations. There are over 600 thousand rows (days) of data in total.</p>
+<p>The third example is again from the <strong><em>Instat files</em></strong> in the <strong><em>Climatic directory</em></strong>. Choose <strong><em>Original Climatic Guide Datasets</em></strong>, which is an Excel file. R-Instat can import multiple sheets together, but here we just need the single sheet called <strong><em>Bulmonth</em></strong>, Fig. 4.2g. The data are monthly from Bulawayo in Zimbabwe from 1951.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.2g Importing monthly data from Bulawayo</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.2h Monthly data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1254.png" style="width:3.00521in;height:2.77952in"></td>
+<td style="text-align: left;"><img src="media/image1246.png" style="width:3.07685in;height:2.67713in"></td>
+</tr>
+</tbody>
+</table>
+<p>The final example is from an R package. From <strong><em>File &gt; Open From Library</em></strong> use the <strong><em>Open from R</em></strong> option, Fig. 4.2i. This gives access to all the datasets provided with the R packages that are in R-Instat. Scroll down the <strong><em>From Package</em></strong> list to the <strong><em>OpenAir</em></strong> package. There is only one data set. Open it to give the data shown in Fig. 4.2j</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.2i Choosing the openair package</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.2j Hourly data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1238.png" style="width:3.0401in;height:2.73756in"></td>
+<td style="text-align: left;"><img src="media/image1240.png" style="width:2.88612in;height:2.9989in"></td>
+</tr>
+</tbody>
+</table>
+<p>These examples show what is assumed in R-Instat to analyse the data. Data for multiple elements and from multiple sites can be in a single data frame. The multiple elements are in successive variables, i.e.&nbsp;they “go across”, while the multiple stations “go down”. The station name or ID is a factor column.</p>
+<p>The dates are also needed, either in a single variable, Fig. 4.2j or in multiple variables as in Fig. 4.2h and Fig. 4.2f.</p>
+</section>
+<section id="the-r-instat-climatic-system" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="the-r-instat-climatic-system"><span class="header-section-number">5.3</span> The R-Instat Climatic System</h2>
+<p>Analyses usually proceed using the following general menus:</p>
+<ol type="1">
+<li><p>The <strong><em>File menu</em></strong> is used to read the data</p></li>
+<li><p>The <strong><em>Prepare menu</em></strong> is to organise the data ready for analysis</p></li>
+<li><p>The <strong><em>Describe menu</em></strong> is for descriptive statistics, i.e.&nbsp;graphs and tables.</p></li>
+<li><p>The <strong><em>Model menu</em></strong> fits and examines statistical models for the data</p></li>
+</ol>
+<p>This is shown by the structure of the R-Instat menus shown in Fig. 4.3a.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.3a The R-Instat menus</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.3b The Climatic menu</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image237.png" style="width:2.93274in;height:1.61806in"></td>
+<td style="text-align: left;"><img src="media/image230.png" style="width:2.94928in;height:3.43809in"></td>
+</tr>
+</tbody>
+</table>
+<p>The same applies to climatic data and hence the special climatic menu is arranged in the same order, Fig. 4.3b. We now examine some of the initial menu items in turn.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.3c The Climatic &gt; File menu</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.3d The Climatic &gt; Tidy and Examine menu</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1234.png" style="width:2.90215in;height:1.30645in"></td>
+<td style="text-align: left;"><img src="media/image1288.png" style="width:3.19258in;height:2.46625in"></td>
+</tr>
+</tbody>
+</table>
+<p>Fig. 4.3c shows the <strong><em>Climatic &gt; File</em></strong> menu. Often the data will be loaded using the main File menu as for all the examples in Section 4.2 above. This used the <strong><em>File &gt; Open from Library</em></strong> dialogue, but the <strong><em>File &gt; Open</em></strong> dialogue is often used for the data files.</p>
+<p>Some options in Fig. 4.3c, such as the importing of NetCDF files are in both menus. Others, like Climsoft are just in this menu. Climsoft is a data management system specially to manage climatic data. It was described in general in Section 1.7 and importing from Climsoft is described in Section 4.5.</p>
+<p>Fig. 4.3d shows the <strong><em>Tidy and Examine</em></strong> menu. The first dialogue is used to “tidy” climatic data that are not yet in the shape of those in the examples shown in Section 4.2. The idea of Tidy data is useful and is described well by <mark>Wickham 2014.</mark> He gives a variety of examples, with the most complex being climatic data. The remaining items in the menu in Fig. 4.2b are all also in the main Prepare menu. They may be needed if the tidying is too tricky for the special <strong><em>Tidy Daily Data</em></strong> dialogue. They are also for further checks. For example, for daily data there should be no duplicate days in the record for the same station. Section 4.8 gives an example where this is not the case.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 67%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.3e The Climatic &gt; dates menu</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.3f The dialogue to define a data frame as climatic</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1287.png" style="width:2.40168in;height:1.3685in"></td>
+<td style="text-align: left;"><img src="media/image1300.png" style="width:3.6608in;height:4.27093in" alt="C:\Users\ROGERS~1\AppData\Local\Temp\SNAGHTMLf1001c1.PNG"></td>
+</tr>
+</tbody>
+</table>
+<p>Next in the preparation is to check that the file has date columns that are ready for the subsequent analyses, Fig. 4.3e. This menu is a copy of the <strong><em>Prepare &gt; Column: Date</em></strong> menu which can be used instead.</p>
+<p>This leads to the <strong><em>Define Climatic Data</em></strong> dialogue shown in Fig. 4.3f. The example in Fig. 4.3f is for the 2 stations in Guinee, but using the second copy of the file, called Guinee2.rds. This was prepared earlier and saved as an RDS file. The fact it is ready for analysis is saved as part of the metadata for this data frame.</p>
+<p>The subsequent dialogues in the climatic menu all assume the data have been defined as climatic, i.e.&nbsp;have used the dialogue in Fig. 4.3f. That’s the “climatic system” in R-Instat.</p>
+<p>Some readers may be concerned that they are in a rush to analyse their data and were not prepared for these initial steps. However, if your data are in “good shape” then they take only a few minutes. If not, then in many analyses these “organising of data” steps do take the time. Once this has been done the analyses can proceed quickly.</p>
+<p>These organising steps are only done the first time you use the data. Then save the data using <strong><em>File &gt; Save As &gt; Save Data As</em></strong> so the climatic information is remembered. You can therefore continue later, with these data, going straight to the subsequent items in the climatic menu.</p>
+<p>If you choose, instead, to save the data frame using <strong><em>File &gt; Export &gt; Export Dataset</em></strong> this has the advantage that you can view and use the data in other software. The only problem is that the special climatic information from Fig. 4.3f isn’t saved. So, when you resume, then start with the <strong><em>Define Climatic Data</em></strong> dialogue.</p>
+</section>
+<section id="tidying-the-data" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="tidying-the-data"><span class="header-section-number">5.4</span> Tidying the Data</h2>
+<p>You can ignore this section if your data are already in the shape discussed in Section 4.2. Often this is not the case.</p>
+<p>The first example was previously prepared for the original Instat. It is 56 years of daily data from Samaru in Northern Nigeria. Use <strong><em>File &gt; Open from Library</em></strong>. Choose <strong><em>Instat data</em></strong>, B<strong><em>rowse</em></strong> to the <strong><em>Climatic directory,</em></strong> choose <strong><em>Original Climatic Guide Datasets</em></strong>. There untick the first option and choose the sheet called <strong><em>Samaru56</em></strong>, Fig. 4.4a.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 4.4a Open Samaru56</em></strong></p>
+<p><strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic</em></strong></p></th>
+<th><strong><em>Fig. 4.4b The “shape” of the Samaru56 data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1262.p ng" style="width:2.98895in;height:2.90026in"></td>
+<td><img src="media/image1278. png" style="width:3.08981in;height:2.92662in"></td>
+</tr>
+</tbody>
+</table>
+<p>The data are shown in Fig. 4.4b. They are from 1928 and each year is in a separate column. All columns are of length 366, in Fig. 4.4b, and there is a special code for February 29<sup>th</sup> in non-leap years.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 4.4c Tidying the Samaru data</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; Tidy Daily Data</em></strong></p></th>
+<th><strong><em>Fig. 4.4d Issues in the data – no surprises</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1 279.png" style="width:3.17122in;height:3.30076in"></td>
+<td><img src="media/image1270.p ng" style="width:2.49872in;height:2.51703in"></td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong><em>Climatic &gt; Tidy and Examine &gt; Tidy Daily Data</em></strong> and complete the dialogue as shown in Fig. 4.4c. This will not work, because we know, from Fig. 4.4b, that there are values on invalid dates, i.e.&nbsp;on Feb 29 in non-leap years. The results are in Fig. 4.4d. We see that day 60 (which we knew about) is the only problem. So we can proceed.</p>
+<p>Return to the dialogue in Fig. 4.4c, <strong><em>tick the option above to ignore data on invalid dates</em></strong>. Press <strong><em>Ok</em></strong> again.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.4e Samaru data reshaped</em></strong></th>
+<th><p><strong><em>Fig. 4.4f Using the date variable</em></strong></p>
+<p><strong><em>Climatic &gt; Dates &gt; Use Date</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1269.png" class="img-fluid"> {width=“2.555686789151356in” he ight=“3.7988068678915137in”}</td>
+<td><img src="media/image 1260.png" style="width:3.0078in;height:3.88967in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are in Fig. 4.4e. The tidy data now has 20454 rows (days). Also, as shown in Fig. 4.4e is that there is no longer any need for a special code for February 29<sup>th</sup> in non-leap years.</p>
+<p>The date column has been included in the data in Fig. 4.4e. The next step is the <strong><em>Climatic &gt; Dates &gt; Use Date</em></strong> dialogue, completed as in Fig. 4.4f. This adds 4 new columns to the data file. We then do some housekeeping, with <strong><em>Right-Click</em></strong> and <strong><em>Reorder Columns</em></strong> to give the data as shown in Fig. 4.4g.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.4g Data ready to be defined as climatic</em></strong></th>
+<th><p><strong><em>Fig. 4.4h Defining the data as climatic</em></strong></p>
+<p><strong><em>Climatic &gt; Define Climatic Data</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1277.png" class="img-fluid">{width=“2.641606517935258in” h eight=“2.5361253280839895in”}</td>
+<td><img src="media/image12 08.png" style="width:3.01996in;height:3.58434in"></td>
+</tr>
+</tbody>
+</table>
+<p>Now use <strong><em>Climatic &gt; Define Climatic Data</em></strong>. The dialogue fills automatically which is a good sign. The Check Unique also indicates the Date column can be a key field. Press Ok and the data are now ready for the analysis in R-Instat. They can be saved as an RDS file and/or exported as a csv file.</p>
+<p>These steps should not have taken long. But this was a single element (rain) from a single station.</p>
+<p>A second example is data from Garoua, Cameroon. The rainfall first, and initially in Excel, Fig. 4.4i.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.4i Rainfall data from Garoua</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1211.png" style="width:5.61702in;height:2.67347in"></td>
+</tr>
+</tbody>
+</table>
+<p>There are (at least 4 complications with these data, compared to the shape we would like.</p>
+<ol type="1">
+<li><p>There are some trace values, given as TR in the data, Fig. 4.4i</p></li>
+<li><p>Each year is on a separate Excel sheet.</p></li>
+<li><p>There are summary values, i.e.&nbsp;there are daily data and analysed data together in Fig. 4.4i.</p></li>
+<li><p>The months “go across”.</p></li>
+</ol>
+<p>We change the trace issue in Excel. They are rare and only up to 2005. R-Instat does not (yet) cope with trace[^16]. We choose to replace the TR by 0 in each sheet. This is easily done in Excel. The data are saved as “Garoua Daily Rainfall data 1999-July2013NOTR.xlxs”.</p>
+<p>In R-Instat save any files you wish, then use <strong><em>File &gt; Close Data File</em></strong> to clear your data.</p>
+<p>Then use <strong><em>File &gt; Open from Library &gt; Instat file, Browse, Climatic, Cameroon</em></strong>. <strong><em>Open the Garoua rainfall file with the TR removed</em></strong>, Fig. 4.4j<strong><em>.</em></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.4j Importing the Garoua rainfall</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.4k Complete the importing dialogue</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1199.png" style="width:3.01272in;height:3.05008in"></td>
+<td style="text-align: left;"><img src="media/image1212.png" style="width:3.09552in;height:3.03215in"></td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Click to select all the sheets</em></strong>, and to import only the first <strong><em>31 data rows</em></strong>, Fig. 4.4k. Press <strong><em>Ok</em></strong>.</p>
+<p>The 15 Excel sheets have imported into 15 R data frames, Fig. 4.4l and we check quickly that each has the 31 rows and 13 columns. Also, that all the columns are numeric. All seems alright. The next step is to append the years together.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.4l The Garoua rainfall data imported</em></strong></th>
+<th><p><strong><em>Fig. 4.4m Appending the years</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; Append</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1206.png" style="width:2.75543in;height:2.54747in"></td>
+<td><img src="media/image1 204.png" style="width:3.26418in;height:2.49398in"></td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong><em>Climatic &gt; Tidy and Examine &gt; Append</em></strong> and use <strong><em>all the sheets</em></strong>, Fig. 4.4m. Press <strong><em>Ok</em></strong>.</p>
+<p>The 15 years of data are now in a single data frame, Fig. 4.4n, and the Append dialogue has added an extra variable that contains the Year. We need the year, but it is “hidden” inside X2013.Stats”, etc. The next dialogue is in Prepare, rather than Climatic.</p>
+<p>Use <strong><em>Prepare &gt; Column: Text &gt; Transform</em></strong> and complete the dialogue as shown in Fig. 4.4o</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.4n Data in a single data frame</em></strong></th>
+<th><p><strong><em>Fig. 4.4o Extract the Year number</em></strong></p>
+<p><strong><em>Prepare &gt; Column: Text &gt; Transform</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1221.png" style="width:2.78174in;height:2.53985in"></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image119 8.png" style="width:3.19492in;height:2.77211in" class="figure-img"></p>
+<figcaption>C:\Users<br>
+~1\AppData\Local\Temp\S NAGHTML109fd672.PNG</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>This adds a new column called yr, Fig. 4.4p.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.4p The year is now available</em></strong></th>
+<th><p><strong><em>Fig. 4.4q Sort the data using the year column</em></strong></p>
+<p><strong><em>Right-click &gt; Sort or Prepare &gt; Data Frame &gt; Sort</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1188.pn g" style="width:2.90099in;height:2.36191in"></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image119 3.png" style="width:3.0999in;height:3.01361in" class="figure-img"></p>
+<figcaption>C:\Users\R OGERS~1\AppData\Local\Temp\SN AGHTML10a74ad5.PNG</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>Nearly there. Use <strong><em>Climatic &gt; Tidy and Examine &gt; Tidy Daily Data</em></strong> as shown in Fig. 4.4r. Earlier, in Fig. 4.4c, each year was in a column. Now each month is in its own column. Complete Fig. 4.4r as shown. As with the first run earlier (Fig. 4.4c) we first check on any errors, rather than simply ignoring them.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 4.4r Tidy the daily data</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; Tidy Daily Data</em></strong></p></th>
+<th><strong><em>Fig. 4.4s An error is reported. The yr column should be numeric</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image 1233.png" style="width:3.414in;height:3.80027in"></td>
+<td><img src="media/image1229.png" class="img-fluid"> {width=“2.59626968503937in” hei ght=“0.6789588801399825in”}</td>
+</tr>
+</tbody>
+</table>
+<p>There is an error! This can happen. Reading the message is says the “year column must be numeric”.</p>
+<p>Looking back to Fig. 4.4p we see the year column is given as yr (c), so it is a character, or text column. So <strong><em>right-click</em></strong> and <strong><em>change it to numeric.</em></strong> Then <strong><em>return to the dialogue</em></strong> in Fig. 4.4r and press <strong><em>Ok</em></strong> again.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.4t Some issues with the data</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.4u The tidy Garoua data – at last!</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1237.png" style="width:2.96368in;height:2.59991in"></td>
+<td style="text-align: left;"><img src="media/image1228.png" style="width:2.65291in;height:3.45157in"></td>
+</tr>
+</tbody>
+</table>
+<p>The results are in Fig. 4.4t. Our troubles are not over, because we learn there are 8 non-existent days with rainfall. Fortunately, most have zero and this was probably just a simple error. But the data shows there was 13.7mm on 31 September 2006, and this is a puzzle. Unfortunately, we have no way of checking this value now. So, we return to the dialogue in Fig. 4.4r and change the options to ignore these days. The result is in Fig. 4.4u.</p>
+<p>If you now wish to proceed with the analysis of the rainfall data, then the next steps are just the same as for the Samaru data, i.e.&nbsp;first the <strong><em>Climatic &gt; Dates &gt; Use Date</em></strong> dialogue, Fig. 4.4f and then the <strong><em>Climatic &gt; Define Climatic Data</em></strong>, Fig. 4.4h. However, we may first want to reorganise the Tmax and Tmin data, and then merge the 3 elements, before defining the climatic data. We leave this largely as an exercise but provide a few hints below.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.4v Garoua Tmax data</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.4w A problem with the data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1223.png" style="width:3.0164in;height:2.72469in"></td>
+<td style="text-align: left;"><img src="media/image1183.png" style="width:2.94236in;height:2.44857in"></td>
+</tr>
+</tbody>
+</table>
+<p>Part of the Tmax data are shown in Excel in Fig. 4.4v. There are again multiple sheets and this time each column is a day of the month. So, there are now 31 columns of data. This is the third option, when using the <strong><em>Climatic &gt; Tidy and Examine &gt; Tidy Daily Data</em></strong> dialogue. For the Samaru data, the years were in separate columns in Fig. 4.4c, and the months in Fig. 4.4r. This time it is the day of the month. That is quite a common layout.</p>
+<p>On importing all the data for Tmax there is a common problem on the sheet called Page 10. The immediate indication is that some values in X25 (25<sup>th</sup> of the month) have many decimals. This is because the column name is X25 (c), so it is a character or text column and not numeric. This is because one value is given as 35.B. Perhaps it should be 35.8?</p>
+<p>Hence note all the columns in Page 10 that are text columns. These are easily corrected in Excel. Then the tidying of the data follows similar steps to that for the rainfall.</p>
+<p>Once the Tmax and Tmin data have been tidied, the <strong><em>Climatic &gt; Tidy and Examine &gt; Merge</em></strong> dialogue is used to merge the elements into a single data frame.</p>
+</section>
+<section id="transferring-data-from-climsoft" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="transferring-data-from-climsoft"><span class="header-section-number">5.5</span> Transferring data from Climsoft</h2>
+<p>Climsoft is a comprehensive system for the entry and management of climatic data. The main menu is shown in Fig. 4.5a. It is designed for the entry (or transfer) of climatic data of any sort. It is also particularly useful for capturing and managing data from automatic stations.</p>
+<p>It also includes facilities for the scanned paper records and hence facilitates the checking of the computerised data against the originals.</p>
+<p>CLIMSOFT has its own products but is also designed to work smoothly with R-Instat. Hence R-Instat can produce products and applications for CLIMSOFT.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.5a The main CLIMSOFT menu</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1227.png" style="width:4.76951in;height:3.3581in"></td>
+</tr>
+</tbody>
+</table>
+<p>There are two ways to transfer data from Climsoft into R-Instat. If Climsoft is on your machine, or is available from your machine, then R-Instat can read the Climsoft database directly. Otherwise Climsoft can export tidy data that is in the form that is easily used by R-Instat. Both methods are shown here.</p>
+<p>Use <strong><em>Climatic &gt; File &gt; Climsoft</em></strong> to transfer data directly from a Climsoft database, Fig. 4.5b.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 4.5b Import data from Climsoft</em></strong></p>
+<p><strong><em>Climatic &gt; File &gt; Climsoft</em></strong></p></th>
+<th><strong><em>Fig. 4.5c Connect to the database</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image123 2.png" style="width:3.18567in;height:3.17203in" class="figure-img"></p>
+<figcaption>C:\Users<br>
+~1\AppData\Local\Temp\S NAGHTML117998d8.PNG</figcaption>
+</figure>
+</div></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image1217.png" style="width:2.37748in;height:2.49245in" class="figure-img"></p>
+<figcaption>C:\Users\ROGERS~1\App Data\Local\Temp\SNAGHTML117 f6eae.PNG</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image1207.png" style="width:2.77051in;height:0.62078in" class="figure-img"></p>
+<figcaption>C:\Users\ROGERS~1\App Data\Local\Temp\SNAGHTML118 11950.PNG</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>In Fig. 4.5b <strong><em>Click</em></strong> on the <strong><em>Establish Connection</em></strong> button to give the screen shown in Fig. 4.5c. This is already set to the main database, so you probably do not need to change that name. We chose to add _test_, Fig. 4.5c to use the tutorial database. Then click on <strong><em>Enter Password</em></strong> and enter your Climsoft password shown at the bottom of Fig. 4.5c.</p>
+<p>The sub-dialogue now says <strong><em>Connected</em></strong>, Fig. 4.5d and you can press <strong><em>Return</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.5d Connected</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.5e Transfer just the station data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1167.png" style="width:2.62513in;height:2.76403in"></td>
+<td style="text-align: left;"><img src="media/image1157.png" style="width:3.3454in;height:3.29135in"></td>
+</tr>
+</tbody>
+</table>
+<p>The main dialogue, in Fig. 4.5e now has all the station identifiers. We choose them all and press Ok.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.5f Station data imported from Climsoft</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.5g Add observation data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1145.png" style="width:2.70723in;height:2.13959in"></td>
+<td style="text-align: left;"><img src="media/image1156.png" style="width:3.24578in;height:3.18499in"></td>
+</tr>
+</tbody>
+</table>
+<p>This gives the station information in Fig. 4.5f for all 122 stations in the tutorial database.</p>
+<p>Now return to the Climsoft dialogue and tick the box for the observation data. Now the Elements are chosen, and we have selected Tmax, Tmin and rainfall in Fig. 4.5g. The Start Date and End Date are left blank so all the data is transferred.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.5h The data are imported</em></strong></th>
+<th><p><strong><em>Fig. 4.5i Add a Date column</em></strong></p>
+<p><strong><em>Climatic &gt; Dates &gt; Make Date</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image115 5.png" style="width:3.1909in;height:2.25732in"></td>
+<td><img src="media/image1166.png" style="width:2.80877in;height:2.60524in"></td>
+</tr>
+</tbody>
+</table>
+<p>The data in R-Instat are in Fig. 4.5h. There are 6 columns, first the station, then the element given in 3 different ways, then the date and finally the data.</p>
+<p>The date column is a date-time variable, because the data may be sub-daily. Use the <strong><em>Climatic &gt; Dates &gt; Make Date</em></strong> dialogue as shown in Fig. 4.5i. This adds an R date column.</p>
+<p>Had we exported just a single element then the data would now be almost ready. As in Section 4.4, just use <strong><em>Climatic &gt; Dates &gt; Use Date</em></strong> and then <strong><em>Climatic &gt; Define Climatic Data</em></strong>.</p>
+<p>However, as we imported 3 elements (Tmax, Tmin and Rain) we have one further step, because they are currently all in a single column. They need to be in separate columns.</p>
+<p>First use Right-click on one of the element columns, Fig. 4.5j, and convert it to a factor column.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.5j Make the Element column a factor</em></strong></th>
+<th><p><strong><em>Fig. 4.5k Unstack the data on the 3 elements</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; Unstack</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1153.png" class="img-fluid"> {width=“2.6682010061242343in” h eight=“2.0810804899387576in”}</td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image11 43.png" style="width:3.215in;height:3.11831in" class="figure-img"></p>
+<figcaption>C:\Use rs\ROGERS~1\AppData\Local\Temp<br>
+120afa21.PNG</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong><em>Climatic &gt; Tidy and Examine &gt; Unstack</em></strong> and complete the dialogue as shown in Fig 4.5k. The data are in Fig. 4.5m and are in just the right “shape” for R-Instat.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.5l The data ready for R-Instat</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.5m Climsoft dialogue to export data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1154.png" style="width:3.02697in;height:2.7565in"></td>
+<td style="text-align: left;"><img src="media/image1129.png" style="width:2.93707in;height:2.77433in"></td>
+</tr>
+</tbody>
+</table>
+<p>The second way is for data to be exported from Climsoft that can then be imported into R-Instat.</p>
+<p>For this option the CLIMSOFT user starts with the <strong><em>Products option</em></strong> in Fig. 4.5a. The products menu is shown in Fig 4.5m. Select <strong><em>Data</em></strong> as the Product category and <strong><em>Daily</em></strong>, as shown in Fig. 4.5m.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 98%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.5n Screen to export daily data from Climsoft</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1180.png" style="width:6.1309in;height:3.18939in" alt="C:\Users\ROGERS~1\AppData\Local\Temp\SNAGHTML15618e97.PNG"></td>
+</tr>
+</tbody>
+</table>
+<p>The resulting screen in Climsoft is shown in Fig. 4.5n. Complete it as shown and then press to <strong><em>Start Extraction,</em></strong> Fig. 4.5n. The resulting data are shown in Fig. 4.5o.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.5o Ooops!</em></strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1190.png" style="width:3.14224in;height:2.18435in"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="satellite-data" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="satellite-data"><span class="header-section-number">5.6</span> Satellite data</h2>
+</section>
+<section id="what-can-go-wrong" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="what-can-go-wrong"><span class="header-section-number">5.7</span> What can go wrong?</h2>
+<p>Nothing may go wrong in organising your data ready for analysis. Even so, it is often frustrating, particularly to those who are relatively inexperienced in these tasks, that the organising stage takes so long, and is also often quite difficult. What can we say except perhaps “Welcome to the real world”!</p>
+<p>But it is annoying that these steps come first and may be more difficult and time-consuming that the subsequent analyses. These problems are general and are not limited to climatic data, but that may be small comfort as you hoped to proceed quickly and then have more time for other activities!</p>
+<p>In addition, things may take longer, because of additional problems in the data. We look at some examples in this section. You need to become a super-critical data detective. Here we show how and why.</p>
+<p>The first problem is very common. It was earlier shown in Fig. 4.4w and we repeat it in Fig. 4.7a. A column that should be numeric has a (c) after it, in R-Instat.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.7a Numeric data imports as character (text)</em></strong></th>
+<th style="text-align: left;"><strong><em>Fig. 4.7b Filter in Excel to see the problem</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1183.png" style="width:2.94236in;height:2.44857in"></td>
+<td style="text-align: left;"><img src="media/image1165.png" style="width:2.25108in;height:3.28884in"></td>
+</tr>
+</tbody>
+</table>
+<p>This indicates it is a character, or text, column. The “cure” is usually to return to Excel and correct the error there. In Excel, once you know where to look, then one way is to set up a filter and then check on the column that R-Instat has shown has the problem. In Fig. 4.7b we filter on column Z for the 25<sup>th</sup> and find the bottom entries are not in order. A more careful look shows the bottom value to be 38.B when it possibly should have been 38.8. Other character columns on this same sheet were when a number was typed with a space and no decimal, e.g.&nbsp;38 6 instead of 38.6 on the 10<sup>th</sup> of the month.</p>
+<p>A check that is often useful is Climatic &gt; Tidy and Examine &gt; One Variable Summaries. This is the Examining part of this menu. To show its use, look again at the Dodoma data that was introduced in Chapter 2. So, <strong><em>File &gt; Open from Library &gt; Instat Data &gt; Browse &gt; Climatic Directory &gt; Instat Guide datasets &gt; Dodoma</em></strong>.</p>
+<p>The data are shown in Fig. 4.7c. On <strong><em>row 120 make a deliberate mistake</em></strong>, i.e.&nbsp;double click on April 30 and change the <strong><em>30 into 31</em></strong>. That’s not a possible day!</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.7c Dodoma with an error added</em></strong></th>
+<th><p><strong><em>Fig. 4.7d Add a date column</em></strong></p>
+<p><strong><em>Climatic &gt; Dates &gt; Make Date</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1175.png" class="img-fluid">{w idth=“2.5625590551181103in” he ight=“2.680066710411199in”}</td>
+<td><img src="media/image 1170.png" style="width:3.47766in;height:2.74552in"></td>
+</tr>
+</tbody>
+</table>
+<p>Add a date column using <strong><em>Climatic &gt; Dates &gt; Make Date</em></strong> and complete the dialogue as shown in Fig. 4.7d.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig 4.7e Examine the data</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong></p></th>
+<th><strong><em>Fig. 4.7f Resulting summaries</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1161.pn g" style="width:2.72794in;height:2.4675in"></td>
+<td><img src="media/image11 72.png" style="width:3.288in;height:1.92416in"></td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong> as shown in Fig. 4.7e. The results are in Fig. 4.7f.</p>
+<p>Examine these results for each column in turn. The results are encouraging. The Year goes from 1935 to 2013. The day of the month is from 1 to 31 – which is fine.</p>
+<p>The rainfall is from 0 (zero) to 119.8. Sometimes it is from -9999 in which case the missing values need to be recoded[^17]. Here they seem fine, and it is encouraging tht there are less than 100 missing values overall. Similarly, the limits for Tmax, Tmin and Sunh all seem reasonable.</p>
+<p>The last column is the Date and there is one missing value – as we know, because this time we caused it! There should not be missing values in the date column. You need to do something about it.</p>
+<p>The first step in solving the problem (assuming we don’t know it) is to filter the data, choosing just the days when Date1 == NA. To do this, right-click in any column and choose Filter, Fig, 4.7g.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 4.7g Filter to locate the problem</em></strong></p>
+<p><strong><em>Right-click &gt; Filter</em></strong></p></th>
+<th><strong><em>Fig. 4.7h The Filter sub-dialogue</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1173. png" style="width:2.90139in;height:3.37899in"></td>
+<td><img src="media/image1194. png" style="width:3.08032in;height:2.35522in"></td>
+</tr>
+</tbody>
+</table>
+<p>In the Filter dialogue, choose the button to Define New Filter, and complete the sub-dialogue as shown in Fig. 4.7h. Click to Add Condition then <strong><em>Return</em></strong> and <strong><em>Ok</em></strong>.</p>
+<p>The filtered data, Fig.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.7i The filtered data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1098.png" style="width:5.6186in;height:1.29478in"></td>
+</tr>
+</tbody>
+</table>
+<p>This shows it is row 120 that is causing the problem. The correction can be made immediately, or you may like to remove the filter first and then check that there was no value on April 30 in that year.</p>
+<p>Data from Thaba Tseka in Lesotho initially seemed easy to process. Use <strong><em>File &gt; Open from Library &gt; Instat &gt; Browse &gt; Climatic &gt; Lesotho</em></strong> and the file <strong><em>Thaba_Tseka_Original</em></strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><em>Fig. 4.7j The Thaba-Tseka rainfall data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="media/image1109.png" style="width:5.52843in;height:2.33853in"></td>
+</tr>
+</tbody>
+</table>
+<p>The data have been exported from a previous version of Climsoft (see Sections 1.6 and 4.5). They include a lot of station details but seem in exactly the right shape to make quick progress.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 4.7k Add a date column</em></strong></p>
+<p><strong><em>Climatic &gt; Dates &gt; Make Date</em></strong></p></th>
+<th><p><strong><em>Fig. 4.7l Define Climatic Data</em></strong></p>
+<p><strong><em>Climatic &gt; Define Climatic Data</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1102.png" class="img-fluid">{ width=“2.5451115485564304in” h eight=“3.125343394575678in”}</td>
+<td><img src="media/image1 087.png" style="width:2.67072in;height:3.16907in"></td>
+</tr>
+</tbody>
+</table>
+<p>Define a date column from <strong><em>Climatic &gt; Dates &gt; Make Date, Fig. 4.7k,</em></strong> and then check, with <strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong>, as in Fig. 4.7e. All seems fine so far.</p>
+<p>So, the last step. Use <strong><em>Climatic &gt; Define Climatic Data</em></strong> as in Fig. 4.7l. Complete the year, month, day fields, as the names are not recognised automatically. Also, obs is the rain column.</p>
+<p>Finally check for uniqueness, Fig. 3.7m.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong><em>Fig. 4.7m A problem - duplicates</em></strong></th>
+<th><p><strong><em>Fig. 4.7n Check on the Duplicates</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; Duplicates</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1094. png" style="width:2.85934in;height:2.02184in"></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image1103 .png" style="width:3.06174in;height:3.21424in" class="figure-img"></p>
+<figcaption>C:\Users\ROGE RS~1\AppData\Local\Temp\SNAG HTML199cd2c0.PNG</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>The message in Fig. 4.7m indicates a problem. There are apparently duplicate values in the data.</p>
+<p>As suggested in Fig. 4.7m use <strong><em>Climatic &gt; Tidy and Examine &gt; Duplicates</em></strong> and complete as shown in Fig. 4.7n. This produces a new logical column, that is first examined through <strong><em>Climatic &gt; Tidy and Explore &gt; One Variable Summarise</em></strong>, Fig. 4.7o.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 4.7o Find how often there are duplicates</em></strong></p>
+<p><strong><em>Climatic &gt; Tidy and Examine &gt; One Variable Summarise</em></strong></p></th>
+<th><strong><em>Fig. 4.7p The results</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1099. png" style="width:2.94966in;height:2.66714in"></td>
+<td><img src="media/image1082. png" style="width:3.03407in;height:1.09115in"></td>
+</tr>
+</tbody>
+</table>
+<p>If there were no duplicates, then this column would be FALSE all the time. We learn, from the result in Fig. 4.7p that it is TRUE on 364 rows. There are then at least 2 values for each day, so up to 182 days have duplicate values.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong><em>Fig. 4.7r Filter sub-dialogue</em></strong></p>
+<p><strong><em>Right Click &gt; Filter &gt; Define New Filter</em></strong></p></th>
+<th><strong><em>Fig. 4.7s The filtered data</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="media/image1089.p ng" style="width:2.78962in;height:1.47657in"></td>
+<td><img src="media/image109 0.png" style="width:3.21415in;height:3.32519in"></td>
+</tr>
+</tbody>
+</table>
+<p>Use the <strong><em>right-click and Filter</em></strong> dialogue. Then Define new Filter and complete the sub-dialogue as shown in Fig. 4.7r. Then <strong><em>Return</em></strong>, and <strong><em>Ok</em></strong> to show the filtered data in Fig. 4.7s.</p>
+<p>The possible problem becomes clearer from an examination of the data from the first 4 days. They are consecutive, from 18<sup>th</sup> to 21<sup>st</sup> January 1987. It looks as though a value might have been put on one day, and then corrected to the previous day. But both versions of the data have been exported from Climsoft, and without any indication of which version is the more recent.</p>
+<p>Now, having been a data detective – it is probably time to go back to the source of the data. This could be to check against the paper copy, or to see whether the data could be exported without the duplicates[^18].</p>
+</section>
+<section id="whats-next" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="whats-next"><span class="header-section-number">5.8</span> What’s next?</h2>
+<p><mark>I would like to describe some of the sets of software to be used in later chapters – in addition to those so far. In particular I am looking for examples from countries (in addition to Kenya) where there could be quite a number of stations. One possibility is Rwanda, where we have permission to use 4 stations. I wonder about Germany – partly because of its potential for comparing satellite and station data. Lesotho – I could ask, and Guyana. Later possibly Haiti, but the data aren’t quite ready yet. Maybe Ghana, we currently have permission to use 2 stations.</mark></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter_3_Using_RInstat_effectively.html" class="pagination-link" aria-label="Using R-Instat effectively">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using R-Instat effectively</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter_5_Quantity_and_quality.html" class="pagination-link" aria-label="Quantity and quality?">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantity and quality?</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
