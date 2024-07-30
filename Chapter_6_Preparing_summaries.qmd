@@ -9,9 +9,9 @@ uses similar ideas for more specialised summaries of the rainfall data,
 such as the start and length of the season.
 
   ------------------------------------------------------------------------------------------------------------
-  ***Fig. 6.1aThe main climatic summary menu***          ***Fig. 6.1b Presenting the summary***
+  ***Fig. 6.1a The main climatic summary menu***          ***Fig. 6.1b Presenting the summary***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image868.png){width="2.9830041557305336in"   ![](media/image850.png){width="3.092963692038495in"
+  ![](figures/Fig6.1a.png){width="2.9830041557305336in"   ![](figures/Fig6.1b.png){width="3.092963692038495in"
   height="2.510556649168854in"}                          height="2.541311242344707in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -37,18 +37,13 @@ pattern of rainfall, and Tamale, which is further North, and with
 unimodal rainfall. The rainfall starts in 1944 for each station. Other
 elements, Fig. 6.2a, start later.
 
-+-------------------------------------+--------------------------------+
-| ***Fig. 6.2a Data from 2            | ***Fig. 6.2b***                |
-| stations***                         |                                |
-|                                     |                                |
-| ***File\>Open from                  |                                |
-| Library\                            |                                |
-| >Instat\>Browse\>Climatic\>Ghana*** |                                |
-+=====================================+================================+
-| ![](media/image8                    | ![](media/image864.pn          |
-| 63.png){width="3.290274496937883in" | g){width="2.968218503937008in" |
-| height="3.2845319335083114in"}      | height="1.3167279090113735in"} |
-+-------------------------------------+--------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.2a Data from 2 stations***          ***Fig. 6.2b***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.2a.png){width="3.290274496937883in"   ![](figures/Fig6.2b.png){width="2.968218503937008in"
+  height="3.2845319335083114in"}                          height="1.3167279090113735in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 The data is in the right shape and already has a date column.
 
@@ -56,16 +51,13 @@ First use ***Climatic \> Dates \> Infill***, Fig. 6.2b, to check there
 are no missing dates. Some files simply omit the days when all data are
 missing.
 
-+-----------------------------------+-----------------------------------+
-| ***Fig. 6.2c Infill missing       | ***Fig. 6.2d Results from         |
-| dates***                          | infilling***                      |
-|                                   |                                   |
-| ***Climatic \> Date \> Infill***  |                                   |
-+===================================+===================================+
-| ![](media/image852                | ![](media/image800.               |
-| .png){width="3.011919291338583in" | png){width="3.0440813648293963in" |
-| height="2.6333103674540683in"}    | height="0.746661198600175in"}     |
-+-----------------------------------+-----------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.2c Infill missing dates***          ***Fig. 6.2d Results from infilling***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.2c.png){width="3.011919291338583in"   ![](figures/Fig6.2d.png){width="3.0440813648293963in"
+  height="2.6333103674540683in"}                          height="0.746661198600175in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Complete the dialogue as shown in Fig. 6.2c and press Ok. The number of
 rows in the data increases slightly to 53297 and the output window
@@ -77,51 +69,37 @@ complete the dialogue as shown in Fig. 6.2e. The results are in Fig.
 a relief), and very few missing rainfall days. Most of those were
 infilled. The other variables have reasonable values. Hence we proceed.
 
-+------------------------------+---------------------------------------+
-| ***Fig. 6.2e Checking the    | ***Fig. 6.2f Results***               |
-| data***                      |                                       |
-|                              |                                       |
-| ***Climatic \> Tidy and      |                                       |
-| Examine \> One Variable      |                                       |
-| Summarise***                 |                                       |
-+==============================+=======================================+
-| ![](media/image803.png){     | ![](media/image                       |
-| width="2.6116010498687663in" | 812.png){width="3.4144444444444444in" |
-| h                            | height="1.937435476815398in"}         |
-| eight="2.139025590551181in"} |                                       |
-+------------------------------+---------------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.2e Checking the data***          ***Fig. 6.2f Results***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.2e.png){width="2.6116010498687663in"   ![](figures/Fig6.2f.png){width="3.4144444444444444in"
+  height="2.139025590551181in"}                          height="1.937435476815398in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Use ***Climatic \> Date \> Use Date***, Fig. 6.2g. Then it is convenient
 to reorder the columns to put the date variables before the climatic
 data, Fig. 6.2h.
 
-+------------------------------+---------------------------------------+
-| ***Fig. 6.2g Generate        | ***Fig. 6.2h Data***                  |
-| further date variables***    |                                       |
-|                              | ***After Right-click \> Reorder       |
-| ***Climatic \> Date \> Use   | columns***                            |
-| Date***                      |                                       |
-+==============================+=======================================+
-| ![](media/image796.png)      | ![](media/image                       |
-| {width="2.626457786526684in" | 806.png){width="3.3682863079615046in" |
-| he                           | height="2.546360454943132in"}         |
-| ight="4.1896883202099735in"} |                                       |
-+------------------------------+---------------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.2g Generate further date variables***          ***Fig. 6.2h Data***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.2g.png){width="2.626457786526684in"   ![](figures/Fig6.2h.png){width="3.3682863079615046in"
+  height="4.1896883202099735in"}                          height="2.546360454943132in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Finally, in this preparation, use ***Climatic \> Define Climatic
 Data***. The dialogue should fill automatically as shown in Fig. 6.2i.
 Check that the data are unique and press Ok.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 6.2***                    | ***Fig. 6.2j A count column***   |
-|                                   |                                  |
-| ***Climatic \> Define Climatic    | ***Climatic \> Prepare \>        |
-| Datai***                          | Transform***                     |
-+===================================+==================================+
-| ![](media/image802.               | ![](media/image810.p             |
-| png){width="3.0969564741907263in" | ng){width="2.9782939632545933in" |
-| height="3.6375339020122484in"}    | height="4.019535214348206in"}    |
-+-----------------------------------+----------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.2i***                 ***Fig. 6.2j A count column***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.2i.png){width="3.0969564741907263in"   ![](figures/Fig6.2j.png){width="2.9782939632545933in"
+  height="3.6375339020122484in"}                          height="4.019535214348206in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Finally, a new step, because we would like to analyse the number of rain
 days as well as the rainfall totals. A new column, giving whether a day
@@ -139,17 +117,13 @@ Now try the second method, which generates a very simple R command. It
 uses R-Instat's powerful calculator, from ***Prepare \> Column:
 Calculate \> Calculations***, Fig. 6.2k
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 6.2k Using the            | ***Fig. 6.2l Using the           |
-| calculator***                     | additional logical keyboard***   |
-|                                   |                                  |
-| ***Prepare \> Column: Calculate   |                                  |
-| \> Calculations***                |                                  |
-+===================================+==================================+
-| ![](media/image807.               | ![](media/image798.              |
-| png){width="3.0777515310586177in" | png){width="2.968632983377078in" |
-| height="2.546943350831146in"}     | height="1.8799464129483814in"}   |
-+-----------------------------------+----------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.2k Using the calculator***          ***Fig. 6.2l Using the additional logical keyboard***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.2k.png){width="3.0777515310586177in"   ![](figures/Fig6.2l.png){width="2.968632983377078in"
+  height="2.546943350831146in"}                          height="1.8799464129483814in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 The resulting data are shown in Fig. 6.2m. The calculator has produced a
 logical column, while the transformation using Prepare \> Transform has
@@ -164,7 +138,7 @@ logical column.
 |                                                                       |
 | ***After Right-click \> Reorder columns***                            |
 +=======================================================================+
-| ![](media/image817.png){width="3.800120297462817in"                   |
+| ![](figures/Fig6.2m.png){width="3.800120297462817in"                   |
 | height="2.891173447069116in"}                                         |
 +-----------------------------------------------------------------------+
 
@@ -178,17 +152,13 @@ frame, or you may not have followed the steps in the section above.)
 We are going to produce the annual totals. Fig. 6.3a also indicates it
 is equally easy to produce the totals for any subset of the year.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 6.3a The climatic summary | ***Fig. 6.3b The summaries       |
-| dialogue***                       | sub-dialogue***                  |
-|                                   |                                  |
-| ***Climatic \> Prepare \>         |                                  |
-| Climatic Summaries***             |                                  |
-+===================================+==================================+
-| ![](media/image821                | ![](media/image826.p             |
-| .png){width="3.101706036745407in" | ng){width="2.9698425196850393in" |
-| height="3.6587226596675415in"}    | height="3.166195319335083in"}    |
-+-----------------------------------+----------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.3a The climatic summary dialogue***          ***Fig. 6.3b The summaries sub-dialogue***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.3a.png){width="3.101706036745407in"   ![](figures/Fig6.3b.png){width="2.9698425196850393in"
+  height="3.6587226596675415in"}                          height="3.166195319335083in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 In Fig. 6.3a add the rainfall column and then press the Summaries
 button. In the sub-dialogue ***untick the N Total***, and keep the ***N
@@ -204,7 +174,7 @@ checkbox from Fig. 6.3b. Press Return and Ok again.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 6.3c***                                        ***Fig. 6.3d***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image814.png){width="2.6389851268591427in"   ![](media/image815.png){width="3.254145888013998in"
+  ![](figures/Fig6.3c.png){width="2.6389851268591427in"   ![](figures/Fig6.3d.png){width="3.254145888013998in"
   height="2.938444881889764in"}                          height="3.783175853018373in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -233,22 +203,18 @@ complete it as shown. In the sub-dialogue, opt to add the mean line, but
 In the sub-dialogue, click also on the Y-axis tab and set the lower
 limit to 0 (zero).
 
-+-------------------------------------+--------------------------------+
-| ***Fig. 6.3e PICSA-style rainfall   | ***Fig. 6.3f Sub-dialogue to   |
-| graphs***                           | add lines***                   |
-|                                     |                                |
-| ***Climatic \> PICSA \> Rainfall    |                                |
-| Graph***                            |                                |
-+=====================================+================================+
-| ![](media/image81                   | ![](media/image813.png         |
-| 9.png){width="3.3122484689413825in" | ){width="2.7570866141732284in" |
-| height="3.08748687664042in"}        | height="2.6320800524934382in"} |
-+-------------------------------------+--------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.3e PICSA-style rainfall graphs***                                        ***Fig. 6.3f Sub-dialogue to add lines***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.3e.png){width="3.3122484689413825in"   ![](figures/Fig6.3f.png){width="2.7570866141732284in"
+  height="3.08748687664042in"}                          height="2.6320800524934382in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
   -----------------------------------------------------------------------
   ***Fig. 6.3g PICSA-style graph for 2 stations***
   -----------------------------------------------------------------------
-  ![](media/image816.png){width="6.065343394575678in"
+  ![](figures/fig6.3g.png){width="6.065343394575678in"
   height="2.9547211286089237in"}
 
   -----------------------------------------------------------------------
@@ -259,9 +225,9 @@ can be in the same data frame. Fig. 6.3h therefore shows another
 example, with a facetted graph for 12 stations from xxx.
 
   -----------------------------------------------------------------------
-  ***Fig. 6.3hPICSA-style rainfall graph for 12 stations from xxx***
+  ***Fig. 6.3h PICSA-style rainfall graph for 12 stations from xxx***
   -----------------------------------------------------------------------
-
+  
   -----------------------------------------------------------------------
 
 [Graph to add]{.mark}
@@ -275,20 +241,13 @@ done from the right-click menu or from within each dialogue.
 Return to the ***previous PICSA dialogue*** and choose ***Data
 Options*** to give the sub-dialogue shown in Fig. 6.3i
 
-+------------------------+---------------------------------------------+
-| ***Fig. 6.3i Define a  | ***Fig. 6.3j Choose a single station***     |
-| filter***              |                                             |
-|                        |                                             |
-| ***Climatic \> PICSA   |                                             |
-| \> Rainfall Graph \>   |                                             |
-| Data Options***        |                                             |
-+========================+=============================================+
-| ![](medi               | ![](media                                   |
-| a/image818.png){width= | /image808.png){width="3.9102220034995625in" |
-| "2.0657567804024497in" | height="2.5876093613298337in"}              |
-| height="               |                                             |
-| 2.5604385389326336in"} |                                             |
-+------------------------+---------------------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.3i Define a filter***                                        ***Fig. 6.3j Choose a single station***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.3i.png){width="2.0657567804024497in"   ![](figures/Fig6.3j.png){width="3.9102220034995625in"
+  height="2.5604385389326336in"}                          height="2.5876093613298337in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Choose to define a new Filter and complete the resulting sub-dialogue as
 shown in Fig. 6.3j. As shown in Fig. 6.3j, give the filter the same name
@@ -301,7 +260,7 @@ for just Saltpond is in Fig. 6.3k.
   -----------------------------------------------------------------------------------------------------------
   ***Fig. 6.3k Single station with terciles***          ***Fig. 6.3l Graph for the second station***
   ----------------------------------------------------- -----------------------------------------------------
-  ![](media/image809.png){width="2.961254374453193in"   ![](media/image788.png){width="2.897379702537183in"
+  ![](figures/Fig6.3k.png){width="2.961254374453193in"   ![](figures/Fig6.3l.png){width="2.897379702537183in"
   height="2.9208737970253718in"}                        height="2.897379702537183in"}
 
   -----------------------------------------------------------------------------------------------------------
@@ -318,7 +277,7 @@ change the Y-variable,
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 6.3m***                                       ***Fig. 6.3n***
   ----------------------------------------------------- ------------------------------------------------------
-  ![](media/image783.png){width="2.777380796150481in"   ![](media/image779.png){width="3.2896248906386703in"
+  ![](figures/Fig6.3m.png){width="2.777380796150481in"   ![](figures/Fig6.3n.png){width="3.2896248906386703in"
   height="2.7827416885389327in"}                        height="3.2821511373578303in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -330,7 +289,7 @@ define the filter as that was done earlier. You can just keep using it.
   -----------------------------------------------------------------------------------------------------------
   ***Fig. 6.3o***                                       ***Fig. 6.3p***
   ----------------------------------------------------- -----------------------------------------------------
-  ![](media/image770.png){width="2.454096675415573in"   ![](media/image789.png){width="3.489805336832896in"
+  ![](figures/Fig6.3o.png){width="2.454096675415573in"   ![](figures/Fig6.3p.png){width="3.489805336832896in"
   height="2.736826334208224in"}                         height="3.489805336832896in"}
 
   -----------------------------------------------------------------------------------------------------------
@@ -346,34 +305,26 @@ trend line to the rainfall data. The PICSA graphs permit horizontal
 lines, but not trend lines. Perhaps the last graph, Fig. 6.3p has a
 downward slope?
 
-+----------------------------------+-----------------------------------+
-| ***Fig. 6.3q Graph with          | ***Fig. 6.3r Saltpond annual      |
-| "ordinary" dialogue***           | rainfall with trend line***       |
-|                                  |                                   |
-| ***Describe \> Specific \> Line  |                                   |
-| Plot***                          |                                   |
-+==================================+===================================+
-| ![](media/image768.p             | ![](media/image775                |
-| ng){width="2.9803674540682414in" | .png){width="3.053941382327209in" |
-| height="2.744633639545057in"}    | height="3.1782305336832897in"}    |
-+----------------------------------+-----------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 6.3q Graph with "ordinary" dialogue***                                       ***Fig. 6.3r Saltpond annual rainfall with trend line***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig6.3q.png){width="2.9803674540682414in"   ![](figures/Fig6.3r.png){width="3.053941382327209in"
+  height="2.744633639545057in"}                         height="3.1782305336832897in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 One way to check this possibility is through the "ordinary" graphics
 dialogues in R-Instat. So, use ***Describe \> Specific \> Line Plot***
 and complete the dialogue as shown in Fig. 6.3q. The results are in Fig.
 6.3t. They perhaps hint at a possible trend[^28]. If there is a trend
 
-+---------------------------------+------------------------------------+
-| ***Fig. 6.3s Analysis for       | ***Fig. 6.3t Cumulative or         |
-| rainfall totals***              | Exceedance Graph***                |
-|                                 |                                    |
-| ***(Change Variable to          | ***Climatic \> PICSA \>            |
-| sum_rainfall in Fig. 6.3q)***   | Cumulative/Exceedance Graph***     |
-+=================================+====================================+
-| ![](media/image767.pn           | ![](media/image764                 |
-| g){width="2.8972101924759404in" | .png){width="3.1671128608923884in" |
-| height="3.0358169291338584in"}  | height="3.575345581802275in"}      |
-+---------------------------------+------------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 6.3s Analysis for rainfall totals***                                       ***Fig. 6.3t Cumulative or Exceedance Graph***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig6.3s.png){width="2.8972101924759404in"   ![](figures/Fig6.3t.png){width="3.1671128608923884in"
+  height="3.0358169291338584in"}                         height="3.575345581802275in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 If there is a trend at Saltpond, perhaps it should also be evident in an
 analysis of the annual totals. Fig. 6.3s shows this is not the case.
@@ -390,17 +341,13 @@ remove it by including ***Data Options*** and choosing ***no_filter***
 in the resulting subdialogue, Fig. 6.3u. The resulting graph is in Fig.
 6.3v.
 
-+----------------------------------+-----------------------------------+
-| ***Fig. 6.3u Removing a          | ***Fig. 6.3v Cumulative           |
-| filter***                        | distributions***                  |
-|                                  |                                   |
-| ***(Data Options from            |                                   |
-| dialogue)***                     |                                   |
-+==================================+===================================+
-| ![](media/image769.p             | ![](media/image797.               |
-| ng){width="2.9515409011373577in" | png){width="3.0426082677165356in" |
-| height="3.9029779090113736in"}   | height="3.2070734908136482in"}    |
-+----------------------------------+-----------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 6.3u Removing a filter***                                       ***Fig. 6.3v Cumulative distributions***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig6.3u.png){width="2.9515409011373577in"   ![](figures/Fig6.3v.png){width="3.0426082677165356in"
+  height="3.9029779090113736in"}                         height="3.2070734908136482in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 Statisticians like cumulative distributions, but many users prefer
 exceedance graphs. If that is your wish, then return to the dialogue in
@@ -419,7 +366,7 @@ getting less than this amount.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 6.3w Exceedance graph***                       ***Fig. 6.3x Exceedance graph for rain days***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image824.png){width="2.8365912073490813in"   ![](media/image799.png){width="2.862159886264217in"
+  ![](figures/Fig6.3w.png){width="2.8365912073490813in"   ![](figures/Fig6.3x.png){width="2.862159886264217in"
   height="2.9799201662292214in"}                         height="3.0429265091863518in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -432,9 +379,9 @@ to Tamale. This can be confirmed numerically using Describe \> Specific
 \> Summary Tables. Results are in Fig. 6.3y.
 
   -----------------------------------------------------------------------
-  Fig. 6.3y Numerical results
+  ***Fig. 6.3y Numerical results***
   -----------------------------------------------------------------------
-  ![](media/image804.png){width="3.020988626421697in"
+  ![](figures/Fig6.3y.png){width="3.020988626421697in"
   height="3.3265594925634296in"}
 
   -----------------------------------------------------------------------
@@ -465,7 +412,7 @@ initially in Fig. 6.3a to produce the annual summaries.
   ------------------------------------------------------------------------------------------------------------
   ***Fig.6.4a***                                        ***Fig. 6.4b***
   ----------------------------------------------------- ------------------------------------------------------
-  ![](media/image801.png){width="3.604351487314086in"   ![](media/image780.png){width="2.3751224846894137in"
+  ![](figures/Fig6.4a.png){width="3.604351487314086in"   ![](figures/Fig6.4b.png){width="2.3751224846894137in"
   height="4.090487751531058in"}                         height="3.6876891951006123in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -486,7 +433,7 @@ total of 256mm.
   -----------------------------------------------------------------------------------------------------------
   ***Fig. 6.4c***                                       ***Fig. 6.4d***
   ----------------------------------------------------- -----------------------------------------------------
-  ![](media/image793.png){width="3.071080489938758in"   ![](media/image792.png){width="2.824102143482065in"
+  ![](figures/Fig6.4c.png){width="3.071080489938758in"   ![](figures/Fig6.4d.png){width="2.824102143482065in"
   height="3.2467333770778652in"}                        height="3.2376738845144355in"}
 
   -----------------------------------------------------------------------------------------------------------
@@ -499,7 +446,7 @@ stations as facets and give the results as in Fig 6.4f[^29].
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 6.4e***                                       ***Fig. 6.4f***
   ----------------------------------------------------- ------------------------------------------------------
-  ![](media/image781.png){width="2.658153980752406in"   ![](media/image774.png){width="3.3286668853893264in"
+  ![](figures/Fig6.4e.png){width="2.658153980752406in"   ![](figures/Fig6.4f.png){width="3.3286668853893264in"
   height="2.7355227471566055in"}                        height="3.287153324584427in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -516,7 +463,7 @@ the number of rain days in Tamale in September.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 6.4g***                                        ***Fig. 6.4h***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image776.png){width="3.1435793963254595in"   ![](media/image751.png){width="2.916351706036745in"
+  ![](figures/Fig6.4g.png){width="3.1435793963254595in"   ![](figures/Fig6.4h.png){width="2.916351706036745in"
   height="3.0935706474190727in"}                         height="2.7955577427821523in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -529,7 +476,7 @@ the factor for the facets, to give the graph as shown in Fig. 6.4i[^30]
   -----------------------------------------------------------------------
   ***Fig. 6.4i***
   -----------------------------------------------------------------------
-  ![](media/image759.png){width="6.0539687226596675in"
+  ![](figures/Fig6.4i.png){width="6.0539687226596675in"
   height="2.929728783902012in"}
 
   -----------------------------------------------------------------------
@@ -552,7 +499,7 @@ records.
   -----------------------------------------------------------------------
   ***Fig. 6.4j Time series graphs for the 2 stations by month***
   -----------------------------------------------------------------------
-  ![](media/image757.png){width="6.067823709536308in"
+  ![](figures/Fig6.4j.png){width="6.067823709536308in"
   height="2.9034930008748905in"}
 
   -----------------------------------------------------------------------
@@ -564,7 +511,7 @@ when June had exceptionally high rainfall.
   -----------------------------------------------------------------------
   ***Fig. 6.2k Daily data for Saltpond for 1962***
   -----------------------------------------------------------------------
-  ![](media/image790.png){width="2.9407699037620296in"
+  ![](figures/Fig6.4k.png){width="2.9407699037620296in"
   height="4.576652449693788in"}
 
   -----------------------------------------------------------------------
@@ -586,17 +533,13 @@ Ghana data. It shows there is hardly a problem for the rainfall data.
 The measurement of the other elements started later and there is a
 slightly greater proportion of missing values.
 
-+----------------------------------+-----------------------------------+
-| ***Fig. 6.5a***                  | ***Fig. 6.5b Default annual       |
-|                                  | summaries of rainfall***          |
-| ***Climatic \> Check Data        |                                   |
-| Inventory***                     | ***From \> Climatic \> Prepare \> |
-|                                  | Climatic Summaries***             |
-+==================================+===================================+
-| ![](media/image744.p             | ![](media/image708.               |
-| ng){width="3.0282392825896762in" | png){width="3.0918077427821524in" |
-| height="3.141479658792651in"}    | height="3.154325240594926in"}     |
-+----------------------------------+-----------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.5a***                                        ***Fig. 6.5b Default annual summaries of rainfall***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.5a.png){width="3.0282392825896762in"   ![](figures/Fig6.5b.png){width="3.0918077427821524in"
+  height="3.141479658792651in"}                         height="3.154325240594926in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Fig. 6.5b shows some of the annual totals that were used for analysis in
 Section 6.3. A column in Fig. 6.3b shows also the number of missing
@@ -615,17 +558,13 @@ remaining data. This uses the same ***Climatic \> Prepare \> Climatic
 Summaries*** dialogue, but check the box labelled ***Omit Missing
 Values***.
 
-+----------------------------------+-----------------------------------+
-| ***Fig. 6.5c Data with both      | ***Fig. 6.5d Years with missing   |
-| summaries***                     | values***                         |
-|                                  |                                   |
-|                                  | ***Use Right-click \> Filter with |
-|                                  | (Total == NA)***                  |
-+==================================+===================================+
-| ![](media/image748.              | ![](media/image746                |
-| png){width="2.973963254593176in" | .png){width="3.130285433070866in" |
-| height="3.0356014873140857in"}   | height="1.9515627734033245in"}    |
-+----------------------------------+-----------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.5c Data with both summaries***                                        ***Fig. 6.5d Years with missing values***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig6.5c.png){width="2.973963254593176in"   ![](figures/Fig6.5d.png){width="3.130285433070866in"
+  height="3.0356014873140857in"}                         height="1.9515627734033245in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 The results are in the last 2 columns of Fig. 6.5c. They show the total
 rainfall to be 665mm in Tamale in 2015 from 53 rain days -- quite low
@@ -683,7 +622,7 @@ In Fig. 6.5e this corresponds to setting the Option Not Missing to about
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 6.5e***                                        ***Fig. 6.5f***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image773.png){width="2.6578444881889762in"   ![](media/image772.png){width="3.4301706036745405in"
+  ![](figures/Fig6.5e.png){width="2.6578444881889762in"   ![](figures/Fig6.5f.png){width="3.4301706036745405in"
   height="2.0866196412948383in"}                         height="2.027972440944882in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -700,16 +639,13 @@ The ***Climatic \> Prepare \> Climatic Summaries*** dialogue applies to
 any element. With the Ghana data the annual temperature summaries can
 therefore be added to those of the rainfall calculated in Section 6.3.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 6.6a***                   | ***Fig. 6.6bInclude temperature  |
-|                                   | extremes***                      |
-| ***Climatic \> Prepare \>         |                                  |
-| Climatic Summaries***             |                                  |
-+===================================+==================================+
-| ![](media/image778.               | ![](media/image782.              |
-| png){width="3.0125404636920385in" | png){width="2.936470909886264in" |
-| height="3.210363079615048in"}     | height="2.6364774715660544in"}   |
-+-----------------------------------+----------------------------------+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.6a***                                        ***Fig. 6.6b Include temperature extremes***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig6.6a.png){width="3.0125404636920385in"   ![](figures/Fig6.6b.png){width="2.936470909886264in"
+  height="3.210363079615048in"}                         height="2.6364774715660544in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 Complete the dialogue as shown in Fig. 6.6a and then the Summaries
 sub-dialogue as shown in Fig. 6.6b. This produces the annual mean and
@@ -725,17 +661,13 @@ replace the minimum by the maximum temperatures.
 The measurement of temperatures started in 1960, hence the summary data
 are now filtered, prior to producing graphs.
 
-+------------------------------------+---------------------------------+
-| ***Fig. 6.6c Annual temperature    | ***Fig. 6.6d***                 |
-| data***                            |                                 |
-|                                    | ***Describe \> Specific \> Line |
-| ***Following Right-click \> Filter | Plot***                         |
-| \> (Year \> 1959)***               |                                 |
-+====================================+=================================+
-| ![](media/image752                 | ![](media/image760.pn           |
-| .png){width="3.1401574803149606in" | g){width="2.8428937007874016in" |
-| height="2.157737314085739in"}      | height="2.385305118110236in"}   |
-+------------------------------------+---------------------------------+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.6c Annual temperature data***                                        ***Fig. 6.6d***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig6.6c.png){width="3.1401574803149606in"   ![](figures/Fig6.6d.png){width="2.8428937007874016in"
+  height="2.157737314085739in"}                         height="2.385305118110236in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 Use the ***Describe \> Specific \> Line Plot*** dialogue, and complete
 as shown in Fig. 6.6d. In the plot options, choose to ***Facet by the
@@ -744,7 +676,7 @@ station***[^33].
   -----------------------------------------------------------------------
   ***Fig. 6.6e***
   -----------------------------------------------------------------------
-  ![](media/image765.png){width="5.985853018372703in"
+  ![](figures/Fig6.6e.png){width="5.985853018372703in"
   height="3.079802055993001in"}
 
   -----------------------------------------------------------------------
@@ -766,7 +698,7 @@ at Tamale, compared to Saltpond.
   -----------------------------------------------------------------------
   ***Fig. 6.6f***
   -----------------------------------------------------------------------
-  ![](media/image753.png){width="6.064581146106737in"
+  ![](figures/Fig6.6f.png){width="6.064581146106737in"
   height="3.0027263779527558in"}
 
   -----------------------------------------------------------------------
@@ -778,17 +710,13 @@ the daily data are available, so we return to these and do a simple time
 series plot of the daily records, Fig. 6.6g. This indicates an oddity in
 the data in about 1974.
 
-+-------------------------------------+--------------------------------+
-| ***Fig. 6.6g Tmax for Saltpond      | ***Fig. 6.6h Monthly means for |
-| daily data by Date***               | Tmax***                        |
-|                                     |                                |
-| ***From Describe \> Specific \>     |                                |
-| Line Plot***                        |                                |
-+=====================================+================================+
-| ![](media/image7                    | ![](media/image777.png         |
-| 50.png){width="3.320465879265092in" | ){width="2.7201159230096237in" |
-| height="2.6814621609798777in"}      | height="1.5in"}                |
-+-------------------------------------+--------------------------------+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.6g Tmax for Saltpond daily data by Date***                                        ***Fig. 6.6h Monthly means for Tmax***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig6.6g.png){width="3.320465879265092in"   ![](figures/Fig6.6h.png){width="2.7201159230096237in"
+  height="2.6814621609798777in"}                         height="1.5in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 This is confirmed in Fig. 6.6h, where the monthly means for Tmax at
 Saltpond are displayed for the 1970s[^34]. They show a drop of about 2
@@ -804,7 +732,7 @@ in Fig. 6.6i.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 6.6i***                                       ***Fig. 6.6j***
   ----------------------------------------------------- ------------------------------------------------------
-  ![](media/image771.png){width="2.698963254593176in"   ![](media/image749.png){width="3.2956649168853893in"
+  ![](figures/Fig6.6i.png){width="2.698963254593176in"   ![](figures/Fig6.6j.png){width="3.2956649168853893in"
   height="4.114812992125985in"}                         height="3.85672353455818in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -836,37 +764,26 @@ For simplicity, given the inhomogeneity of Tmax at Saltpond, the daily
 data are first filtered so only the data from 1975 are analysed, Fig.
 6.7a.
 
-+--------------------------------+-------------------------------------+
-| ***Fig. 6.7a Filter the data   | ***Fig. 6.7bMonthly summaries***    |
-| (optional)***                  |                                     |
-|                                | ***Climatic \> Prepare \> Climatic  |
-| ***Right-click \> Filter \>    | Summaries***                        |
-| Define new***                  |                                     |
-|                                | ***Only summary is the mean***      |
-+================================+=====================================+
-| ![](media/image701.png         | ![](media/image70                   |
-| ){width="2.7416404199475064in" | 6.png){width="3.1761122047244092in" |
-| height="2.041117672790901in"}  | height="3.4447670603674543in"}      |
-+--------------------------------+-------------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.7a Filter the data (optional)***                                       ***Fig. 6.7bMonthly summaries***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](figures/Fig6.7a.png){width="2.7416404199475064in"   ![](figures/Fig6.7b.png){width="3.1761122047244092in"
+  height="2.041117672790901in"}                         height="3.4447670603674543in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Then use ***Climatic \> Prepare \> Climatic Summaries***, Fig. 9.7b. In
 Fig. 9.7b click on ***Summaries*** and just choose the ***mean***.
 
 Then repeat for Tmax, to give the data as in Fig. 6.7c.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 6.7c Monthly means for    | ***Fig. 6.7d***                  |
-| Tmin and Tmax***                  |                                  |
-|                                   | ***Describe \> Specific \> Line  |
-|                                   | Plot***                          |
-|                                   |                                  |
-|                                   | ***(Also use Plot Options with   |
-|                                   | Month a Facet)***                |
-+===================================+==================================+
-| ![](media/image747.               | ![](media/image704.              |
-| png){width="3.0479516622922134in" | png){width="2.974469597550306in" |
-| height="3.2115999562554682in"}    | height="2.6106496062992126in"}   |
-+-----------------------------------+----------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.7c Monthly means for Tmin and Tmax***                                       ***Fig. 6.7d***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](figures/Fig6.7c.png){width="3.0479516622922134in"   ![](figures/Fig6.7d.png){width="2.974469597550306in"
+  height="3.2115999562554682in"}                         height="2.6106496062992126in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Then ***Describe \> Specific \> Line Plot***, as shown in Fig. 6.7d
 indicates a reasonably consistent slope at both sites, for each of the
@@ -875,7 +792,7 @@ months, Fig. 6.7e.
   -----------------------------------------------------------------------
   ***Fig. 6.7e Trends by month for the two stations***
   -----------------------------------------------------------------------
-  ![](media/image705.png){width="6.119820647419073in"
+  ![](figures/Fig6.7e.png){width="6.119820647419073in"
   height="2.979225721784777in"}
 
   -----------------------------------------------------------------------
@@ -886,17 +803,13 @@ trend is independent of the month, i.e. it is the same in each month.
 The modelling dialogues are needed to address this hypothesis. The menu
 is shown in Fig. 6.7f.
 
-+-------------------------+--------------------------------------------+
-| ***Fig. 6.7f The Model  | ***Fig. 6.7g Filter by Station***          |
-| menu***                 |                                            |
-|                         | ***Right-click \> Filter \> Define New***  |
-+=========================+============================================+
-| ![](m                   | ![](media/                                 |
-| edia/image745.png){widt | image703.png){width="3.8126957567804025in" |
-| h="2.062606080489939in" | height="2.2848392388451444in"}             |
-| height=                 |                                            |
-| "2.4237357830271216in"} |                                            |
-+-------------------------+--------------------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.7f The Model menu***                                       ***Fig. 6.7g Filter by Station***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](figures/Fig6.7f.png){width="2.062606080489939in"   ![](figures/Fig6.7g.png){width="3.8126957567804025in"
+  height="2.4237357830271216in"}                         height="2.2848392388451444in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 In the modelling menu, Fig. 6.7f, the ***One Variable*** sub-menu
 permits a wide variety of distributions to be fitted to a single
@@ -918,16 +831,13 @@ more general Model dialogue, where you just give an R command.
 To simplify the modelling, first filter for a single station, Fig. 6.7g.
 Call the filter ***Saltpond*** (rather than Filter1).
 
-+----------------------------------+-----------------------------------+
-| ***Fig. 6.7h Make a new data     | ***Fig. 6.7i***                   |
-| frame***                         |                                   |
-|                                  | ***Model \> Three Variables \>    |
-|                                  | Fit Model***                      |
-+==================================+===================================+
-| ![](media/image702.p             | ![](media/image699                |
-| ng){width="2.9819280402449695in" | .png){width="3.089155730533683in" |
-| height="2.9965923009623796in"}   | height="2.7298272090988625in"}    |
-+----------------------------------+-----------------------------------+
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 6.7h Make a new data frame***                                       ***Fig. 6.7i***
+  ----------------------------------------------------- ------------------------------------------------------
+  ![](figures/Fig6.7h.png){width="2.9819280402449695in"   ![](figures/Fig6.7i.png){width="3.089155730533683in"
+  height="2.9965923009623796in"}                         height="2.7298272090988625in"}
+
+  ------------------------------------------------------------------------------------------------------------
 
 Return. to the main dialogue and opt to ***Apply as Subset***, Fig.
 6.7h.
@@ -941,7 +851,7 @@ for Saltpond, in Fig. 6.7e.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 6.7j***                                        ***Fig. 6.7k***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image564.png){width="3.3083158355205597in"   ![](media/image572.png){width="2.707610454943132in"
+  ![](figures/Fig6.7j.png){width="3.3083158355205597in"   ![](figures/Fig6.7k.png){width="2.707610454943132in"
   height="1.2852865266841644in"}                         height="1.6346784776902887in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -970,7 +880,7 @@ use ***yr*** instead of year in the model.
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 6.7l***                                        ***Fig. 6.7m***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image563.png){width="2.4777220034995624in"   ![](media/image570.png){width="3.5530839895013124in"
+  ![](figures/Fig6.7l.png){width="2.4777220034995624in"   ![](figures/Fig6.7m.png){width="3.5530839895013124in"
   height="2.535048118985127in"}                          height="2.508620953630796in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -993,7 +903,7 @@ Specific \> Line Plot***, as shown in Fig. 6.7n
   -----------------------------------------------------------------------
   ***Fig. 6.7n Observed and fitted temperatures at Saltpond***
   -----------------------------------------------------------------------
-  ![](media/image565.png){width="6.061395450568679in"
+  ![](figures/Fig6.7n.png){width="6.061395450568679in"
   height="2.9729440069991253in"}
 
   -----------------------------------------------------------------------
