@@ -7,7 +7,7 @@ and are defined as a climatic data frame in R-Instat.
   -----------------------------------------------------------------------------------------
   ***Fig. 5.1a The Check Data menu***                    
   ------------------------------------------------------ ----------------------------------
-  ![](media/image1116.png){width="3.071272965879265in"   
+  ![](figures/Fig5.1a.png){width="3.071272965879265in"   
   height="2.6721817585301837in"}                         
 
   -----------------------------------------------------------------------------------------
@@ -48,18 +48,13 @@ a.  The data frame was not yet defined as climatic.
 b.  You are in the wrong data frame -- change it in the data selector in
     the dialogue in Fig. 5.2b.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 5.2a Rwanda workshop      | ***Fig. 5.2b Inventory           |
-| data***                           | Dialogue***                      |
-|                                   |                                  |
-| ***File \> Open from Library \>   | ***Climatic \> Check Data \>     |
-| Instat \> Climatic \> Rwanda \>   | Inventory***                     |
-| Rwanda Workshop Data.RDS***       |                                  |
-+===================================+==================================+
-| ![](media/image1139.              | ![](media/image1150.             |
-| png){width="3.0161132983377077in" | png){width="2.973377077865267in" |
-| height="3.0676706036745407in"}    | height="2.575567585301837in"}    |
-+-----------------------------------+----------------------------------+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.2a Rwanda workshop data***                                    ***Fig. 5.2b Inventory Dialogue Climatic\>Check Data\>Inventory***
+  ------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
+  ![](figures/Fig5.2a.png){width="3.0161132983377077in"   ![](figures/Fig5.2b.png){width="2.973377077865267in"
+  height="3.0161132983377077in"}                          height="2.575567585301837in"}
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 In Fig. 5.2b, add the 3 data columns for TMAX, TMIN and PRECIP and press
 Ok. The resulting inventory is in Fig. 5.2c.
@@ -67,7 +62,7 @@ Ok. The resulting inventory is in Fig. 5.2c.
   ---------------------------------------------------------------------------------------------------------------
   ***Fig. 5.2c Default inventory plot***                  ***Fig. 5.2d Facet by element***
   ------------------------------------------------------- -------------------------------------------------------
-  ![](media/image1144.png){width="2.9092760279965004in"   ![](media/image1110.png){width="3.0269050743657044in"
+  ![](figures/Fig5.2c.png){width="2.9092760279965004in"   ![](figures/Fig5.2d.png){width="3.0269050743657044in"
   height="2.830469160104987in"}                           height="2.839443350831146in"}
 
   ---------------------------------------------------------------------------------------------------------------
@@ -93,7 +88,7 @@ They can be supplemented by simple time series plots[^19].
   -----------------------------------------------------------------------
   ***Fig. 5.2e Rwanda temperature data***
   -----------------------------------------------------------------------
-  ![](media/image1128.png){width="6.066142825896763in"
+  ![](figures/Fig5.2e.png){width="6.066142825896763in"
   height="3.02500656167979in"}
 
   -----------------------------------------------------------------------
@@ -107,7 +102,7 @@ Graph*** is used to examine this part of the graph in more detail.
   ***Fig. 5.2f Examine the temperature data in more       
   detail***                                               
   ------------------------------------------------------- -----------------------------------
-  ![](media/image1138.png){width="2.9750185914260716in"   
+  ![](figures/Fig5.2f.png){width="2.9750185914260716in"   
   height="3.30957895888014in"}                            
 
   -------------------------------------------------------------------------------------------
@@ -119,7 +114,7 @@ are clearly visible in these graphs.
   -----------------------------------------------------------------------
   ***Fig. 5.2g Rainfall data at the four stations***
   -----------------------------------------------------------------------
-  ![](media/image1126.png){width="6.052942913385826in"
+  ![](figures/Fig5.2g.png){width="6.052942913385826in"
   height="2.9319149168853893in"}
 
   -----------------------------------------------------------------------
@@ -132,19 +127,15 @@ When using this dialogue the items on the right (from Station down to
 Year) are completed automatically. If not, then you are probably in the
 wrong data frame
 
-+-------------------------------+--------------------------------------+
-| ***Fig. 5.2h Examining daily  | ***Fig. 5.2i One year of the data*** |
-| values***                     |                                      |
-|                               |                                      |
-| ***Climatic \> Check Data \>  |                                      |
-| Display Daily***              |                                      |
-+===============================+======================================+
-| ![](media/image1105.png)      | ![](media/image1                     |
-| {width="2.6560739282589676in" | 100.png){width="3.337146762904637in" |
-| height="3.423170384951881in"} | height="3.400753499562555in"}        |
-+-------------------------------+--------------------------------------+
+  ---------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.2h Examining daily values***                  ***Fig. 5.2i One year of the data***
+  ------------------------------------------------------- -------------------------------------------------------
+  ![](figures/Fig5.2h.png){width="2.6560739282589676in"   ![](figures/Fig5.2i.png){width="3.337146762904637in"
+  height="2.830469160104987in"}                           height="2.839443350831146in"}
 
-. Complete the dialogue in Fig. 5.2h as shown. We have chosen to recode
+  ---------------------------------------------------------------------------------------------------------------
+
+Complete the dialogue in Fig. 5.2h as shown. We have chosen to recode
 zero rainfalls to "---". This is an option so the rainy days are
 displayed more clearly in Fig. 5.2i. It indicates the dry period in the
 year is usually June and July. The dry period was a feature of Fig.
@@ -163,7 +154,7 @@ the missing periods as well as the dry parts of the year.
   -----------------------------------------------------------------------
   ***Fig. 5.2j. Daily rainfall for one station***
   -----------------------------------------------------------------------
-  ![](media/image698.png){width="6.105915354330708in"
+  ![](figures/Fig5.2j.png){width="6.105915354330708in"
   height="2.9670450568678914in"}
 
   -----------------------------------------------------------------------
@@ -180,17 +171,13 @@ the main Describe menu (Describe \> Specific \> Boxplot). The results
 are the same, but the Climatic Boxplot dialogue is usually simpler to
 complete.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 5.3a Climatic boxplot     | ***Fig. 5.3b Seasonal pattern of |
-| dialogue***                       | sunshine hours***                |
-|                                   |                                  |
-| ***Climatic \> Check Data \>      |                                  |
-| Boxplot***                        |                                  |
-+===================================+==================================+
-| ![](media/image700                | ![](media/image695.p             |
-| .png){width="3.146314523184602in" | ng){width="2.9883934820647418in" |
-| height="3.020275590551181in"}     | height="3.016061898512686in"}    |
-+-----------------------------------+----------------------------------+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.3a Climatic boxplot dialogue***                  ***Fig. 5.3b Seasonal pattern of sunshine hours***
+  ------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
+  ![](figures/Fig5.3a.png){width="2.6560739282589676in"   ![](figures/Fig5.3b.png){width="2.6560739282589676in"
+  height="2.830469160104987in"}                           height="2.830469160104987in"}
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The results, in Fig. 5.3b Show only one value, in September, is odd in
 being longer than the day length. Most days in the year have many
@@ -218,7 +205,7 @@ missing values.
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 5.3c Change to show the time series***         ***Fig. 5.3d***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image707.png){width="3.0568897637795276in"   ![](media/image697.png){width="2.9790977690288716in"
+  ![](figures/Fig5.3c.png){width="3.0568897637795276in"   ![](figures/Fig5.3d.png){width="2.9790977690288716in"
   height="3.0768055555555556in"}                         height="3.0134984689413824in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -231,7 +218,7 @@ quarters[^21].
   -----------------------------------------------------------------------
   ***Fig. 5.3e***
   -----------------------------------------------------------------------
-  ![](media/image694.png){width="6.056246719160105in"
+  ![](figures/Fig5.3e.png){width="6.056246719160105in"
   height="2.9328455818022747in"}
 
   -----------------------------------------------------------------------
@@ -246,7 +233,7 @@ sunshine hours.
   ***Fig. 5.3f Satellite estimates of sunshine at        ***Fig. 5.3g Suspect values mainly in early years***
   Dodoma***                                              
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image693.png){width="2.9552602799650045in"   ![](media/image692.png){width="2.954428040244969in"
+  ![](figures/Fig5.3f.png){width="2.9552602799650045in"   ![](figures/Fig5.3g.png){width="2.954428040244969in"
   height="2.915323709536308in"}                          height="2.9476049868766405in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -260,9 +247,9 @@ sunshine hours) that are less reliable. This is confirmed through the
 time series plot for the satellite data, in Fig. 5.3g.
 
   -------------------------------------------------------------------------------------------------------------
-  ***Fig. 5.3hBoxplots for the rainfall***               ***Fig. 5.3i Rainfall on rain days***
+  ***Fig. 5.3h Boxplots for the rainfall***               ***Fig. 5.3i Rainfall on rain days***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image696.png){width="3.0212062554680665in"   ![](media/image691.png){width="2.9721916010498686in"
+  ![](figures/Fig5.3h.png){width="3.0212062554680665in"   ![](figures/Fig5.3i.png){width="2.9721916010498686in"
   height="3.0562204724409447in"}                         height="2.9926902887139106in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -272,16 +259,13 @@ data plotted are just for rain days, with the variable width of each box
 indicating the number of rain days. The plot shows the unimodal pattern
 of the rainfall from November to April[^22].
 
-+----------------------------------+-----------------------------------+
-| ***Fig. 5.3j Adding a second     | ***Fig. 5.3k Tmax and Tmin        |
-| layer to the plot***             | plotted together***               |
-|                                  |                                   |
-| Plot Options \> Layers \> Add    |                                   |
-+==================================+===================================+
-| ![](media/image894.              | ![](media/image891                |
-| png){width="2.992442038495188in" | .png){width="2.970890201224847in" |
-| height="2.7443383639545056in"}   | height="3.033581583552056in"}     |
-+----------------------------------+-----------------------------------+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.3j Adding a second layer to the plot***               ***Fig. 5.3k Tmax and Tmin plotted together***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig5.3j.png){width="2.992442038495188in"   ![](figures/Fig5.3k.png){width="2.970890201224847in"
+  height="2.7443383639545056in"}                         height="3.033581583552056in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 The Dodoma data includes Tmax and Tmin and these can, if required, be
 shown together on the same graph. An example is in Fig. 5.3k and one of
@@ -292,17 +276,13 @@ the rainy season, i.e. from November to April.
 Graphs, once saved, can be also combined, using Describe \> Combine
 Graphs, as shown in Fig. 5.3l, with all 4 elements shown in Fig. 5.3m
 
-+--------------------------------+-------------------------------------+
-| ***Fig. 5.3l Combining         | ***Fig. 5.3m The 4 elements in      |
-| graphs***                      | Dodoma***                           |
-|                                |                                     |
-| ***Describe \> Combine Graphs  |                                     |
-| \> Options***                  |                                     |
-+================================+=====================================+
-| ![](media/image918.pn          | ![](media/image129                  |
-| g){width="2.758496281714786in" | 0.png){width="3.1666666666666665in" |
-| height="2.707830271216098in"}  | height="3.1666666666666665in"}      |
-+--------------------------------+-------------------------------------+
+ -------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.3l Combining graphs***               ***Fig. 5.3m The 4 elements in Dodoma***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig5.3l.png){width="2.758496281714786in"   ![](figures/Fig5.3m.png){width="3.1666666666666665in"
+  height="2.707830271216098in"}                         height="3.1666666666666665in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 Other displays of these data are also possible. In Fig. 5.3k we observed
 the larger variation of the Tmax data in the rainy months (compared to
@@ -312,20 +292,13 @@ from the ordinary Describe menu. The results in Fig. 5.3p indicate a
 roughly normal-type shape for the data, though with a slightly longer
 tail for Tmax in the rainy season[^24].
 
-+-------------------------------+--------------------------------------+
-| ***Fig. 5.3o Producing        | ***Fig. 5.3p Density plots for Tmax  |
-| density plots***              | and Tmin by month***                 |
-|                               |                                      |
-| ***Describe \> Specific \>    |                                      |
-| Histogram***                  |                                      |
-+===============================+======================================+
-| ![C:\\Users\\ROGERS\~1\\A     | ![](media/image8                     |
-| ppData\\Local\\Temp\\SNAGHTML | 96.png){width="3.3430457130358704in" |
-| 98d61a3.PNG](media/image880.p | height="3.8018930446194226in"}       |
-| ng){width="2.7408552055993in" |                                      |
-| h                             |                                      |
-| eight="2.7116983814523183in"} |                                      |
-+-------------------------------+--------------------------------------+
+ -------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.3n Producing density plots***               ***Fig. 5.3o Density plots for Tmax and Tmin by month***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig5.3n.png){width="2.992442038495188in"   ![](figures/Fig5.3o.png){width="2.970890201224847in"
+  height="2.7443383639545056in"}                         height="3.033581583552056in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 Often the data frame will include data from more than one station. This
 is illustrated briefly with the Rwanda data, from the library, that is
@@ -337,10 +310,10 @@ For this presentation, in the ***Climatic \> Check Data \> Boxplot***
 dialogue, the option is then used to facet by the Station.
 
   -----------------------------------------------------------------------
-  ***Fig. 5.3q Example for multiple stations, Tmin for 4 stations in
+  ***Fig. 5.3p Example for multiple stations, Tmin for 4 stations in
   Rwanda***
   -----------------------------------------------------------------------
-  ![](media/image887.png){width="6.1667082239720035in"
+  ![](figures/Fig5.3p.png){width="6.1667082239720035in"
   height="3.0204975940507435in"}
 
   -----------------------------------------------------------------------
@@ -356,18 +329,13 @@ flexibility to permit it to be used also for other elements.
 Fig. 5.4 has been completed for the Dodoma data. Initially with a single
 element (Tmax).
 
-+------------------------------------+---------------------------------+
-| ***Fig. 5.4a***                    | ***Fig. 5.4b***                 |
-|                                    |                                 |
-| ***Climatic \> Check Data \> QC    |                                 |
-| Temperatures***                    |                                 |
-+====================================+=================================+
-| ![C:\\Users\\                      | ![](media/image881.pn           |
-| ROGERS\~1\\AppData\\Local\\Temp\\S | g){width="2.8671358267716536in" |
-| NAGHTML13ef1d27.PNG](media/image88 | height="2.7212642169728785in"}  |
-| 4.png){width="3.123163823272091in" |                                 |
-| height="3.504679571303587in"}      |                                 |
-+------------------------------------+---------------------------------+
+ -------------------------------------------------------------------------------------------------------------
+  ***Fig. 5.4a Climatic \> Check Data \> QC Temperatures***               ***Fig. 5.4b***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig5.4a.png){width="3.123163823272091in"   ![](figures/Fig5.4b.png){width="2.8671358267716536in"
+  height="3.504679571303587in"}                         height="2.7212642169728785in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 From the previous Section, Fig. 5.3k, Tmax at Dodoma is rarely less than
 20°C, and could usefully be checked each time. So, the first
@@ -381,7 +349,7 @@ they include 9^th^ October 1989, when Tmax was equal to Tmin at 15.6°C.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 5.4c The available checks***                   ***Fig. 5.4d Checking for consecutive values***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image893.png){width="2.7496237970253716in"   ![](media/image834.png){width="3.316666666666667in"
+  ![](figures/Fig5.4c.png){width="2.7496237970253716in"   ![](figures/Fig5.4d.png){width="3.316666666666667in"
   height="1.6854516622922135in"}                         height="2.6708147419072614in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -425,7 +393,7 @@ together.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 5.4e Results from the Same check***            ***Fig. 5.4f Jump of more than 10°C***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image846.png){width="2.9792082239720035in"   ![](media/image860.png){width="3.028753280839895in"
+  ![](figures/Fig5.4e.png){width="2.9792082239720035in"   ![](figures/Fig5.4f.png){width="3.028753280839895in"
   height="2.8092530621172354in"}                         height="2.7992268153980753in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -446,7 +414,7 @@ Fig. 5.4f include the size of the jump.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 5.4g Tmax within 1°C of Tmin***                ***Fig. 5.4h Outiers from corresponding boxplots***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image845.png){width="2.6875459317585304in"   ![](media/image832.png){width="3.334831583552056in"
+  ![](figures/Fig5.4g.png){width="2.6875459317585304in"   ![](figures/Fig5.4h.png){width="3.334831583552056in"
   height="1.1320406824146982in"}                         height="2.499064960629921in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -474,7 +442,7 @@ temperatures, described in Section 5.4.
   -----------------------------------------------------------------------------------------------------------
   ***Fig. 5.5a***                                       ***Fig. 5.5b***
   ----------------------------------------------------- -----------------------------------------------------
-  ![](media/image833.png){width="3.053068678915136in"   ![](media/image836.png){width="2.846933508311461in"
+  ![](figures/Fig5.5a.png){width="3.053068678915136in"   ![](figures/Fig5.5b.png){width="2.846933508311461in"
   height="2.969220253718285in"}                         height="3.6387970253718285in"}
 
   -----------------------------------------------------------------------------------------------------------
@@ -493,7 +461,7 @@ on both the 5^th^ and 6^th^ January 1967 deserves further investigation.
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 5.5c Same values after a filter***             ***Fig. 5.5d Checking for dry months***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image831.png){width="2.9309733158355207in"   ![](media/image842.png){width="3.0435115923009626in"
+  ![](figures/Fig5.5c.png){width="2.9309733158355207in"   ![](figures/Fig5.5d.png){width="3.0435115923009626in"
   height="3.479775809273841in"}                          height="3.0732534995625547in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -522,9 +490,9 @@ November is totally dry, then it could be true and a late start to the
 season. Or the data are missing. The same goes for April.
 
   -----------------------------------------------------------------------------------------------------------
-  ***Fig. 5.5e***                                      ***Fgi. 5.5f***
+  ***Fig. 5.5e***                                      ***Fig. 5.5f***
   ---------------------------------------------------- ------------------------------------------------------
-  ![](media/image835.png){width="3.11877624671916in"   ![](media/image874.png){width="2.7583595800524936in"
+  ![](figures/Fig5.5e.png){width="3.11877624671916in"   ![](figures/Fig5.5f.png){width="2.7583595800524936in"
   height="3.303284120734908in"}                        height="3.0145352143482063in"}
 
   -----------------------------------------------------------------------------------------------------------
@@ -541,9 +509,9 @@ The results are in Fig. 5.5h, showing the first years are 1935. 1936,
 years when December was zero.
 
   ------------------------------------------------------------------------------------------------------------
-  ***Fig. 5.5g It is a November/December problem***      ***Fig. 5.5hThese are the years***
+  ***Fig. 5.5g It is a November/December problem***      ***Fig. 5.5h These are the years***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image865.png){width="2.5220581802274715in"   ![](media/image869.png){width="2.729306649168854in"
+  ![](figures/Fig5.5g.png){width="2.5220581802274715in"   ![](figures/Fig5.5h.png){width="2.729306649168854in"
   height="3.516259842519685in"}                          height="3.521013779527559in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -556,7 +524,7 @@ only just above the corresponding limit, see Fig 5.5j.
   -----------------------------------------------------------------------------------------------------------
   ***Fig. 5.5i Settings for the rainfall outliers***    ***Fig. 5.5j Possible outliers from skew boxplot***
   ----------------------------------------------------- -----------------------------------------------------
-  ![](media/image859.png){width="2.978626421697288in"   ![](media/image890.png){width="3.272315179352581in"
+  ![](figures/Fig5.5i.png){width="2.978626421697288in"   ![](figures/Fig5.5j.png){width="3.272315179352581in"
   height="1.497422353455818in"}                         height="0.9956594488188977in"}
 
   -----------------------------------------------------------------------------------------------------------
