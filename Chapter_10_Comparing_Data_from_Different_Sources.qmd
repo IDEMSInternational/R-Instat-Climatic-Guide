@@ -10,7 +10,7 @@ summarises some sources of rainfall data:
   -----------------------------------------------------------------------
   Table 10.1
   -----------------------------------------------------------------------
-  ![](media/image115.png){width="6.268055555555556in"
+  ![](figures/Table10.1.png){width="6.268055555555556in"
   height="1.9694444444444446in"}
 
   -----------------------------------------------------------------------
@@ -56,19 +56,13 @@ the ERA5 reanalysis data and the smallest is for CHIRPS. This figure
 also shows that the pixel in coastal sites can sometimes be largely over
 the ocean and hence a neighbouring pixel may be more relevant.
 
-+------------------------------------+---------------------------------+
-| ***Fig. 10.1a Pixel size for 3     | ***Fig. 10.1b Difference        |
-| methods in Barbados***             | between gridded and point data  |
-|                                    | for rainfall***                 |
-|                                    |                                 |
-|                                    | (Figure with permission from H. |
-|                                    | Greatrex)                       |
-+====================================+=================================+
-| ![Chart Description automatically  | ![](media/image104.pn           |
-| generated](media/image11           | g){width="2.7712182852143483in" |
-| 2.png){width="3.094673009623797in" | height="2.506793525809274in"}   |
-| height="2.188830927384077in"}      |                                 |
-+------------------------------------+---------------------------------+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 10.1a Pixel size for 3 methods in Barbados***                                        ***Fig. 10.1b Difference between gridded and point data for rainfall***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig10.1a.png){width="3.094673009623797in"   ![](figures/Fig10.1b.png){width="2.7712182852143483in"
+  height="2.188830927384077in"}                          height="2.506793525809274in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 Fig 10.1b illustrates a reason for possible differences between area and
 point data for rainfall. The sketch shows a cloud, and hence possibly
