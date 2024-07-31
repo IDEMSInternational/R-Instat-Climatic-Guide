@@ -11,7 +11,7 @@ popular form of display by National Met Services (NMSs) for these data.
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 16.1a***                                       ***Fig. 16.1b***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image876.png){width="2.6243372703412073in"   ![](media/image975.png){width="3.3880194663167105in"
+  ![](figures/Fig16.1a.png){width="2.6243372703412073in"   ![](figures/Fig16.1b.png){width="3.3880194663167105in"
   height="2.683885608048994in"}                          height="2.6981517935258092in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -70,18 +70,13 @@ Fig. 16.2a shows the data in R-Instat. The wind directions (column
 wind_dir) are in radians, i.e. they are an angle between 0 and 2pi (i.e.
 2 \* 3.14 = 6.28).
 
-+------------------------------+---------------------------------------+
-| ***Fig. 16.2a Data from      | ***Fig. 16.2b Adding a date           |
-| circular package***          | variable***                           |
-|                              |                                       |
-|                              | ***Climatic \> Dates \> Generate      |
-|                              | Dates***                              |
-+==============================+=======================================+
-| ![](media/image955.png){     | ![](media/imag                        |
-| width="2.5966491688538933in" | e954.png){width="3.488678915135608in" |
-| h                            | height="3.357030839895013in"}         |
-| eight="3.298924978127734in"} |                                       |
-+------------------------------+---------------------------------------+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2a Data from circular package***                                       ***Fig. 16.2b Adding a date variable***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig16.2a.png){width="2.5966491688538933in"   ![](figures/Fig16.2b.png){width="3.488678915135608in"
+  height="3.298924978127734in"}                          height="3.357030839895013in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 Directional data are often given in degrees. Hence also use ***Prepare
 \> Column: Calculate \> Calculations***, with the formula:
@@ -99,7 +94,7 @@ to give the directions in degrees. The results are all shown in Fig.
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 16.2c***                                       ***Fig. 16.2d***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image900.png){width="2.5924682852143484in"   ![](media/image916.png){width="3.5642311898512684in"
+  ![](figures/Fig16.2c.png){width="2.5924682852143484in"   ![](figures/Fig16.2d.png){width="3.5642311898512684in"
   height="2.2782305336832898in"}                         height="1.0976224846894138in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -119,17 +114,13 @@ a standard deviation that indicates a good level of concentration of the
 data. Thus, we don't expect the circular mean to be as large as 2.36
 radians, or 135 degrees, as shown in Fig. 16.2d
 
-+-----------------------------+----------------------------------------+
-| ***Fig. 16.2e A circular    | ***Fig. 16.2f The circular keyboard*** |
-| histogram of the wind       |                                        |
-| data***                     | ***Prepare \> Column: Calculate \>     |
-|                             | Calculations***                        |
-+=============================+========================================+
-| ![](media/image928.png){    | ![](media/imag                         |
-| width="2.557014435695538in" | e921.png){width="3.5340409011373577in" |
-| hei                         | height="1.9491097987751531in"}         |
-| ght="2.6285608048993874in"} |                                        |
-+-----------------------------+----------------------------------------+
+  -------------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2e A circular histogram of the wind data***                                       ***Fig. 16.2f The circular keyboard***
+  ------------------------------------------------------ ------------------------------------------------------
+  ![](figures/Fig16.2e.png){width="2.557014435695538in"   ![](figures/Fig16.2f.png){width="3.5340409011373577in"
+  height="2.6285608048993874in"}                         height="1.9491097987751531in"}
+
+  -------------------------------------------------------------------------------------------------------------
 
 Use ***Prepare \> Column: Calculate \> Calculations*** and open the
 ***Circular*** keyboard, Fig. 16.2f. The initial step is to define the
@@ -143,13 +134,13 @@ Then press ***Clear***, and do the same for the wind_deg variable, Fig.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 16.2g***                                       ***Fig. 16.2h***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image902.png){width="3.5270439632545934in"   ![](media/image919.png){width="2.536725721784777in"
+  ![](figures/Fig16.2g.png){width="3.5270439632545934in"   ![](figures/Fig16.2h.png){width="2.536725721784777in"
   height="2.5473108048993875in"}                         height="2.549666447944007in"}
 
   ------------------------------------------------------------------------------------------------------------
 
 It seems that nothing has happened. But now press the
-![](media/image898.png){width="0.2736023622047244in"
+![](figures/Fig3.1h.png){width="0.2736023622047244in"
 height="0.30578958880139984in"}icon on the toolbar, Fig. 16.2i to
 confirm that the two variables are now defined as circular. Press
 ![](media/image950.png){width="0.26344050743657044in"
@@ -158,7 +149,7 @@ height="0.23361767279090115in"} to close the metadata window.
   -----------------------------------------------------------------------
   ***Fig. 16.2i***
   -----------------------------------------------------------------------
-  ![](media/image929.png){width="4.6506572615923005in"
+  ![](figures/Fig16.2i.png){width="4.6506572615923005in"
   height="1.764834864391951in"}
 
   -----------------------------------------------------------------------
@@ -170,7 +161,7 @@ Output window, Fig. 16.2k.
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 16.2j***                                       ***Fig. 16.2k***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image899.png){width="3.1713484251968502in"   ![](media/image939.png){width="2.8102821522309713in"
+  ![](figures/Fig16.2j.png){width="3.1713484251968502in"   ![](figures/Fig16.2k.png){width="2.8102821522309713in"
   height="3.01583552055993in"}                           height="1.6273206474190727in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -192,7 +183,7 @@ graph, given in Fig. 16.2e. It is a long way from the result in Fig.
   ----------------------------------------------------------------------------------------------------------
   ***Fig. 16.2l***                                     ***Fig. 16.2m***
   ---------------------------------------------------- -----------------------------------------------------
-  ![](media/image948.png){width="2.40545384951881in"   ![](media/image930.png){width="3.680741469816273in"
+  ![](figures/Fig16.2l.png){width="2.40545384951881in"   ![](figures/Fig16.2m.png){width="3.680741469816273in"
   height="1.7108311461067367in"}                       height="2.1625273403324585in"}
 
   ----------------------------------------------------------------------------------------------------------
@@ -257,15 +248,13 @@ To help with the interpretation, of these summaries, take a very simple
 example with 5 observations. In degrees take 10, 15, 20, 25 30, Fig.
 16.2n. Round the circle they are not very spread out.
 
-+------------------------------------+---------------------------------+
-| ***Fig. 16.2n***                   | ***Fig. 16.2o***                |
-|                                    |                                 |
-| ***File \> New Data Frame***       |                                 |
-+====================================+=================================+
-| ![](media/image93                  | ![](media/image937.pn           |
-| 8.png){width="3.098264435695538in" | g){width="2.7570877077865266in" |
-| height="2.7773720472440946in"}     | height="2.7570877077865266in"}  |
-+------------------------------------+---------------------------------+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2n***                                     ***Fig. 16.2o***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.2n.png){width="3.098264435695538in"   ![](figures/Fig16.2o.png){width="2.7570877077865266in"
+  height="2.7773720472440946in"}                       height="2.7570877077865266in"}
+
+  ----------------------------------------------------------------------------------------------------------
 
 Use ***Prepare \> Column: Calculations \> Calculate*** and produce
 ***data_rad = (data_deg/360)\*2\*pi***.
@@ -342,16 +331,13 @@ The von Mises distribution is roughly the equivalent to the normal
 distribution for linear data, Fig. 16.2k. This has, similarly, 2
 parameters and is symmetrical about the circular mean.
 
-+----------------------------------+-----------------------------------+
-| ***Fig. 16.2k Examples of von    | ***Fig. 16.2l***                  |
-| Mises distributions***           |                                   |
-+==================================+===================================+
-| [Prefer from R-Instat]{.mark}    | ![](media/image934                |
-|                                  | .png){width="3.070688976377953in" |
-| ![](media/image933.              | height="2.5898534558180226in"}    |
-| png){width="2.939744094488189in" |                                   |
-| height="2.360246062992126in"}    |                                   |
-+----------------------------------+-----------------------------------+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2p Examples of von Mises distributions***                                     ***Fig. 16.2q***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.2p.png){width="2.939744094488189in"   ![](figures/Fig16.2q.png){width="3.070688976377953in"
+  height="2.360246062992126in"}                       height="2.5898534558180226in"}
+
+  ----------------------------------------------------------------------------------------------------------
 
 The shape is dictated by the к parameter. К = 0 corresponds to the
 uniform distribution (round the circle) and large values of к correspond
@@ -374,20 +360,13 @@ Hence get the mean each day and then analyse the resulting daily data.
 This is the circular mean, and uses the ***Prepare \> Column: Reshape \>
 Column Summaries*** as shown in Fig. 16.2m and Fig. 16.2n.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 16.2m***                  | ***Fig. 16.2n Circular           |
-|                                   | sub-dialogue***                  |
-| ***Prepare \> Column: Reshape \>  |                                  |
-| Column Summaries***               |                                  |
-+===================================+==================================+
-| ![](media/image932.               | ![](media/image926.              |
-| png){width="2.9925721784776904in" | png){width="2.955838801399825in" |
-| height="3.2901760717410324in"}    | height="2.0233978565179354in"}   |
-+-----------------------------------+----------------------------------+
-|                                   | ![](media/image931.p             |
-|                                   | ng){width="2.9682622484689416in" |
-|                                   | height="1.713193350831146in"}    |
-+-----------------------------------+----------------------------------+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2r***                                     ***Fig. 16.2s Circular sub-dialogue***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.2r.png){width="2.9925721784776904in"   ![](figures/Fig16.2s.png){width="2.902083333333333in"
+  height="3.2901760717410324in"}                       height="3.334722222222222in"}
+
+  ----------------------------------------------------------------------------------------------------------
 
 These daily data have 62 records as shown in Fig. 16.2o. For example on
 2^nd^ February the mean wind direction was 355 degrees (or 6.19
@@ -398,13 +377,13 @@ the next day, ranging from 303 degrees (roughly from the West) to 77
 degrees (almost East) within the hour. The (circular) standard deviation
 was just over 1.
 
-  ------------------------------------------------------------------------------------------------------------
-  ***Fig. 16.2o***                                      ***Fig. 16.2p***
-  ----------------------------------------------------- ------------------------------------------------------
-  ![](media/image885.png){width="3.054669728783902in"   ![](media/image879.png){width="2.9363615485564303in"
-  height="2.7000721784776904in"}                        height="2.3743088363954508in"}
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.2t***                                     ***Fig. 16.2u***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.2t.png){width="3.054669728783902in"   ![](figures/Fig16.2u.png){width="2.9363615485564303in"
+  height="2.7000721784776904in"}                       height="2.3743088363954508in"}
 
-  ------------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------
 
 It is simply for illustration that the results, in Fig. 16.2o are given
 in both degrees and radians. As discussed above, the standard deviation
@@ -433,35 +412,24 @@ Section 16.4 examines wind roses, that examine wind speeds and wind
 directions together. Here simpler plots are used to examine just the
 circular element, i.e. the wind directions in the variable called wd.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 16.3a Wind and pollution  | ***Fig. 16.3b Checking the wind  |
-| data***                           | data***                          |
-|                                   |                                  |
-|                                   | ***Climatic \> Tidy and Examine  |
-|                                   | \> One Variable Frequencies***   |
-+===================================+==================================+
-| ![](media/image876.               | ![](media/image878.p             |
-| png){width="2.9951706036745405in" | ng){width="2.5270352143482064in" |
-| height="3.0631321084864394in"}    | height="3.0722867454068243in"}   |
-+-----------------------------------+----------------------------------+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3a Wind and pollution data***                                     ***Fig. 16.3b Checking the wind data***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3a.png){width="2.9951706036745405in"   ![](figures/Fig16.3b.png){width="2.5270352143482064in"
+  height="3.0631321084864394in"}                       height="3.0722867454068243in"}
+
+  ----------------------------------------------------------------------------------------------------------
 
 First examine the wind direction data. One way uses the ***Climatic \>
 Tidy and Examine \> One Variable Frequencies*** dialogue, Fig. 16.3b.
 
-+----------------------------------+-----------------------------------+
-| ***Fig. 16.3c Different values   | ***Fig. 16.3d Duplicating the     |
-| in the wd variable***            | wind variable***                  |
-|                                  |                                   |
-|                                  | ***Right click (in wd variable)   |
-|                                  | \> Duplicate Column***            |
-|                                  |                                   |
-|                                  | [Redo with new duplicate column   |
-|                                  | dialogue]{.mark}                  |
-+==================================+===================================+
-| ![](media/image873.              | ![](media/image889                |
-| png){width="2.902083333333333in" | .png){width="3.140196850393701in" |
-| height="3.334722222222222in"}    | height="2.535087489063867in"}     |
-+----------------------------------+-----------------------------------+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3c Different values in the wd variable***                                     ***Fig. 16.3d Duplicating the wind variable***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3c.png){width="2.902083333333333in"   ![](figures/Fig16.3d.png){width="3.140196850393701in"
+  height="3.334722222222222in"}                       height="2.535087489063867in"}
+
+  ----------------------------------------------------------------------------------------------------------
 
 The results are in Fig. 16.3c. They confirm that the data are measured
 to the nearest 10 degrees. There is one possible oddity, namely that
@@ -490,19 +458,13 @@ hence we adopt option 2, and set the zero-degree values to be missing.
 First use the ***Right-click \> Duplicate Column*** dialogue, Fig. 16.3d
 to avoid overwriting the original data in wd.
 
-+--------------------------+-------------------------------------------+
-| ***Fig. 16.3e Replace 0  | ***Fig. 16.3f Results from summary of 4   |
-| by missing***            | variables***                              |
-|                          |                                           |
-| ***Climatic \> Tidy and  | ***Climatic \> Tidy and Examine \> One    |
-| Examine \> Replace***    | Variable Summarise***                     |
-+==========================+===========================================+
-| ![]                      | ![](media/i                               |
-| (media/image872.png){wid | mage871.png){width="3.8288287401574803in" |
-| th="2.243173665791776in" | height="1.8698742344706911in"}            |
-| heigh                    |                                           |
-| t="2.243173665791776in"} |                                           |
-+--------------------------+-------------------------------------------+
+  ----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3e Replace 0 by missing***                                     ***Fig. 16.3f Results from summary of 4 variables***
+  ---------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3e.png){width="2.243173665791776in"   ![](figures/Fig16.3f.png){width="3.8288287401574803in"
+  height="2.243173665791776in"}                       height="1.8698742344706911in"}
+
+  ----------------------------------------------------------------------------------------------------------
 
 Now use ***Climatic \> Tidy and Examine \> Replace Values***, Fig.
 16.3e, to replace all instances of 0 by missing values. The result can
@@ -525,7 +487,7 @@ here the grouping for the histogram is probably to blame.
   -----------------------------------------------------------------------------------------------------------
   ***Fig. 16.3g***                                      ***Fig. 16.3h***
   ----------------------------------------------------- -----------------------------------------------------
-  ![](media/image877.png){width="2.882574365704287in"   ![](media/image870.png){width="3.096017060367454in"
+  ![](figures/Fig16.3g.png){width="2.882574365704287in"   ![](figures/Fig16.3h.png){width="3.096017060367454in"
   height="3.0101727909011373in"}                        height="3.2579746281714788in"}
 
   -----------------------------------------------------------------------------------------------------------
@@ -534,37 +496,26 @@ So return to the dialogue and click on the Histogram Options button to
 set the number of bins to 36, Fig. 16.3i. We make the histogram a little
 more colourful at the same time.
 
-+------------------------------+---------------------------------------+
-| ***Fig. 16.3i Setting bins   | ***Fig. 16.3j Ordinary histogram***   |
-| in the histogram***          |                                       |
-|                              |                                       |
-| ***Describe \> Specific \>   |                                       |
-| Histogram\                   |                                       |
-| Then Histogram Options***    |                                       |
-+==============================+=======================================+
-| ![](media/image895.png       | ![](media/image                       |
-| ){width="2.63702646544182in" | 915.png){width="3.3948250218722658in" |
-| h                            | height="3.5374660979877515in"}        |
-| eight="3.539001531058618in"} |                                       |
-+------------------------------+---------------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3i Setting bins in the histogram***                                      ***Fig. 16.3j Ordinary histogram***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3i.png){width="2.63702646544182in"   ![](figures/Fig16.3j.png){width="3.3948250218722658in"
+  height="3.539001531058618in"}                        height="3.5374660979877515in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 This is now ready to produce a circular plot. Return to the dialogue,
 use the Plot Options and the Y-axis tab, Fig. 16.3k. Set the axis limits
 for the y-axis as shown in Fig. 16.3k. Also press on the
 ***Coordinates*** tab in Fig. 16.3k and specify ***polar*** coordinates.
 
-+---------------------------------+------------------------------------+
-| ***Fig. 16.3k***                | ***Fig. 16.3l Histogram as a       |
-|                                 | circular plot***                   |
-| ***Describe \> Specific \>      |                                    |
-| Histogram\                      |                                    |
-| Then Plot Options \> Y-Axis and |                                    |
-| Coordinates***                  |                                    |
-+=================================+====================================+
-| ![](media/image897.pn           | ![](media/image886                 |
-| g){width="2.8561056430446192in" | .png){width="2.7276979440069993in" |
-| height="2.6587325021872266in"}  | height="2.743533464566929in"}      |
-+---------------------------------+------------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3k***                                      ***Fig. 16.3l Histogram as a circular plot***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3k.png){width="2.8561056430446192in"   ![](figures/Fig16.3l.png){width="2.7276979440069993in"
+  height="2.6587325021872266in"}                        height="2.743533464566929in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 The "trick" of starting the Y-Axis with a negative value in Fig 16.3k,
 gives the "hole" in the circular plot.
@@ -584,17 +535,13 @@ Use ***Prepare \> Column: Calculate \> Calculations***, with the
 Check the calculation by using the ***Try button***, Fig. 16.3m and save
 the result into a variable called ***hour***.
 
-+--------------------------------+-------------------------------------+
-| ***Fig. 16.3m Making an hour   | ***Fig. 16.3n Making a 3-hour       |
-| variable***                    | variable***                         |
-|                                |                                     |
-| ***Prepare \> Column:          | ***Prepare \> Column: Calculate \>  |
-| Calculate \> Calculations***   | Calculations***                     |
-+================================+=====================================+
-| ![](media/image888.pn          | ![](media/image91                   |
-| g){width="2.794021216097988in" | 7.png){width="3.1914271653543307in" |
-| height="3.2234055118110234in"} | height="3.2890627734033244in"}      |
-+--------------------------------+-------------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3m Making an hour variable***                                      ***Fig. 16.3n Making a 3-hour variable***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3m.png){width="2.794021216097988in"   ![](figures/Fig16.3n.png){width="3.1914271653543307in"
+  height="3.2234055118110234in"}                        height="3.2890627734033244in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 The hour variable is from 0 (midnight) to 23 (11pm). This can be used to
 give 24 plots, one for each hour. This is unnecessarily detailed, so
@@ -611,20 +558,13 @@ Then return to the ***histogram dialogue, Plot Options*** and use this
 variable as a ***facet***, Fig. 16.3o. Also change the ***Y-axis
 limits*** to ***-600 to 600***.
 
-+-------------------------+--------------------------------------------+
-| ***Fig. 16.3o***        | ***Fig. 16.3p Circular histogram with      |
-|                         | facets***                                  |
-| ***Describe \> Specific |                                            |
-| \> Histogram\           |                                            |
-| Plot Options \> Facets  |                                            |
-| and Y-axis***           |                                            |
-+=========================+============================================+
-| ![](m                   | ![](media                                  |
-| edia/image901.png){widt | /image882.png){width="3.889770341207349in" |
-| h="2.160592738407699in" | height="2.695122484689414in"}              |
-| height                  |                                            |
-| ="2.357010061242345in"} |                                            |
-+-------------------------+--------------------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3o***                                      ***Fig. 16.3p Circular histogram with facets***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3o.png){width="2.160592738407699in"   ![](figures/Fig16.3p.png){width="3.889770341207349in"
+  height="2.357010061242345in"}                        height="2.695122484689414in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 The resulting graph is shown in Fig. 16.3p. There is no obviously
 consistent pattern for different times of the day.
@@ -633,40 +573,24 @@ The next step is to summarise the hourly data to a daily basis. To
 enable this, use the ***Climatic \> Dates \> Make Date*** dialogue, Fig.
 16.3q to make a Date column from the date-time column.
 
-+-----------------------------------+-----------------------------------+
-| ***Fig. 16.3q***                  | ***Fig. 16.3r Defining a variable |
-|                                   | as circular***                    |
-| ***Climatic \> Dates \> Make      |                                   |
-| Date***                           | ***Prepare \> Column: Define \>   |
-|                                   | Circular***                       |
-+===================================+===================================+
-| ![](media/image883.               | [The new dialogue when            |
-| png){width="2.9268219597550305in" | ready]{.mark}                     |
-| height="3.5730719597550307in"}    |                                   |
-+-----------------------------------+-----------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3q***                                      ***Fig. 16.3r Defining a variable as circular***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3q.png){width="2.9268219597550305in"   ![](figures/Fig16.3r.png){width="3.889770341207349in"
+  height="3.5730719597550307in"}                        height="2.695122484689414in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 Now use the ***Prepare \>Column: Define \> Circular*** to set the ***wd
 variable*** as ***circular, Fig 16.4r***.
 
-+---------------------------------+------------------------------------+
-| ***Fig. 16.4s Calculating       | ***Fig. 16.4t***                   |
-| circular summaries***           |                                    |
-|                                 |                                    |
-| ***Prepare \> Column: Reshape   |                                    |
-| \> Summarise***                 |                                    |
-+=================================+====================================+
-| ![](media/image892.p            | ![](media/image855                 |
-| ng){width="2.861185476815398in" | .png){width="3.2525437445319336in" |
-| height="2.8767071303587053in"}  | height="1.0542038495188102in"}     |
-+---------------------------------+------------------------------------+
-|                                 | ![](media/image851                 |
-|                                 | .png){width="3.2090365266841645in" |
-|                                 | height="1.2806244531933508in"}     |
-+---------------------------------+------------------------------------+
-|                                 | ![](media/image86                  |
-|                                 | 7.png){width="3.264692694663167in" |
-|                                 | height="0.9643383639545057in"}     |
-+---------------------------------+------------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3s Calculating circular summaries***                                      ***Fig. 16.3t***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3s.png){width="2.861185476815398in"   ![](figures/Fig16.3t.png){width="3.889770341207349in"
+  height="2.8767071303587053in"}                        height="2.695122484689414in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 Then use the ***Prepare \> Column: Reshape \> Column Summaries, Fig
 16.4s*** to give the ***circular mean and standard deviation,*** Fig.
@@ -677,19 +601,21 @@ The resulting data frame has 2731 rows (days) of data, Fig. 16.4u. The
 summary in Fig. 16.4uhas a few missing daily values, when less than 21
 hours are available.
 
-  --------------------------------------------------------------------------------------------
-  ***Fig. 16.3u***                                       ***Fig. 16.3v***
-  ------------------------------------------------------ -------------------------------------
-  ![](media/image862.png){width="2.6617049431321087in"   
-  height="3.3775021872265967in"}                         
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3u***                                      ***Fig. 16.3v***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3u.png){width="2.6617049431321087in"   ![](figures/Fig16.3v.png){width="3.889770341207349in"
+  height="3.3775021872265967in"}                        height="2.695122484689414in"}
 
-  --------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------
+ 
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.3w***                                      ***Fig. 16.3x***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.3w.png){width="2.6617049431321087in"   ![](figures/Fig16.3x.png){width="3.889770341207349in"
+  height="3.3775021872265967in"}                        height="2.695122484689414in"}
 
-  ----------------------------------- ------------------------------------------------------
-                                      ![](media/image843.png){width="2.9924245406824146in"
-                                      height="2.9322222222222223in"}
-
-  ----------------------------------- ------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------
 
 The obvious extension of this plotting is to consider the seasonality,
 e.g. to produce the plot on a monthly basis. This is left largely as a
@@ -698,9 +624,9 @@ predominant wind direction is consistent in each month, but some have an
 indication of bimodality.
 
   -----------------------------------------------------------------------
-  ***Fig. 16.3u***
+  ***Fig. 16.3y***
   -----------------------------------------------------------------------
-  ![](media/image849.png){width="6.120766622922135in"
+  ![](figures/Fig16.3y.png){width="6.120766622922135in"
   height="2.369372265966754in"}
 
   -----------------------------------------------------------------------
@@ -722,17 +648,13 @@ Use ***Climatic \> Describe \> Wind Speed/Direction \> Wind Rose***,
 Fig. 16.4a. Ignore the Windrose Options to investigate the default
 results from the hourly data.
 
-+-------------------------------+--------------------------------------+
-| ***Fig. 16.4a Default wind    | ***Fig. 16.4b Default wind-rose***   |
-| rose***                       |                                      |
-|                               | ***(5 wind speeds, colours: Blues,   |
-| ***Climatic \> Describe \>    | Theme: Minimal)***                   |
-| Wind \> Wind Rose***          |                                      |
-+===============================+======================================+
-| ![](media/image866.png)       | ![](media/image                      |
-| {width="2.7000404636920385in" | 853.png){width="3.279529746281715in" |
-| height="2.970044838145232in"} | height="2.730269028871391in"}        |
-+-------------------------------+--------------------------------------+
+  -----------------------------------------------------------------------------------------------------------
+  ***Fig. 16.4a Default wind rose***                                      ***Fig. 16.4b Default wind-rose***
+  ----------------------------------------------------- -----------------------------------------------------
+  ![](figures/Fig16.4a.png){width="2.7000404636920385in"   ![](figures/Fig16.4b.png){width="3.279529746281715in"
+  height="2.970044838145232in"}                        height="2.730269028871391in"}
+
+  -----------------------------------------------------------------------------------------------------------
 
 Many wind roses will be produced, so a useful step is to fix on a
 suitable colour scheme and theme for the graphs.
@@ -745,7 +667,7 @@ theme to Classical. Then choose the Colours tab and try Red-Yellow-Blue.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 16.4c Windrose Options***                     ***Fig. 16.4d***
   ----------------------------------------------------- ------------------------------------------------------
-  ![](media/image839.png){width="2.305673665791776in"   ![](media/image844.png){width="3.5765726159230096in"
+  ![](figures/Fig16.4c.png){width="2.305673665791776in"   ![](figures/Fig16.4d.png){width="3.5765726159230096in"
   height="2.826534339457568in"}                         height="2.8056999125109363in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -756,7 +678,7 @@ The resulting wind rose is in Fig. 16.4e. Changing the theme to linedraw
   ----------------------------------------------------------------------------------------------------------
   ***Fig. 16.4e***                                     ***Fig. 16.4f***
   ---------------------------------------------------- -----------------------------------------------------
-  ![](media/image352.png){width="2.99290791776028in"   ![](media/image348.png){width="2.940764435695538in"
+  ![](figures/Fig16.4e.png){width="2.99290791776028in"   ![](figures/Fig16.4f.png){width="2.940764435695538in"
   height="2.7942268153980754in"}                       height="2.7876476377952755in"}
 
   ----------------------------------------------------------------------------------------------------------
@@ -770,7 +692,7 @@ directions at different times of the day.
 | ***Climatic \> Describe \> Wind Speed/Direction \> Wind Rose -        |
 | three-hour as facet and 4 columns***                                  |
 +=======================================================================+
-| ![](media/image340.png){width="6.1262849956255465in"                  |
+| ![](figures/Fig16.4g.png){width="6.1262849956255465in"                |
 | height="2.9776224846894137in"}                                        |
 +-----------------------------------------------------------------------+
 
@@ -784,7 +706,7 @@ The daily data are shown in Fig. 16.4h.
   ------------------------------------------------------------------------------------------------------------
   ***Fig. 16.4h***                                       ***Fig. 16.4i***
   ------------------------------------------------------ -----------------------------------------------------
-  ![](media/image337.png){width="3.3471358267716536in"   ![](media/image342.png){width="2.649762685914261in"
+  ![](figures/Fig16.4h.png){width="3.3471358267716536in"   ![](figures/Fig16.4i.png){width="2.649762685914261in"
   height="3.201608705161855in"}                          height="2.5432163167104114in"}
 
   ------------------------------------------------------------------------------------------------------------
@@ -792,7 +714,7 @@ The daily data are shown in Fig. 16.4h.
   -----------------------------------------------------------------------
   ***Fig. 16.4j***
   -----------------------------------------------------------------------
-  ![](media/image341.png){width="6.124628171478565in"
+  ![](figures/Fig16.4j.png){width="6.124628171478565in"
   height="2.3491535433070867in"}
 
   -----------------------------------------------------------------------
@@ -828,7 +750,7 @@ use directions, i.e. N, NNE, etc.
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 16.5a***                                       ***Fig. 16.5b***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image338.png){width="2.9411942257217847in"   ![](media/image353.png){width="2.9109405074365706in"
+  ![](figures/Fig16.5a.png){width="2.9411942257217847in"   ![](figures/Fig16.5b.png){width="2.9109405074365706in"
   height="2.2323447069116362in"}                         height="2.239504593175853in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -843,7 +765,7 @@ of the wind speeds by these 12 directions.
   ***Fig. 16.5c***                                       ***Fig. 16.5d Maximum daily wind speeds, by
                                                          direction***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image339.png){width="2.5343930446194225in"   ![](media/image346.png){width="3.4517311898512686in"
+  ![](figures/Fig16.5c.png){width="2.5343930446194225in"   ![](figures/Fig16.5d.png){width="3.4517311898512686in"
   height="2.976563867016623in"}                          height="3.5370078740157482in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -860,7 +782,7 @@ Fig. 16.5e.
   -------------------------------------------------------------------------------------------------------------
   ***Fig. 16.5e***                                       ***Fig. 16.5f***
   ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image315.png){width="2.9485433070866143in"   ![](media/image324.png){width="2.9764621609798776in"
+  ![](figures/Fig16.5e.png){width="2.9485433070866143in"   ![](figures/Fig16.5f.png){width="2.9764621609798776in"
   height="2.9555708661417324in"}                         height="2.958765310586177in"}
 
   -------------------------------------------------------------------------------------------------------------
@@ -875,7 +797,7 @@ while Fig. 16.5h adds the jittered points to the diagram.
   -----------------------------------------------------------------------------------------------------------
   ***Fig. 16.5g***                                      ***Fig. 16.5h***
   ----------------------------------------------------- -----------------------------------------------------
-  ![](media/image311.png){width="2.992658573928259in"   ![](media/image302.png){width="2.977374234470691in"
+  ![](figures/Fig16.5g.png){width="2.992658573928259in"   ![](figures/Fig16.5h.png){width="2.977374234470691in"
   height="2.9998425196850396in"}                        height="2.988058836395451in"}
 
   -----------------------------------------------------------------------------------------------------------
@@ -888,7 +810,7 @@ the station. Fig. 16.5i shows the data for the mean daily windspeed
   -----------------------------------------------------------------------
   ***Fig. 16.5i***
   -----------------------------------------------------------------------
-  ![](media/image333.png){width="6.155880358705162in"
+  ![](figures/Fig16.5i.png){width="6.155880358705162in"
   height="2.937444225721785in"}
 
   -----------------------------------------------------------------------
@@ -902,7 +824,7 @@ easier to make from Fig. 16.5i.
   -----------------------------------------------------------------------
   ***Fig. 16.5j***
   -----------------------------------------------------------------------
-  ![](media/image313.png){width="6.137919947506561in"
+  ![](figures/Fig16.5j.png){width="6.137919947506561in"
   height="2.27128937007874in"}
 
   -----------------------------------------------------------------------
