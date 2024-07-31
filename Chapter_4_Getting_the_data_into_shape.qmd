@@ -231,25 +231,25 @@ Open from Library***. Choose ***Instat data***, B***rowse*** to the
 There untick the first option and choose the sheet called
 ***Samaru56***, Fig. 4.4a.
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.4a Open Samaru56***              ***Fig. 4.4b The "shape" of the Samaru56 data***
-  ------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.4a Open Samaru56***                                       ***Fig. 4.4b The "shape" of the Samaru56 data***
+  ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.4a.png){width="2.9889523184601923in"   ![](figures/Fig4.4b.png){width="3.0898140857392824in"
  height="2.9002613735783025in"}                          height="2.9266207349081363in"}
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
 
 The data are shown in Fig. 4.4b. They are from 1928 and each year is in
 a separate column. All columns are of length 366, in Fig. 4.4b, and
 there is a special code for February 29^th^ in non-leap years.
 
- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.4c Tidying the Samaru data*** ***Climatic\> Tidy and Examine \> Tidy Daily Data***              ***Fig. 4.4d Issues in the data -- no surprises***
-  ------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
-  ![](figures/Fig4.4c.png){width="2.9889523184601923in"   ![](figures/Fig4.4d.png){width="3.0898140857392824in"
- height="3.30076115485564in"}                          height="2.5170286526684165in"}
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.4c Tidying the Samaru data***                                       ***Fig. 4.4d Issues in the data -- no surprises***
+  ------------------------------------------------------ -----------------------------------------------------
+  ![](figures/Fig4.4c.png){width="3.0052121609798776in"   ![](figures/Fig4.4d.png){width="3.0768536745406823in"
+ height="2.779524278215223in"}                          height="2.6771259842519686in"}
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
 
 Use ***Climatic \> Tidy and Examine \> Tidy Daily Data*** and complete
 the dialogue as shown in Fig. 4.4c. This will not work, because we know,
@@ -260,13 +260,13 @@ in non-leap years. The results are in Fig. 4.4d. We see that day 60
 Return to the dialogue in Fig. 4.4c, ***tick the option above to ignore
 data on invalid dates***. Press ***Ok*** again.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.4e Samaru data reshaped***          ***Fig. 4.4f Using the date variable***
-  ------------------------------------------------------ -------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.4e Samaru data reshaped***                                       ***Fig. 4.4f Using the date variable***
+  ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.4e.png){width="2.641606517935258in"   ![](figures/Fig4.4f.png){width="3.0199562554680663in"
-  height="3.7988068678915137in"}                          height="3.889673009623797in"}
+ height="3.7988068678915137in"}                          height="3.889673009623797in"}
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
 
 The results are in Fig. 4.4e. The tidy data now has 20454 rows (days).
 Also, as shown in Fig. 4.4e is that there is no longer any need for a
@@ -375,13 +375,13 @@ as shown in Fig. 4.4o
 
 This adds a new column called yr, Fig. 4.4p.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.4p The year is now available***          ***Fig. 4.4q Sort the data using the year column***
-  ------------------------------------------------------ -------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.4p The year is now available***                                       ***Fig. 4.4q Sort the data using the year column***
+  ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.4p.png){width="2.9009897200349957in"   ![](figures/Fig4.4q.png){width="3.099902668416448in"
   height="2.3619094488188974in"}                          height="3.013610017497813in"}
 
-  --------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
 
 Nearly there. Use ***Climatic \> Tidy and Examine \> Tidy Daily Data***
 as shown in Fig. 4.4r. Earlier, in Fig. 4.4c, each year was in a column.
@@ -389,13 +389,13 @@ Now each month is in its own column. Complete Fig. 4.4r as shown. As
 with the first run earlier (Fig. 4.4c) we first check on any errors,
 rather than simply ignoring them.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.4r Tidy the daily data  Climatic\>Tidy and Examine\>Tidy Daily Data***          ***Fig. 4.4s An error is reported The yr column should be numeric***
-  ------------------------------------------------------ -------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.4r Tidy the daily data  Climatic\>Tidy and Examine\>Tidy Daily Data***                                       ***Fig. 4.4s An error is reported The yr column should be numeric***
+  ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.4r.png){width="3.4139971566054244in"   ![](figures/Fig4.4s.png){width="2.59626968503937in"
   height="3.800272309711286in"}                          height="0.6789588801399825in"}
 
-  --------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
 
 There is an error! This can happen. Reading the message is says the
 "year column must be numeric".
@@ -491,13 +491,13 @@ Both methods are shown here.
 Use ***Climatic \> File \> Climsoft*** to transfer data directly from a
 Climsoft database, Fig. 4.5b.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.5b Import data from Climsoft  Climatic \> File \> Climsoft***                        ***Fig. 4.5c Connect to the database***
-  ------------------------------------------------------- ------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.5b Import data from Climsoft  Climatic \> File \> Climsoft***                                       ***Fig. 4.5c Connect to the database***
+  ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.5b.png){width="3.1856747594050745in"   ![](figures/Fig4.5c.png){width="3.1856747594050745in"
   height="3.1720319335083116in"}                          height="3.1720319335083116in"}
 
-  --------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
 
 In Fig. 4.5b ***Click*** on the ***Establish Connection*** button to
 give the screen shown in Fig. 4.5c. This is already set to the main
@@ -536,13 +536,13 @@ data. Now the Elements are chosen, and we have selected Tmax, Tmin and
 rainfall in Fig. 4.5g. The Start Date and End Date are left blank so all
 the data is transferred.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.5h The data are imported***    ***Fig. 4.5i Add a Date column***
-  ------------------------------------------------------ -------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.5h The data are imported***                                       ***Fig. 4.5i Add a Date column***
+  ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.5h.png){width="3.1908967629046368in"   ![](figures/Fig4.5i.png){width="2.8087740594925634in"
   height="2.257316272965879in"}                          height="2.605239501312336in"}
 
-  --------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
 
 The data in R-Instat are in Fig. 4.5h. There are 6 columns, first the
 station, then the element given in 3 different ways, then the date and
@@ -675,7 +675,7 @@ Add a date column using ***Climatic \> Dates \> Make Date*** and
 complete the dialogue as shown in Fig. 4.7d.
 
   ------------------------------------------------------------------------------------------------------------
-  ***Fig 4.7e Examine the data Climatic \> Tidy and Examine \> One Variable Summarise***            ***Fig. 4.7f Resulting summaries***
+  ***Fig 4.7e Examine the data Climatic \> Tidy and Examine \> One Variable Summarise***                                       ***Fig. 4.7f Resulting summaries***
   ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.7e.png){width="2.727936351706037in"   ![](figures/Fig4.7f.png){width="3.288003062117235in"
   height="2.680066710411199in"}                         height="2.7455194663167104in"}
@@ -746,7 +746,7 @@ Sections 1.6 and 4.5). They include a lot of station details but seem in
 exactly the right shape to make quick progress.
 
   ------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.7k Add a date column***            ***Fig. 4.7l Define Climatic Data  Climatic \> Define Climatic Data***
+  ***Fig. 4.7k Add a date column***                                       ***Fig. 4.7l Define Climatic Data  Climatic \> Define Climatic Data***
   ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.7k.png){width="2.5451115485564304in"   ![](figures/Fig4.7l.png){width="2.6707239720034996in"
   height="3.125343394575678in"}                         height="3.1690671478565178in"}
@@ -764,7 +764,7 @@ recognised automatically. Also, obs is the rain column.
 Finally check for uniqueness, Fig. 4.7m.
 
   ------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.7m A problem - duplicates***            ***Fig. 4.7n Check on the Duplicates***
+  ***Fig. 4.7m A problem - duplicates***                                       ***Fig. 4.7n Check on the Duplicates***
   ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.7m.png){width="2.859336176727909in"   ![](figures/Fig4.7n.png){width="3.061738845144357in"
   height="2.021839457567804in"}                         height="3.214241032370954in"}
@@ -780,7 +780,7 @@ logical column, that is first examined through ***Climatic \> Tidy and
 Explore \> One Variable Summarise***, Fig. 4.7o.
 
   ------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.7o Find how often there are duplicates  Climatic \> Tidy and Examine\> One Variable Summarise***            ***Fig. 4.7n Check on the Duplicates***
+  ***Fig. 4.7o Find how often there are duplicates  Climatic \> Tidy and Examine\> One Variable Summarise***                                       ***Fig. 4.7p Check on the Duplicates***
   ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.7o.png){width="2.949659886264217in"   ![](figures/Fig4.7p.png){width="3.0340715223097114in"
   height="2.6671434820647417in"}                         height="1.0911526684164479in"}
@@ -792,9 +792,9 @@ time. We learn, from the result in Fig. 4.7p that it is TRUE on 364
 rows. There are then at least 2 values for each day, so up to 182 days
 have duplicate values.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 4.7r Filter sub-dialogue  Right Click \> Filter \>Define New Filter***          ***Fig. 4.7s The filtered data***
-  ------------------------------------------------------ -------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------
+  ***Fig. 4.7q Filter sub-dialogue  Right Click \> Filter \>Define New Filter***                                       ***Fig. 4.7r The filtered data***
+  ------------------------------------------------------ -----------------------------------------------------
   ![](figures/Fig4.7r.png){width="2.949659886264217in"   ![](figures/Fig4.7s.png){width="3.0340715223097114in"
   height="2.021839457567804in"}                         height="3.214241032370954in"}
 
