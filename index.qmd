@@ -1,2 +1,2 @@
-# Acknowledgments
+# Acknowledgments {.unnumbered}
 [To be added.]{.mark}

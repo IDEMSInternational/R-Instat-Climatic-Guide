@@ -100,7 +100,7 @@ give the screen shown in Fig. 2.2b. Press ***Ok***.
 | ***Fig. 2.2a File \> Open from Library*** | ***Fig. 2.2b Ready to import Moorings.RDS*** |
 |:----------------------------------------:|:-------------------------------------------:|
 | ***Climatic \> Zambia \> Moorings.RDS*** |                                             |
-| ![Fig2.2a](figures/Fig2.2a.png){width="3.36in" height="3.06in"} | ![Fig2.2b](figures/Fig2.2b.png){width="2.43in" height="2.75in"} |
+| ![](figures/Fig2.2a.png){width="3.36in" height="3.06in"} | ![](figures/Fig2.2b.png){width="2.43in" height="2.75in"} |
 
 The resulting data are shown in Fig. 2.2c. There are 2 data frames. The
 one called Moorings has daily data.
@@ -113,7 +113,7 @@ number of rain days. A rain day was defined as a day with more than
 | ***Fig. 2.2c The Moorings monthly data*** | ***Fig. 2.2d Boxplot dialogue on the Describe menu*** |
 |:----------------------------------------:|:---------------------------------------------------:|
 |                                           | ***Describe \> Specific \> Boxplot***                 |
-| ![Fig2.2c](figures/Fig2.2c.png){width="1.844in" height="3.474in"} | ![Fig2.2d](figures/Fig2.2d.png){width="3.096in" height="2.329in"} |
+| ![](figures/Fig2.2c.png){width="1.844in" height="3.474in"} | ![](figures/Fig2.2d.png){width="3.096in" height="2.329in"} |
 
 Rainfall in Southern Zambia is from November to April. Hence, we analyze
 the data by season, rather than by year. There are 88 seasons from 1922
