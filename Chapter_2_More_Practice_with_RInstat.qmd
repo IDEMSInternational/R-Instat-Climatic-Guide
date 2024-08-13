@@ -97,18 +97,10 @@ Collection***, Then ***Browse*** to the ***Climatic*** directory then to
 ***Zambia***. ***Select*** the file called ***Moorings_July.rds*** to
 give the screen shown in Fig. 2.2b. Press ***Ok***.
 
-+----------------------------------------+-----------------------------+
-| ***Fig. 2.2a File \> Open from         | ***Fig. 2.2b Ready to       |
-| Library***                             | import Moorings.RDS***      |
-|                                        |                             |
-| ***(Climatic \> Zambia \>              |                             |
-| Moorings.RDS)***                       |                             |
-+========================================+=============================+
-| ![](media/image                        | ![](media/image1409.png){   |
-| 1404.png){width="3.3584514435695536in" | width="2.430002187226597in" |
-| height="3.0461209536307963in"}         | hei                         |
-|                                        | ght="2.7552777777777777in"} |
-+----------------------------------------+-----------------------------+
+| ***Fig. 2.2a File \> Open from Library*** | ***Fig. 2.2b Ready to import Moorings.RDS*** |
+|:----------------------------------------:|:-------------------------------------------:|
+| ***Climatic \> Zambia \> Moorings.RDS*** |                                             |
+| ![Fig2.2a](figures/Fig2.2a.png){width="3.36in" height="3.06in"} | ![Fig2.2b](figures/Fig2.2b.png){width="2.43in" height="2.75in"} |
 
 The resulting data are shown in Fig. 2.2c. There are 2 data frames. The
 one called Moorings has daily data.
@@ -118,17 +110,10 @@ the monthly totals. They are the total rainfall in mm and the total
 number of rain days. A rain day was defined as a day with more than
 0.85mm[^1].
 
-+---------------------------------+------------------------------------+
-| ***Fig. 2.2c The Moorings       | ***Fig. 2.2d Boxplot dialogue on   |
-| monthly data***                 | the Describe menu***               |
-|                                 |                                    |
-|                                 | ***Describe \> Specific \>         |
-|                                 | Boxplot***                         |
-+=================================+====================================+
-| ![](media/image1423.pn          | ![](media/image141                 |
-| g){width="1.8441360454943132in" | 6.png){width="3.095645231846019in" |
-| height="3.4743996062992126in"}  | height="2.329336176727909in"}      |
-+---------------------------------+------------------------------------+
+| ***Fig. 2.2c The Moorings monthly data*** | ***Fig. 2.2d Boxplot dialogue on the Describe menu*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+|                                           | ***Describe \> Specific \> Boxplot***                 |
+| ![Fig2.2c](figures/Fig2.2c.png){width="1.844in" height="3.474in"} | ![Fig2.2d](figures/Fig2.2d.png){width="3.096in" height="2.329in"} |
 
 Rainfall in Southern Zambia is from November to April. Hence, we analyze
 the data by season, rather than by year. There are 88 seasons from 1922
@@ -149,17 +134,11 @@ shows the total rainfall was typically 200mm in each of December to
 February. There was always some rain in each of these months, and the
 records were over 500mm.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 2.2e Completed boxplot    | ***Fig. 2.2f Boxplot of monthly  |
-| dialogue***                       | rainfall totals***               |
-|                                   |                                  |
-| ***Describe \> Specific \>        |                                  |
-| Boxplot***                        |                                  |
-+===================================+==================================+
-| ![](media/image1413               | ![](media/image1424.p            |
-| .png){width="3.101418416447944in" | ng){width="2.9661537620297462in" |
-| height="3.5402176290463694in"}    | height="3.0952646544181976in"}   |
-+-----------------------------------+----------------------------------+
+
+| ***Fig. 2.2e Completed boxplot dialogue*** | ***Fig. 2.2f Boxplot of monthly rainfall totals*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Describe \> Specific \> Boxplot***    |                                                      |
+| ![](figures/Fig2.2e.png){width="3.101in" height="3.540in"} | ![](figures/Fig2.2f.png){width="2.966in" height="3.095in"} |
 
 Change the variable from rain to ***raindays*** in Fig. 2.2e to give the
 corresponding boxplots for the number of raindays in the month, Fig.
@@ -171,29 +150,19 @@ outliers also shown). The ***Prepare \> Column: Reshape \> Column
 Summaries, Fig. 2.2h,*** dialogue can provide the same summaries
 numerically.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.2g The number of rain days***                 ***Fig. 2.2h Summary dialogue on the Prepare menu***
-  ------------------------------------------------------- ------------------------------------------------------
-  ![](media/image1408.png){width="3.2808048993875767in"   ![](media/image1421.png){width="2.724430227471566in"
-  height="3.43955271216098in"}                            height="2.6912051618547683in"}
 
-  --------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.2g The number of rain days*** | ***Fig. 2.2h Summary dialogue on the Prepare menu*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+|   ![](figures/Fig2.2g.png){width="3.281in" height="3.440in"} | ![](figures/Fig2.2h.png){width="2.724in" height="2.691in"}|
 
 Summarise both the monthly totals and the number of raindays, with the
 month as the factor, as shown in Fig. 2.2i. Then choose the Summaries
 button and complete the sub-dialogue as shown in Fig. 2.2j.
 
-+-------------------------------------+--------------------------------+
-| ***Fig. 2.2i The Summary            | ***Fig. 2.2j Summaries         |
-| dialogue***                         | sub-dialogue***                |
-|                                     |                                |
-| ***Prepare \> Column: Reshape \>    |                                |
-| Column Summaries***                 |                                |
-+=====================================+================================+
-| ![](media/image107                  | ![](media/image1065.png        |
-| 9.png){width="3.2056266404199474in" | ){width="2.7337193788276464in" |
-| height="3.343377077865267in"}       | height="3.6745319335083115in"} |
-+-------------------------------------+--------------------------------+
+| ***Fig. 2.2i Summary dialogue*** | ***Fig. 2.2j Summaries sub-dialogue*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Prepare \> Column: Reshape \> Column Summaries***    |                                      |
+| ![](figures/Fig2.2i.png){width="3.206in" height="3.343in"} | ![](figures/Fig2.2j.png){width="2.734in" height="3.674in"} |
 
 The results are in a third data frame. It just has 12 rows as shown in
 Fig. 2.2k. The summaries are clearer if they are in order (which we did
@@ -202,13 +171,9 @@ already for Fig. 2.2k).
 ***Right-click in the name field*** of this data frame and choose the
 option to ***Reorder columns***, Fig. 2.2l.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.2k Resulting summary data***                  ***Fig 2.2l Right-click menu to reorder columns***
-  ------------------------------------------------------- ------------------------------------------------------
-  ![](media/image1078.png){width="3.5167333770778653in"   ![](media/image1074.png){width="2.419306649168854in"
-  height="2.4429199475065615in"}                          height="2.4641087051618547in"}
-
-  --------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.2k Resulting summary data*** | ***Fig. 2.2l Right-click menu to reorder columns*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.2k.png){width="3.517in" height="2.443in"} | ![](figures/Fig2.2l.png){width="2.419in" height="2.464in"} |
 
 In the Reorder dialogue, use the ***arrow keys*** to change the position
 of the columns in the data frame.
@@ -216,33 +181,19 @@ of the columns in the data frame.
 With the summaries in a sensible order, they are now transferred to the
 results (output) window.
 
-+-----------------------------------+----------------------------------+
-| ***Fig. 2.2m Reorder the          | ***Fig. 2.2n Simplify column     |
-| resulting columns***              | names***                         |
-|                                   |                                  |
-| ***Right-Click \> Reorder         | ***Right-click \> Rename         |
-| Column(s)***                      | Column***                        |
-+===================================+==================================+
-| ![](media/image1080.              | ![](media/image1077.p            |
-| png){width="3.0982819335083116in" | ng){width="3.0263024934383203in" |
-| height="2.21875in"}               | height="2.083488626421697in"}    |
-+-----------------------------------+----------------------------------+
+| ***Fig. 2.2m Reorder the resulting columns*** | ***Fig. 2.2n Simplify column names*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Right-click \> Reorder column(s)***    | ***Right-click \> Rename column(s)***             |
+| ![](figures/Fig2.2m.png){width="3.098in" height="2.219in"} | ![](figures/Fig2.2n.png){width="3.026in" height="2.083in"} |
 
 Before this, we renamed some of the columns to give shorter names. This
 again used the ***right-click*** menu, Fig 2.2l. The rename dialogue is
 shown in Fig. 2.2n.
 
-+-------------------------------+--------------------------------------+
-| ***Fig. 2.2o View Data        | ***Fig. 2.2n The Monthly number of   |
-| dialogue***                   | rain days***                         |
-|                               |                                      |
-| ***Prepare \> Data Frame \>   |                                      |
-| View Data***                  |                                      |
-+===============================+======================================+
-| ![](media/image1091.png)      | ![](media/image1                     |
-| {width="2.7121620734908136in" | 075.jpg){width="3.378299431321085in" |
-| height="2.720417760279965in"} | height="2.301573709536308in"}        |
-+-------------------------------+--------------------------------------+
+| ***Fig. 2.2o View Data dialogue*** | ***Fig. 2.2p The Monthly number of rain days*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Prepare \> Data Frame \> View Data***    |                                                 |
+| ![](figures/Fig2.2o.png){width="2.712in" height="2.720in"} | ![](figures/Fig2.2p.png){width="3.378in" height="2.302in"} |
 
 Now use the ***Prepare \> Data Frame \> View Data*** dialogue, Fig.
 2.2o, to transfer the rainfall totals and then the number of rain days
@@ -264,43 +215,26 @@ Some "housekeeping" is a preliminary. The 3^rd^ data-frame is no longer
 needed. Right-click on the bottom tab a and choose the option to delete,
 Fig. 2.3a. The dialogue shown in Fig. 2.3b opens. Just press ok.
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.3a Right-click on the bottom tab***         ***Fig. 2.3b Delete a data frame***
-  ----------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------
-  ![](media/image1086.png){width="2.15288823272091in"   ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML1e674805.PNG](media/image1081.png){width="3.8076443569553806in"
-  height="1.6875863954505688in"}                        height="2.3232436570428696in"}
-
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.3a Right-click on the bottom tab*** | ***Fig. 2.3b Delete a data frame*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.3a.png){width="2.15in" height="1.688in"} | ![](figures/Fig2.3b.png){width="3.808in" height="2.323in"} |
 
 Use ***Prepare \> Column: Reshape \> Column Summaries*** and complete
 the dialogue and sub-dialogue as shown in Fig. 2.3c and Fig. 2.3d to
 produce the seasonal totals.
 
-+------------------------------------+---------------------------------+
-| ***Fig. 2.3c Produce the annual    | ***Fig. 2.3d The Summaries      |
-| totals***                          | sub-dialogue***                 |
-|                                    |                                 |
-| ***Prepare \> Column: Reshape \>   |                                 |
-| Column Summaries***                |                                 |
-+====================================+=================================+
-| ![C:\\Users\\R                     | ![](media/image1048.pn          |
-| OGERS\~1\\AppData\\Local\\Temp\\SN | g){width="2.8312390638670166in" |
-| AGHTML1b0bb1d.PNG](media/image1057 | height="3.8056135170603675in"}  |
-| .png){width="3.1936745406824145in" |                                 |
-| height="3.340392607174103in"}      |                                 |
-+------------------------------------+---------------------------------+
+| ***Fig. 2.3c Produce the annual totals*** | ***Fig. 2.3d The Summaries sub-dialogue*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Prepare \> Column: Reshape \> Column Summaries***    |                                                 |
+| ![](figures/Fig2.3c.png){width="3.194in" height="3.340in"} | ![](figures/Fig2.3d.png){width="2.831in" height="3.806in"} |
 
 The results are shown in Fig. 2.3 e after the steps explained below.
 First, notice in Fig. 2.3e that there were only 4 months in the first
 season, and the annual summary was therefore set to missing[^3].
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.3e Resulting annual data***                   ***Fig. 2.3f Menu for a text substring***
-  ------------------------------------------------------- ------------------------------------------------------
-  ![](media/image1092.png){width="2.9407163167104113in"   ![](media/image1053.png){width="3.027933070866142in"
-  height="3.521816491688539in"}                           height="2.8126443569553805in"}
-
-  --------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.3e Resulting annual data*** | ***Fig. 2.3f Menu for a text substring*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.3e.png){width="2.941in" height="3.522in"} | ![](figures/Fig2.3f.png){width="3.028in" height="2.812in"} |
 
 A numeric column for the year (season) is needed for the time series
 graphs. Hence, as shown below, we produce the second column, called
@@ -310,17 +244,10 @@ Use ***Prepare \> Column: Text \> Transform***, Fig. 2.3f. Complete the
 resulting dialogue, as shown in Fig. 2.3g, to give just the starting
 year of the season. The resulting variable is shown in Fig. 2.3e.
 
-+----------------------------------------+-----------------------------+
-| ***Fig. 2.3g The Substring Option***   | ***Fig. 2.3h Convert Column |
-|                                        | to Numeric***               |
-| ***Prepare \> Column:Text \>           |                             |
-| Transform***                           |                             |
-+========================================+=============================+
-| ![](media/imag                         | ![](media/image1076.png){   |
-| e1056.png){width="3.459864391951006in" | width="2.003675634295713in" |
-| height="3.0012171916010497in"}         | hei                         |
-|                                        | ght="2.8906255468066493in"} |
-+----------------------------------------+-----------------------------+
+| ***Fig. 2.3g The Substring Option*** | ***Fig. 2.3h Convert Column to Numeric*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Prepare \> Column: Text \> Transform***    |                                                 |
+| ![](figures/Fig2.3c.png){width="3.460in" height="3.001in"} | ![](figures/Fig2.3d.png){width="2.004in" height="2.891in"} |
 
 Use the ***right-click*** menu, Fig. 2.3h to convert the resulting s_yr
 column to numeric.
@@ -338,29 +265,18 @@ Use ***Climatic \> PICSA \> Rainfall Graph***. Complete as shown in Fig.
 2.3i. Press the **PICSA Options** button and complete the Lines ab as
 shown in Fig. 2.3j to add (and label) a horizontal line for the mean.
 
-+--------------------------------+-------------------------------------+
-| ***Fig. 2.3i PICSA Rainfall    | ***Fig. 2.3j Add a line showing the |
-| graph dialogue***              | mean***                             |
-|                                |                                     |
-| ***Climatic \> PICSA \>        |                                     |
-| Rainfall Graph***              |                                     |
-+================================+=====================================+
-| ![](media/image1059.png        | ![](media/image10                   |
-| ){width="2.7957239720034996in" | 55.png){width="3.263653762029746in" |
-| height="2.519543963254593in"}  | height="2.31790135608049in"}        |
-+--------------------------------+-------------------------------------+
+| ***Fig. 2.3i PICSA Rainfall graph dialogue*** | ***Fig. 2.3j Add a line showing the mean*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***CLimatic \> PICSA \> Rainfall Graph***    |                                                 |
+| ![](figures/Fig2.3c.png){width="2.796in" height="3.340in"} | ![](figures/Fig2.3d.png){width="3.264in" height="2.318in"} |
 
 The resulting graph is shown in Fig 2.3k[^4]. ***Return to the
 dialogue*** and put ***raindays*** as the y-variable to give the results
 in Fig. 2.3l.
 
-  -------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.3k Seasonal rainfall totals***               ***Fig. 2.3l Number of rain days***
-  ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image1058.png){width="3.017334864391951in"   ![](media/image1064.png){width="2.871992563429571in"
-  height="1.5016458880139982in"}                         height="1.4293143044619423in"}
-
-  -------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.3k Seasonal rainfall totals*** | ***Fig. 2.3l Number of rain days*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.3k.png){width="3.017in" height="1.502in"} | ![](figures/Fig2.3l.png){width="2.872in" height="1.429in"} |
 
 These graphs indicate large inter-annual variability, but they don't
 seem to show a trend. That is important because, if you can attribute
@@ -397,6 +313,11 @@ November and December, when the season starts.
 those months. So, make sure you are on the monthly data. ***Right
 click*** as usual and choose ***Filter***, Fig. 2.3m
 
+| ***Fig. 2.3m Right-click for Filter*** | ***Fig. 2.3n The filter dialogue*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.3c.png){width="2.886in" height="6.250in"} | ![](figures/Fig2.3l.png){width="6.944in" height="3.659in"} |
+
+
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   ***Fig. 2.3m Right-click for Filter***                  ***Fig. 2.3n The filter dialogue***
   ------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -417,13 +338,11 @@ sub-dialogue as shown in Fig. 2.3o. The steps are as follows:
 
 4)  Press ***Return***
 
-  ---------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.3o Defining the filter***                     ***Fig. 2.3p The filtered data***
-  ------------------------------------------------------- -------------------------------------------------------
-  ![](media/image1135.png){width="3.9919324146981627in"   ![](media/image1131.png){width="2.0555741469816273in"
-  height="2.857508748906387in"}                           height="2.975057961504812in"}
+| ***Fig. 2.3o Define the filter*** | ***Fig. 2.3p The filtered data*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Prepare \> Column: Reshape \> Column Summaries***    |                                                 |
+| ![](figures/Fig2.3o.png){width="3.992in" height="2.858in"} | ![](figures/Fig2.3p.png){width="2.056in" height="2.975in"} |
 
-  ---------------------------------------------------------------------------------------------------------------
 
 Back on the main filter dialogue, just ***press Ok***. The data are now
 as shown in Fig. 2.3p. The first column is in red and this shows a
@@ -438,13 +357,9 @@ press right-click as before, Fig. 2.3m and choose the last option to
 Now it is quick to repeat the steps above for this analysis. It is
 simpler to recall the last dialogues as shown in Fig. 2.3q.
 
-  ---------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.3q Recall the last dialogues***               ***Fig. 2.3r The Column Statistics dialogue***
-  ------------------------------------------------------- -------------------------------------------------------
-  ![](media/image1112.png){width="2.6035640857392828in"   ![](media/image1130.png){width="3.3151476377952758in"
-  height="2.746363735783027in"}                           height="3.457603893263342in"}
-
-  ---------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.3q Recall the last dialogues*** | ***Fig. 2.3r The Column Statistics dialogue*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+|![](figures/Fig2.3q.png){width="2.604in" height="2.746in"} | ![](figures/Fig2.3r.png){width="3.315in" height="3.458in"} |
 
 The Column Statistics dialogue and sub-dialogue remain completed from
 before, Fig. 2.3r. So just ***press Ok***.
@@ -455,13 +370,10 @@ variable*** for the November-December totals and press OK. The mean is
 now 286mm for the 2 months. Repeat for the number of rain days to give
 the graphs for the filtered data, see Fig. 2.3s and 2.3t.
 
-  -------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.3s Rainfall totals Nov-Dec***               ***Fig. 2.3t Number of rain days Nov-Dec***
-  ----------------------------------------------------- -------------------------------------------------------
-  ![](media/image1136.png){width="2.96668416447944in"   ![](media/image1120.png){width="3.0319685039370077in"
-  height="1.4764413823272091in"}                        height="1.5089304461942257in"}
+| ***Fig. 2.3s Rainfall totals Nov-Dec*** | ***Fig. 2.3t Number of rain days Nov-Dec*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+|![](figures/Fig2.3s.png){width="2.967in" height="1.476in"} | ![](figures/Fig2.3t.png){width="3.032in" height="1.509in"} |
 
-  -------------------------------------------------------------------------------------------------------------
 
 One feature of the data in Fig. 2.3s is that had the record started in
 1981, then it might have given an impression of an upward trend in the
@@ -498,14 +410,9 @@ As in the tutorial use ***File \> Open From Library***. Choose the
 choose the ***Original Climatic Guide datasets***. Choose just the
 ***Dodoma*** sheet, Fig. 2.4a.
 
-  -------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4a Importing the Dodoma data***              ***Fig. 2.4b Add a Date column***
-  ------------------------------------------------------ ------------------------------------------------------
-  ![](media/image1083.png){width="3.179580052493438in"   ![](media/image1101.png){width="2.830372922134733in"
-  height="2.681396544181977in"}                          height="2.695404636920385in"}
-
-  -------------------------------------------------------------------------------------------------------------
-
+| ***Fig. 2.4a Importing the Dodoma data*** | ***Fig. 2.4b The Summaries sub-dialogue*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.4a.png){width="3.179in" height="2.681in"} | ![](figures/Fig2.4b.png){width="2.830in" height="2.695in"} |
 Once imported use ***Prepare \> Column: Date \> Make Date***, Fig. 2.4b
 to construct a date column from the Year, Month, Day columns. Name the
 resulting column as ***Date***, see Fig. 2.4b.
@@ -515,25 +422,18 @@ option ***From Library*** and the file that starts ***CMSAF_SDU*** (for
 sunshine duration). This file contains just the data from the nearest
 pixel to the Dodoma station data.
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4c Import the CMSAF satellite data***                                                                        ***Fig. 2.4d Change the name to Date***
-  ---------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------
-  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML2bdf480.PNG](media/image1088.png){width="2.9877384076990374in"   ![](media/image1085.png){width="3.0399321959755032in"
-  height="1.7811504811898513in"}                                                                                         height="1.7735804899387577in"}
+| ***Fig. 2.4c Import the CMSAF Satellite data*** | ***Fig. 2.4d Change the name to Date*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+|![](figures/Fig2.4c.png){width="2.988in" height="1.781in"} | ![](figures/Fig2.4d.png){width="3.040in" height="1.774in"} |
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Once imported, ***right-click*** to change the name of the last column
 from ***time_date*** to ***Date***, i.e. to the same name as in the
 station data, Fig. 2.4d[^5].
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4e The Merge dialogue***                     ***Fig. 2.4f Sub-dialogue to add just SDU***
-  ------------------------------------------------------ -------------------------------------------------------
-  ![](media/image1111.png){width="3.111791338582677in"   ![](media/image1093.png){width="3.2452384076990377in"
-  height="2.5076716972878392in"}                         height="2.2773534558180226in"}
-
-  --------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.4e The Merge dialogue*** | ***Fig. 2.4f Sub-dialogue to add just SDU*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.4e.png){width="3.111in" height="2.508in"} | ![](figures/Fig2.4f.png){width="3.245in" height="2.277in"} |
 
 Use ***Prepare \> Column: Reshape \> Merge*** and complete the dialogue
 as shown in Fig. 2.4e. It chooses to match on the Date columns, which is
@@ -549,17 +449,10 @@ Now check, using ***Describe \> One Variable \> Summarise*** on the
 merged data. Choose all the columns and press Ok. The results are in
 Fig. 2.4g.
 
-+-------------------------------------+--------------------------------+
-| ***Fig. 2.4g Results from One       | ***Fig. 2.4h Generate columns  |
-| Variable Summarise***               | from the Date***               |
-|                                     |                                |
-| ***From Describe \> One Variable \> | ***Prepare \> Column: Date \>  |
-| Summarise***                        | Make Date***                   |
-+=====================================+================================+
-| ![](media/image10                   | ![](media/image1096.pn         |
-| 97.png){width="3.249407261592301in" | g){width="2.799818460192476in" |
-| height="2.516402012248469in"}       | height="3.594505686789151in"}  |
-+-------------------------------------+--------------------------------+
+| ***Fig. 2.4g Results from One Variable Summarise*** | ***Fig. 2.4h Generate columns from the Date*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Describe \> One Variable \> Summarise***    |  ***Prepare \> Column: Date \> Make Date*** 
+| ![](figures/Fig2.4g.png){width="3.249in" height="2.516in"} | ![](figures/Fig2.4h.png){width="2.799in" height="3.594in"} |
 
 An encouraging sign in Fig. 2.4g is that summary statistics for the Sunh
 (from the station) and SDU (from the satellite) are almost identical.
@@ -575,13 +468,9 @@ them again (without missing values) using ***Prepare \> Column: Date \>
 Use Date*** dialogue, Fig. 2.4h. Then use Describe \> One Variable \>
 Summarise again to confirm the new columns do not have missing values.
 
-  ---------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4i Resulting merged data***                   ***Fig. 2.4j Correlations dialogue***
-  ------------------------------------------------------- -------------------------------------------------------
-  ![](media/image1095.png){width="3.2849989063867016in"   ![](media/image1108.png){width="2.7924835958005247in"
-  height="2.7602055993000874in"}                          height="2.8119094488188976in"}
-
-  ---------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.4i Resulting merged data*** | ***Fig. 2.4j Correlations dialogue*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.4g.png){width="3.285in" height="2.760in"} | ![](figures/Fig2.4j.png){width="2.792in" height="2.812in"} |
 
 ***Right-Click*** and choose ***Reorder Column(s)***. The resulting data
 should be like that shown in Fig. 2.4i.
@@ -589,13 +478,9 @@ should be like that shown in Fig. 2.4i.
 We are now ready to compare the satellite data (SDU) with the station
 values (sunh).
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4k Correlations sub-dialogue***                                                                              ***Fig. 2.4l Results***
-  ---------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------
-  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML3dae776.PNG](media/image1162.png){width="2.9056058617672793in"   ![](media/image1186.png){width="3.0944444444444446in"
-  height="3.124498031496063in"}                                                                                          height="3.0944444444444446in"}
-
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.4k Correlations sub-dialogue*** | ***Fig. 2.4l Results*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.4k.png){width="2.906in" height="3.124in"} | ![](figures/Fig2.4l.png){width="3.094in" height="3.094in"} |
 
 Use ***Describe \> Multivariate \> Correlations***. and enter SDU and
 sunh, Fig. 2.4j. Click on ***Options*** and choose ***Scatter Matrix***.
@@ -612,13 +497,9 @@ analysis.
 So, return to the ***correlations dialogue*** and sub-dialogue, Fig.
 2.4k and ***add the month factor***.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4m Including months in the analysis***        ***Fig. 2.4n The Histogram dialogue***
-  ------------------------------------------------------- ------------------------------------------------------
-  ![](media/image1164.png){width="2.9305555555555554in"   ![](media/image1177.png){width="3.064351487314086in"
-  height="2.9305555555555554in"}                          height="2.493587051618548in"}
-
-  --------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.4m Including months in the analysis*** | ***Fig. 2.4n The Histogram dialogue*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+|![](figures/Fig2.4m.png){width="2.931in" height="2.931in"} | ![](figures/Fig2.4n.png){width="3.064in" height="2.494in"} |
 
 The results in Fig. 2.4m show that the shape of both variables depends
 on the month. In particular (as expected) there is often less sun in the
@@ -631,13 +512,10 @@ compare the satellite and station data in more detail.
 
 Use ***Describe \> Specific \> Histogram***, Fig. 2.4n.
 
-  --------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4o A set of density graphs***                 ***Fig. 2.4p Include facets in the graph***
-  ------------------------------------------------------- ------------------------------------------------------
-  ![](media/image1176.png){width="2.8561548556430445in"   ![](media/image1178.png){width="3.222419072615923in"
-  height="2.821793525809274in"}                           height="2.8333595800524933in"}
+| ***Fig. 2.4o A set of density graphs*** | ***Fig. 2.4p Include facets in the graph*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.4o.png){width="2.856in" height="2.822in"} | ![](figures/Fig2.4p.png){width="3.222in" height="2.833in"} |
 
-  --------------------------------------------------------------------------------------------------------------
 
 Change the button at the top of Fig. 2.4o to Density and click on Plot
 Options.
@@ -645,13 +523,11 @@ Options.
 In the sub-dialogue, Fig. 2.4p tick the checkbox to include facets and
 include the month factor.
 
-  ------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4q Multiple variables***                    ***Fig. 2.4r Resulting graphs***
-  ----------------------------------------------------- ------------------------------------------------------
-  ![](media/image1169.png){width="1.83832895888014in"   ![](media/image1182.png){width="4.200391513560805in"
-  height="1.875511811023622in"}                         height="2.0904232283464568in"}
+| ***Fig. 2.4q Multiple variables*** | ***Fig. 2.4r Resulting graphs*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ***Describe \> One Variable \> Summarise***    |  ***Prepare \> Column: Date \> Make Date*** 
+| ![](figures/Fig2.4q.png){width="1.838in" height="1.876in"} | ![](figures/Fig2.4r.png){width="4.200in" height="2.090in"} |
 
-  ------------------------------------------------------------------------------------------------------------
 
 Return to the main dialogue, and click to include multiple variables,
 Fig. 2.4q. Include Sunh and SDU and press Ok. The graphs from Fig. 2.4m
@@ -671,20 +547,16 @@ Use ***Describe \> Specific \> Scatterplot*** and complete the dialogue
 as shown in Fig. 2.4s. Press on ***Plot Options*** and include the
 months as facets, Fig. 2.4t, just as earlier in Fig. 2.4p.
 
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ***Fig. 2.4s Scatterplot dialogue***                                                                                  ***Fig. 2.4t Plotting sub-dialogue***
-  --------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------
-  ![C:\\Users\\ROGERS\~1\\AppData\\Local\\Temp\\SNAGHTML6ce7e6e.PNG](media/image1181.png){width="3.050495406824147in"   ![](media/image1187.png){width="2.944646762904637in"
-  height="2.892821522309711in"}                                                                                         height="2.4655577427821522in"}
-
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| ***Fig. 2.4s Scatterplot dialogue*** | ***Fig. 2.4t Plotting sub-dialogue*** |
+|:----------------------------------------:|:---------------------------------------------------:|
+| ![](figures/Fig2.4g.png){width="3.050in" height="2.945in"} | ![](figures/Fig2.4h.png){width="2.893in" height="2.466in"} |
 
 The resulting set of graphs is shown in Fig. 2.4u.
 
   -----------------------------------------------------------------------
   ***Fig. 2.4u Scatterplots for each month***
   -----------------------------------------------------------------------
-  ![](media/image1163.png){width="6.131447944006999in"
+  ![](figures/Fig2.4u.png){width="6.131447944006999in"
   height="3.0514577865266843in"}
 
   -----------------------------------------------------------------------
